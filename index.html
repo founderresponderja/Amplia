@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amplia - Consultora Informática</title>
+    <meta name="description" content="Soluções de TI que ampliam o seu negócio." />
+    
+    <!-- Load Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Fonts: Using 'Outfit' from Google Fonts as a high-fidelity proxy for 'Max-Regular' 
+         due to its similar geometric, wide, and rounded characteristics seen in the logo. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              amplia: {
+                green: '#8cc63f', // Extracted from logo
+                dark: '#1a1a1a',  // Extracted from logo text
+                light: '#f4f7f0', // Very light green/grey for backgrounds
+                gray: '#4a4a4a'
+              }
+            },
+            fontFamily: {
+              // Mapping 'max' to our loaded font family to satisfy the "max-regular" requirement
+              'max': ['Outfit', 'Max-Regular', 'sans-serif'],
+            },
+            backgroundImage: {
+              'hero-pattern': "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Outfit', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Smooth scrolling for anchor links */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
