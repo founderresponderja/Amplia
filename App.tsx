@@ -1,22 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, CheckCircle2, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowRight, CheckCircle2, Sun, Moon, Globe, Edit3, Lock } from 'lucide-react';
 import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
+import { Language } from './types';
+import { ContentProvider, useContent } from './contexts/ContentContext';
+import { AdminPanel } from './components/AdminPanel';
 
-function App() {
+function AppContent() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+  const [adminPanelOpen, setAdminPanelOpen] = useState(false);
+  
+  const { content, isAdmin, login } = useContent();
+
+  // Language Initialization
+  const [language, setLanguage] = useState<Language>(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark' || 
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ? 'dark' 
-        : 'light';
+      const saved = localStorage.getItem('language') as Language;
+      return (saved === 'pt' || saved === 'en' || saved === 'es') ? saved : 'pt';
     }
+    return 'pt';
+  });
+
+  // Theme Initialization
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof window === 'undefined') return 'light';
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || savedTheme === 'light') return savedTheme;
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
     return 'light';
   });
+
+  const t = content[language];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,12 +47,16 @@ function App() {
     const root = window.document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
     }
+    localStorage.setItem('theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+    document.documentElement.lang = language === 'pt' ? 'pt-PT' : language === 'en' ? 'en-US' : 'es-ES';
+  }, [language]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
@@ -49,9 +70,33 @@ function App() {
     }
   };
 
+  const handleAdminLogin = () => {
+    const password = prompt("Insira a senha de administrador:");
+    if (password) {
+      const success = login(password);
+      if (success) {
+        setAdminPanelOpen(true);
+      } else {
+        alert("Senha incorreta.");
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen font-max font-normal text-amplia-dark dark:text-gray-100 bg-white dark:bg-neutral-900 overflow-x-hidden selection:bg-amplia-green selection:text-white transition-colors duration-300">
       
+      <AdminPanel currentLang={language} isOpen={adminPanelOpen} setIsOpen={setAdminPanelOpen} />
+
+      {/* Admin Toggle Button (Floating) */}
+      {isAdmin && !adminPanelOpen && (
+        <button 
+          onClick={() => setAdminPanelOpen(true)}
+          className="fixed bottom-6 right-6 z-50 bg-amplia-green text-white p-4 rounded-full shadow-2xl hover:bg-[#7ab800] transition-all animate-bounce-slow"
+        >
+          <Edit3 size={24} />
+        </button>
+      )}
+
       {/* Navigation */}
       <nav 
         className={`fixed w-full z-50 transition-all duration-300 ${
@@ -64,11 +109,38 @@ function App() {
           <Logo className="h-8 md:h-10" />
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollTo('home')} className="text-amplia-dark dark:text-gray-200 hover:text-amplia-green dark:hover:text-amplia-green font-normal transition-colors">Home</button>
-            <button onClick={() => scrollTo('about')} className="text-amplia-dark dark:text-gray-200 hover:text-amplia-green dark:hover:text-amplia-green font-normal transition-colors">Sobre</button>
-            <button onClick={() => scrollTo('services')} className="text-amplia-dark dark:text-gray-200 hover:text-amplia-green dark:hover:text-amplia-green font-normal transition-colors">Serviços</button>
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <button onClick={() => scrollTo('home')} className="text-amplia-dark dark:text-gray-200 hover:text-amplia-green dark:hover:text-amplia-green font-normal transition-colors">{t.nav.home}</button>
+            <button onClick={() => scrollTo('about')} className="text-amplia-dark dark:text-gray-200 hover:text-amplia-green dark:hover:text-amplia-green font-normal transition-colors">{t.nav.about}</button>
+            <button onClick={() => scrollTo('services')} className="text-amplia-dark dark:text-gray-200 hover:text-amplia-green dark:hover:text-amplia-green font-normal transition-colors">{t.nav.services}</button>
             
+            <div className="h-6 w-px bg-gray-300 dark:bg-white/20 mx-2"></div>
+
+            {/* Language Selector - Discreet Version */}
+            <div className="flex items-center gap-2 group">
+              <Globe size={14} className="text-gray-400 group-hover:text-amplia-green transition-colors" />
+              <div className="flex gap-2 text-xs font-medium text-gray-400">
+                <button 
+                  onClick={() => setLanguage('pt')} 
+                  className={`transition-colors hover:text-amplia-dark dark:hover:text-white ${language === 'pt' ? 'text-amplia-green font-bold' : ''}`}
+                >
+                  PT
+                </button>
+                <button 
+                  onClick={() => setLanguage('en')} 
+                  className={`transition-colors hover:text-amplia-dark dark:hover:text-white ${language === 'en' ? 'text-amplia-green font-bold' : ''}`}
+                >
+                  EN
+                </button>
+                <button 
+                  onClick={() => setLanguage('es')} 
+                  className={`transition-colors hover:text-amplia-dark dark:hover:text-white ${language === 'es' ? 'text-amplia-green font-bold' : ''}`}
+                >
+                  ES
+                </button>
+              </div>
+            </div>
+
             <button 
               onClick={toggleTheme} 
               className="p-2 rounded-full text-amplia-dark dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
@@ -78,7 +150,7 @@ function App() {
             </button>
 
             <Button onClick={() => scrollTo('contact')} variant="primary" className="scale-90">
-              Fale Connosco
+              {t.nav.button}
             </Button>
           </div>
 
@@ -102,11 +174,16 @@ function App() {
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white dark:bg-neutral-900 shadow-xl border-t border-gray-100 dark:border-white/10 p-6 flex flex-col space-y-4 md:hidden animate-fade-in-down">
-            <button onClick={() => scrollTo('home')} className="text-left text-lg font-normal py-2 dark:text-white">Home</button>
-            <button onClick={() => scrollTo('about')} className="text-left text-lg font-normal py-2 dark:text-white">Sobre</button>
-            <button onClick={() => scrollTo('services')} className="text-left text-lg font-normal py-2 dark:text-white">Serviços</button>
+            <div className="flex justify-center gap-6 mb-4 pb-4 border-b border-gray-100 dark:border-white/5">
+              <button onClick={() => setLanguage('pt')} className={`font-bold ${language === 'pt' ? 'text-amplia-green' : 'text-gray-400'}`}>PT</button>
+              <button onClick={() => setLanguage('en')} className={`font-bold ${language === 'en' ? 'text-amplia-green' : 'text-gray-400'}`}>EN</button>
+              <button onClick={() => setLanguage('es')} className={`font-bold ${language === 'es' ? 'text-amplia-green' : 'text-gray-400'}`}>ES</button>
+            </div>
+            <button onClick={() => scrollTo('home')} className="text-left text-lg font-normal py-2 dark:text-white">{t.nav.home}</button>
+            <button onClick={() => scrollTo('about')} className="text-left text-lg font-normal py-2 dark:text-white">{t.nav.about}</button>
+            <button onClick={() => scrollTo('services')} className="text-left text-lg font-normal py-2 dark:text-white">{t.nav.services}</button>
             <Button onClick={() => scrollTo('contact')} className="w-full justify-center mt-4">
-              Fale Connosco
+              {t.nav.button}
             </Button>
           </div>
         )}
@@ -123,40 +200,34 @@ function App() {
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-amplia-green/10 dark:bg-amplia-green/20 text-amplia-green rounded-full text-sm font-normal tracking-wide uppercase">
                 <span className="w-2 h-2 rounded-full bg-amplia-green animate-pulse"></span>
-                Inovação Constante
+                {t.hero.badge}
               </div>
               <h1 className="text-5xl lg:text-7xl font-max font-normal leading-tight text-amplia-dark dark:text-white">
-                Amplie o seu <br/>
+                {t.hero.titleLine1} <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amplia-green to-[#6a9e00]">
-                  Potencial Digital
+                  {t.hero.titleLine2}
                 </span>
               </h1>
               <p className="text-xl text-gray-500 dark:text-gray-400 font-normal max-w-lg leading-relaxed">
-                Transformamos desafios complexos em soluções de software simples e eficazes. A sua parceira tecnológica para o futuro.
+                {t.hero.description}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button onClick={() => scrollTo('contact')} className="flex items-center justify-center gap-2 shadow-xl shadow-amplia-green/20">
-                  Começar Agora <ArrowRight size={20} />
+                  {t.hero.ctaPrimary} <ArrowRight size={20} />
                 </Button>
                 <Button onClick={() => scrollTo('services')} variant="outline">
-                  Nossos Serviços
+                  {t.hero.ctaSecondary}
                 </Button>
               </div>
 
-              <div className="pt-8 flex items-center gap-8 text-gray-400 dark:text-gray-500">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="text-amplia-green" size={20} />
-                  <span className="text-sm font-normal">Suporte 24/7</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="text-amplia-green" size={20} />
-                  <span className="text-sm font-normal">Equipa Senior</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="text-amplia-green" size={20} />
-                  <span className="text-sm font-normal">Tecnologia de Ponta</span>
-                </div>
+              <div className="pt-8 flex flex-wrap items-center gap-6 md:gap-8 text-gray-400 dark:text-gray-500">
+                {t.hero.features.map((feature: string, idx: number) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <CheckCircle2 className="text-amplia-green" size={20} />
+                    <span className="text-sm font-normal">{feature}</span>
+                  </div>
+                ))}
               </div>
             </div>
             
@@ -169,14 +240,14 @@ function App() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-8 left-8 text-white">
-                  <p className="font-normal text-2xl">Mais de 10 anos</p>
-                  <p className="text-white/80 font-normal">de excelência no mercado</p>
+                  <p className="font-normal text-2xl">{t.hero.imageLabel1}</p>
+                  <p className="text-white/80 font-normal">{t.hero.imageLabel2}</p>
                 </div>
               </div>
               {/* Floating element */}
               <div className="absolute -bottom-10 -left-10 bg-white dark:bg-neutral-800 p-6 rounded-2xl shadow-xl dark:shadow-black/30 border-l-4 border-amplia-green animate-bounce-slow">
-                <p className="text-amplia-dark dark:text-white font-normal text-lg">+200 Projetos</p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm font-normal">Entregues com sucesso</p>
+                <p className="text-amplia-dark dark:text-white font-normal text-lg">{t.hero.floatLabel1}</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm font-normal">{t.hero.floatLabel2}</p>
               </div>
             </div>
           </div>
@@ -186,32 +257,32 @@ function App() {
       {/* About Section */}
       <section id="about" className="py-20 bg-amplia-light dark:bg-neutral-800/50 border-y border-gray-100 dark:border-white/5 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-normal mb-6 text-amplia-dark dark:text-white">Porquê a Amplia?</h2>
+          <h2 className="text-3xl font-normal mb-6 text-amplia-dark dark:text-white">{t.about.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="p-6">
               <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">01</h3>
-              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">Visão Estratégica</h4>
-              <p className="text-gray-600 dark:text-gray-400 font-normal">Não escrevemos apenas código. Entendemos o seu negócio para criar soluções que geram valor real.</p>
+              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card1.title}</h4>
+              <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card1.description}</p>
             </div>
             <div className="p-6">
               <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">02</h3>
-              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">Agilidade Total</h4>
-              <p className="text-gray-600 dark:text-gray-400 font-normal">Metodologias ágeis que garantem entregas rápidas, transparentes e adaptáveis às mudanças.</p>
+              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card2.title}</h4>
+              <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card2.description}</p>
             </div>
             <div className="p-6">
               <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">03</h3>
-              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">Tecnologia Humana</h4>
-              <p className="text-gray-600 dark:text-gray-400 font-normal">Acreditamos que a tecnologia deve servir as pessoas. O nosso suporte é próximo e personalizado.</p>
+              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card3.title}</h4>
+              <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card3.description}</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <Services />
+      <Services content={t.services} />
 
       {/* Contact Section */}
-      <Contact />
+      <Contact content={t.contact} />
 
       {/* Footer */}
       <footer className="bg-[#111] dark:bg-black text-white py-12 border-t border-white/10">
@@ -226,16 +297,32 @@ function App() {
           </div>
           <div className="border-t border-white/10 pt-8 text-center md:text-left text-gray-500 text-sm font-normal">
             <div className="flex flex-col md:flex-row justify-between">
-              <p>&copy; {new Date().getFullYear()} Amplia Consultoria. Todos os direitos reservados.</p>
-              <div className="space-x-4 mt-4 md:mt-0">
-                <a href="#" className="hover:text-white font-normal">Privacidade</a>
-                <a href="#" className="hover:text-white font-normal">Termos</a>
+              <p>&copy; {new Date().getFullYear()} Amplia Consultoria. {t.footer.rights}</p>
+              <div className="space-x-4 mt-4 md:mt-0 flex items-center">
+                <a href="#" className="hover:text-white font-normal">{t.footer.privacy}</a>
+                <span className="text-gray-700">|</span>
+                <a href="#" className="hover:text-white font-normal">{t.footer.terms}</a>
+                <span className="text-gray-700">|</span>
+                <button 
+                  onClick={handleAdminLogin}
+                  className="hover:text-white font-normal text-xs uppercase flex items-center gap-1 opacity-50 hover:opacity-100"
+                >
+                  <Lock size={10} /> Admin
+                </button>
               </div>
             </div>
           </div>
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ContentProvider>
+      <AppContent />
+    </ContentProvider>
   );
 }
 

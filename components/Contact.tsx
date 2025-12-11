@@ -3,8 +3,13 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Button } from './Button';
 import { FormStatus } from '../types';
 
-export const Contact: React.FC = () => {
+interface ContactProps {
+  content: any;
+}
+
+export const Contact: React.FC<ContactProps> = ({ content }) => {
   const [status, setStatus] = useState<FormStatus>(FormStatus.IDLE);
+  const t = content;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,12 +31,12 @@ export const Contact: React.FC = () => {
           
           {/* Contact Info */}
           <div>
-            <h2 className="text-amplia-green font-normal tracking-widest uppercase text-sm mb-2">Contacte-nos</h2>
+            <h2 className="text-amplia-green font-normal tracking-widest uppercase text-sm mb-2">{t.sectionTitle}</h2>
             <h3 className="text-4xl md:text-5xl font-max font-normal mb-8">
-              Vamos ampliar o seu <span className="text-amplia-green">sucesso</span>?
+              {t.mainTitlePrefix} <span className="text-amplia-green">{t.mainTitleHighlight}</span>{t.mainTitleSuffix}
             </h3>
             <p className="text-gray-400 text-lg mb-12 font-normal">
-              Estamos prontos para analisar o seu desafio tecnológico. Agende uma reunião gratuita com os nossos especialistas.
+              {t.description}
             </p>
 
             <div className="space-y-6">
@@ -69,45 +74,45 @@ export const Contact: React.FC = () => {
 
           {/* Form */}
           <div className="bg-white dark:bg-neutral-800 rounded-3xl p-8 lg:p-10 text-amplia-dark dark:text-white shadow-2xl transition-colors duration-300">
-            <h4 className="text-2xl font-normal font-max mb-6">Envie uma mensagem</h4>
+            <h4 className="text-2xl font-normal font-max mb-6">{t.formTitle}</h4>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-normal text-gray-600 dark:text-gray-300">Nome</label>
+                  <label className="text-sm font-normal text-gray-600 dark:text-gray-300">{t.labels.name}</label>
                   <input 
                     type="text" 
                     required
                     className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 text-amplia-dark dark:text-white focus:border-amplia-green focus:ring-2 focus:ring-amplia-green/20 outline-none transition-all font-normal"
-                    placeholder="Seu nome"
+                    placeholder={t.placeholders.name}
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-normal text-gray-600 dark:text-gray-300">Empresa</label>
+                  <label className="text-sm font-normal text-gray-600 dark:text-gray-300">{t.labels.company}</label>
                   <input 
                     type="text" 
                     className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 text-amplia-dark dark:text-white focus:border-amplia-green focus:ring-2 focus:ring-amplia-green/20 outline-none transition-all font-normal"
-                    placeholder="Sua empresa"
+                    placeholder={t.placeholders.company}
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-normal text-gray-600 dark:text-gray-300">Email</label>
+                <label className="text-sm font-normal text-gray-600 dark:text-gray-300">{t.labels.email}</label>
                 <input 
                   type="email" 
                   required
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 text-amplia-dark dark:text-white focus:border-amplia-green focus:ring-2 focus:ring-amplia-green/20 outline-none transition-all font-normal"
-                  placeholder="seu@email.com"
+                  placeholder={t.placeholders.email}
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-normal text-gray-600 dark:text-gray-300">Mensagem</label>
+                <label className="text-sm font-normal text-gray-600 dark:text-gray-300">{t.labels.message}</label>
                 <textarea 
                   required
                   rows={4}
                   className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 text-amplia-dark dark:text-white focus:border-amplia-green focus:ring-2 focus:ring-amplia-green/20 outline-none transition-all resize-none font-normal"
-                  placeholder="Como podemos ajudar?"
+                  placeholder={t.placeholders.message}
                 ></textarea>
               </div>
 
@@ -116,9 +121,9 @@ export const Contact: React.FC = () => {
                 disabled={status === FormStatus.SUBMITTING}
                 className="w-full flex items-center justify-center gap-2"
               >
-                {status === FormStatus.SUBMITTING ? 'A enviar...' : status === FormStatus.SUCCESS ? 'Mensagem Enviada!' : (
+                {status === FormStatus.SUBMITTING ? t.button.submitting : status === FormStatus.SUCCESS ? t.button.success : (
                   <>
-                    Enviar Mensagem <Send size={18} />
+                    {t.button.idle} <Send size={18} />
                   </>
                 )}
               </Button>

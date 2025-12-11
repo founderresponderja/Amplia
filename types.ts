@@ -1,5 +1,7 @@
 import React from 'react';
 
+export type Language = 'pt' | 'en' | 'es';
+
 export interface ServiceItem {
   id: string;
   title: string;

@@ -16,6 +16,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script>
+      // Apply theme preference immediately to prevent flash of unstyled content
+      (function() {
+        try {
+          const localTheme = localStorage.getItem('theme');
+          const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          
+          if (localTheme === 'dark' || (!localTheme && systemTheme)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
