@@ -7,6 +7,7 @@ import { Contact } from './components/Contact';
 import { Language } from './types';
 import { ContentProvider, useContent } from './contexts/ContentContext';
 import { AdminPanel } from './components/AdminPanel';
+import { ScrollReveal } from './components/ScrollReveal';
 
 function AppContent() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -257,23 +258,32 @@ function AppContent() {
       {/* About Section */}
       <section id="about" className="py-20 bg-amplia-light dark:bg-neutral-800/50 border-y border-gray-100 dark:border-white/5 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-normal mb-6 text-amplia-dark dark:text-white">{t.about.title}</h2>
+          <ScrollReveal>
+            <h2 className="text-3xl font-normal mb-6 text-amplia-dark dark:text-white">{t.about.title}</h2>
+          </ScrollReveal>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="p-6">
-              <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">01</h3>
-              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card1.title}</h4>
-              <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card1.description}</p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">02</h3>
-              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card2.title}</h4>
-              <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card2.description}</p>
-            </div>
-            <div className="p-6">
-              <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">03</h3>
-              <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card3.title}</h4>
-              <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card3.description}</p>
-            </div>
+            <ScrollReveal delay={0.1}>
+              <div className="p-6">
+                <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">01</h3>
+                <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card1.title}</h4>
+                <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card1.description}</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="p-6">
+                <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">02</h3>
+                <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card2.title}</h4>
+                <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card2.description}</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3}>
+              <div className="p-6">
+                <h3 className="text-6xl font-normal text-amplia-green/20 mb-4">03</h3>
+                <h4 className="text-xl font-normal mb-3 dark:text-gray-100">{t.about.card3.title}</h4>
+                <p className="text-gray-600 dark:text-gray-400 font-normal">{t.about.card3.description}</p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -297,7 +307,7 @@ function AppContent() {
           </div>
           <div className="border-t border-white/10 pt-8 text-center md:text-left text-gray-500 text-sm font-normal">
             <div className="flex flex-col md:flex-row justify-between">
-              <p>&copy; {new Date().getFullYear()} Amplia Consultoria. {t.footer.rights}</p>
+              <p>&copy; {new Date().getFullYear()} Amplia Solutions. {t.footer.rights}</p>
               <div className="space-x-4 mt-4 md:mt-0 flex items-center">
                 <a href="#" className="hover:text-white font-normal">{t.footer.privacy}</a>
                 <span className="text-gray-700">|</span>
