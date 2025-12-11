@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Monitor, Server, ShieldCheck, Code, Smartphone, Database, ExternalLink, Check, Share2, Linkedin, Twitter, X } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Monitor, Server, ShieldCheck, Code, Smartphone, Database, ExternalLink, Check, Share2, Linkedin, Twitter, X, Copy, CheckCheck } from 'lucide-react';
 import { Button } from './Button';
 import { ScrollReveal } from './ScrollReveal';
 
@@ -9,6 +9,8 @@ interface ServicesProps {
 
 export const Services: React.FC<ServicesProps> = ({ content }) => {
   const [activeShareItem, setActiveShareItem] = useState<any | null>(null);
+  const [copied, setCopied] = useState(false);
+  const urlInputRef = useRef<HTMLInputElement>(null);
   const t = content;
 
   const icons = [
@@ -22,10 +24,32 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
 
   const handleShare = (portfolio: any) => {
     setActiveShareItem(portfolio);
+    setCopied(false);
   };
 
   const closeShare = () => {
     setActiveShareItem(null);
+    setCopied(false);
+  };
+
+  useEffect(() => {
+    if (activeShareItem && urlInputRef.current) {
+      // Small delay to ensure the modal transition/render is complete
+      const timer = setTimeout(() => {
+        urlInputRef.current?.select();
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [activeShareItem]);
+
+  const handleCopy = (url: string) => {
+    navigator.clipboard.writeText(url);
+    setCopied(true);
+    // Keep input selected
+    if (urlInputRef.current) {
+      urlInputRef.current.select();
+    }
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -150,26 +174,53 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
                 Mostre ao mundo o <span className="font-bold">{activeShareItem.appName}</span>
               </p>
 
-              <div className="space-y-3">
-                <a 
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(activeShareItem.url)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 w-full p-3 bg-[#0077b5] text-white rounded-xl hover:bg-[#006396] transition-colors font-medium"
+              <div className="space-y-4">
+                {/* Link Input Section */}
+                <div>
+                  <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Link do Projeto</label>
+                  <input
+                    ref={urlInputRef}
+                    type="text"
+                    readOnly
+                    value={activeShareItem.url}
+                    onClick={(e) => e.currentTarget.select()}
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-gray-300 text-sm focus:border-amplia-green focus:ring-1 focus:ring-amplia-green outline-none transition-all font-mono"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <a 
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(activeShareItem.url)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full p-3 bg-[#0077b5] text-white rounded-xl hover:bg-[#006396] transition-colors font-medium text-sm"
+                  >
+                    <Linkedin size={18} />
+                    LinkedIn
+                  </a>
+                  
+                  <a 
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(activeShareItem.url)}&text=${encodeURIComponent(`Descubra o ${activeShareItem.appName} da Amplia Solutions!`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full p-3 bg-black dark:bg-white dark:text-black text-white rounded-xl hover:opacity-80 transition-opacity font-medium text-sm"
+                  >
+                    <Twitter size={18} />
+                    X / Twitter
+                  </a>
+                </div>
+
+                <button 
+                  onClick={() => handleCopy(activeShareItem.url)}
+                  className={`flex items-center justify-center gap-3 w-full p-3 rounded-xl transition-all duration-300 font-medium ${
+                    copied 
+                      ? 'bg-amplia-green text-white ring-4 ring-amplia-green/20 scale-[1.02]' 
+                      : 'bg-gray-100 dark:bg-neutral-700 text-amplia-dark dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-600'
+                  }`}
                 >
-                  <Linkedin size={20} />
-                  Partilhar no LinkedIn
-                </a>
-                
-                <a 
-                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(activeShareItem.url)}&text=${encodeURIComponent(`Check out ${activeShareItem.appName} by Amplia Solutions!`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 w-full p-3 bg-black dark:bg-white dark:text-black text-white rounded-xl hover:opacity-80 transition-opacity font-medium"
-                >
-                  <Twitter size={20} />
-                  Partilhar no X
-                </a>
+                  {copied ? <CheckCheck size={20} /> : <Copy size={20} />}
+                  {copied ? 'Link Copiado com Sucesso!' : 'Copiar Link'}
+                </button>
               </div>
             </div>
           </div>
