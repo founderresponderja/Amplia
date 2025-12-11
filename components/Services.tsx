@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Server, ShieldCheck, Code, Smartphone, Database, ExternalLink, Box, Zap } from 'lucide-react';
+import { Monitor, Server, ShieldCheck, Code, Smartphone, Database, ExternalLink, Check } from 'lucide-react';
 import { Button } from './Button';
 
 interface ServicesProps {
@@ -48,58 +48,64 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
           ))}
         </div>
 
-        {/* Portfolio Subsection */}
-        {t.portfolio && (
-          <div className="relative mt-24">
-            <div className="absolute inset-0 bg-gradient-to-r from-amplia-green/5 to-transparent rounded-3xl -z-10"></div>
-            <div className="bg-white dark:bg-neutral-800 border border-gray-100 dark:border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-              
-              {/* Content Side */}
-              <div className="p-8 md:p-12 flex-1 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 mb-4">
-                   <span className="w-2 h-2 rounded-full bg-amplia-green animate-pulse"></span>
-                   <span className="text-amplia-green font-bold text-xs uppercase tracking-widest">{t.portfolio.title}</span>
-                </div>
-                <h3 className="text-3xl font-max font-normal text-amplia-dark dark:text-white mb-4">
-                  {t.portfolio.appName}
-                </h3>
-                <p className="text-lg text-gray-500 dark:text-gray-400 font-normal mb-8 leading-relaxed">
-                  {t.portfolio.appDescription}
-                </p>
-                <div>
-                  <a 
-                    href={t.portfolio.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Button className="flex items-center gap-2">
-                      {t.portfolio.buttonText} <ExternalLink size={18} />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-
-              {/* Visual/Logo Side */}
-              <div className="bg-gray-50 dark:bg-neutral-900 md:w-1/3 border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5 flex items-center justify-center p-12 relative overflow-hidden group">
-                 {/* Decorative background effects */}
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-amplia-green/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-amplia-green/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
-
-                 {/* App Logo Representation */}
-                 <div className="relative z-10 w-32 h-32 bg-gradient-to-br from-white to-gray-100 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl shadow-lg flex items-center justify-center transform group-hover:scale-105 transition-transform duration-500 border border-gray-200 dark:border-neutral-700">
-                    <div className="absolute inset-0 bg-gradient-to-br from-amplia-green to-[#6a9e00] opacity-10 rounded-2xl"></div>
-                    {/* The Triangle Logo inside the App Icon */}
-                    <div className="w-16 h-16 relative">
-                       <svg viewBox="0 0 100 60" className="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 50 L35 15 L50 30 L15 60 Z" fill="#8cc63f" />
-                        <path d="M35 15 L55 0 L70 30 L50 30 Z" fill="#7ab800" /> 
-                        <path d="M50 30 L70 30 L60 50 Z" fill="#6a9e00" opacity="0.8" />
-                      </svg>
+        {/* Portfolios Subsection */}
+        {t.portfolios && t.portfolios.length > 0 && (
+          <div className="space-y-16 mt-24">
+            {t.portfolios.map((portfolio: any, index: number) => (
+              <div key={index} className="relative">
+                {/* Background gradient only for the first item or alternate if needed */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${index % 2 === 0 ? 'from-amplia-green/5' : 'from-blue-500/5'} to-transparent rounded-3xl -z-10`}></div>
+                <div className="bg-white dark:bg-neutral-800 border border-gray-100 dark:border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+                  
+                  {/* Content Side */}
+                  <div className="p-8 md:p-12 lg:w-3/5 flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-2 mb-4">
+                      <span className={`w-2 h-2 rounded-full ${index % 2 === 0 ? 'bg-amplia-green' : 'bg-blue-500'} animate-pulse`}></span>
+                      <span className={`${index % 2 === 0 ? 'text-amplia-green' : 'text-blue-500'} font-bold text-xs uppercase tracking-widest`}>{portfolio.title}</span>
                     </div>
-                 </div>
-              </div>
+                    <h3 className="text-3xl font-max font-normal text-amplia-dark dark:text-white mb-4">
+                      {portfolio.appName}
+                    </h3>
+                    <p className="text-lg text-gray-500 dark:text-gray-400 font-normal mb-8 leading-relaxed">
+                      {portfolio.appDescription}
+                    </p>
+                    <div>
+                      <a 
+                        href={portfolio.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        <Button className={`flex items-center gap-2 ${index % 2 !== 0 ? '!bg-blue-600 hover:!bg-blue-700' : ''}`}>
+                          {portfolio.buttonText} <ExternalLink size={18} />
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
 
-            </div>
+                  {/* Pricing Side */}
+                  <div className="lg:w-2/5 bg-gray-50 dark:bg-neutral-900/50 border-t lg:border-t-0 lg:border-l border-gray-100 dark:border-white/5 p-8 md:p-12 flex flex-col justify-center">
+                    <div className="bg-white dark:bg-neutral-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
+                        <h4 className="text-sm font-bold uppercase text-gray-400 mb-2">{portfolio.pricingTitle}</h4>
+                        <div className="flex items-baseline gap-1 mb-6">
+                          <span className="text-4xl font-max font-normal text-amplia-dark dark:text-white">{portfolio.pricingPrice}</span>
+                          <span className="text-gray-500 text-sm">{portfolio.pricingPeriod}</span>
+                        </div>
+                        <ul className="space-y-3 mb-0">
+                          {[portfolio.pricingFeature1, portfolio.pricingFeature2, portfolio.pricingFeature3, portfolio.pricingFeature4].map((feature: string, idx: number) => (
+                            <li key={idx} className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
+                              <div className={`w-5 h-5 rounded-full ${index % 2 === 0 ? 'bg-amplia-green/10' : 'bg-blue-500/10'} flex items-center justify-center flex-shrink-0`}>
+                                <Check size={12} className={index % 2 === 0 ? 'text-amplia-green' : 'text-blue-500'} />
+                              </div>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>

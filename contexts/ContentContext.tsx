@@ -6,7 +6,7 @@ type ContentType = typeof defaultTranslations;
 
 interface ContentContextType {
   content: ContentType;
-  updateContent: (lang: Language, section: string, key: string, value: any, index?: number) => void;
+  updateContent: (lang: Language, section: string, key: string, value: any, index?: number, parentKey?: string) => void;
   resetContent: () => void;
   isAdmin: boolean;
   login: (password: string) => boolean;
@@ -40,28 +40,25 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
     localStorage.setItem('is_admin', String(isAdmin));
   }, [isAdmin]);
 
-  const updateContent = (lang: Language, section: string, key: string, value: any, index?: number) => {
+  const updateContent = (lang: Language, section: string, key: string, value: any, index?: number, parentKey?: string) => {
     setContent(prev => {
       const newContent = { ...prev };
       const langContent = { ...newContent[lang] };
       // @ts-ignore
       const sectionContent = { ...langContent[section] };
 
-      if (index !== undefined && Array.isArray(sectionContent[key])) {
-        // Handle array updates (like features list)
+      if (index !== undefined && parentKey && Array.isArray(sectionContent[parentKey])) {
+        // Generic handler for array of objects (e.g. services.items or services.portfolios)
+        const newArray = [...sectionContent[parentKey]];
+        newArray[index] = { ...newArray[index], [key]: value };
+        sectionContent[parentKey] = newArray;
+      } else if (index !== undefined && Array.isArray(sectionContent[key])) {
+        // Handle array of strings updates (like features list where key IS the array name)
         const newArray = [...sectionContent[key]];
         newArray[index] = value;
         sectionContent[key] = newArray;
-      } else if (index !== undefined && Array.isArray(sectionContent.items)) {
-         // Handle service items specific structure
-         const newItems = [...sectionContent.items];
-         newItems[index] = { ...newItems[index], [key]: value };
-         sectionContent.items = newItems;
       } else if (typeof sectionContent[key] === 'object' && !Array.isArray(sectionContent[key]) && sectionContent[key] !== null) {
-        // Handle nested objects (like card1.title)
-        // Note: The recursive editor in AdminPanel handles the flattening, 
-        // but for deep updates we might need this. 
-        // For simplicity, the AdminPanel passes the direct key for simple objects.
+        // Handle nested objects direct update
         sectionContent[key] = value;
       } else {
         // Simple string update

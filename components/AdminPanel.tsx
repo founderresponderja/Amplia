@@ -32,18 +32,18 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ currentLang, isOpen, set
 
   const currentContent = content[currentLang];
 
-  const renderInput = (section: string, key: string, value: any, label: string, index?: number) => {
+  const renderInput = (section: string, key: string, value: any, label: string, index?: number, parentKey?: string) => {
     if (typeof value === 'string') {
       const isLongText = value.length > 50;
       return (
-        <div className="mb-4" key={`${section}-${key}-${index ?? ''}`}>
+        <div className="mb-4" key={`${section}-${parentKey || ''}-${key}-${index ?? ''}`}>
           <label className="block text-xs font-bold text-gray-500 uppercase mb-1">
             {label}
           </label>
           {isLongText ? (
             <textarea
               value={value}
-              onChange={(e) => updateContent(currentLang, section, key, e.target.value, index)}
+              onChange={(e) => updateContent(currentLang, section, key, e.target.value, index, parentKey)}
               className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-amplia-green focus:border-transparent outline-none bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
               rows={3}
             />
@@ -51,7 +51,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ currentLang, isOpen, set
             <input
               type="text"
               value={value}
-              onChange={(e) => updateContent(currentLang, section, key, e.target.value, index)}
+              onChange={(e) => updateContent(currentLang, section, key, e.target.value, index, parentKey)}
               className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-amplia-green focus:border-transparent outline-none bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
             />
           )}
@@ -109,9 +109,9 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ currentLang, isOpen, set
             {expandedSections[sectionKey] && (
               <div className="p-4 bg-white dark:bg-neutral-900/50">
                 {Object.entries(sectionData as any).map(([key, value]) => {
-                  // Handle Arrays (like features)
+                  // Handle Arrays (like features, services items, portfolios)
                   if (Array.isArray(value)) {
-                    // Check if it's an array of strings or objects
+                    // Check if it's an array of strings
                     if (typeof value[0] === 'string') {
                       return (
                         <div key={key} className="mb-4 border-l-2 border-amplia-green pl-3">
@@ -122,15 +122,18 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ currentLang, isOpen, set
                         </div>
                       );
                     } else if (typeof value[0] === 'object') {
-                      // Specific handler for Services items array
+                      // Generic handler for array of objects (Services items, Portfolios)
                       return (
                         <div key={key}>
                            <label className="block text-xs font-bold text-gray-500 uppercase mb-2">{key}</label>
                            {value.map((item: any, idx: number) => (
-                             <div key={idx} className="mb-4 pl-3 border-l-2 border-gray-300 dark:border-neutral-600">
-                               <p className="text-xs text-gray-400 mb-2">Item {idx + 1}</p>
-                               {renderInput(sectionKey, 'title', item.title, 'Título', idx)}
-                               {renderInput(sectionKey, 'description', item.description, 'Descrição', idx)}
+                             <div key={idx} className="mb-6 pl-3 border-l-2 border-gray-300 dark:border-neutral-600">
+                               <p className="text-xs text-gray-400 mb-2 font-bold bg-gray-100 dark:bg-neutral-800 inline-block px-2 py-1 rounded">
+                                 {item.title || item.appName || `Item ${idx + 1}`}
+                               </p>
+                               {Object.keys(item).map((itemKey) => 
+                                 renderInput(sectionKey, itemKey, item[itemKey], itemKey, idx, key)
+                               )}
                              </div>
                            ))}
                         </div>
@@ -144,25 +147,29 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ currentLang, isOpen, set
                       <div key={key} className="mb-4 pl-3 border-l-2 border-blue-200">
                         <label className="block text-xs font-bold text-blue-500 uppercase mb-2">{key}</label>
                          {Object.entries(value).map(([subKey, subValue]) => (
-                           // We flatten the update key path by passing a specialized update function or by handling it in context.
-                           // For this simple implementation, let's create a temporary composite key or handle it in the renderInput by direct modification
-                           // Actually, for the card1.title, we need to pass 'card1' as key, but the value is an object.
-                           // Simpler approach for this demo: Render inputs that update the sub-object property
-                           <div key={subKey} className="mb-2">
-                             <label className="block text-xs font-bold text-gray-400 uppercase mb-1">
-                               {subKey}
-                             </label>
-                             <textarea
-                               value={subValue as string}
-                               onChange={(e) => {
-                                  // Update the nested object
-                                  const updatedObject = { ...(value as object), [subKey]: e.target.value };
-                                  updateContent(currentLang, sectionKey, key, updatedObject);
-                               }}
-                               className="w-full p-2 text-sm border border-gray-200 rounded-lg bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
-                               rows={2}
-                             />
-                           </div>
+                           // We map this as simple inputs for now using the composite key update if needed, 
+                           // but for this simple schema we can just use renderInput and let ContentContext handle object merge if supported,
+                           // or simple iteration.
+                           // Current implementation passes subKey as 'key'.
+                            <div key={subKey}>
+                               {renderInput(sectionKey, key, { ...value, [subKey]: subValue }, subKey)} 
+                               {/* NOTE: This nested object rendering in previous version was manually handling textarea updates.
+                                   To keep it simple and consistent with new updates: */}
+                               <div className="mb-2">
+                                 <label className="block text-xs font-bold text-gray-400 uppercase mb-1">
+                                   {subKey}
+                                 </label>
+                                 <textarea
+                                   value={subValue as string}
+                                   onChange={(e) => {
+                                      const updatedObject = { ...(value as object), [subKey]: e.target.value };
+                                      updateContent(currentLang, sectionKey, key, updatedObject);
+                                   }}
+                                   className="w-full p-2 text-sm border border-gray-200 rounded-lg bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
+                                   rows={2}
+                                 />
+                               </div>
+                            </div>
                          ))}
                       </div>
                     );

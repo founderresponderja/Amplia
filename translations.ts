@@ -67,13 +67,36 @@ export const translations = {
           description: 'Transforme dados brutos em insights valiosos para a tomada de decisão com os nossos dashboards inteligentes.'
         }
       ],
-      portfolio: {
-        title: 'Portfólio em Destaque',
-        appName: 'Amplia Drive AI',
-        appDescription: 'Uma ferramenta revolucionária de gestão documental assistida por Inteligência Artificial. Teste agora a nossa versão beta pública.',
-        buttonText: 'Aceder à Aplicação',
-        url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ'
-      }
+      portfolios: [
+        {
+          title: 'Produto em Destaque',
+          appName: 'Amplia OpsFlow',
+          appDescription: 'A plataforma definitiva para orquestração de operações de TI. Automatize fluxos de trabalho, centralize logs e antecipe falhas de infraestrutura com o poder dos nossos agentes de IA generativa. Recupere o controlo do seu tempo.',
+          buttonText: 'Começar Trial Gratuito',
+          url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ',
+          pricingTitle: 'Plano Professional',
+          pricingPrice: '49€',
+          pricingPeriod: '/mês',
+          pricingFeature1: 'Monitorização de Logs Ilimitada',
+          pricingFeature2: 'Até 5 Agentes de IA Ativos',
+          pricingFeature3: 'Integração Slack, Teams e Jira',
+          pricingFeature4: 'Suporte Técnico Prioritário'
+        },
+        {
+          title: 'Novo Lançamento',
+          appName: 'LIA',
+          appDescription: 'Potencie a sua carreira com IA. Da otimização de CV à procura de emprego automática. A Lia é o seu agente pessoal de carreira.',
+          buttonText: 'Conhecer a LIA',
+          url: 'https://aistudio.google.com/apps/drive/17l0GsjgJok3QxowWjRx5v28FNmwgw5et',
+          pricingTitle: 'Plano Business',
+          pricingPrice: '39€',
+          pricingPeriod: '/mês',
+          pricingFeature1: 'Otimização de CV com IA',
+          pricingFeature2: 'Candidaturas Automáticas',
+          pricingFeature3: 'Simulação de Entrevistas',
+          pricingFeature4: 'Análise de Mercado em Tempo Real'
+        }
+      ]
     },
     contact: {
       sectionTitle: 'Contacte-nos',
@@ -172,13 +195,36 @@ export const translations = {
           description: 'Transform raw data into valuable insights for decision making with our intelligent dashboards.'
         }
       ],
-      portfolio: {
-        title: 'Featured Portfolio',
-        appName: 'Amplia Drive AI',
-        appDescription: 'A revolutionary AI-assisted document management tool. Try our public beta version now.',
-        buttonText: 'Access App',
-        url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ'
-      }
+      portfolios: [
+        {
+          title: 'Featured Product',
+          appName: 'Amplia OpsFlow',
+          appDescription: 'The definitive platform for IT operations orchestration. Automate workflows, centralize logs, and anticipate infrastructure failures with the power of our generative AI agents. Take back control of your time.',
+          buttonText: 'Start Free Trial',
+          url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ',
+          pricingTitle: 'Professional Plan',
+          pricingPrice: '49€',
+          pricingPeriod: '/month',
+          pricingFeature1: 'Unlimited Log Monitoring',
+          pricingFeature2: 'Up to 5 Active AI Agents',
+          pricingFeature3: 'Slack, Teams & Jira Integration',
+          pricingFeature4: 'Priority Technical Support'
+        },
+        {
+          title: 'New Launch',
+          appName: 'LIA',
+          appDescription: 'Boost your career with AI. From CV optimization to automated job search. Lia is your personal career agent.',
+          buttonText: 'Meet LIA',
+          url: 'https://aistudio.google.com/apps/drive/17l0GsjgJok3QxowWjRx5v28FNmwgw5et',
+          pricingTitle: 'Business Plan',
+          pricingPrice: '39€',
+          pricingPeriod: '/month',
+          pricingFeature1: 'AI CV Optimization',
+          pricingFeature2: 'Automated Applications',
+          pricingFeature3: 'Interview Simulation',
+          pricingFeature4: 'Real-time Market Analysis'
+        }
+      ]
     },
     contact: {
       sectionTitle: 'Contact Us',
@@ -277,13 +323,36 @@ export const translations = {
           description: 'Transforma datos brutos en insights valiosos para la toma de decisiones con nuestros dashboards inteligentes.'
         }
       ],
-      portfolio: {
-        title: 'Portafolio Destacado',
-        appName: 'Amplia Drive AI',
-        appDescription: 'Una herramienta revolucionaria de gestión documental asistida por IA. Pruebe nuestra versión beta pública ahora.',
-        buttonText: 'Acceder a la App',
-        url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ'
-      }
+      portfolios: [
+        {
+          title: 'Producto Destacado',
+          appName: 'Amplia OpsFlow',
+          appDescription: 'La plataforma definitiva para la orquestación de operaciones de TI. Automatice flujos de trabajo, centralice registros y anticipe fallos de infraestructura con el poder de nuestros agentes de IA generativa.',
+          buttonText: 'Comenzar Prueba Gratuita',
+          url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ',
+          pricingTitle: 'Plan Profesional',
+          pricingPrice: '49€',
+          pricingPeriod: '/mes',
+          pricingFeature1: 'Monitorización de Logs Ilimitada',
+          pricingFeature2: 'Hasta 5 Agentes de IA Activos',
+          pricingFeature3: 'Integración Slack, Teams y Jira',
+          pricingFeature4: 'Soporte Técnico Prioritário'
+        },
+        {
+          title: 'Nuevo Lanzamiento',
+          appName: 'LIA',
+          appDescription: 'Potencia tu carrera con IA. Desde la optimización del CV hasta la búsqueda automática de empleo. Lia es tu agente personal de carrera.',
+          buttonText: 'Conocer a LIA',
+          url: 'https://aistudio.google.com/apps/drive/17l0GsjgJok3QxowWjRx5v28FNmwgw5et',
+          pricingTitle: 'Plan Business',
+          pricingPrice: '39€',
+          pricingPeriod: '/mes',
+          pricingFeature1: 'Optimización de CV con IA',
+          pricingFeature2: 'Candidaturas Automáticas',
+          pricingFeature3: 'Simulación de Entrevistas',
+          pricingFeature4: 'Análisis de Mercado en Tiempo Real'
+        }
+      ]
     },
     contact: {
       sectionTitle: 'Contáctanos',
