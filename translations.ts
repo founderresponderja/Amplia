@@ -95,6 +95,20 @@ export const translations = {
           pricingFeature2: 'Candidaturas Automáticas',
           pricingFeature3: 'Simulação de Entrevistas',
           pricingFeature4: 'Análise de Mercado em Tempo Real'
+        },
+        {
+          title: 'Eficiência Garantida',
+          appName: 'Responder Já',
+          appDescription: 'Nunca mais deixe um email sem resposta. A nossa IA analisa a sua caixa de entrada, categoriza mensagens e sugere respostas personalizadas em segundos. Ideal para equipas de suporte e vendas que valorizam a velocidade.',
+          buttonText: 'Experimentar Agora',
+          url: 'https://aistudio.google.com/apps/drive/1T0zXP1vERy45urOT0b4uTxpsaRxa79sW',
+          pricingTitle: 'Plano Growth',
+          pricingPrice: '29€',
+          pricingPeriod: '/mês',
+          pricingFeature1: 'Análise Inteligente de Email',
+          pricingFeature2: 'Sugestões em Tempo Real',
+          pricingFeature3: 'Tom de Voz Personalizável',
+          pricingFeature4: 'Integração Gmail e Outlook'
         }
       ]
     },
@@ -223,6 +237,20 @@ export const translations = {
           pricingFeature2: 'Automated Applications',
           pricingFeature3: 'Interview Simulation',
           pricingFeature4: 'Real-time Market Analysis'
+        },
+        {
+          title: 'Guaranteed Efficiency',
+          appName: 'Responder Já',
+          appDescription: 'Never leave an email unanswered again. Our AI analyzes your inbox, categorizes messages, and suggests personalized responses in seconds. Ideal for support and sales teams who value speed.',
+          buttonText: 'Try Now',
+          url: 'https://aistudio.google.com/apps/drive/1T0zXP1vERy45urOT0b4uTxpsaRxa79sW',
+          pricingTitle: 'Growth Plan',
+          pricingPrice: '29€',
+          pricingPeriod: '/month',
+          pricingFeature1: 'Intelligent Email Analysis',
+          pricingFeature2: 'Real-time Suggestions',
+          pricingFeature3: 'Customizable Tone of Voice',
+          pricingFeature4: 'Gmail & Outlook Integration'
         }
       ]
     },
@@ -351,6 +379,20 @@ export const translations = {
           pricingFeature2: 'Candidaturas Automáticas',
           pricingFeature3: 'Simulación de Entrevistas',
           pricingFeature4: 'Análisis de Mercado en Tiempo Real'
+        },
+        {
+          title: 'Eficiencia Garantizada',
+          appName: 'Responder Já',
+          appDescription: 'Nunca más deje un correo sin respuesta. Nuestra IA analiza su bandeja de entrada, categoriza mensajes y sugiere respuestas personalizadas en segundos. Ideal para equipos de soporte y ventas que valoran la velocidad.',
+          buttonText: 'Probar Ahora',
+          url: 'https://aistudio.google.com/apps/drive/1T0zXP1vERy45urOT0b4uTxpsaRxa79sW',
+          pricingTitle: 'Plan Growth',
+          pricingPrice: '29€',
+          pricingPeriod: '/mes',
+          pricingFeature1: 'Análisis Inteligente de Email',
+          pricingFeature2: 'Sugerencias en Tiempo Real',
+          pricingFeature3: 'Tono de Voz Personalizable',
+          pricingFeature4: 'Integración Gmail y Outlook'
         }
       ]
     },
