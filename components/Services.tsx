@@ -7,6 +7,52 @@ interface ServicesProps {
   content: any; // Using any for flexibility with the dynamic context structure
 }
 
+// Custom Logo Components
+const OpsFlowLogo = () => (
+  <svg viewBox="0 0 64 64" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="16" fill="url(#gradOps)" />
+    <path d="M16 32C16 23.1634 23.1634 16 32 16C40.8366 16 48 23.1634 48 32" stroke="white" strokeWidth="4" strokeLinecap="round" />
+    <path d="M48 32C48 40.8366 40.8366 48 32 48C23.1634 48 16 40.8366 16 32" stroke="white" strokeWidth="4" strokeLinecap="round" strokeOpacity="0.5" />
+    <circle cx="32" cy="32" r="6" fill="white" />
+    <circle cx="48" cy="32" r="3" fill="white" />
+    <circle cx="16" cy="32" r="3" fill="white" />
+    <defs>
+      <linearGradient id="gradOps" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#06b6d4" /> {/* Cyan 500 */}
+        <stop offset="1" stopColor="#10b981" /> {/* Emerald 500 */}
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+const LiaLogo = () => (
+  <svg viewBox="0 0 64 64" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="16" fill="url(#gradLia)" />
+    <path d="M32 12L36 24L48 28L36 32L32 44L28 32L16 28L28 24L32 12Z" fill="white" />
+    <path d="M48 40L50 46L56 48L50 50L48 56L46 50L40 48L46 46L48 40Z" fill="white" fillOpacity="0.7" />
+    <defs>
+      <linearGradient id="gradLia" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#8b5cf6" /> {/* Violet 500 */}
+        <stop offset="1" stopColor="#d946ef" /> {/* Fuchsia 500 */}
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+const ResponderLogo = () => (
+  <svg viewBox="0 0 64 64" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="16" fill="url(#gradResp)" />
+    <path d="M14 32L28 46L50 18" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M48 48L38 38" stroke="white" strokeWidth="4" strokeLinecap="round" strokeOpacity="0.5" />
+    <defs>
+      <linearGradient id="gradResp" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#f59e0b" /> {/* Amber 500 */}
+        <stop offset="1" stopColor="#f97316" /> {/* Orange 500 */}
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 export const Services: React.FC<ServicesProps> = ({ content }) => {
   const [activeShareItem, setActiveShareItem] = useState<any | null>(null);
   const [copied, setCopied] = useState(false);
@@ -34,7 +80,6 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
 
   useEffect(() => {
     if (activeShareItem && urlInputRef.current) {
-      // Small delay to ensure the modal transition/render is complete
       const timer = setTimeout(() => {
         urlInputRef.current?.select();
       }, 50);
@@ -45,11 +90,64 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
   const handleCopy = (url: string) => {
     navigator.clipboard.writeText(url);
     setCopied(true);
-    // Keep input selected
     if (urlInputRef.current) {
       urlInputRef.current.select();
     }
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const renderLogo = (id: string) => {
+    switch (id) {
+      case 'opsflow': return <OpsFlowLogo />;
+      case 'lia': return <LiaLogo />;
+      case 'responderja': return <ResponderLogo />;
+      default: return <div className="w-full h-full bg-gray-200 rounded-xl" />;
+    }
+  };
+
+  const getThemeStyles = (theme: string) => {
+    switch (theme) {
+      case 'cyan':
+        return {
+          bg: 'from-cyan-500/10 to-transparent',
+          text: 'text-cyan-600',
+          dot: 'bg-cyan-500',
+          btn: '!bg-cyan-600 hover:!bg-cyan-700',
+          checkBg: 'bg-cyan-500/10',
+          checkText: 'text-cyan-600',
+          border: 'group-hover:border-cyan-500/20'
+        };
+      case 'violet':
+        return {
+          bg: 'from-violet-500/10 to-transparent',
+          text: 'text-violet-600',
+          dot: 'bg-violet-500',
+          btn: '!bg-violet-600 hover:!bg-violet-700',
+          checkBg: 'bg-violet-500/10',
+          checkText: 'text-violet-600',
+          border: 'group-hover:border-violet-500/20'
+        };
+      case 'amber':
+        return {
+          bg: 'from-amber-500/10 to-transparent',
+          text: 'text-amber-600',
+          dot: 'bg-amber-500',
+          btn: '!bg-amber-600 hover:!bg-amber-700',
+          checkBg: 'bg-amber-500/10',
+          checkText: 'text-amber-600',
+          border: 'group-hover:border-amber-500/20'
+        };
+      default:
+        return {
+          bg: 'from-amplia-green/10 to-transparent',
+          text: 'text-amplia-green',
+          dot: 'bg-amplia-green',
+          btn: '',
+          checkBg: 'bg-amplia-green/10',
+          checkText: 'text-amplia-green',
+          border: 'group-hover:border-amplia-green/20'
+        };
+    }
   };
 
   return (
@@ -88,70 +186,96 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
         {/* Portfolios Subsection */}
         {t.portfolios && t.portfolios.length > 0 && (
           <div className="space-y-16 mt-24">
-            {t.portfolios.map((portfolio: any, index: number) => (
-              <ScrollReveal key={index} delay={0.2}>
-                <div className="relative">
-                  {/* Background gradient only for the first item or alternate if needed */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${index % 2 === 0 ? 'from-amplia-green/5' : 'from-blue-500/5'} to-transparent rounded-3xl -z-10`}></div>
-                  <div className="bg-white dark:bg-neutral-800 border border-gray-100 dark:border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+            {t.portfolios.map((portfolio: any, index: number) => {
+              const theme = getThemeStyles(portfolio.theme || 'green');
+              
+              return (
+                <ScrollReveal key={index} delay={0.2}>
+                  <div className="relative group">
+                    {/* Background gradient dynamically based on theme */}
+                    <div className={`absolute inset-0 bg-gradient-to-r ${theme.bg} rounded-3xl -z-10 transition-colors duration-300`}></div>
                     
-                    {/* Content Side */}
-                    <div className="p-8 md:p-12 lg:w-3/5 flex flex-col justify-center">
-                      <div className="inline-flex items-center gap-2 mb-4">
-                        <span className={`w-2 h-2 rounded-full ${index % 2 === 0 ? 'bg-amplia-green' : 'bg-blue-500'} animate-pulse`}></span>
-                        <span className={`${index % 2 === 0 ? 'text-amplia-green' : 'text-blue-500'} font-bold text-xs uppercase tracking-widest`}>{portfolio.title}</span>
-                      </div>
-                      <h3 className="text-3xl font-max font-normal text-amplia-dark dark:text-white mb-4">
-                        {portfolio.appName}
-                      </h3>
-                      <p className="text-lg text-gray-500 dark:text-gray-400 font-normal mb-8 leading-relaxed">
-                        {portfolio.appDescription}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-4">
-                        <a 
-                          href={portfolio.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          <Button className={`flex items-center gap-2 ${index % 2 !== 0 ? '!bg-blue-600 hover:!bg-blue-700' : ''}`}>
-                            {portfolio.buttonText} <ExternalLink size={18} />
-                          </Button>
-                        </a>
-                        <button 
-                          onClick={() => handleShare(portfolio)}
-                          className="p-3 rounded-full bg-gray-100 dark:bg-neutral-700 text-amplia-dark dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors"
-                          aria-label="Partilhar"
-                        >
-                          <Share2 size={20} />
-                        </button>
-                      </div>
-                    </div>
+                    <div className={`bg-white dark:bg-neutral-800 border border-gray-100 dark:border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row transition-all duration-300 ${theme.border}`}>
+                      
+                      {/* Content Side */}
+                      <div className="p-8 md:p-12 lg:w-3/5 flex flex-col justify-center relative">
+                        {/* Decorative Logo Background Opacity */}
+                        <div className="absolute right-0 bottom-0 w-64 h-64 opacity-[0.03] pointer-events-none transform translate-x-1/4 translate-y-1/4">
+                           {renderLogo(portfolio.id)}
+                        </div>
 
-                    {/* Pricing Side */}
-                    <div className="lg:w-2/5 bg-gray-50 dark:bg-neutral-900/50 border-t lg:border-t-0 lg:border-l border-gray-100 dark:border-white/5 p-8 md:p-12 flex flex-col justify-center">
-                      <div className="bg-white dark:bg-neutral-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5">
-                          <h4 className="text-sm font-bold uppercase text-gray-400 mb-2">{portfolio.pricingTitle}</h4>
-                          <div className="flex items-baseline gap-1 mb-6">
-                            <span className="text-4xl font-max font-normal text-amplia-dark dark:text-white">{portfolio.pricingPrice}</span>
-                            <span className="text-gray-500 text-sm">{portfolio.pricingPeriod}</span>
-                          </div>
-                          <ul className="space-y-3 mb-0">
-                            {[portfolio.pricingFeature1, portfolio.pricingFeature2, portfolio.pricingFeature3, portfolio.pricingFeature4].map((feature: string, idx: number) => (
-                              <li key={idx} className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
-                                <div className={`w-5 h-5 rounded-full ${index % 2 === 0 ? 'bg-amplia-green/10' : 'bg-blue-500/10'} flex items-center justify-center flex-shrink-0`}>
-                                  <Check size={12} className={index % 2 === 0 ? 'text-amplia-green' : 'text-blue-500'} />
-                                </div>
-                                {feature}
-                              </li>
-                            ))}
-                          </ul>
-                      </div>
-                    </div>
+                        <div className="inline-flex items-center gap-2 mb-6">
+                          <span className={`w-2 h-2 rounded-full ${theme.dot} animate-pulse`}></span>
+                          <span className={`${theme.text} font-bold text-xs uppercase tracking-widest`}>{portfolio.title}</span>
+                        </div>
+                        
+                        <div className="flex items-center gap-4 mb-6">
+                           <div className="w-16 h-16 rounded-2xl shadow-lg flex-shrink-0">
+                              {renderLogo(portfolio.id)}
+                           </div>
+                           <h3 className="text-3xl md:text-4xl font-max font-normal text-amplia-dark dark:text-white">
+                             {portfolio.appName}
+                           </h3>
+                        </div>
 
+                        <p className="text-lg text-gray-500 dark:text-gray-400 font-normal mb-8 leading-relaxed max-w-xl">
+                          {portfolio.appDescription}
+                        </p>
+                        
+                        <div className="flex flex-wrap items-center gap-4 z-10">
+                          <a 
+                            href={portfolio.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
+                            <Button className={`flex items-center gap-2 ${theme.btn} shadow-lg shadow-gray-200 dark:shadow-none`}>
+                              {portfolio.buttonText} <ExternalLink size={18} />
+                            </Button>
+                          </a>
+                          
+                          {/* SHARE BUTTON - ENABLED FOR LIA AND OPSFLOW */}
+                          {(portfolio.id === 'lia' || portfolio.id === 'opsflow') && (
+                            <button 
+                              onClick={() => handleShare(portfolio)}
+                              className="flex items-center gap-2 px-5 py-3 rounded-full bg-gray-100 dark:bg-neutral-700 text-amplia-dark dark:text-white hover:bg-gray-200 dark:hover:bg-neutral-600 transition-colors font-medium"
+                              aria-label={t.share?.button || 'Partilhar'}
+                            >
+                              <Share2 size={18} />
+                              <span>{t.share?.button || 'Partilhar'}</span>
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Pricing Side */}
+                      <div className="lg:w-2/5 bg-gray-50 dark:bg-neutral-900/50 border-t lg:border-t-0 lg:border-l border-gray-100 dark:border-white/5 p-8 md:p-12 flex flex-col justify-center">
+                        <div className="bg-white dark:bg-neutral-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 relative overflow-hidden">
+                            {/* Top colored line */}
+                            <div className={`absolute top-0 left-0 w-full h-1 ${theme.dot}`}></div>
+                            
+                            <h4 className="text-xs font-bold uppercase text-gray-400 mb-2">{portfolio.pricingTitle}</h4>
+                            <div className="flex items-baseline gap-1 mb-8">
+                              <span className="text-5xl font-max font-normal text-amplia-dark dark:text-white tracking-tight">{portfolio.pricingPrice}</span>
+                              <span className="text-gray-500 text-sm font-medium">{portfolio.pricingPeriod}</span>
+                            </div>
+                            <ul className="space-y-4 mb-0">
+                              {[portfolio.pricingFeature1, portfolio.pricingFeature2, portfolio.pricingFeature3, portfolio.pricingFeature4].map((feature: string, idx: number) => (
+                                <li key={idx} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-300">
+                                  <div className={`w-5 h-5 rounded-full ${theme.checkBg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                                    <Check size={12} className={theme.checkText} />
+                                  </div>
+                                  <span className="leading-tight">{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         )}
 
@@ -167,17 +291,23 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
                 <X size={20} />
               </button>
               
-              <h3 className="text-xl font-max font-normal text-amplia-dark dark:text-white mb-2">
-                Partilhar
-              </h3>
+              <div className="flex items-center gap-3 mb-4">
+                 <div className="w-10 h-10 rounded-lg shadow-sm overflow-hidden">
+                   {renderLogo(activeShareItem.id)}
+                 </div>
+                 <h3 className="text-xl font-max font-normal text-amplia-dark dark:text-white">
+                  {t.share?.modalTitle || 'Partilhar'}
+                </h3>
+              </div>
+              
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-                Mostre ao mundo o <span className="font-bold">{activeShareItem.appName}</span>
+                {t.share?.subtitle || 'Mostre ao mundo o'} <span className="font-bold">{activeShareItem.appName}</span>
               </p>
 
               <div className="space-y-4">
                 {/* Link Input Section */}
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Link do Projeto</label>
+                  <label className="block text-xs font-bold text-gray-400 uppercase mb-2">{t.share?.linkLabel || 'Link'}</label>
                   <input
                     ref={urlInputRef}
                     type="text"
@@ -196,7 +326,7 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
                     className="flex items-center justify-center gap-2 w-full p-3 bg-[#0077b5] text-white rounded-xl hover:bg-[#006396] transition-colors font-medium text-sm"
                   >
                     <Linkedin size={18} />
-                    LinkedIn
+                    {t.share?.linkedin || 'LinkedIn'}
                   </a>
                   
                   <a 
@@ -206,7 +336,7 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
                     className="flex items-center justify-center gap-2 w-full p-3 bg-black dark:bg-white dark:text-black text-white rounded-xl hover:opacity-80 transition-opacity font-medium text-sm"
                   >
                     <Twitter size={18} />
-                    X / Twitter
+                    {t.share?.twitter || 'X / Twitter'}
                   </a>
                 </div>
 
@@ -219,7 +349,7 @@ export const Services: React.FC<ServicesProps> = ({ content }) => {
                   }`}
                 >
                   {copied ? <CheckCheck size={20} /> : <Copy size={20} />}
-                  {copied ? 'Link Copiado com Sucesso!' : 'Copiar Link'}
+                  {copied ? (t.share?.copied || 'Copiado!') : (t.share?.copy || 'Copiar Link')}
                 </button>
               </div>
             </div>

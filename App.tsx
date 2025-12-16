@@ -4,6 +4,7 @@ import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
+import { VideoSection } from './components/VideoSection';
 import { Language } from './types';
 import { ContentProvider, useContent } from './contexts/ContentContext';
 import { AdminPanel } from './components/AdminPanel';
@@ -287,6 +288,9 @@ function AppContent() {
           </div>
         </div>
       </section>
+
+      {/* Video Marketing Section (New) */}
+      {t.videoSection && <VideoSection content={t.videoSection} />}
 
       {/* Services Section */}
       <Services content={t.services} />

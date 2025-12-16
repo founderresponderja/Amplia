@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { X, Save, RotateCcw, ChevronDown, ChevronRight, Lock, LogOut } from 'lucide-react';
+import { X, RotateCcw, ChevronDown, ChevronRight, Lock, LogOut } from 'lucide-react';
 import { useContent } from '../contexts/ContentContext';
 import { Language } from '../types';
-import { Button } from './Button';
 
 interface AdminPanelProps {
   currentLang: Language;
@@ -14,7 +13,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ currentLang, isOpen, set
   const { content, updateContent, resetContent, logout } = useContent();
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
     'nav': false,
-    'hero': true,
+    'hero': false,
     'about': false,
     'services': false,
     'contact': false,
@@ -141,34 +140,46 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ currentLang, isOpen, set
                     }
                   }
                   
-                  // Handle Nested Objects (like card1 inside about)
+                  // Handle Nested Objects (like card1 inside about, or videoSection)
                   if (typeof value === 'object' && value !== null) {
                     return (
                       <div key={key} className="mb-4 pl-3 border-l-2 border-blue-200">
                         <label className="block text-xs font-bold text-blue-500 uppercase mb-2">{key}</label>
                          {Object.entries(value).map(([subKey, subValue]) => (
-                           // We map this as simple inputs for now using the composite key update if needed, 
-                           // but for this simple schema we can just use renderInput and let ContentContext handle object merge if supported,
-                           // or simple iteration.
-                           // Current implementation passes subKey as 'key'.
                             <div key={subKey}>
-                               {renderInput(sectionKey, key, { ...value, [subKey]: subValue }, subKey)} 
-                               {/* NOTE: This nested object rendering in previous version was manually handling textarea updates.
-                                   To keep it simple and consistent with new updates: */}
-                               <div className="mb-2">
-                                 <label className="block text-xs font-bold text-gray-400 uppercase mb-1">
-                                   {subKey}
-                                 </label>
-                                 <textarea
-                                   value={subValue as string}
-                                   onChange={(e) => {
-                                      const updatedObject = { ...(value as object), [subKey]: e.target.value };
-                                      updateContent(currentLang, sectionKey, key, updatedObject);
-                                   }}
-                                   className="w-full p-2 text-sm border border-gray-200 rounded-lg bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
-                                   rows={2}
-                                 />
-                               </div>
+                               {/* Special case for manual video URL editing */}
+                               {key === 'videoSection' && subKey === 'videoUrl' ? (
+                                 <div className="mb-2">
+                                    <label className="block text-xs font-bold text-gray-400 uppercase mb-1">
+                                      videoUrl (Manual)
+                                    </label>
+                                    <input
+                                      type="text"
+                                      value={subValue as string}
+                                      onChange={(e) => {
+                                         const updatedObject = { ...(value as object), [subKey]: e.target.value };
+                                         updateContent(currentLang, sectionKey, key, updatedObject);
+                                      }}
+                                      className="w-full p-2 text-sm border border-gray-200 rounded-lg bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
+                                    />
+                                 </div>
+                               ) : (
+                                 // Generic string input for nested object properties
+                                 <div className="mb-4">
+                                   <label className="block text-xs font-bold text-gray-400 uppercase mb-1">
+                                     {subKey}
+                                   </label>
+                                   <textarea
+                                     value={subValue as string}
+                                     onChange={(e) => {
+                                       const updatedObject = { ...(value as object), [subKey]: e.target.value };
+                                       updateContent(currentLang, sectionKey, key, updatedObject);
+                                     }}
+                                     className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-amplia-green focus:border-transparent outline-none bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white"
+                                     rows={typeof subValue === 'string' && subValue.length > 50 ? 3 : 1}
+                                   />
+                                 </div>
+                               )}
                             </div>
                          ))}
                       </div>

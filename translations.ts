@@ -1,5 +1,9 @@
 import { Language } from './types';
 
+// YouTube Configuration for ID: VebmwNqWrIw
+const YOUTUBE_VIDEO_ID = "VebmwNqWrIw";
+const VIDEO_URL = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&controls=0&loop=1&playlist=${YOUTUBE_VIDEO_ID}&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`;
+
 export const translations = {
   pt: {
     nav: {
@@ -16,7 +20,7 @@ export const translations = {
       description: 'Transformamos desafios complexos em soluções de software simples e eficazes. A sua parceira tecnológica para o futuro.',
       ctaPrimary: 'Começar Agora',
       ctaSecondary: 'Nossos Serviços',
-      features: ['Suporte 24/7', 'Equipa Senior', 'Tecnologia de Ponta'],
+      features: ['Suporte 24/7', 'Equipa Sénior', 'Tecnologia de Ponta'],
       imageLabel1: 'Mais de 10 anos',
       imageLabel2: 'de excelência no mercado',
       floatLabel1: '+200 Projetos',
@@ -37,10 +41,26 @@ export const translations = {
         description: 'Acreditamos que a tecnologia deve servir as pessoas. O nosso suporte é próximo e personalizado.'
       }
     },
+    videoSection: {
+      title: 'Tecnologia em Ação',
+      subtitle: 'Acelere o seu negócio com IA',
+      description: 'Veja como criamos soluções à medida com rapidez e eficiência imbatíveis.',
+      videoUrl: VIDEO_URL
+    },
     services: {
       sectionTitle: 'O Que Fazemos',
       mainTitle: 'Soluções Tecnológicas Integradas',
       description: 'Ajudamos a sua empresa a navegar na era digital com soluções personalizadas e inovadoras.',
+      share: {
+        button: 'Partilhar',
+        modalTitle: 'Partilhar Projeto',
+        subtitle: 'Mostre ao mundo o',
+        linkLabel: 'Link do Projeto',
+        copy: 'Copiar Link',
+        copied: 'Copiado!',
+        linkedin: 'LinkedIn',
+        twitter: 'X / Twitter'
+      },
       items: [
         {
           title: 'Consultoria IT',
@@ -69,46 +89,52 @@ export const translations = {
       ],
       portfolios: [
         {
-          title: 'Produto em Destaque',
+          id: 'opsflow',
+          theme: 'cyan',
+          title: 'Infraestrutura Inteligente',
           appName: 'Amplia OpsFlow',
-          appDescription: 'A plataforma definitiva para orquestração de operações de TI. Automatize fluxos de trabalho, centralize logs e antecipe falhas de infraestrutura com o poder dos nossos agentes de IA generativa. Recupere o controlo do seu tempo.',
-          buttonText: 'Começar Trial Gratuito',
+          appDescription: 'A plataforma definitiva para equipas de DevOps. O OpsFlow utiliza agentes de IA para monitorizar logs em tempo real, prever falhas de sistema antes de acontecerem e orquestrar a resolução de incidentes automáticamente.',
+          buttonText: 'Aceder ao Painel',
           url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ',
-          pricingTitle: 'Plano Professional',
-          pricingPrice: '49€',
+          pricingTitle: 'Plano Enterprise',
+          pricingPrice: '99€',
           pricingPeriod: '/mês',
-          pricingFeature1: 'Monitorização de Logs Ilimitada',
-          pricingFeature2: 'Até 5 Agentes de IA Ativos',
-          pricingFeature3: 'Integração Slack, Teams e Jira',
-          pricingFeature4: 'Suporte Técnico Prioritário'
+          pricingFeature1: 'Monitorização Preditiva de Logs',
+          pricingFeature2: 'Automação de Resolução de Incidentes',
+          pricingFeature3: 'Dashboards de Grafana Integrados',
+          pricingFeature4: 'SLA de 99.9% e Suporte Dedicado'
         },
         {
-          title: 'Novo Lançamento',
+          id: 'lia',
+          theme: 'violet',
+          title: 'Carreira & Talento',
           appName: 'LIA',
-          appDescription: 'Potencie a sua carreira com IA. Da otimização de CV à procura de emprego automática. A Lia é o seu agente pessoal de carreira.',
+          appDescription: 'A LIA (Linked Intelligence Agent) é a sua assistente de carreira pessoal. Analisa o mercado de trabalho, otimiza o seu CV para passar nos filtros ATS e simula entrevistas técnicas personalizadas para a sua área.',
           buttonText: 'Conhecer a LIA',
           url: 'https://aistudio.google.com/apps/drive/17l0GsjgJok3QxowWjRx5v28FNmwgw5et',
-          pricingTitle: 'Plano Business',
-          pricingPrice: '39€',
+          pricingTitle: 'Plano Career Pro',
+          pricingPrice: '19€',
           pricingPeriod: '/mês',
-          pricingFeature1: 'Otimização de CV com IA',
-          pricingFeature2: 'Candidaturas Automáticas',
-          pricingFeature3: 'Simulação de Entrevistas',
-          pricingFeature4: 'Análise de Mercado em Tempo Real'
+          pricingFeature1: 'Otimização Ilimitada de CVs',
+          pricingFeature2: 'Coach de Entrevista via Voz',
+          pricingFeature3: 'Matching Automático de Vagas',
+          pricingFeature4: 'Análise de Perfil LinkedIn'
         },
         {
-          title: 'Eficiência Garantida',
+          id: 'responderja',
+          theme: 'amber',
+          title: 'Produtividade Máxima',
           appName: 'Responder Já',
-          appDescription: 'Nunca mais deixe um email sem resposta. A nossa IA analisa a sua caixa de entrada, categoriza mensagens e sugere respostas personalizadas em segundos. Ideal para equipas de suporte e vendas que valorizam a velocidade.',
+          appDescription: 'Transforme o caos do email em produtividade. O Responder Já classifica automaticamente a sua caixa de entrada e gera rascunhos de resposta contextuais com um clique, aprendendo o seu tom de voz ao longo do tempo.',
           buttonText: 'Experimentar Agora',
           url: 'https://aistudio.google.com/apps/drive/1T0zXP1vERy45urOT0b4uTxpsaRxa79sW',
-          pricingTitle: 'Plano Growth',
+          pricingTitle: 'Plano Team Growth',
           pricingPrice: '29€',
-          pricingPeriod: '/mês',
-          pricingFeature1: 'Análise Inteligente de Email',
-          pricingFeature2: 'Sugestões em Tempo Real',
-          pricingFeature3: 'Tom de Voz Personalizável',
-          pricingFeature4: 'Integração Gmail e Outlook'
+          pricingPeriod: '/utilizador',
+          pricingFeature1: 'Triagem Automática (Inbox Zero)',
+          pricingFeature2: 'Respostas em 1-Clique (PT/EN/ES)',
+          pricingFeature3: 'Integração CRM (Salesforce/Hubspot)',
+          pricingFeature4: 'Tom de Voz Personalizado da Marca'
         }
       ]
     },
@@ -158,7 +184,7 @@ export const translations = {
       description: 'We transform complex challenges into simple and effective software solutions. Your tech partner for the future.',
       ctaPrimary: 'Start Now',
       ctaSecondary: 'Our Services',
-      features: ['24/7 Support', 'Senior Team', 'Cutting-edge Tech'],
+      features: ['24/7 Support', 'Senior Experts', 'Cutting-edge Tech'],
       imageLabel1: 'Over 10 years',
       imageLabel2: 'of excellence',
       floatLabel1: '+200 Projects',
@@ -175,14 +201,30 @@ export const translations = {
         description: 'Agile methodologies that ensure fast, transparent deliveries adaptable to change.'
       },
       card3: {
-        title: 'Human Technology',
-        description: 'We believe technology should serve people. Our support is close and personalized.'
+        title: 'Human-Centric Tech',
+        description: 'We believe technology should serve people. Our support is close, personal, and human.'
       }
+    },
+    videoSection: {
+      title: 'Technology in Action',
+      subtitle: 'Accelerate your business with AI',
+      description: 'See how we create custom solutions with unbeatable speed and efficiency.',
+      videoUrl: VIDEO_URL
     },
     services: {
       sectionTitle: 'What We Do',
       mainTitle: 'Integrated Tech Solutions',
       description: 'Helping your company navigate the digital age with custom innovative solutions.',
+      share: {
+        button: 'Share',
+        modalTitle: 'Share Project',
+        subtitle: 'Show the world',
+        linkLabel: 'Project Link',
+        copy: 'Copy Link',
+        copied: 'Copied!',
+        linkedin: 'LinkedIn',
+        twitter: 'X / Twitter'
+      },
       items: [
         {
           title: 'IT Consulting',
@@ -211,46 +253,52 @@ export const translations = {
       ],
       portfolios: [
         {
-          title: 'Featured Product',
+          id: 'opsflow',
+          theme: 'cyan',
+          title: 'Smart Infrastructure',
           appName: 'Amplia OpsFlow',
-          appDescription: 'The definitive platform for IT operations orchestration. Automate workflows, centralize logs, and anticipate infrastructure failures with the power of our generative AI agents. Take back control of your time.',
-          buttonText: 'Start Free Trial',
+          appDescription: 'The definitive platform for DevOps teams. OpsFlow uses AI agents to monitor logs in real-time, predict system failures before they occur, and automatically orchestrate incident resolution.',
+          buttonText: 'Access Dashboard',
           url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ',
-          pricingTitle: 'Professional Plan',
-          pricingPrice: '49€',
+          pricingTitle: 'Enterprise Plan',
+          pricingPrice: '99€',
           pricingPeriod: '/month',
-          pricingFeature1: 'Unlimited Log Monitoring',
-          pricingFeature2: 'Up to 5 Active AI Agents',
-          pricingFeature3: 'Slack, Teams & Jira Integration',
-          pricingFeature4: 'Priority Technical Support'
+          pricingFeature1: 'Predictive Log Monitoring',
+          pricingFeature2: 'Automated Incident Resolution',
+          pricingFeature3: 'Integrated Grafana Dashboards',
+          pricingFeature4: '99.9% SLA & Dedicated Support'
         },
         {
-          title: 'New Launch',
+          id: 'lia',
+          theme: 'violet',
+          title: 'Career & Talent',
           appName: 'LIA',
-          appDescription: 'Boost your career with AI. From CV optimization to automated job search. Lia is your personal career agent.',
+          appDescription: 'LIA (Linked Intelligence Agent) is your personal career assistant. It analyzes the job market, optimizes your CV to pass ATS filters, and simulates technical interviews tailored to your field.',
           buttonText: 'Meet LIA',
           url: 'https://aistudio.google.com/apps/drive/17l0GsjgJok3QxowWjRx5v28FNmwgw5et',
-          pricingTitle: 'Business Plan',
-          pricingPrice: '39€',
+          pricingTitle: 'Career Pro Plan',
+          pricingPrice: '19€',
           pricingPeriod: '/month',
-          pricingFeature1: 'AI CV Optimization',
-          pricingFeature2: 'Automated Applications',
-          pricingFeature3: 'Interview Simulation',
-          pricingFeature4: 'Real-time Market Analysis'
+          pricingFeature1: 'Unlimited CV Optimization',
+          pricingFeature2: 'Voice Interview Coach',
+          pricingFeature3: 'Automated Job Matching',
+          pricingFeature4: 'LinkedIn Profile Analysis'
         },
         {
-          title: 'Guaranteed Efficiency',
+          id: 'responderja',
+          theme: 'amber',
+          title: 'Peak Productivity',
           appName: 'Responder Já',
-          appDescription: 'Never leave an email unanswered again. Our AI analyzes your inbox, categorizes messages, and suggests personalized responses in seconds. Ideal for support and sales teams who value speed.',
+          appDescription: 'Turn email chaos into productivity. Responder Já automatically sorts your inbox and generates contextual draft responses with one click, learning your tone of voice over time.',
           buttonText: 'Try Now',
           url: 'https://aistudio.google.com/apps/drive/1T0zXP1vERy45urOT0b4uTxpsaRxa79sW',
-          pricingTitle: 'Growth Plan',
+          pricingTitle: 'Team Growth Plan',
           pricingPrice: '29€',
-          pricingPeriod: '/month',
-          pricingFeature1: 'Intelligent Email Analysis',
-          pricingFeature2: 'Real-time Suggestions',
-          pricingFeature3: 'Customizable Tone of Voice',
-          pricingFeature4: 'Gmail & Outlook Integration'
+          pricingPeriod: '/user',
+          pricingFeature1: 'Auto-Triage (Inbox Zero)',
+          pricingFeature2: '1-Click Responses (PT/EN/ES)',
+          pricingFeature3: 'CRM Integration (Salesforce/Hubspot)',
+          pricingFeature4: 'Custom Brand Voice'
         }
       ]
     },
@@ -265,7 +313,7 @@ export const translations = {
         name: 'Name',
         company: 'Company',
         email: 'Email',
-        message: 'Message'
+        message: 'Mensaje'
       },
       placeholders: {
         name: 'Your name',
@@ -288,7 +336,7 @@ export const translations = {
   es: {
     nav: {
       home: 'Inicio',
-      about: 'Sobre',
+      about: 'Nosotros',
       services: 'Servicios',
       contact: 'Contáctanos',
       button: 'Contáctanos'
@@ -300,7 +348,7 @@ export const translations = {
       description: 'Transformamos desafíos complejos en soluciones de software simples y eficaces. Tu socio tecnológico para el futuro.',
       ctaPrimary: 'Comenzar Ahora',
       ctaSecondary: 'Nuestros Servicios',
-      features: ['Soporte 24/7', 'Equipo Senior', 'Tecnología Punta'],
+      features: ['Soporte 24/7', 'Equipo Sénior', 'Tecnología de Punta'],
       imageLabel1: 'Más de 10 años',
       imageLabel2: 'de excelencia',
       floatLabel1: '+200 Proyectos',
@@ -313,7 +361,7 @@ export const translations = {
         description: 'No solo escribimos código. Entendemos tu negocio para crear soluciones que generan valor real.'
       },
       card2: {
-        title: 'Agilidad Total',
+        title: 'Agilidade Total',
         description: 'Metodologías ágiles que garantizan entregas rápidas, transparentes y adaptables a los cambios.'
       },
       card3: {
@@ -321,10 +369,26 @@ export const translations = {
         description: 'Creemos que la tecnología debe servir a las personas. Nuestro soporte es cercano y personalizado.'
       }
     },
+    videoSection: {
+      title: 'Tecnología en Acción',
+      subtitle: 'Acelera tu negocio con IA',
+      description: 'Mira cómo creamos soluciones a medida con rapidez y eficiencia imbatibles.',
+      videoUrl: VIDEO_URL
+    },
     services: {
       sectionTitle: 'Qué Hacemos',
       mainTitle: 'Soluciones Tecnológicas Integradas',
       description: 'Ayudamos a tu empresa a navegar en la era digital con soluciones personalizadas e innovadoras.',
+      share: {
+        button: 'Compartir',
+        modalTitle: 'Compartir Proyecto',
+        subtitle: 'Muestra al mundo',
+        linkLabel: 'Enlace del Proyecto',
+        copy: 'Copiar Enlace',
+        copied: '¡Copiado!',
+        linkedin: 'LinkedIn',
+        twitter: 'X / Twitter'
+      },
       items: [
         {
           title: 'Consultoría TI',
@@ -353,46 +417,52 @@ export const translations = {
       ],
       portfolios: [
         {
-          title: 'Producto Destacado',
+          id: 'opsflow',
+          theme: 'cyan',
+          title: 'Infraestrutura Inteligente',
           appName: 'Amplia OpsFlow',
-          appDescription: 'La plataforma definitiva para la orquestación de operaciones de TI. Automatice flujos de trabajo, centralice registros y anticipe fallos de infraestructura con el poder de nuestros agentes de IA generativa.',
-          buttonText: 'Comenzar Prueba Gratuita',
+          appDescription: 'La plataforma definitiva para equipos DevOps. OpsFlow usa agentes de IA para monitorear logs en tiempo real, predecir fallos antes de que ocurran y orquestar la resolución de incidentes automáticamente.',
+          buttonText: 'Acceder al Panel',
           url: 'https://aistudio.google.com/apps/drive/1bnpe99ukN_v4LSqdZJS-pF3NqROlVKQQ',
-          pricingTitle: 'Plan Profesional',
-          pricingPrice: '49€',
+          pricingTitle: 'Plan Enterprise',
+          pricingPrice: '99€',
           pricingPeriod: '/mes',
-          pricingFeature1: 'Monitorización de Logs Ilimitada',
-          pricingFeature2: 'Hasta 5 Agentes de IA Activos',
-          pricingFeature3: 'Integración Slack, Teams y Jira',
-          pricingFeature4: 'Soporte Técnico Prioritário'
+          pricingFeature1: 'Monitoreo Predictivo de Logs',
+          pricingFeature2: 'Automatización de Incidentes',
+          pricingFeature3: 'Dashboards de Grafana Integrados',
+          pricingFeature4: 'SLA de 99.9% y Soporte Dedicado'
         },
         {
-          title: 'Nuevo Lanzamiento',
+          id: 'lia',
+          theme: 'violet',
+          title: 'Carrera y Talento',
           appName: 'LIA',
-          appDescription: 'Potencia tu carrera con IA. Desde la optimización del CV hasta la búsqueda automática de empleo. Lia es tu agente personal de carrera.',
+          appDescription: 'LIA (Linked Intelligence Agent) es tu asistente de carrera personal. Analiza el mercado laboral, optimiza tu CV para pasar filtros ATS y simula entrevistas técnicas personalizadas.',
           buttonText: 'Conocer a LIA',
           url: 'https://aistudio.google.com/apps/drive/17l0GsjgJok3QxowWjRx5v28FNmwgw5et',
-          pricingTitle: 'Plan Business',
-          pricingPrice: '39€',
+          pricingTitle: 'Plan Career Pro',
+          pricingPrice: '19€',
           pricingPeriod: '/mes',
-          pricingFeature1: 'Optimización de CV con IA',
-          pricingFeature2: 'Candidaturas Automáticas',
-          pricingFeature3: 'Simulación de Entrevistas',
-          pricingFeature4: 'Análisis de Mercado en Tiempo Real'
+          pricingFeature1: 'Optimización Ilimitada de CVs',
+          pricingFeature2: 'Coach de Entrevista por Voz',
+          pricingFeature3: 'Matching Automático de Empleos',
+          pricingFeature4: 'Análisis de Perfil LinkedIn'
         },
         {
-          title: 'Eficiencia Garantizada',
+          id: 'responderja',
+          theme: 'amber',
+          title: 'Productividad Máxima',
           appName: 'Responder Já',
-          appDescription: 'Nunca más deje un correo sin respuesta. Nuestra IA analiza su bandeja de entrada, categoriza mensajes y sugiere respuestas personalizadas en segundos. Ideal para equipos de soporte y ventas que valoran la velocidad.',
+          appDescription: 'Transforma el caos del email en productividad. Responder Já clasifica automáticamente tu bandeja de entrada y genera borradores de respuesta contextuales con un clic, aprendiendo tu tono de voz.',
           buttonText: 'Probar Ahora',
           url: 'https://aistudio.google.com/apps/drive/1T0zXP1vERy45urOT0b4uTxpsaRxa79sW',
-          pricingTitle: 'Plan Growth',
+          pricingTitle: 'Plan Team Growth',
           pricingPrice: '29€',
-          pricingPeriod: '/mes',
-          pricingFeature1: 'Análisis Inteligente de Email',
-          pricingFeature2: 'Sugerencias en Tiempo Real',
-          pricingFeature3: 'Tono de Voz Personalizable',
-          pricingFeature4: 'Integración Gmail y Outlook'
+          pricingPeriod: '/usuario',
+          pricingFeature1: 'Clasificación Automática',
+          pricingFeature2: 'Respuestas en 1-Clic (PT/EN/ES)',
+          pricingFeature3: 'Integración CRM (Salesforce/Hubspot)',
+          pricingFeature4: 'Tono de Voz Personalizado'
         }
       ]
     },

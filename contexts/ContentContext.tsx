@@ -17,10 +17,10 @@ const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
 export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Load content from localStorage or use default
-  // Using 'site_content_v2' to invalidate old cache and ensure new portfolio items appear
+  // Using 'site_content_v10' to invalidate old cache and ensure new video config appears
   const [content, setContent] = useState<ContentType>(() => {
     try {
-      const saved = localStorage.getItem('site_content_v2');
+      const saved = localStorage.getItem('site_content_v10');
       return saved ? JSON.parse(saved) : defaultTranslations;
     } catch (e) {
       return defaultTranslations;
@@ -33,7 +33,7 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   // Persist content changes
   useEffect(() => {
-    localStorage.setItem('site_content_v2', JSON.stringify(content));
+    localStorage.setItem('site_content_v10', JSON.stringify(content));
   }, [content]);
 
   // Persist admin state
@@ -76,7 +76,7 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const resetContent = () => {
     if (confirm('Tem a certeza? Todas as alterações serão perdidas.')) {
       setContent(defaultTranslations);
-      localStorage.removeItem('site_content_v2');
+      localStorage.removeItem('site_content_v10');
     }
   };
 
