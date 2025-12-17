@@ -7,6 +7,7 @@ import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { AIChatBot } from './components/AIChatBot';
 import { AdminPanel } from './components/AdminPanel';
+import { VideoSection } from './components/VideoSection';
 import { useContent } from './contexts/ContentContext';
 import { ScrollReveal } from './components/ScrollReveal';
 import { Language } from './types';
@@ -82,7 +83,7 @@ function App() {
               ))}
             </div>
             
-            <button onClick={toggleTheme} className="p-2 text-amplia-dark dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-all">
+            <button onClick={toggleTheme} className="p-2 text-amplia-dark dark:text-white hover:bg-gray-100 dark:hover:hover:bg-white/5 rounded-full transition-all">
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
@@ -93,6 +94,7 @@ function App() {
         </div>
       </nav>
 
+      {/* Hero Section */}
       <section className="pt-48 pb-32 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amplia-green/5 blur-[150px] rounded-full -z-10"></div>
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
@@ -120,7 +122,12 @@ function App() {
         </div>
       </section>
 
+      {/* Main Sections */}
       <Services content={t.services} />
+      
+      {/* Video Section: Autoplay, Loop, Muted configured for high engagement */}
+      <VideoSection content={t.video} />
+
       <Contact content={t.contact} />
       
       <footer className="py-12 border-t border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-black/10">

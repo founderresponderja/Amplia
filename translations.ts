@@ -11,6 +11,12 @@ export const translations = {
       ctaSecondary: 'Nossos Serviços',
       features: ['Suporte 24/7', 'Equipa Sénior', 'IA Nativa']
     },
+    video: {
+      title: 'A nossa Essência',
+      subtitle: 'Engenharia de Precisão',
+      description: 'Veja como a Amplia Solutions está a montar o futuro através de fluxos de trabalho inteligentes e infraestruturas resilientes.',
+      videoUrl: 'https://www.youtube.com/watch?v=VebmwNqWrIw'
+    },
     services: {
       sectionTitle: 'O Que Fazemos',
       mainTitle: 'Soluções Inteligentes',
@@ -97,7 +103,7 @@ export const translations = {
       privacy: 'Privacidade',
       terms: 'Termos e Condições',
       cookies: 'Cookies',
-      companyInfo: 'Amplia Solutions, Lda. | NIPC: 512345678 | Sede: Lisboa, Portugal',
+      companyInfo: 'Amplia Solutions, Lda.',
       cookieTitle: 'Consentimento de Cookies',
       cookieText: 'Utilizamos cookies técnicos necessários para o funcionamento do site e cookies analíticos para melhorar a sua experiência. Pode gerir as suas preferências abaixo.',
       accept: 'Aceitar todos',
@@ -124,6 +130,12 @@ export const translations = {
       ctaPrimary: 'Get Started',
       ctaSecondary: 'Our Services',
       features: ['24/7 Support', 'Senior Engineering', 'Native AI']
+    },
+    video: {
+      title: 'Our Essence',
+      subtitle: 'Precision Engineering',
+      description: 'See how Amplia Solutions is shaping the future through intelligent workflows and resilient infrastructures.',
+      videoUrl: 'https://www.youtube.com/watch?v=VebmwNqWrIw'
     },
     services: {
       sectionTitle: 'What We Do',
@@ -211,7 +223,7 @@ export const translations = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
       cookies: 'Cookies',
-      companyInfo: 'Amplia Solutions, Lda. | Tax ID: 512345678 | Lisbon, Portugal',
+      companyInfo: 'Amplia Solutions, Lda.',
       cookieTitle: 'Cookie Consent',
       cookieText: 'We use strictly necessary and analytical cookies to improve your experience. Manage your preferences below.',
       accept: 'Accept all',
@@ -239,6 +251,12 @@ export const translations = {
       ctaSecondary: 'Ver Servicios',
       features: ['Soporte 24/7', 'Equipo Senior', 'IA Nativa']
     },
+    video: {
+      title: 'Nuestra Esencia',
+      subtitle: 'Ingeniería de Precisión',
+      description: 'Descubra cómo Amplia Solutions está moldeando el futuro a través de flujos de trabalho inteligentes e infraestructuras resilientes.',
+      videoUrl: 'https://www.youtube.com/watch?v=VebmwNqWrIw'
+    },
     services: {
       sectionTitle: 'Qué Hacemos',
       mainTitle: 'Soluciones Inteligentes',
@@ -249,7 +267,7 @@ export const translations = {
           theme: 'cyan',
           title: 'Infraestructura Inteligente',
           appName: 'OpsFlow',
-          appDescription: 'El futuro del desarrollo es inteligente. OpsFlow utiliza inteligencia artificial avanzada para generar Dockerfiles, CI/CD y configuraciones de nube en segundos. Optimice su flujo de trabajo.',
+          appDescription: 'El futuro del desarrollo es inteligente. OpsFlow utiliza inteligencia artificial avanzada para generar Dockerfiles, CI/CD y configuraciones de nube en segundos. Optimice su flujo de trabalho.',
           buttonText: 'Ir al Panel',
           url: 'https://opsflow.amplia.pt',
           pricingTitle: 'BASIC AI',
@@ -322,16 +340,16 @@ export const translations = {
       }
     },
     legal: {
-      privacy: 'Privacidad',
+      privacy: 'Privacidade',
       terms: 'Términos y Condiciones',
       cookies: 'Cookies',
-      companyInfo: 'Amplia Solutions, Lda. | NIF: 512345678 | Sede: Lisboa, Portugal',
+      companyInfo: 'Amplia Solutions, Lda.',
       cookieTitle: 'Consentimiento de Cookies',
       cookieText: 'Utilizamos cookies técnicas necesarias y analíticas para mejorar su experiencia. Puede gestionar sus preferencias abajo.',
       accept: 'Aceptar todo',
       decline: 'Solo necesarias',
-      privacyPolicyTitle: 'Política de Protección de Datos',
-      privacyPolicyText: 'Amplia Solutions, Lda. se compromete a proteger la privacidad según el RGPD.\n\n1. Responsable: Amplia Solutions, Lda.\n2. Finalidad: Gestión de solicitudes de contacto.\n3. Destinatarios: Socios tecnológicos certificados.\n4. Derechos: Acceso, rectificación o supresión vía ampliasolutions.pt@gmail.com.',
+      privacyPolicyTitle: 'Política de Protección de Dados',
+      privacyPolicyText: 'Amplia Solutions, Lda. se compromete a proteger la privacidad según el RGPD.\n\n1. Responsable: Amplia Solutions, Lda.\n2. Finalidade: Gestión de solicitudes de contacto.\n3. Destinatarios: Socios tecnológicos certificados.\n4. Derechos: Acceso, rectificación o supresión vía ampliasolutions.pt@gmail.com.',
       termsTitle: 'Términos de Uso',
       termsText: 'El uso de este sitio web se rige por estos Términos. Todo el contenido y software son propiedad exclusiva de Amplia Solutions, Lda.',
       hashtags: '#InteligenciaArtificial #IngenieriaDeSoftware #IA #ConsultoriaTecnologica #DevOpsAI #AmpliaSolutions #InnovacionDigital'
