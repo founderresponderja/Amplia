@@ -1,32 +1,28 @@
+
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-PT" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Amplia Solutions</title>
-    <meta name="description" content="Soluções de TI que ampliam o seu negócio." />
+    <title>Amplia Solutions | Engenharia de Software e IA</title>
     
-    <!-- Load Tailwind -->
+    <!-- Security Headers - Optimized for Performance -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <meta name="description" content="A Amplia Solutions transforma desafios complexos em soluções digitais inteligentes. Especialistas em IA, Cloud e Consultoria IT." />
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Load Fonts: Using 'Outfit' from Google Fonts as a high-fidelity proxy for 'Max-Regular' 
-         due to its similar geometric, wide, and rounded characteristics seen in the logo. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script>
-      // Apply theme preference immediately to prevent flash of unstyled content
       (function() {
         try {
-          const localTheme = localStorage.getItem('theme');
-          const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          
-          if (localTheme === 'dark' || (!localTheme && systemTheme)) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
+          const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.classList.toggle('dark', theme === 'dark');
         } catch (e) {}
       })();
     </script>
@@ -38,54 +34,42 @@
           extend: {
             colors: {
               amplia: {
-                green: '#8cc63f', // Extracted from logo
-                dark: '#1a1a1a',  // Extracted from logo text
-                light: '#f4f7f0', // Very light green/grey for backgrounds
-                gray: '#4a4a4a'
+                green: '#8cc63f',
+                dark: '#0f1115',
+                light: '#f9fafb'
               }
             },
-            fontFamily: {
-              // Mapping 'max' to our loaded font family to satisfy the "max-regular" requirement
-              'max': ['Outfit', 'Max-Regular', 'sans-serif'],
-            },
-            backgroundImage: {
-              'hero-pattern': "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
+            fontFamily: { 'max': ['Outfit', 'sans-serif'] },
+            animation: { 'fade-in-up': 'fadeInUp 0.5s ease-out forwards', 'bounce-slow': 'bounce 3s infinite' },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
             }
           }
         }
       }
     </script>
     <style>
-      body {
-        font-family: 'Outfit', sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-      /* Smooth scrolling for anchor links */
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Animation utilities */
-      @keyframes pulse-ring {
-        0% { transform: scale(0.8); opacity: 0.5; }
-        100% { transform: scale(2); opacity: 0; }
-      }
-      .animate-pulse-ring {
-        animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-      }
+      body { font-family: 'Outfit', sans-serif; -webkit-font-smoothing: antialiased; }
+      .glass { backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+      .hp-field { display: none; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
-  }
-}
-</script>
-</head>
-  <body>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19.0.0",
+        "react/": "https://esm.sh/react@19.0.0/",
+        "react-dom": "https://esm.sh/react-dom@19.0.0",
+        "react-dom/": "https://esm.sh/react-dom@19.0.0/",
+        "@google/genai": "https://esm.sh/@google/genai",
+        "lucide-react": "https://esm.sh/lucide-react@0.460.0"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white dark:bg-amplia-dark text-gray-900 dark:text-gray-100 selection:bg-amplia-green/30">
     <div id="root"></div>
   </body>
 </html>
