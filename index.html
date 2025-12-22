@@ -5,15 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Amplia Solutions | Engenharia de Software e IA</title>
-    
-    <!-- Security Headers - Optimized for Performance -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-
     <meta name="description" content="A Amplia Solutions transforma desafios complexos em soluções digitais inteligentes. Especialistas em IA, Cloud e Consultoria IT." />
     
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Outfit (Used as the base for Max-Regular style) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,8 +18,13 @@
     <script>
       (function() {
         try {
-          const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-          document.documentElement.classList.toggle('dark', theme === 'dark');
+          const localTheme = localStorage.getItem('theme');
+          const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (localTheme === 'dark' || (!localTheme && systemTheme)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
         } catch (e) {}
       })();
     </script>
@@ -36,15 +38,22 @@
               amplia: {
                 green: '#8cc63f',
                 dark: '#0f1115',
-                light: '#f9fafb'
+                light: '#f9fafb',
+                gray: '#6b7280'
               }
             },
-            fontFamily: { 'max': ['Outfit', 'sans-serif'] },
-            animation: { 'fade-in-up': 'fadeInUp 0.5s ease-out forwards', 'bounce-slow': 'bounce 3s infinite' },
+            fontFamily: {
+              'sans': ['Max-Regular', 'Outfit', 'sans-serif'],
+              'max': ['Max-Regular', 'Outfit', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'bounce-slow': 'bounce 3s infinite',
+            },
             keyframes: {
               fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' }
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             }
           }
@@ -52,9 +61,39 @@
       }
     </script>
     <style>
-      body { font-family: 'Outfit', sans-serif; -webkit-font-smoothing: antialiased; }
-      .glass { backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
-      .hp-field { display: none; }
+      /* Aliasing Outfit to Max-Regular to ensure branding consistency */
+      @font-face {
+        font-family: 'Max-Regular';
+        src: local('Outfit'), local('Outfit-Regular');
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: 'Max-Regular';
+        src: local('Outfit Bold'), local('Outfit-Bold');
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: 'Max-Regular';
+        src: local('Outfit Light'), local('Outfit-Light');
+        font-weight: 300;
+      }
+      
+      /* Global override to ensure all elements use Max-Regular */
+      * {
+        font-family: 'Max-Regular', 'Outfit', sans-serif !important;
+      }
+
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .dark .glass {
+        background: rgba(15, 17, 21, 0.6);
+      }
     </style>
     <script type="importmap">
     {
@@ -69,7 +108,7 @@
     }
     </script>
   </head>
-  <body class="bg-white dark:bg-amplia-dark text-gray-900 dark:text-gray-100 selection:bg-amplia-green/30">
+  <body class="bg-white dark:bg-amplia-dark text-gray-900 dark:text-gray-100">
     <div id="root"></div>
   </body>
 </html>

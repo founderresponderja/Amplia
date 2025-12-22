@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Bot, Loader2 } from 'lucide-react';
+import { MessageSquare, X, Send, Bot, User, Loader2 } from 'lucide-react';
 import { GoogleGenAI } from '@google/genai';
 import { Language } from '../types';
 
@@ -15,37 +15,34 @@ export const AIChatBot = ({ t, lang }: { t: any; lang: Language }) => {
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-  }, [messages, isTyping]);
+  }, [messages]);
 
   const handleSend = async () => {
-    if (!input.trim() || isTyping) return;
-    
-    const userMsg = input.trim();
+    if (!input.trim()) return;
+    const userMsg = input;
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setInput('');
     setIsTyping(true);
 
     try {
-      const apiKey = process.env.API_KEY;
-      if (!apiKey) throw new Error("API Key missing");
-
-      const ai = new GoogleGenAI({ apiKey });
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMsg,
         config: {
-          systemInstruction: `You are the Amplia Solutions virtual assistant. 
-          Respond in ${lang === 'pt' ? 'Portuguese' : lang === 'es' ? 'Spanish' : 'English'}.
-          Company details: IT Consultancy based in Lisbon. Services: AI, Cloud, Software Engineering.
-          Products: OpsFlow (DevOps), Responder Já (Reviews), LIA (Career).
-          Style: Professional, concise, tech-forward. Identify as AI.`,
+          systemInstruction: `You are the official assistant for Amplia Solutions, an IT consultancy.
+          Language of response MUST BE: ${lang === 'pt' ? 'Portuguese' : lang === 'es' ? 'Spanish' : 'English'}.
+          Expertise: IT Consulting, Web Dev, Cybersecurity, Cloud, Apps, and Data Analytics.
+          Products: 
+          1. OpsFlow: AI for DevOps (Docker, CI/CD). Price: €9.99/mo.
+          2. Responder Já: Automatic review responses (Google/Booking). Price: €19.99/mo.
+          3. LIA: AI career assistant.
+          Be professional, friendly, and concise. Always identify as an AI.`,
         },
       });
       
-      const botResponse = response.text || t.error;
-      setMessages(prev => [...prev, { role: 'bot', text: botResponse }]);
+      setMessages(prev => [...prev, { role: 'bot', text: response.text || t.error }]);
     } catch (err) {
-      console.error("AI Error:", err);
       setMessages(prev => [...prev, { role: 'bot', text: t.error }]);
     } finally {
       setIsTyping(false);
@@ -57,28 +54,27 @@ export const AIChatBot = ({ t, lang }: { t: any; lang: Language }) => {
       {!isOpen ? (
         <button 
           onClick={() => setIsOpen(true)}
-          className="bg-amplia-green text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform animate-bounce-slow"
-          aria-label="Open Chat"
+          className="bg-amplia-green text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 flex items-center justify-center animate-bounce-slow"
         >
           <MessageSquare size={24} />
         </button>
       ) : (
-        <div className="bg-white dark:bg-[#1a1c20] w-[320px] sm:w-[380px] h-[500px] rounded-[2rem] shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-white/5 animate-fade-in-up">
-          <div className="bg-amplia-green p-5 flex justify-between items-center text-white">
-            <div className="flex items-center gap-3">
+        <div className="bg-white dark:bg-[#1a1c20] w-[320px] sm:w-[380px] h-[480px] rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-white/10 animate-fade-in-up">
+          <div className="bg-amplia-green p-4 flex justify-between items-center text-white">
+            <div className="flex items-center gap-2">
               <Bot size={20} />
-              <span className="font-max font-bold text-sm">Amplia AI</span>
+              <span className="font-bold text-sm">Amplia AI Assist</span>
             </div>
-            <button onClick={() => setIsOpen(false)} className="hover:bg-black/10 p-1 rounded-lg"><X size={20} /></button>
+            <button onClick={() => setIsOpen(false)}><X size={20} /></button>
           </div>
           
-          <div ref={scrollRef} className="flex-1 overflow-y-auto p-5 space-y-4 bg-gray-50 dark:bg-black/20">
+          <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-transparent">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-4 rounded-2xl text-xs leading-relaxed ${
+                <div className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed ${
                   m.role === 'user' 
-                    ? 'bg-amplia-green text-white rounded-tr-none shadow-lg shadow-amplia-green/10' 
-                    : 'bg-white dark:bg-[#2a2c31] text-gray-700 dark:text-gray-200 border border-gray-100 dark:border-white/5 rounded-tl-none'
+                    ? 'bg-amplia-green text-white rounded-tr-none shadow-md' 
+                    : 'bg-white dark:bg-neutral-800 text-gray-800 dark:text-gray-200 shadow-sm border border-gray-100 dark:border-white/5 rounded-tl-none'
                 }`}>
                   {m.text}
                 </div>
@@ -86,26 +82,25 @@ export const AIChatBot = ({ t, lang }: { t: any; lang: Language }) => {
             ))}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-gray-200 dark:bg-[#2a2c31] p-3 rounded-2xl animate-pulse">
+                <div className="bg-gray-200 dark:bg-neutral-800 p-3 rounded-2xl animate-pulse">
                   <Loader2 className="animate-spin text-gray-400" size={16} />
                 </div>
               </div>
             )}
           </div>
 
-          <div className="p-4 bg-white dark:bg-[#1a1c20] border-t border-gray-100 dark:border-white/5 flex gap-2">
+          <div className="p-4 border-t border-gray-100 dark:border-white/10 flex gap-2 bg-white dark:bg-neutral-900">
             <input 
               type="text" 
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder={t.placeholder}
-              className="flex-1 bg-gray-50 dark:bg-black/40 border-none rounded-xl px-4 text-xs dark:text-white focus:ring-1 focus:ring-amplia-green outline-none"
+              className="flex-1 bg-gray-100 dark:bg-neutral-800 border-none rounded-full px-4 text-xs focus:ring-2 focus:ring-amplia-green outline-none dark:text-white"
             />
             <button 
               onClick={handleSend}
-              disabled={isTyping}
-              className="bg-amplia-green text-white p-3 rounded-xl hover:opacity-90 transition-all disabled:opacity-50"
+              className="bg-amplia-green text-white p-2 rounded-full hover:bg-opacity-90 transition-colors shadow-sm"
             >
               <Send size={18} />
             </button>

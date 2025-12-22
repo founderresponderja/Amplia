@@ -1,21 +1,15 @@
 
 export const translations = {
   pt: {
-    nav: { home: 'Início', about: 'Sobre', services: 'Serviços', contact: 'Contacto', button: 'Fale Connosco' },
+    nav: { home: 'Home', about: 'Sobre', services: 'Serviços', contact: 'Contacto', button: 'Fale Connosco' },
     hero: {
-      badge: 'Inovação Sem Limites',
+      badge: 'Inovação Constante',
       titleLine1: 'Amplie o seu',
       titleLine2: 'Potencial Digital',
       description: 'Consultoria tecnológica de elite. Transformamos desafios complexos em produtos de software inteligentes e escaláveis através de IA e Engenharia de ponta.',
       ctaPrimary: 'Começar Agora',
       ctaSecondary: 'Nossos Serviços',
       features: ['Suporte 24/7', 'Equipa Sénior', 'IA Nativa']
-    },
-    video: {
-      title: 'A nossa Essência',
-      subtitle: 'Engenharia de Precisão',
-      description: 'Veja como a Amplia Solutions está a montar o futuro através de fluxos de trabalho inteligentes e infraestruturas resilientes.',
-      videoUrl: 'https://www.youtube.com/watch?v=VebmwNqWrIw'
     },
     services: {
       sectionTitle: 'O Que Fazemos',
@@ -27,48 +21,48 @@ export const translations = {
           theme: 'cyan',
           title: 'Infraestrutura Inteligente',
           appName: 'OpsFlow',
-          appDescription: 'O futuro do desenvolvimento de aplicações é inteligente. O OpsFlow utiliza inteligência artificial avançada para gerar Dockerfiles, CI/CD e configurações de cloud em segundos. Otimize o seu fluxo de trabalho hoje.',
+          appDescription: 'O Futuro do desenvolvimento de aplicações é Inteligente. O OpsFlow utiliza inteligência artificial avançada para gerar Dockerfiles, CI/CD e cloud configs em segundos. Otimize o seu workflow hoje.',
           buttonText: 'Aceder ao Painel',
           url: 'https://opsflow.amplia.pt',
           pricingTitle: 'BASIC AI',
           pricingPrice: '€9.99',
           pricingPeriod: '/mês',
           pricingFeature1: '10 Deployments /mês',
-          pricingFeature2: 'Suporte prioritário por email',
-          pricingFeature3: 'Scan de segurança standard',
-          pricingFeature4: 'Automação CI/CD completa'
+          pricingFeature2: 'Suporte por Email',
+          pricingFeature3: 'Standard Security Scan',
+          pricingFeature4: 'Automação CI/CD'
         },
         {
           id: 'responderja',
           theme: 'blue',
           title: 'Reputação Digital',
           appName: 'Responder Já',
-          appDescription: 'Domine a sua reputação online e conquiste mais clientes. A única plataforma de IA que responde automaticamente a avaliações no Google, Booking e TripAdvisor. Melhore o seu SEO local e poupe tempo precioso.',
+          appDescription: 'Domine a sua Reputação Online e Conquiste Mais Clientes. A única plataforma de IA que responde automaticamente a avaliações no Google, Booking e TripAdvisor. Melhore o seu SEO Local e poupe tempo.',
           buttonText: 'Experimentar Agora',
           url: 'https://responder.amplia.pt',
           pricingTitle: 'Starter',
           pricingPrice: '€19.99',
           pricingPeriod: '/mês',
-          pricingFeature1: '50 respostas inteligentes por IA',
-          pricingFeature2: 'Acesso para 1 utilizador',
-          pricingFeature3: 'Dashboard de SEO e Analytics',
-          pricingFeature4: 'Integração multicanal'
+          pricingFeature1: '50 respostas IA inteligentes',
+          pricingFeature2: '1 utilizador(es)',
+          pricingFeature3: 'Dashboard de SEO & Analytics',
+          pricingFeature4: ''
         },
         {
           id: 'lia',
           theme: 'violet',
-          title: 'Carreira e Talento',
+          title: 'Carreira & Talento',
           appName: 'LIA',
-          appDescription: 'Linked Intelligence Agent. O seu assistente pessoal de carreira que utiliza IA para otimizar perfis e encontrar oportunidades ideais de forma proativa e estratégica.',
+          appDescription: 'Linked Intelligence Agent. O seu assistente pessoal de carreira que utiliza IA para otimizar perfis e encontrar oportunidades ideais de forma proativa.',
           buttonText: 'Conhecer LIA',
           url: 'https://lia.amplia.pt',
           pricingTitle: 'Pro',
           pricingPrice: '€14.99',
           pricingPeriod: '/mês',
-          pricingFeature1: 'Criação ilimitada de CVs por IA',
-          pricingFeature2: 'Piloto automático de pesquisa',
-          pricingFeature3: 'Simulador de entrevistas',
-          pricingFeature4: 'Análise de perfil LinkedIn'
+          pricingFeature1: 'CV IA Ilimitado',
+          pricingFeature2: 'Search Autopilot',
+          pricingFeature3: 'Entrevistas Simuladas',
+          pricingFeature4: ''
         }
       ]
     },
@@ -77,18 +71,18 @@ export const translations = {
       mainTitlePrefix: 'Vamos ',
       mainTitleHighlight: 'Ampliar',
       mainTitleSuffix: ' o seu Negócio',
-      description: 'Pronto para elevar a sua tecnologia ao próximo nível? A nossa equipa de especialistas está preparada para o ajudar.',
+      description: 'Pronto para elevar a sua tecnologia ao próximo nível? A nossa equipa de especialistas está aqui para ajudar.',
       formTitle: 'Envie-nos uma Mensagem',
       labels: {
-        name: 'Nome completo',
+        name: 'Nome Completo',
         company: 'Empresa (Opcional)',
-        email: 'Email profissional',
+        email: 'Email Profissional',
         message: 'Como podemos ajudar?',
-        privacy: 'Li e concordo com a Política de Privacidade e o tratamento dos meus dados para efeitos de resposta a este contacto.'
+        privacy: 'Aceito o tratamento dos meus dados de acordo com a Política de Privacidade.'
       },
       placeholders: {
-        name: 'O seu nome',
-        company: 'A sua empresa',
+        name: 'Seu nome',
+        company: 'Sua empresa',
         email: 'exemplo@empresa.com',
         message: 'Descreva o seu projeto ou desafio...'
       },
@@ -101,94 +95,86 @@ export const translations = {
     },
     legal: {
       privacy: 'Privacidade',
-      terms: 'Termos e Condições',
+      terms: 'Termos',
       cookies: 'Cookies',
-      companyInfo: 'Amplia Solutions, Lda.',
-      cookieTitle: 'Consentimento de Cookies',
-      cookieText: 'Utilizamos cookies técnicos necessários para o funcionamento do site e cookies analíticos para melhorar a sua experiência. Pode gerir as suas preferências abaixo.',
-      accept: 'Aceitar todos',
-      decline: 'Apenas necessários',
-      privacyPolicyTitle: 'Política de Proteção de Dados',
-      privacyPolicyText: 'A Amplia Solutions, Lda. compromete-se a proteger a privacidade dos seus utilizadores de acordo com o RGPD.\n\n1. Responsável pelo Tratamento: Amplia Solutions, Lda.\n2. Finalidade: Gestão exclusiva do pedido de contacto.\n3. Destinatários: Processamento por parceiros tecnológicos certificados.\n4. Direitos: Acesso, retificação ou eliminação via ampliasolutions.pt@gmail.com.',
-      termsTitle: 'Termos de Utilização',
-      termsText: 'A utilização deste website rege-se pelos presentes Termos. Todo o conteúdo, marcas e software proprietário são propriedade exclusiva da Amplia Solutions, Lda.',
-      hashtags: '#InteligenciaArtificial #EngenhariaDeSoftware #IA #ConsultoriaTecnologica #DevOpsAI #AmpliaSolutions #InovaçãoDigital'
+      cookieTitle: 'Valorizamos a sua Privacidade',
+      cookieText: 'Utilizamos cookies para melhorar a sua experiência e garantir o funcionamento técnico do site.',
+      accept: 'Aceitar Todos',
+      decline: 'Essenciais Apenas',
+      privacyPolicyTitle: 'Política de Privacidade',
+      privacyPolicyText: 'Na Amplia Solutions, a proteção dos seus dados pessoais é uma prioridade absoluta. Em conformidade com o RGPD, informamos que os dados recolhidos através do nosso formulário de contacto são utilizados exclusivamente para processar o seu pedido de informação e não são partilhados com terceiros sem consentimento explícito.',
+      termsTitle: 'Termos e Condições',
+      termsText: 'Ao utilizar o site da Amplia Solutions, concorda com os termos de utilização aqui descritos. O conteúdo deste site é propriedade intelectual da Amplia Solutions e está protegido por direitos de autor.'
     },
     aiBot: {
-      welcome: 'Olá! Sou o assistente virtual da Amplia. Como posso ajudar com os nossos serviços de IA e engenharia?',
-      placeholder: 'Faça uma pergunta...',
-      error: 'Ocorreu um erro técnico. Por favor, tente novamente.'
+      welcome: 'Olá! Sou o assistente da Amplia. Informo que sou uma IA treinada para ajudar. Como posso ser útil?',
+      placeholder: 'Pergunte sobre os nossos serviços...',
+      error: 'Desculpe, tive um problema ao processar. Tente novamente.'
     }
   },
   en: {
     nav: { home: 'Home', about: 'About', services: 'Services', contact: 'Contact', button: 'Get in Touch' },
     hero: {
-      badge: 'Unbounded Innovation',
+      badge: 'Constant Innovation',
       titleLine1: 'Amplify your',
       titleLine2: 'Digital Potential',
-      description: 'Elite technology consultancy. We transform complex challenges into intelligent, scalable software products through cutting-edge AI and engineering.',
+      description: 'Elite technology consultancy. We transform complex challenges into intelligent and scalable software products through cutting-edge AI and Engineering.',
       ctaPrimary: 'Get Started',
       ctaSecondary: 'Our Services',
-      features: ['24/7 Support', 'Senior Engineering', 'Native AI']
-    },
-    video: {
-      title: 'Our Essence',
-      subtitle: 'Precision Engineering',
-      description: 'See how Amplia Solutions is shaping the future through intelligent workflows and resilient infrastructures.',
-      videoUrl: 'https://www.youtube.com/watch?v=VebmwNqWrIw'
+      features: ['24/7 Support', 'Senior Team', 'Native AI']
     },
     services: {
       sectionTitle: 'What We Do',
       mainTitle: 'Intelligent Solutions',
-      description: 'Proprietary products and professional engineering services designed for the new digital era.',
+      description: 'Proprietary products and engineering services designed for the new digital era.',
       portfolios: [
         {
           id: 'opsflow',
           theme: 'cyan',
           title: 'Smart Infrastructure',
           appName: 'OpsFlow',
-          appDescription: 'The future of development is automated. OpsFlow leverages advanced AI to generate Dockerfiles, CI/CD pipelines, and cloud configurations in seconds. Streamline your workflow today.',
+          appDescription: 'The future of app development is Intelligent. OpsFlow uses advanced AI to generate Dockerfiles, CI/CD, and cloud configs in seconds. Optimize your workflow today.',
           buttonText: 'Access Dashboard',
           url: 'https://opsflow.amplia.pt',
           pricingTitle: 'BASIC AI',
           pricingPrice: '€9.99',
-          pricingPeriod: '/mo',
-          pricingFeature1: '10 Deployments per month',
-          pricingFeature2: 'Priority email support',
-          pricingFeature3: 'Standard security scans',
-          pricingFeature4: 'Full CI/CD automation'
+          pricingPeriod: '/month',
+          pricingFeature1: '10 Deployments /month',
+          pricingFeature2: 'Email Support',
+          pricingFeature3: 'Standard Security Scan',
+          pricingFeature4: 'CI/CD Automation'
         },
         {
           id: 'responderja',
           theme: 'blue',
           title: 'Digital Reputation',
           appName: 'Responder Já',
-          appDescription: 'Master your online reputation and scale your business. The only AI-driven platform that automatically handles reviews on Google, Booking, and TripAdvisor. Boost your local SEO.',
-          buttonText: 'Try for Free',
+          appDescription: 'Master your Online Reputation and Win More Customers. The only AI platform that automatically responds to reviews on Google, Booking, and TripAdvisor. Improve Local SEO and save time.',
+          buttonText: 'Try Now',
           url: 'https://responder.amplia.pt',
           pricingTitle: 'Starter',
           pricingPrice: '€19.99',
-          pricingPeriod: '/mo',
+          pricingPeriod: '/month',
           pricingFeature1: '50 smart AI responses',
-          pricingFeature2: 'Single user access',
-          pricingFeature3: 'SEO & Analytics dashboard',
-          pricingFeature4: 'Multi-platform integration'
+          pricingFeature2: '1 user(s)',
+          pricingFeature3: 'SEO & Analytics Dashboard',
+          pricingFeature4: ''
         },
         {
           id: 'lia',
           theme: 'violet',
           title: 'Career & Talent',
           appName: 'LIA',
-          appDescription: 'Linked Intelligence Agent. Your personal AI-powered career assistant that optimizes professional profiles and proactively identifies top-tier opportunities.',
+          appDescription: 'Linked Intelligence Agent. Your personal career assistant using AI to optimize profiles and proactively find ideal opportunities.',
           buttonText: 'Meet LIA',
           url: 'https://lia.amplia.pt',
           pricingTitle: 'Pro',
           pricingPrice: '€14.99',
-          pricingPeriod: '/mo',
-          pricingFeature1: 'Unlimited AI CV generation',
-          pricingFeature2: 'Job search autopilot',
-          pricingFeature3: 'AI-simulated interviews',
-          pricingFeature4: 'LinkedIn profile analysis'
+          pricingPeriod: '/month',
+          pricingFeature1: 'Unlimited AI CVs',
+          pricingFeature2: 'Search Autopilot',
+          pricingFeature3: 'Mock Interviews',
+          pricingFeature4: ''
         }
       ]
     },
@@ -197,14 +183,14 @@ export const translations = {
       mainTitlePrefix: 'Let\'s ',
       mainTitleHighlight: 'Amplify',
       mainTitleSuffix: ' your Business',
-      description: 'Ready to elevate your technology? Our team of experts is ready to help you scale.',
+      description: 'Ready to take your technology to the next level? Our team of experts is here to help.',
       formTitle: 'Send us a Message',
       labels: {
-        name: 'Full name',
+        name: 'Full Name',
         company: 'Company (Optional)',
-        email: 'Business email',
+        email: 'Business Email',
         message: 'How can we help?',
-        privacy: 'I have read and agree to the Privacy Policy and the processing of my data for communication purposes.'
+        privacy: 'I accept the processing of my data according to the Privacy Policy.'
       },
       placeholders: {
         name: 'Your name',
@@ -220,42 +206,34 @@ export const translations = {
       }
     },
     legal: {
-      privacy: 'Privacy Policy',
-      terms: 'Terms of Use',
+      privacy: 'Privacy',
+      terms: 'Terms',
       cookies: 'Cookies',
-      companyInfo: 'Amplia Solutions, Lda.',
-      cookieTitle: 'Cookie Consent',
-      cookieText: 'We use strictly necessary and analytical cookies to improve your experience. Manage your preferences below.',
-      accept: 'Accept all',
-      decline: 'Strictly necessary',
-      privacyPolicyTitle: 'Data Protection Policy',
-      privacyPolicyText: 'Amplia Solutions, Lda. is committed to protecting user privacy under GDPR standards.\n\n1. Controller: Amplia Solutions, Lda.\n2. Purpose: Handling contact requests.\n3. Data Sharing: Certified tech partners only.\n4. Rights: Access, rectification, or deletion via ampliasolutions.pt@gmail.com.',
-      termsTitle: 'Terms of Use',
-      termsText: 'Use of this website is governed by these Terms. All proprietary content and software are the exclusive property of Amplia Solutions, Lda.',
-      hashtags: '#ArtificialIntelligence #SoftwareEngineering #AI #TechConsultancy #DevOpsAI #AmpliaSolutions #DigitalInnovation'
+      cookieTitle: 'We Value your Privacy',
+      cookieText: 'We use cookies to improve your experience and ensure the technical functioning of the site.',
+      accept: 'Accept All',
+      decline: 'Essentials Only',
+      privacyPolicyTitle: 'Privacy Policy',
+      privacyPolicyText: 'At Amplia Solutions, protecting your personal data is an absolute priority. In compliance with GDPR, we inform you that the data collected through our contact form is used exclusively to process your inquiry.',
+      termsTitle: 'Terms and Conditions',
+      termsText: 'By using the Amplia Solutions website, you agree to the terms of use described here. All content on this site is intellectual property of Amplia Solutions.'
     },
     aiBot: {
-      welcome: 'Hello! I am Amplia\'s virtual assistant. How can I help you with our AI and engineering services?',
-      placeholder: 'Ask a question...',
-      error: 'A technical error occurred. Please try again.'
+      welcome: 'Hello! I am the Amplia assistant. I am an AI trained to help. How can I be of service?',
+      placeholder: 'Ask about our services...',
+      error: 'Sorry, I had trouble processing that. Please try again.'
     }
   },
   es: {
-    nav: { home: 'Inicio', about: 'Nosotros', services: 'Servicios', contact: 'Contacto', button: 'Contáctanos' },
+    nav: { home: 'Inicio', about: 'Sobre nosotros', services: 'Servicios', contact: 'Contacto', button: 'Contáctanos' },
     hero: {
-      badge: 'Innovación Sin Límites',
+      badge: 'Innovación Constante',
       titleLine1: 'Amplíe su',
       titleLine2: 'Potencial Digital',
-      description: 'Consultoría tecnológica de élite. Transformamos desafíos complejos en productos de software inteligentes y escalables mediante IA e ingeniería de vanguardia.',
+      description: 'Consultoría tecnológica de élite. Transformamos desafíos complejos en productos de software inteligentes y escalables a través de IA e Ingeniería de vanguardia.',
       ctaPrimary: 'Empezar Ahora',
-      ctaSecondary: 'Ver Servicios',
+      ctaSecondary: 'Nuestros Servicios',
       features: ['Soporte 24/7', 'Equipo Senior', 'IA Nativa']
-    },
-    video: {
-      title: 'Nuestra Esencia',
-      subtitle: 'Ingeniería de Precisión',
-      description: 'Descubra cómo Amplia Solutions está moldeando el futuro a través de flujos de trabalho inteligentes e infraestructuras resilientes.',
-      videoUrl: 'https://www.youtube.com/watch?v=VebmwNqWrIw'
     },
     services: {
       sectionTitle: 'Qué Hacemos',
@@ -267,48 +245,48 @@ export const translations = {
           theme: 'cyan',
           title: 'Infraestructura Inteligente',
           appName: 'OpsFlow',
-          appDescription: 'El futuro del desarrollo es inteligente. OpsFlow utiliza inteligencia artificial avanzada para generar Dockerfiles, CI/CD y configuraciones de nube en segundos. Optimice su flujo de trabalho.',
-          buttonText: 'Ir al Panel',
+          appDescription: 'El futuro del desarrollo de aplicaciones es Inteligente. OpsFlow utiliza inteligencia artificial avanzada para generar Dockerfiles, CI/CD y cloud configs en segundos. Optimice su flujo de trabajo hoy.',
+          buttonText: 'Acceder al Panel',
           url: 'https://opsflow.amplia.pt',
-          pricingTitle: 'BASIC AI',
+          pricingTitle: 'BASIC IA',
           pricingPrice: '€9.99',
           pricingPeriod: '/mes',
-          pricingFeature1: '10 Despliegues al mes',
-          pricingFeature2: 'Soporte prioritario por email',
-          pricingFeature3: 'Escaneo de seguridad estándar',
-          pricingFeature4: 'Automatización CI/CD completa'
+          pricingFeature1: '10 Despliegues /mes',
+          pricingFeature2: 'Soporte por Email',
+          pricingFeature3: 'Escaneo de Seguridad Estándar',
+          pricingFeature4: 'Automatización CI/CD'
         },
         {
           id: 'responderja',
           theme: 'blue',
           title: 'Reputación Digital',
           appName: 'Responder Já',
-          appDescription: 'Domine su reputación online y atraiga más clientes. La única plataforma de IA que responde automáticamente a reseñas en Google, Booking y TripAdvisor. Mejore su SEO local.',
+          appDescription: 'Domine su Reputación Online y Conquiste Más Clientes. La única plataforma de IA que responde automáticamente a reseñas en Google, Booking y TripAdvisor. Mejore su SEO Local.',
           buttonText: 'Probar Ahora',
           url: 'https://responder.amplia.pt',
           pricingTitle: 'Starter',
           pricingPrice: '€19.99',
           pricingPeriod: '/mes',
-          pricingFeature1: '50 respuestas inteligentes por IA',
-          pricingFeature2: 'Acceso para un usuario',
+          pricingFeature1: '50 respuestas IA inteligentes',
+          pricingFeature2: '1 usuario(s)',
           pricingFeature3: 'Panel de SEO y Analítica',
-          pricingFeature4: 'Integración multiplataforma'
+          pricingFeature4: ''
         },
         {
           id: 'lia',
           theme: 'violet',
           title: 'Carrera y Talento',
           appName: 'LIA',
-          appDescription: 'Linked Intelligence Agent. Su asistente personal de carrera impulsado por IA para optimizar perfiles profesionales y encontrar oportunidades de forma proactiva.',
-          buttonText: 'Conocer a LIA',
+          appDescription: 'Linked Intelligence Agent. Tu asistente personal de carrera que utiliza IA para optimizar perfiles y encontrar oportunidades ideales de forma proactiva.',
+          buttonText: 'Conocer LIA',
           url: 'https://lia.amplia.pt',
           pricingTitle: 'Pro',
           pricingPrice: '€14.99',
           pricingPeriod: '/mes',
-          pricingFeature1: 'CVs ilimitados por IA',
-          pricingFeature2: 'Piloto automático de búsqueda',
-          pricingFeature3: 'Simulador de entrevistas',
-          pricingFeature4: 'Análisis de perfil LinkedIn'
+          pricingFeature1: 'CV IA Ilimitado',
+          pricingFeature2: 'Piloto Automático de Búsqueda',
+          pricingFeature3: 'Entrevistas Simuladas',
+          pricingFeature4: ''
         }
       ]
     },
@@ -317,14 +295,14 @@ export const translations = {
       mainTitlePrefix: 'Vamos a ',
       mainTitleHighlight: 'Ampliar',
       mainTitleSuffix: ' su Negocio',
-      description: '¿Listo para elevar su tecnología al siguiente nivel? Nuestro equipo de expertos está a su disposición.',
+      description: '¿Listo para llevar su tecnología al siguiente nivel? Nuestro equipo de expertos está aquí para ayudarle.',
       formTitle: 'Envíenos un Mensaje',
       labels: {
-        name: 'Nombre completo',
+        name: 'Nombre Completo',
         company: 'Empresa (Opcional)',
-        email: 'Email profesional',
-        message: '¿Cómo podemos ayudarle?',
-        privacy: 'He leído y acepto la Política de Privacidad y el tratamiento de mis datos para responder a mi solicitud.'
+        email: 'Email Profesional',
+        message: '¿Cómo podemos ayudar?',
+        privacy: 'Acepto el tratamiento de mis datos de acuerdo con la Política de Privacidad.'
       },
       placeholders: {
         name: 'Su nombre',
@@ -340,24 +318,22 @@ export const translations = {
       }
     },
     legal: {
-      privacy: 'Privacidade',
-      terms: 'Términos y Condiciones',
+      privacy: 'Privacidad',
+      terms: 'Términos',
       cookies: 'Cookies',
-      companyInfo: 'Amplia Solutions, Lda.',
-      cookieTitle: 'Consentimiento de Cookies',
-      cookieText: 'Utilizamos cookies técnicas necesarias y analíticas para mejorar su experiencia. Puede gestionar sus preferencias abajo.',
-      accept: 'Aceptar todo',
-      decline: 'Solo necesarias',
-      privacyPolicyTitle: 'Política de Protección de Dados',
-      privacyPolicyText: 'Amplia Solutions, Lda. se compromete a proteger la privacidad según el RGPD.\n\n1. Responsable: Amplia Solutions, Lda.\n2. Finalidade: Gestión de solicitudes de contacto.\n3. Destinatarios: Socios tecnológicos certificados.\n4. Derechos: Acceso, rectificación o supresión vía ampliasolutions.pt@gmail.com.',
-      termsTitle: 'Términos de Uso',
-      termsText: 'El uso de este sitio web se rige por estos Términos. Todo el contenido y software son propiedad exclusiva de Amplia Solutions, Lda.',
-      hashtags: '#InteligenciaArtificial #IngenieriaDeSoftware #IA #ConsultoriaTecnologica #DevOpsAI #AmpliaSolutions #InnovacionDigital'
+      cookieTitle: 'Valoramos su Privacidad',
+      cookieText: 'Utilizamos cookies para mejorar su experiencia y garantizar el funcionamiento técnico del sitio.',
+      accept: 'Aceptar Todo',
+      decline: 'Solo Esenciales',
+      privacyPolicyTitle: 'Política de Privacidad',
+      privacyPolicyText: 'En Amplia Solutions, la protección de sus datos personales es una prioridad absoluta. De acuerdo con el RGPD, le informamos que los datos recopilados se utilizan exclusivamente para responder a su solicitud.',
+      termsTitle: 'Términos y Condiciones',
+      termsText: 'Al utilizar el sitio de Amplia Solutions, acepta los términos de uso aquí descritos. El contenido de este sitio es propiedad intelectual de Amplia Solutions.'
     },
     aiBot: {
-      welcome: '¡Hola! Soy el asistente virtual de Amplia. ¿En qué posso ayudarle con nuestros servicios de IA e ingeniería?',
-      placeholder: 'Haga una pregunta...',
-      error: 'Ocurrió un error técnico. Inténtelo de nuevo.'
+      welcome: '¡Hola! Soy el asistente de Amplia. Soy una IA entrenada para ayudar. ¿En qué puedo serle útil?',
+      placeholder: 'Pregunte sobre nuestros servicios...',
+      error: 'Lo siento, tuve un problema al procesar su solicitud. Inténtelo de nuevo.'
     }
   }
 };
