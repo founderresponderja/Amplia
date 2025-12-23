@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, ShieldCheck, FileText, Info, X } from 'lucide-react';
+import { Sun, Moon, ShieldCheck, FileText, Info, X, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
@@ -142,15 +142,6 @@ function App() {
                 alt="Digital Potential" 
               />
             </div>
-            <div className="absolute -bottom-10 -left-10 bg-white dark:bg-[#1a1c20] p-8 rounded-[32px] shadow-2xl border border-gray-100 dark:border-white/5 flex items-center gap-6 z-20">
-               <div className="w-14 h-14 bg-amplia-green/20 rounded-2xl flex items-center justify-center text-amplia-green">
-                  <Logo showText={false} className="h-8" />
-               </div>
-               <div>
-                 <p className="text-3xl font-max font-bold dark:text-white">10+</p>
-                 <p className="text-xs text-gray-400 uppercase tracking-widest font-bold">Anos de Excelência</p>
-               </div>
-            </div>
           </div>
         </div>
       </section>
@@ -160,8 +151,23 @@ function App() {
       
       <footer className="py-16 border-t border-gray-100 dark:border-white/5 text-center transition-colors">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 text-gray-400 text-sm">
-          <Logo className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" />
-          <p>&copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.</p>
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <Logo className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" />
+            <div className="flex gap-4">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
+                <Linkedin size={18} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
+                <Twitter size={18} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
+                <Instagram size={18} />
+              </a>
+            </div>
+          </div>
+          
+          <p className="max-w-xs md:max-w-none">&copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.</p>
+          
           <div className="flex gap-8 font-bold text-xs uppercase tracking-widest">
             <button onClick={() => setLegalModal('privacy')} className="hover:text-amplia-green transition-colors">{t.legal.privacy}</button>
             <button onClick={() => setLegalModal('terms')} className="hover:text-amplia-green transition-colors">{t.legal.terms}</button>
