@@ -48,6 +48,28 @@ function App() {
 
   const t = translations[lang];
 
+  // Dynamic SEO Metadata Update
+  useEffect(() => {
+    // @ts-ignore
+    const seo = t.seo;
+    if (seo) {
+      document.title = seo.title;
+      
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', seo.description);
+      }
+
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', seo.keywords);
+      }
+
+      // Update lang attribute in HTML
+      document.documentElement.lang = lang;
+    }
+  }, [lang, t]);
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
@@ -139,7 +161,7 @@ function App() {
               <img 
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80" 
                 className="rounded-[40px] w-full h-[500px] object-cover" 
-                alt="Digital Potential" 
+                alt="Amplia Solutions - Consultoria de Engenharia de Software e IA" 
               />
             </div>
           </div>
@@ -154,10 +176,10 @@ function App() {
           <div className="flex flex-col items-center md:items-start gap-4">
             <Logo className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" />
             <div className="flex gap-4">
-              <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
+              <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors" aria-label="LinkedIn Amplia Solutions">
                 <Linkedin size={18} />
               </a>
-              <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
+              <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors" aria-label="Instagram Amplia Solutions">
                 <Instagram size={18} />
               </a>
             </div>

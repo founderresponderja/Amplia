@@ -1,6 +1,11 @@
 
 export const translations = {
   pt: {
+    seo: {
+      title: 'Amplia Solutions | Consultoria IT, Engenharia de Software e IA em Portugal',
+      description: 'Consultoria tecnológica de elite em Lisboa. Especialistas em IA, Cloud, DevOps com OpsFlow e suporte à carreira com LIA. Transformamos o seu negócio digital.',
+      keywords: 'consultoria informática, inteligência artificial, engenharia de software portugal, devops ai, responder já, lia ai, amplia studio'
+    },
     nav: { home: 'Home', about: 'Sobre', services: 'Serviços', contact: 'Contacto', button: 'Fale Connosco' },
     hero: {
       badge: 'Inovação Constante',
@@ -111,7 +116,7 @@ export const translations = {
     },
     legal: {
       privacy: 'Privacidade',
-      terms: 'Termos',
+      terms: 'Terms',
       cookies: 'Cookies',
       cookieTitle: 'Valorizamos a sua Privacidade',
       cookieText: 'Utilizamos cookies para melhorar a sua experiência e garantir o funcionamento técnico do site.',
@@ -129,6 +134,11 @@ export const translations = {
     }
   },
   en: {
+    seo: {
+      title: 'Amplia Solutions | IT Consulting, Software Engineering & AI Portugal',
+      description: 'Elite tech consultancy in Lisbon. Specialists in AI, Cloud, DevOps with OpsFlow, and career support with LIA. Amplify your digital business.',
+      keywords: 'it consulting, artificial intelligence, software engineering portugal, devops ai, responder ja, lia ai, amplia studio'
+    },
     nav: { home: 'Home', about: 'About', services: 'Services', contact: 'Contact', button: 'Get in Touch' },
     hero: {
       badge: 'Constant Innovation',
@@ -257,6 +267,11 @@ export const translations = {
     }
   },
   es: {
+    seo: {
+      title: 'Amplia Solutions | Consultoría IT, Ingeniería de Software e IA Portugal',
+      description: 'Consultoría tecnológica de élite en Lisboa. Especialistas en IA, Cloud, DevOps con OpsFlow y soporte profesional con LIA. Amplíe su negocio digital.',
+      keywords: 'consultoría it, inteligencia artificial, ingeniería de software portugal, devops ai, responder ja, lia ai, amplia studio'
+    },
     nav: { home: 'Inicio', about: 'Sobre nosotros', services: 'Servicios', contact: 'Contacto', button: 'Contáctanos' },
     hero: {
       badge: 'Innovación Constante',
@@ -270,7 +285,7 @@ export const translations = {
     services: {
       sectionTitle: 'Qué Hacemos',
       mainTitle: 'Soluções Inteligentes',
-      description: 'Productos propios y servicios de ingeniería diseñados para la nueva era digital.',
+      description: 'Productos propios y servicios de ingeniería diseñados para la nova era digital.',
       portfolios: [
         {
           id: 'opsflow',
@@ -323,7 +338,7 @@ export const translations = {
         {
           id: 'homestudio',
           theme: 'green',
-          title: 'Estudio de Creación IA',
+          title: 'Estúdio de Criação IA',
           appName: 'Amplia Studio',
           appDescription: 'Transforme sus ideas en realidad con nuestro estudio de creación alimentado por IA. Herramientas intuitivas para diseño, prototipado y desarrollo acelerado directamente en su navegador.',
           buttonText: 'Visitar Estúdio',
