@@ -20,7 +20,14 @@ export const Services = ({ content }: { content: any }) => {
           </svg>
         </div>
       ),
-      responderja: <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white font-bold shadow-lg">RJ</div>,
+      responderja: (
+        <div className="w-12 h-12 flex items-center justify-center">
+          <svg viewBox="0 0 100 100" className="w-10 h-10 drop-shadow-md" fill="none">
+             <circle cx="50" cy="48" r="32" stroke="#38bdf8" strokeWidth="8" />
+             <path d="M30 72 L20 84 L28 78" stroke="#38bdf8" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+      ),
       homestudio: (
         <div className="w-12 h-12 flex items-center justify-center">
           <svg viewBox="0 0 100 100" className="w-10 h-10 drop-shadow-lg">

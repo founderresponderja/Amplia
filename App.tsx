@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, ShieldCheck, FileText, Info, X, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Sun, Moon, ShieldCheck, FileText, Info, X, Linkedin, Instagram } from 'lucide-react';
 import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
@@ -154,13 +154,10 @@ function App() {
           <div className="flex flex-col items-center md:items-start gap-4">
             <Logo className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" />
             <div className="flex gap-4">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
+              <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
                 <Linkedin size={18} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
-                <Twitter size={18} />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
+              <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors">
                 <Instagram size={18} />
               </a>
             </div>
