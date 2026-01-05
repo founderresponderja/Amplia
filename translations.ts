@@ -20,7 +20,7 @@ export const translations = {
           id: 'opsflow',
           theme: 'cyan',
           title: 'Infraestrutura Inteligente',
-          appName: 'OpsFlow',
+          appName: 'OpsFlow AI',
           appDescription: 'O Futuro do desenvolvimento de aplicações é Inteligente. O OpsFlow utiliza inteligência artificial avançada para gerar Dockerfiles, CI/CD e cloud configs em segundos. Otimize o seu workflow hoje.',
           buttonText: 'Aceder ao Painel',
           url: 'https://opsflow.amplia.pt',
@@ -52,7 +52,7 @@ export const translations = {
           id: 'lia',
           theme: 'violet',
           title: 'Carreira & Talento',
-          appName: 'LIA',
+          appName: 'Lia',
           appDescription: 'Linked Intelligence Agent. O seu assistente pessoal de carreira que utiliza IA para otimizar perfis e encontrar oportunidades ideais de forma proativa.',
           buttonText: 'Conhecer LIA',
           url: 'https://lia.amplia.pt',
@@ -63,6 +63,22 @@ export const translations = {
           pricingFeature2: 'Search Autopilot',
           pricingFeature3: 'Entrevistas Simuladas',
           pricingFeature4: ''
+        },
+        {
+          id: 'homestudio',
+          theme: 'green',
+          title: 'Estúdio de Criação IA',
+          appName: 'Amplia Studio',
+          appDescription: 'Transforme as suas ideias em realidade com o nosso estúdio de criação alimentado por IA. Ferramentas intuitivas para design, prototipagem e desenvolvimento acelerado diretamente no browser.',
+          buttonText: 'Visitar Estúdio',
+          url: 'https://aistudio.google.com/apps/drive/1fvkVmFpkuJf3Cfpre0DOXpBwBhkNHf0X',
+          pricingTitle: 'Studio Access',
+          pricingPrice: 'Gratuito',
+          pricingPeriod: '/beta',
+          pricingFeature1: 'Prototipagem Rápida IA',
+          pricingFeature2: 'Modelos Gemini Pro',
+          pricingFeature3: 'Exportação Direta',
+          pricingFeature4: 'Workspace Colaborativo'
         }
       ]
     },
@@ -132,7 +148,7 @@ export const translations = {
           id: 'opsflow',
           theme: 'cyan',
           title: 'Smart Infrastructure',
-          appName: 'OpsFlow',
+          appName: 'OpsFlow AI',
           appDescription: 'The future of app development is Intelligent. OpsFlow uses advanced AI to generate Dockerfiles, CI/CD, and cloud configs in seconds. Optimize your workflow today.',
           buttonText: 'Access Dashboard',
           url: 'https://opsflow.amplia.pt',
@@ -164,7 +180,7 @@ export const translations = {
           id: 'lia',
           theme: 'violet',
           title: 'Career & Talent',
-          appName: 'LIA',
+          appName: 'Lia',
           appDescription: 'Linked Intelligence Agent. Your personal career assistant using AI to optimize profiles and proactively find ideal opportunities.',
           buttonText: 'Meet LIA',
           url: 'https://lia.amplia.pt',
@@ -175,6 +191,22 @@ export const translations = {
           pricingFeature2: 'Search Autopilot',
           pricingFeature3: 'Mock Interviews',
           pricingFeature4: ''
+        },
+        {
+          id: 'homestudio',
+          theme: 'green',
+          title: 'AI Creation Studio',
+          appName: 'Amplia Studio',
+          appDescription: 'Turn your ideas into reality with our AI-powered creation studio. Intuitive tools for design, prototyping, and accelerated development directly in your browser.',
+          buttonText: 'Visit Studio',
+          url: 'https://aistudio.google.com/apps/drive/1fvkVmFpkuJf3Cfpre0DOXpBwBhkNHf0X',
+          pricingTitle: 'Studio Access',
+          pricingPrice: 'Free',
+          pricingPeriod: '/beta',
+          pricingFeature1: 'Rapid AI Prototyping',
+          pricingFeature2: 'Gemini Pro Models',
+          pricingFeature3: 'Direct Export',
+          pricingFeature4: 'Collaborative Workspace'
         }
       ]
     },
@@ -237,15 +269,15 @@ export const translations = {
     },
     services: {
       sectionTitle: 'Qué Hacemos',
-      mainTitle: 'Soluciones Inteligentes',
+      mainTitle: 'Soluções Inteligentes',
       description: 'Productos propios y servicios de ingeniería diseñados para la nueva era digital.',
       portfolios: [
         {
           id: 'opsflow',
           theme: 'cyan',
           title: 'Infraestructura Inteligente',
-          appName: 'OpsFlow',
-          appDescription: 'El futuro del desarrollo de aplicaciones es Inteligente. OpsFlow utiliza inteligencia artificial avanzada para generar Dockerfiles, CI/CD y cloud configs en segundos. Optimice su flujo de trabajo hoy.',
+          appName: 'OpsFlow AI',
+          appDescription: 'El futuro del desarrollo de aplicaciones es Inteligente. OpsFlow utiliza inteligencia artificial avanzada para generar Dockerfiles, CI/CD y cloud configs in segundos. Optimice su flujo de trabajo hoy.',
           buttonText: 'Acceder al Panel',
           url: 'https://opsflow.amplia.pt',
           pricingTitle: 'BASIC IA',
@@ -261,7 +293,7 @@ export const translations = {
           theme: 'blue',
           title: 'Reputación Digital',
           appName: 'Responder Já',
-          appDescription: 'Domine su Reputación Online y Conquiste Más Clientes. La única plataforma de IA que responde automáticamente a reseñas en Google, Booking y TripAdvisor. Mejore su SEO Local.',
+          appDescription: 'Domine su Reputación Online y Conquiste Mais Clientes. La única plataforma de IA que responde automáticamente a reseñas en Google, Booking y TripAdvisor. Mejore su SEO Local.',
           buttonText: 'Probar Ahora',
           url: 'https://responder.amplia.pt',
           pricingTitle: 'Starter',
@@ -276,8 +308,8 @@ export const translations = {
           id: 'lia',
           theme: 'violet',
           title: 'Carrera y Talento',
-          appName: 'LIA',
-          appDescription: 'Linked Intelligence Agent. Tu asistente personal de carrera que utiliza IA para optimizar perfiles y encontrar oportunidades ideales de forma proactiva.',
+          appName: 'Lia',
+          appDescription: 'Linked Intelligence Agent. Tu asistente personal de carrera que utiliza IA para optimizar perfiles y encontrar oportunidades ideales de forma proativa.',
           buttonText: 'Conocer LIA',
           url: 'https://lia.amplia.pt',
           pricingTitle: 'Pro',
@@ -287,6 +319,22 @@ export const translations = {
           pricingFeature2: 'Piloto Automático de Búsqueda',
           pricingFeature3: 'Entrevistas Simuladas',
           pricingFeature4: ''
+        },
+        {
+          id: 'homestudio',
+          theme: 'green',
+          title: 'Estudio de Creación IA',
+          appName: 'Amplia Studio',
+          appDescription: 'Transforme sus ideas en realidad con nuestro estudio de creación alimentado por IA. Herramientas intuitivas para diseño, prototipado y desarrollo acelerado directamente en su navegador.',
+          buttonText: 'Visitar Estúdio',
+          url: 'https://aistudio.google.com/apps/drive/1fvkVmFpkuJf3Cfpre0DOXpBwBhkNHf0X',
+          pricingTitle: 'Studio Access',
+          pricingPrice: 'Gratis',
+          pricingPeriod: '/beta',
+          pricingFeature1: 'Prototipado IA Rápido',
+          pricingFeature2: 'Modelos Gemini Pro',
+          pricingFeature3: 'Exportación Directa',
+          pricingFeature4: 'Espacio de Trabajo Colaborativo'
         }
       ]
     },
@@ -302,7 +350,7 @@ export const translations = {
         company: 'Empresa (Opcional)',
         email: 'Email Profesional',
         message: '¿Cómo podemos ayudar?',
-        privacy: 'Acepto el tratamiento de mis datos de acuerdo con la Política de Privacidad.'
+        privacy: 'Acepto el tratamiento de mis datos de acuerdo con la Política de Privacidade.'
       },
       placeholders: {
         name: 'Su nombre',
@@ -318,8 +366,8 @@ export const translations = {
       }
     },
     legal: {
-      privacy: 'Privacidad',
-      terms: 'Términos',
+      privacy: 'Privacidade',
+      terms: 'Termos',
       cookies: 'Cookies',
       cookieTitle: 'Valoramos su Privacidad',
       cookieText: 'Utilizamos cookies para mejorar su experiencia y garantizar el funcionamiento técnico del sitio.',
@@ -327,8 +375,8 @@ export const translations = {
       decline: 'Solo Esenciales',
       privacyPolicyTitle: 'Política de Privacidad',
       privacyPolicyText: 'En Amplia Solutions, la protección de sus datos personales es una prioridad absoluta. De acuerdo con el RGPD, le informamos que los datos recopilados se utilizan exclusivamente para responder a su solicitud.',
-      termsTitle: 'Términos y Condiciones',
-      termsText: 'Al utilizar el sitio de Amplia Solutions, acepta los términos de uso aquí descritos. El contenido de este sitio es propiedad intelectual de Amplia Solutions.'
+      termsTitle: 'Termos e Condições',
+      termsText: 'Ao utilizar o site da Amplia Solutions, concorda com os termos de utilização aqui descritos. O conteúdo deste site é propriedade intelectual da Amplia Solutions e está protegido por direitos de autor.'
     },
     aiBot: {
       welcome: '¡Hola! Soy el asistente de Amplia. Soy una IA entrenada para ayudar. ¿En qué puedo serle útil?',

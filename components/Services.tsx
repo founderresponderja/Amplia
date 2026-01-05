@@ -1,20 +1,40 @@
 
 import React from 'react';
-import { ExternalLink, Check, Share2 } from 'lucide-react';
+import { ExternalLink, Check, Share2, Rocket } from 'lucide-react';
 import { Button } from './Button';
 import { ScrollReveal } from './ScrollReveal';
+import { Logo as BrandLogo } from './Logo';
 
 export const Services = ({ content }: { content: any }) => {
   const renderLogo = (id: string) => {
     const logos: any = {
-      opsflow: <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold">OF</div>,
-      lia: <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-400 to-fuchsia-500 flex items-center justify-center text-white font-bold">LIA</div>,
-      responderja: <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white font-bold">RJ</div>
+      opsflow: (
+        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#52b6ff] to-[#a46eff] flex items-center justify-center text-white shadow-lg">
+          <Rocket size={24} fill="currentColor" fillOpacity={0.2} />
+        </div>
+      ),
+      lia: (
+        <div className="w-12 h-12 flex items-center justify-center">
+          <svg viewBox="0 0 100 100" className="w-10 h-10 drop-shadow-md">
+             <path d="M50 5 L95 90 L5 90 Z" fill="#8cc63f" />
+          </svg>
+        </div>
+      ),
+      responderja: <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white font-bold shadow-lg">RJ</div>,
+      homestudio: (
+        <div className="w-12 h-12 flex items-center justify-center">
+          <svg viewBox="0 0 100 100" className="w-10 h-10 drop-shadow-lg">
+             <path d="M50 5 L89 27.5 L89 72.5 L50 95 L11 72.5 L11 27.5 Z" fill="none" stroke="#22d3ee" strokeWidth="2" opacity="0.2" />
+             <path d="M50 50 L50 5 M50 50 L11 72.5 M50 50 L89 72.5" fill="none" stroke="#22d3ee" strokeWidth="6" strokeLinecap="round" />
+          </svg>
+        </div>
+      )
     };
-    return logos[id];
+    return logos[id] || <div className="w-12 h-12 rounded-xl bg-gray-200" />;
   };
 
   const formatFeatureText = (text: string) => {
+    if (!text) return "";
     // Regex to bold numbers (e.g., "50", "1")
     const parts = text.split(/(\d+)/);
     return parts.map((part, i) => 
@@ -27,7 +47,21 @@ export const Services = ({ content }: { content: any }) => {
       case 'blue': return 'text-blue-400';
       case 'cyan': return 'text-cyan-400';
       case 'violet': return 'text-violet-400';
+      case 'green': return 'text-amplia-green';
       default: return 'text-amplia-green';
+    }
+  };
+
+  const handleShare = (p: any) => {
+    if (navigator.share) {
+      navigator.share({
+        title: p.appName,
+        text: p.appDescription,
+        url: p.url,
+      }).catch(console.error);
+    } else {
+      navigator.clipboard.writeText(p.url);
+      alert('Link copiado para a área de transferência!');
     }
   };
 
@@ -46,12 +80,29 @@ export const Services = ({ content }: { content: any }) => {
                 <div className="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-8">
                     {renderLogo(p.id)}
-                    <h4 className="text-3xl font-max dark:text-white">{p.appName}</h4>
+                    <h4 className="text-3xl font-max dark:text-white">
+                      {p.id === 'homestudio' ? (
+                        <>
+                          amplia <span className="text-cyan-400 uppercase tracking-widest font-bold">Studio</span>
+                        </>
+                      ) : p.appName}
+                    </h4>
                   </div>
                   <p className="text-lg text-gray-500 dark:text-gray-400 mb-10 leading-relaxed whitespace-pre-line font-normal">{p.appDescription}</p>
                   <div className="flex gap-4">
-                    <Button className="flex items-center gap-2">{p.buttonText} <ExternalLink size={18} /></Button>
-                    <button className="p-3 rounded-full bg-gray-100 dark:bg-neutral-800 text-gray-500 hover:text-amplia-green transition-colors"><Share2 size={20} /></button>
+                    <Button 
+                      className="flex items-center gap-2"
+                      onClick={() => window.open(p.url, '_blank')}
+                    >
+                      {p.buttonText} <ExternalLink size={18} />
+                    </Button>
+                    <button 
+                      onClick={() => handleShare(p)}
+                      className="p-3 rounded-full bg-gray-100 dark:bg-neutral-800 text-gray-500 hover:text-amplia-green transition-colors"
+                      title="Partilhar"
+                    >
+                      <Share2 size={20} />
+                    </button>
                   </div>
                 </div>
 
