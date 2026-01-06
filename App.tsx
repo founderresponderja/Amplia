@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, ShieldCheck, FileText, Info, X, Linkedin, Instagram } from 'lucide-react';
+import { Sun, Moon, ShieldCheck, FileText, Info, X, Linkedin, Instagram, Github } from 'lucide-react';
 import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
@@ -174,18 +174,23 @@ function App() {
       <footer className="py-16 border-t border-gray-100 dark:border-white/5 text-center transition-colors">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 text-gray-400 text-sm">
           <div className="flex flex-col items-center md:items-start gap-4">
-            <Logo className="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" />
-            <div className="flex gap-4">
-              <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors" aria-label="LinkedIn Amplia Solutions">
-                <Linkedin size={18} />
+            <Logo className="h-6 opacity-40 hover:opacity-100 transition-all cursor-pointer" showText={true} />
+            <div className="flex gap-5">
+              <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="LinkedIn Amplia Solutions">
+                <Linkedin size={20} />
               </a>
-              <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors" aria-label="Instagram Amplia Solutions">
-                <Instagram size={18} />
+              <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="Instagram Amplia Solutions">
+                <Instagram size={20} />
+              </a>
+              <a href="https://github.com/amplia-solutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="GitHub Amplia Solutions">
+                <Github size={20} />
               </a>
             </div>
           </div>
           
-          <p className="max-w-xs md:max-w-none">&copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.</p>
+          <p className="max-w-xs md:max-w-none font-medium opacity-60 transition-opacity hover:opacity-100">
+            &copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.
+          </p>
           
           <div className="flex gap-8 font-bold text-xs uppercase tracking-widest">
             <button onClick={() => setLegalModal('privacy')} className="hover:text-amplia-green transition-colors">{t.legal.privacy}</button>
