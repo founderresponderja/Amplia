@@ -5,6 +5,8 @@ import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
+import { About } from './components/About';
+import { FAQ } from './components/FAQ';
 import { AIChatBot } from './components/AIChatBot';
 import { translations } from './translations';
 import { ScrollReveal } from './components/ScrollReveal';
@@ -95,14 +97,26 @@ function App() {
     setShowCookieBanner(false);
   };
 
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen transition-colors duration-300">
       <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 dark:bg-amplia-dark/80 backdrop-blur-xl py-3 border-b border-gray-100 dark:border-white/5 shadow-sm' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <Logo className="h-8 md:h-10" />
+          <div className="flex items-center gap-12">
+            <Logo className="h-8 md:h-10 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+            
+            <div className="hidden lg:flex items-center gap-8">
+              <button onClick={() => scrollTo('about')} className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-amplia-green transition-colors">{t.nav.about}</button>
+              <button onClick={() => scrollTo('services')} className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-amplia-green transition-colors">{t.nav.services}</button>
+              <button onClick={() => scrollTo('faq')} className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-amplia-green transition-colors">{t.nav.faq}</button>
+              <button onClick={() => scrollTo('contact')} className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-amplia-green transition-colors">{t.nav.contact}</button>
+            </div>
+          </div>
           
           <div className="flex items-center gap-4 md:gap-8">
-            {/* Improved Language Picker - Shows all available languages */}
             <div className="flex items-center bg-gray-100 dark:bg-white/5 rounded-full p-1 border border-gray-200 dark:border-white/10">
               {(['pt', 'en', 'es'] as Language[]).map((l) => (
                 <button
@@ -128,7 +142,7 @@ function App() {
 
             <Button 
               className="hidden lg:block !px-6 !py-2 !text-[14px] font-semibold tracking-tight"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollTo('contact')}
             >
               {t.nav.button}
             </Button>
@@ -151,7 +165,7 @@ function App() {
                 {t.hero.description}
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button className="px-10 py-4 shadow-xl shadow-amplia-green/20 font-bold text-lg" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>{t.hero.ctaPrimary}</Button>
+                <Button className="px-10 py-4 shadow-xl shadow-amplia-green/20 font-bold text-lg" onClick={() => scrollTo('about')}>{t.hero.ctaPrimary}</Button>
               </div>
             </div>
           </ScrollReveal>
@@ -168,7 +182,9 @@ function App() {
         </div>
       </section>
 
+      <About content={t.about} />
       <Services content={t.services} />
+      <FAQ content={t.faq} />
       <Contact content={t.contact} />
       
       <footer className="py-16 border-t border-gray-100 dark:border-white/5 text-center transition-colors">
@@ -188,9 +204,14 @@ function App() {
             </div>
           </div>
           
-          <p className="max-w-xs md:max-w-none font-medium opacity-60 transition-opacity hover:opacity-100">
-            &copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.
-          </p>
+          <div className="flex flex-col items-center gap-2">
+            <p className="max-w-xs md:max-w-none font-medium opacity-60 transition-opacity hover:opacity-100">
+              &copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.
+            </p>
+            <p className="text-[10px] opacity-40 uppercase tracking-widest font-bold">
+              Lisboa, Portugal • (+351) 91 346 67 49
+            </p>
+          </div>
           
           <div className="flex gap-8 font-bold text-xs uppercase tracking-widest">
             <button onClick={() => setLegalModal('privacy')} className="hover:text-amplia-green transition-colors">{t.legal.privacy}</button>

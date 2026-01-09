@@ -1,13 +1,16 @@
+
 import React from 'react';
 
 interface LogoProps {
   className?: string;
   showText?: boolean;
+  // Added onClick prop to handle click events on the logo, as used in App.tsx
+  onClick?: () => void;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className = "h-10", showText = true }) => {
+export const Logo: React.FC<LogoProps> = ({ className = "h-10", showText = true, onClick }) => {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex items-center gap-3 ${className}`} onClick={onClick}>
       {/* Recreated the triangle/folded ribbon icon from the image */}
       <svg viewBox="0 0 100 60" className="h-full w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 50 L35 15 L50 30 L15 60 Z" fill="#8cc63f" />

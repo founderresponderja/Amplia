@@ -16,6 +16,7 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
 
   useEffect(() => {
     // Detect if the app is being run from a local file, which blocks FormSubmit AJAX
+    // This is the core cause of the "Make sure you open this page through a web server" error.
     if (window.location.protocol === 'file:') {
       setIsLocalFile(true);
     }
@@ -25,9 +26,10 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
     e.preventDefault();
     setErrorMessage(null);
 
-    if (isLocalFile) {
+    // If running from file://, FormSubmit's AJAX endpoint will always reject the request.
+    if (window.location.protocol === 'file:') {
       setStatus(FormStatus.ERROR);
-      setErrorMessage("O envio de mensagens requer um servidor web (http/https). Não funciona ao abrir o ficheiro diretamente.");
+      setErrorMessage("Erro: FormSubmit exige um servidor web (HTTP/HTTPS). Não pode enviar formulários abrindo o ficheiro HTML diretamente.");
       return;
     }
 
@@ -59,14 +61,15 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
         body: JSON.stringify(payload)
       });
 
+      // Attempt to parse response even if it's not 200 OK
       const responseData = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        // Handle specific FormSubmit error about web servers
-        if (response.status === 403 || (responseData.message && responseData.message.includes("web server"))) {
-          throw new Error("O serviço de email exige um servidor web ativo (HTTP/HTTPS).");
+        // FormSubmit sends a 403 or specific message when it detects no web server origin
+        if (response.status === 403 || (responseData.message && responseData.message.toLowerCase().includes("web server"))) {
+          throw new Error("O serviço de email bloqueou o envio porque o site não está num servidor web (HTTP/HTTPS).");
         }
-        throw new Error(responseData.message || "Erro na comunicação com o servidor.");
+        throw new Error(responseData.message || "Erro inesperado do servidor de email.");
       }
       
       const isSuccess = responseData.success === true || responseData.success === "true";
@@ -76,13 +79,14 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
         (e.target as HTMLFormElement).reset();
         setTimeout(() => setStatus(FormStatus.IDLE), 5000);
       } else {
-        throw new Error(responseData.message || "Falha na submissão.");
+        throw new Error(responseData.message || "A submissão falhou no servidor.");
       }
     } catch (error: any) {
-      console.error("Submission error:", error);
+      console.error("Submission error details:", error);
       setStatus(FormStatus.ERROR);
-      setErrorMessage(error.message || "Ocorreu um erro ao enviar a mensagem.");
-      // We don't reset IDLE immediately so the user can read the error
+      setErrorMessage(error.message || "Ocorreu um erro ao processar o seu pedido.");
+      
+      // Auto-clear error after a reasonable time for readability
       setTimeout(() => {
         setStatus(FormStatus.IDLE);
         setErrorMessage(null);
@@ -97,11 +101,17 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {isLocalFile && (
-          <div className="mb-8 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl flex items-center gap-3 text-amber-700 dark:text-amber-300 animate-in fade-in slide-in-from-top-4 duration-500">
-            <Globe className="flex-shrink-0" size={20} />
-            <p className="text-sm font-medium">
-              <strong>Nota:</strong> O formulário está desativado porque o site foi aberto como um ficheiro local. Utilize um servidor (ex: Live Server) para testar o envio.
-            </p>
+          <div className="mb-8 p-5 bg-rose-50 dark:bg-rose-900/20 border-2 border-rose-200 dark:border-rose-800 rounded-[2rem] flex items-center gap-4 text-rose-700 dark:text-rose-300 animate-in fade-in slide-in-from-top-4 duration-700 shadow-lg">
+            <div className="bg-rose-500 text-white p-2 rounded-full flex-shrink-0">
+              <Globe size={24} />
+            </div>
+            <div>
+              <p className="text-sm font-bold uppercase tracking-tight mb-1">Aviso de Compatibilidade</p>
+              <p className="text-xs font-medium opacity-90 leading-relaxed">
+                O site foi aberto via <code className="bg-rose-100 dark:bg-rose-900/40 px-1 rounded">file://</code>. 
+                Para que o formulário de contacto funcione, deve publicar o site ou utilizar um servidor local (como o Live Server do VS Code).
+              </p>
+            </div>
           </div>
         )}
 
@@ -215,11 +225,11 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
               <div className="space-y-4">
                 <Button 
                   type="submit" 
-                  disabled={status === FormStatus.SUBMITTING || isLocalFile}
+                  disabled={status === FormStatus.SUBMITTING}
                   className={`w-full !py-4 flex items-center justify-center gap-3 text-lg font-bold shadow-xl transition-all ${
                     status === FormStatus.SUCCESS ? 'bg-emerald-500 hover:bg-emerald-600 shadow-emerald-500/20' : 
                     status === FormStatus.ERROR ? 'bg-rose-500 hover:bg-rose-600 shadow-rose-500/20' : 
-                    isLocalFile ? 'bg-gray-400 cursor-not-allowed grayscale' : 'shadow-amplia-green/20'
+                    'shadow-amplia-green/20'
                   }`}
                 >
                   {status === FormStatus.SUBMITTING ? (
@@ -243,9 +253,9 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
                 </Button>
 
                 {errorMessage && (
-                  <div className="flex items-center gap-2 text-rose-500 dark:text-rose-400 text-xs font-bold justify-center bg-rose-50 dark:bg-rose-900/20 p-3 rounded-xl animate-in fade-in duration-300">
-                    <AlertCircle size={14} />
-                    <span>{errorMessage}</span>
+                  <div className="flex items-start gap-2 text-rose-500 dark:text-rose-400 text-xs font-bold bg-rose-50 dark:bg-rose-900/20 p-4 rounded-2xl animate-in fade-in zoom-in-95 duration-300">
+                    <AlertCircle size={16} className="mt-0.5 flex-shrink-0" />
+                    <span className="leading-relaxed">{errorMessage}</span>
                   </div>
                 )}
               </div>

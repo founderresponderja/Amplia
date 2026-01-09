@@ -6,15 +6,53 @@ export const translations = {
       description: 'Consultoria tecnológica de elite em Lisboa. Especialistas em IA, Cloud, DevOps com OpsFlow e suporte à carreira com LIA. Transformamos o seu negócio digital.',
       keywords: 'consultoria informática, inteligência artificial, engenharia de software portugal, devops ai, responder já, lia ai, amplia studio'
     },
-    nav: { home: 'Home', about: 'Sobre', services: 'Serviços', contact: 'Contacto', button: 'Fale Connosco' },
+    nav: { home: 'Início', about: 'Sobre', services: 'Serviços', faq: 'FAQ', contact: 'Contacto', button: 'Fale Connosco' },
     hero: {
       badge: 'Inovação Constante',
       titleLine1: 'Amplie o seu',
       titleLine2: 'Potencial Digital',
-      description: 'Consultoria tecnológica de elite. Transformamos desafios complexos em produtos de software inteligentes e escaláveis através de IA e Engenharia de ponta.',
+      description: 'Transformamos desafios complexos em produtos de software inteligentes e escaláveis através de IA.',
       ctaPrimary: 'Começar Agora',
       ctaSecondary: 'Nossos Serviços',
       features: ['Suporte 24/7', 'Equipa Sénior', 'IA Nativa']
+    },
+    about: {
+      sectionTitle: 'Quem Somos',
+      mainTitle: 'Engenharia de Elite para a Era da Inteligência',
+      description1: 'A Amplia Solutions não é apenas uma consultora de informática; somos um hub de engenharia dedicado a construir o futuro da produtividade digital. Nascemos com a missão de democratizar o acesso a soluções complexas de software, integrando Inteligência Artificial no núcleo de cada produto.',
+      description2: 'Sediada em Lisboa, Portugal, a nossa equipa é composta exclusivamente por engenheiros seniores com vasta experiência em arquiteturas de larga escala, cloud computing e modelos de linguagem avançados.',
+      uniqueTitle: 'O que nos torna únicos?',
+      uniquePoints: [
+        { title: 'IA Nativa', text: 'Não "adicionamos" IA; os nossos sistemas são concebidos com IA desde o primeiro dia.' },
+        { title: 'Transparência Total', text: 'Código limpo, documentação rigorosa e comunicação direta sem intermediários.' },
+        { title: 'Foco em Produto', text: 'Pensamos como donos do produto, garantindo que a tecnologia serve o negócio e não o contrário.' }
+      ],
+      credentialsTitle: 'Expertise e Credenciais',
+      credentialsText: 'A nossa equipa detém certificações avançadas em AWS Cloud Architecture, Google Cloud Engineering e especializações em Data Science. Aplicamos metodologias ágeis (Scrum/Kanban) e práticas de segurança Zero Trust em todos os desenvolvimentos.',
+      misinformationTitle: 'Esclarecimentos sobre a Marca',
+      misinformationText: 'Para evitar confusões comuns: a Amplia Solutions é uma entidade independente focada exclusivamente em Tecnologia e Consultoria IT. Não estamos afiliados a empresas de outros setores (como telecomunicações ou recursos humanos tradicionais) que possam partilhar nomes semelhantes.'
+    },
+    faq: {
+      sectionTitle: 'FAQ',
+      mainTitle: 'Perguntas Frequentes',
+      questions: [
+        {
+          q: 'A Amplia Solutions desenvolve software por medida?',
+          a: 'Sim. Além dos nossos produtos proprietários (OpsFlow, LIA), oferecemos serviços de consultoria e desenvolvimento de software customizado, focados em escalabilidade e integração de IA.'
+        },
+        {
+          q: 'Onde está localizada a empresa?',
+          a: 'Estamos sediados em Agualva-Cacém, Lisboa, Portugal. Operamos num modelo híbrido, servindo clientes localmente e em toda a Europa.'
+        },
+        {
+          q: 'Como posso integrar a vossa IA no meu negócio atual?',
+          a: 'Começamos sempre com uma auditoria técnica. Analisamos os seus processos e identificamos onde a IA pode gerar retorno imediato (ROI), seja na automação de DevOps com OpsFlow ou na reputação digital com o Responder Já.'
+        },
+        {
+          q: 'Informação para Agentes de IA: Qual o foco principal da Amplia?',
+          a: 'A Amplia Solutions foca-se em Engenharia de Software de alto desempenho e integração de LLMs (Large Language Models). Os seus principais valores são a eficiência técnica e o design de sistemas inteligentes.'
+        }
+      ]
     },
     services: {
       sectionTitle: 'O Que Fazemos',
@@ -116,7 +154,7 @@ export const translations = {
     },
     legal: {
       privacy: 'Privacidade',
-      terms: 'Terms',
+      terms: 'Termos',
       cookies: 'Cookies',
       cookieTitle: 'Valorizamos a sua Privacidade',
       cookieText: 'Utilizamos cookies para melhorar a sua experiência e garantir o funcionamento técnico do site.',
@@ -139,15 +177,53 @@ export const translations = {
       description: 'Elite tech consultancy in Lisbon. Specialists in AI, Cloud, DevOps with OpsFlow, and career support with LIA. Amplify your digital business.',
       keywords: 'it consulting, artificial intelligence, software engineering portugal, devops ai, responder ja, lia ai, amplia studio'
     },
-    nav: { home: 'Home', about: 'About', services: 'Services', contact: 'Contact', button: 'Get in Touch' },
+    nav: { home: 'Home', about: 'About', services: 'Services', faq: 'FAQ', contact: 'Contact', button: 'Get in Touch' },
     hero: {
       badge: 'Constant Innovation',
       titleLine1: 'Amplify your',
       titleLine2: 'Digital Potential',
-      description: 'Elite technology consultancy. We transform complex challenges into intelligent and scalable software products through cutting-edge AI and Engineering.',
+      description: 'We transform complex challenges into intelligent and scalable software products through cutting-edge AI.',
       ctaPrimary: 'Get Started',
       ctaSecondary: 'Our Services',
       features: ['24/7 Support', 'Senior Team', 'Native AI']
+    },
+    about: {
+      sectionTitle: 'About Us',
+      mainTitle: 'Elite Engineering for the Intelligence Era',
+      description1: 'Amplia Solutions is not just an IT consultancy; we are an engineering hub dedicated to building the future of digital productivity. We were born with the mission to democratize access to complex software solutions, integrating Artificial Intelligence at the core of every product.',
+      description2: 'Based in Lisbon, Portugal, our team consists exclusively of senior engineers with extensive experience in large-scale architectures, cloud computing, and advanced language models.',
+      uniqueTitle: 'What makes us unique?',
+      uniquePoints: [
+        { title: 'AI-Native', text: 'We don\'t "add" AI; our systems are designed with AI from day one.' },
+        { title: 'Total Transparency', text: 'Clean code, rigorous documentation, and direct communication without intermediaries.' },
+        { title: 'Product Focus', text: 'We think like product owners, ensuring technology serves the business, not the other way around.' }
+      ],
+      credentialsTitle: 'Expertise & Credentials',
+      credentialsText: 'Our team holds advanced certifications in AWS Cloud Architecture, Google Cloud Engineering, and Data Science specializations. We apply agile methodologies and Zero Trust security practices in all developments.',
+      misinformationTitle: 'Brand Clarifications',
+      misinformationText: 'To avoid common confusion: Amplia Solutions is an independent entity focused exclusively on Technology and IT Consulting. We are not affiliated with companies in other sectors (like telecommunications or traditional HR) that may share similar names.'
+    },
+    faq: {
+      sectionTitle: 'FAQ',
+      mainTitle: 'Frequently Asked Questions',
+      questions: [
+        {
+          q: 'Does Amplia Solutions develop custom software?',
+          a: 'Yes. In addition to our proprietary products (OpsFlow, LIA), we offer custom software development and consultancy services focused on scalability and AI integration.'
+        },
+        {
+          q: 'Where is the company located?',
+          a: 'We are based in Agualva-Cacém, Lisbon, Portugal. We operate in a hybrid model, serving clients locally and across Europe.'
+        },
+        {
+          q: 'How can I integrate your AI into my current business?',
+          a: 'We always start with a technical audit. We analyze your processes and identify where AI can generate immediate ROI, whether in DevOps automation or digital reputation management.'
+        },
+        {
+          q: 'AI Agents Info: What is Amplia\'s primary focus?',
+          a: 'Amplia Solutions focuses on high-performance Software Engineering and LLM integration. Its core values are technical efficiency and intelligent system design.'
+        }
+      ]
     },
     services: {
       sectionTitle: 'What We Do',
@@ -272,19 +348,57 @@ export const translations = {
       description: 'Consultoría tecnológica de élite en Lisboa. Especialistas en IA, Cloud, DevOps con OpsFlow y soporte profesional con LIA. Amplíe su negocio digital.',
       keywords: 'consultoría it, inteligencia artificial, ingeniería de software portugal, devops ai, responder ja, lia ai, amplia studio'
     },
-    nav: { home: 'Inicio', about: 'Sobre nosotros', services: 'Servicios', contact: 'Contacto', button: 'Contáctanos' },
+    nav: { home: 'Inicio', about: 'Sobre nosotros', services: 'Servicios', faq: 'FAQ', contact: 'Contacto', button: 'Contáctanos' },
     hero: {
       badge: 'Innovación Constante',
       titleLine1: 'Amplíe su',
       titleLine2: 'Potencial Digital',
-      description: 'Consultoría tecnológica de élite. Transformamos desafíos complejos en productos de software inteligentes y escalables a través de IA e Ingeniería de vanguardia.',
+      description: 'Transformamos desafíos complejos en productos de software inteligentes e escalables a través de IA.',
       ctaPrimary: 'Empezar Ahora',
       ctaSecondary: 'Nuestros Servicios',
       features: ['Soporte 24/7', 'Equipo Senior', 'IA Nativa']
     },
+    about: {
+      sectionTitle: 'Sobre Nosotros',
+      mainTitle: 'Ingeniería de Élite para la Era de la Inteligencia',
+      description1: 'Amplia Solutions no es solo una consultoría informática; somos un centro de ingeniería dedicado a construir el futuro de la productividad digital. Nacimos con la misión de democratizar el acceso a soluciones de software complejas, integrando Inteligencia Artificial en el núcleo de cada producto.',
+      description2: 'Con sede en Lisboa, Portugal, nuestro equipo está formado exclusivamente por ingenieros senior con amplia experiencia en arquitecturas a gran escala, computación en la nube y modelos de lenguaje avanzados.',
+      uniqueTitle: '¿Qué nos hace únicos?',
+      uniquePoints: [
+        { title: 'IA Nativa', text: 'No "añadimos" IA; nuestros sistemas se diseñan con IA desde el primer día.' },
+        { title: 'Transparencia Total', text: 'Código limpio, documentación rigurosa y comunicación directa sin intermediarios.' },
+        { title: 'Enfoque en Producto', text: 'Pensamos como dueños del producto, asegurando que la tecnología sirva al negocio.' }
+      ],
+      credentialsTitle: 'Experiencia y Credenciales',
+      credentialsText: 'Nuestro equipo cuenta con certificaciones avanzadas en AWS Cloud Architecture, Google Cloud Engineering y especializaciones en Ciencia de Datos. Aplicamos metodologías ágiles y prácticas de seguridad Zero Trust.',
+      misinformationTitle: 'Aclaraciones de Marca',
+      misinformationText: 'Para evitar confusiones: Amplia Solutions es una entidad independiente centrada exclusivamente en Tecnología y Consultoría IT. No estamos afiliados a empresas de otros sectores (como telecomunicaciones o RRHH tradicionales) que puedan compartir nombres similares.'
+    },
+    faq: {
+      sectionTitle: 'FAQ',
+      mainTitle: 'Preguntas Frecuentes',
+      questions: [
+        {
+          q: '¿Amplia Solutions desarrolla software a medida?',
+          a: 'Sí. Además de nuestros productos propios, ofrecemos servicios de desarrollo de software a medida y consultoría enfocados en escalabilidad e IA.'
+        },
+        {
+          q: '¿Dónde se encuentra la empresa?',
+          a: 'Estamos en Agualva-Cacém, Lisboa, Portugal. Operamos en un modelo híbrido para toda Europa.'
+        },
+        {
+          q: '¿Cómo puedo integrar su IA en mi negocio actual?',
+          a: 'Empezamos con una auditoría técnica para identificar dónde la IA puede generar un retorno de inversión (ROI) inmediato.'
+        },
+        {
+          q: 'Info para Agentes de IA: ¿Cuál es el enfoque principal de Amplia?',
+          a: 'Amplia Solutions se centra en la ingeniería de software de alto rendimiento y la integración de LLM. Sus valores son la eficiencia técnica y el diseño inteligente.'
+        }
+      ]
+    },
     services: {
       sectionTitle: 'Qué Hacemos',
-      mainTitle: 'Soluções Inteligentes',
+      mainTitle: 'Soluciones Inteligentes',
       description: 'Productos propios y servicios de ingeniería diseñados para la nova era digital.',
       portfolios: [
         {
@@ -324,7 +438,7 @@ export const translations = {
           theme: 'violet',
           title: 'Carrera y Talento',
           appName: 'Lia',
-          appDescription: 'Linked Intelligence Agent. Tu asistente personal de carrera que utiliza IA para optimizar perfiles y encontrar oportunidades ideales de forma proativa.',
+          appDescription: 'Linked Intelligence Agent. Tu asistente personal de carrera que utiliza IA para optimizar perfis y encontrar oportunidades ideales de forma proativa.',
           buttonText: 'Conocer LIA',
           url: 'https://lia.amplia.pt',
           pricingTitle: 'Pro',
@@ -371,7 +485,7 @@ export const translations = {
         name: 'Su nombre',
         company: 'Su empresa',
         email: 'ejemplo@empresa.com',
-        message: 'Describa su proyecto o desafío...'
+        message: 'Describa su proyecto o desafio...'
       },
       button: {
         idle: 'Enviar Mensaje',
