@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, ShieldCheck, FileText, Info, X, Linkedin, Instagram, Github } from 'lucide-react';
+import { Sun, Moon, ShieldCheck, FileText, Info, X, Linkedin, Instagram, Github, Menu } from 'lucide-react';
 import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
@@ -36,7 +36,6 @@ const LegalModal = ({ title, content, onClose }: { title: string; content: strin
 
 function App() {
   const [lang, setLang] = useState<Language>(() => {
-    // Detect browser language or default to pt
     const browserLang = navigator.language.split('-')[0];
     if (browserLang === 'en') return 'en';
     if (browserLang === 'es') return 'es';
@@ -47,27 +46,19 @@ function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [showCookieBanner, setShowCookieBanner] = useState(false);
   const [legalModal, setLegalModal] = useState<'privacy' | 'terms' | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const t = translations[lang];
 
-  // Dynamic SEO Metadata Update
   useEffect(() => {
     // @ts-ignore
     const seo = t.seo;
     if (seo) {
       document.title = seo.title;
-      
       const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', seo.description);
-      }
-
+      if (metaDescription) metaDescription.setAttribute('content', seo.description);
       const metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (metaKeywords) {
-        metaKeywords.setAttribute('content', seo.keywords);
-      }
-
-      // Update lang attribute in HTML
+      if (metaKeywords) metaKeywords.setAttribute('content', seo.keywords);
       document.documentElement.lang = lang;
     }
   }, [lang, t]);
@@ -75,13 +66,8 @@ function App() {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    
-    // Cookie acceptance check
     const cookiesAccepted = localStorage.getItem('cookies-accepted');
-    if (!cookiesAccepted) {
-      setTimeout(() => setShowCookieBanner(true), 2000);
-    }
-
+    if (!cookiesAccepted) setTimeout(() => setShowCookieBanner(true), 2000);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -99,11 +85,13 @@ function App() {
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   return (
     <div className="min-h-screen transition-colors duration-300">
-      <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 dark:bg-amplia-dark/80 backdrop-blur-xl py-3 border-b border-gray-100 dark:border-white/5 shadow-sm' : 'bg-transparent py-6'}`}>
+      {/* Navigation */}
+      <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'bg-white/95 dark:bg-amplia-dark/95 backdrop-blur-xl py-3 border-b border-gray-100 dark:border-white/5 shadow-sm' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-12">
             <Logo className="h-8 md:h-10 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
@@ -116,8 +104,8 @@ function App() {
             </div>
           </div>
           
-          <div className="flex items-center gap-4 md:gap-8">
-            <div className="flex items-center bg-gray-100 dark:bg-white/5 rounded-full p-1 border border-gray-200 dark:border-white/10">
+          <div className="flex items-center gap-2 md:gap-8">
+            <div className="hidden sm:flex items-center bg-gray-100 dark:bg-white/5 rounded-full p-1 border border-gray-200 dark:border-white/10">
               {(['pt', 'en', 'es'] as Language[]).map((l) => (
                 <button
                   key={l}
@@ -146,6 +134,54 @@ function App() {
             >
               {t.nav.button}
             </Button>
+
+            {/* Hamburger Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 text-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-xl transition-all"
+              aria-label="Menu"
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        <div className={`lg:hidden fixed inset-x-0 top-[100%] h-screen bg-white dark:bg-amplia-dark transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-y-0 opacity-100 visible' : 'translate-y-10 opacity-0 invisible'}`}>
+          <div className="flex flex-col p-8 space-y-6">
+            <div className="flex justify-center gap-4 mb-8 sm:hidden">
+              {(['pt', 'en', 'es'] as Language[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-4 py-2 rounded-2xl text-xs font-bold transition-all uppercase border ${
+                    lang === l 
+                      ? 'bg-amplia-green text-white border-amplia-green' 
+                      : 'text-gray-500 border-gray-200 dark:border-white/10'
+                  }`}
+                >
+                  {l}
+                </button>
+              ))}
+            </div>
+            
+            <button onClick={() => scrollTo('about')} className="text-3xl font-max font-bold dark:text-white text-left border-b border-gray-100 dark:border-white/5 pb-4">{t.nav.about}</button>
+            <button onClick={() => scrollTo('services')} className="text-3xl font-max font-bold dark:text-white text-left border-b border-gray-100 dark:border-white/5 pb-4">{t.nav.services}</button>
+            <button onClick={() => scrollTo('faq')} className="text-3xl font-max font-bold dark:text-white text-left border-b border-gray-100 dark:border-white/5 pb-4">{t.nav.faq}</button>
+            <button onClick={() => scrollTo('contact')} className="text-3xl font-max font-bold dark:text-white text-left border-b border-gray-100 dark:border-white/5 pb-4">{t.nav.contact}</button>
+            
+            <Button 
+              className="w-full !py-6 !text-lg font-bold mt-8"
+              onClick={() => scrollTo('contact')}
+            >
+              {t.nav.button}
+            </Button>
+
+            <div className="flex justify-center gap-8 pt-12 text-gray-400">
+               <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Linkedin size={24} /></a>
+               <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Instagram size={24} /></a>
+               <a href="https://github.com/amplia-solutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Github size={24} /></a>
+            </div>
           </div>
         </div>
       </nav>
@@ -157,7 +193,7 @@ function App() {
           <ScrollReveal>
             <div className="space-y-8">
               <span className="px-4 py-2 bg-amplia-green/10 text-amplia-green rounded-full text-[11px] font-bold uppercase tracking-[0.2em]">{t.hero.badge}</span>
-              <h1 className="text-6xl md:text-8xl font-max leading-[1.1] dark:text-white tracking-tight">
+              <h1 className="text-5xl md:text-8xl font-max leading-[1.1] dark:text-white tracking-tight">
                 {t.hero.titleLine1} <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amplia-green to-emerald-400 font-bold">{t.hero.titleLine2}</span>
               </h1>
@@ -175,7 +211,7 @@ function App() {
               <img 
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80" 
                 className="rounded-[40px] w-full h-[500px] object-cover" 
-                alt="Amplia Solutions - Consultoria de Engenharia de Software e IA" 
+                alt="Amplia Solutions" 
               />
             </div>
           </div>
@@ -192,13 +228,13 @@ function App() {
           <div className="flex flex-col items-center md:items-start gap-4">
             <Logo className="h-6 opacity-40 hover:opacity-100 transition-all cursor-pointer" showText={true} />
             <div className="flex gap-5">
-              <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="LinkedIn Amplia Solutions">
+              <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="Instagram Amplia Solutions">
+              <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="https://github.com/amplia-solutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="GitHub Amplia Solutions">
+              <a href="https://github.com/amplia-solutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="GitHub">
                 <Github size={20} />
               </a>
             </div>
@@ -220,7 +256,6 @@ function App() {
         </div>
       </footer>
 
-      {/* Cookie Banner */}
       {showCookieBanner && (
         <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:w-[450px] z-[120] animate-fade-in-up">
           <div className="glass dark:bg-amplia-dark/95 p-6 rounded-3xl border border-amplia-green/20 shadow-2xl flex flex-col gap-4">
@@ -245,7 +280,6 @@ function App() {
         </div>
       )}
 
-      {/* Legal Modals */}
       {legalModal === 'privacy' && (
         <LegalModal 
           title={t.legal.privacyPolicyTitle} 
