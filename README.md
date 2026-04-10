@@ -15,6 +15,13 @@ View your app in AI Studio: https://ai.studio/apps/drive/15CqTbw8RN3KBF1-SgEyAoC
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Set the `GEMINI_API_KEY` in your environment (for `/api/chat` server function)
+3. Optional: set `VITE_CONTACT_ENDPOINT` in `.env.local` if you need a custom contact endpoint
+4. Run the app:
    `npm run dev`
+
+## Deploy on Vercel
+
+1. Import this repository in Vercel.
+2. Configure the environment variable `GEMINI_API_KEY` in Vercel project settings.
+3. Deploy using defaults (`npm run build`, output `dist`).

@@ -13,6 +13,10 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
   const [isLocalFile, setIsLocalFile] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const t = content;
+  const contactEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT || "https://formsubmit.co/ajax/ampliasolutions.pt@gmail.com";
+
+  const sanitizeText = (value: string, max = 1000) => value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, max);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   useEffect(() => {
     // Detect if the app is being run from a local file, which blocks FormSubmit AJAX
@@ -38,10 +42,24 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
+    const name = sanitizeText(String(data.name || ''), 120);
+    const company = sanitizeText(String(data.company || ''), 120);
+    const email = sanitizeText(String(data.email || ''), 160);
+    const message = sanitizeText(String(data.message || ''), 3000);
+
+    if (name.length < 2 || message.length < 10 || !emailRegex.test(email)) {
+      setStatus(FormStatus.ERROR);
+      setErrorMessage("Por favor valida os dados: nome, email e mensagem.");
+      return;
+    }
+
     const payload: any = {
-      ...data,
-      _subject: `Novo contacto via Site - ${data.name}`,
-      _replyto: data.email,
+      name,
+      company,
+      email,
+      message,
+      _subject: `Novo contacto via Site - ${name}`,
+      _replyto: email,
       _template: "table",
       _captcha: "false"
     };
@@ -51,7 +69,7 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
     }
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/ampliasolutions.pt@gmail.com", {
+      const response = await fetch(contactEndpoint, {
         method: "POST",
         mode: "cors",
         headers: { 

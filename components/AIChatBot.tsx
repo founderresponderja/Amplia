@@ -1,7 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Bot, Loader2, Sparkles } from 'lucide-react';
-import { GoogleGenAI, Type } from '@google/genai';
+import { MessageSquare, X, Send, Bot, Sparkles } from 'lucide-react';
 import { Language } from '../types';
 
 interface Message {
@@ -45,58 +44,22 @@ export const AIChatBot = ({ t, lang }: { t: any; lang: Language }) => {
     setIsTyping(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: userMsg,
-        config: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              text: { 
-                type: Type.STRING, 
-                description: "The main textual response to the user." 
-              },
-              options: { 
-                type: Type.ARRAY, 
-                items: { type: Type.STRING },
-                description: "A list of 2-3 short labels for buttons that guide the user to next steps or related info."
-              }
-            },
-            required: ["text"]
-          },
-          systemInstruction: `You are the Expert Sales & Tech Lead at Amplia Solutions (Lisbon).
-          Language: Respond ONLY in ${lang === 'pt' ? 'Portuguese' : lang === 'es' ? 'Spanish' : 'English'}.
-          
-          Persona: 
-          - Highly technical, professional, but conversion-focused. 
-          - Goal: Help users understand how Amplia's products solve their business pain points.
-          
-          Knowledge Base & Strategy:
-          1. OpsFlow AI: Focus on CI/CD automation, cost reduction in cloud. (Price: €9.99/mo).
-          2. Responder Já: Focus on Local SEO impact and automatic digital reputation. (Price: €19.99/mo).
-          3. LIA: Focus on talent retention and proactive recruitment using Linked Intelligence. (Price: €14.99/mo).
-          4. Amplia Studio: Focus on rapid prototyping and Gemini integration. (Currently Free/Beta).
-          
-          Response Format:
-          - Always provide a concise and helpful text.
-          - ALWAYS provide 2-3 interactive 'options' (buttons) that make sense as next steps.
-          - If the user is just browsing, offer to show a specific product.
-          - If the user wants to buy, guide them to 'Contact' or the specific product URL.`,
-        },
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMsg, lang }),
       });
-      
-      try {
-        const jsonResponse = JSON.parse(response.text);
-        setMessages(prev => [...prev, { 
-          role: 'bot', 
-          text: jsonResponse.text, 
-          options: jsonResponse.options || [] 
-        }]);
-      } catch (e) {
-        setMessages(prev => [...prev, { role: 'bot', text: response.text || t.error }]);
+
+      if (!response.ok) {
+        throw new Error('AI endpoint error');
       }
+
+      const data = await response.json();
+      setMessages(prev => [...prev, {
+        role: 'bot',
+        text: typeof data.text === 'string' ? data.text : t.error,
+        options: Array.isArray(data.options) ? data.options : [],
+      }]);
     } catch (err) {
       setMessages(prev => [...prev, { role: 'bot', text: t.error }]);
     } finally {

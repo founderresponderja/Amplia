@@ -50,11 +50,6 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <script>
       (function() {
         try {
@@ -82,10 +77,6 @@
                 gray: '#6b7280'
               }
             },
-            fontFamily: {
-              'sans': ['Max-Regular', 'Outfit', 'sans-serif'],
-              'max': ['Max-Regular', 'Outfit', 'sans-serif'],
-            },
             animation: {
               'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
               'bounce-slow': 'bounce 3s infinite',
@@ -101,26 +92,6 @@
       }
     </script>
     <style>
-      @font-face {
-        font-family: 'Max-Regular';
-        src: local('Outfit'), local('Outfit-Regular');
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: 'Max-Regular';
-        src: local('Outfit Bold'), local('Outfit-Bold');
-        font-weight: 700;
-      }
-      @font-face {
-        font-family: 'Max-Regular';
-        src: local('Outfit Light'), local('Outfit-Light');
-        font-weight: 300;
-      }
-      
-      * {
-        font-family: 'Max-Regular', 'Outfit', sans-serif !important;
-      }
-
       body {
         transition: background-color 0.3s ease, color 0.3s ease;
       }
@@ -133,20 +104,9 @@
         background: rgba(15, 17, 21, 0.6);
       }
     </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@19.0.0",
-        "react/": "https://esm.sh/react@19.0.0/",
-        "react-dom": "https://esm.sh/react-dom@19.0.0",
-        "react-dom/": "https://esm.sh/react-dom@19.0.0/",
-        "@google/genai": "https://esm.sh/@google/genai",
-        "lucide-react": "https://esm.sh/lucide-react@0.460.0"
-      }
-    }
-    </script>
   </head>
   <body class="bg-white dark:bg-amplia-dark text-gray-900 dark:text-gray-100">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

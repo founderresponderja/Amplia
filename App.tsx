@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { Sun, Moon, ShieldCheck, FileText, Info, X, Linkedin, Instagram, Github, Menu } from 'lucide-react';
 import { Logo } from './components/Logo';
 import { Button } from './components/Button';
@@ -7,10 +7,13 @@ import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { About } from './components/About';
 import { FAQ } from './components/FAQ';
-import { AIChatBot } from './components/AIChatBot';
 import { translations } from './translations';
 import { ScrollReveal } from './components/ScrollReveal';
 import { Language } from './types';
+
+const AIChatBot = lazy(() =>
+  import('./components/AIChatBot').then((mod) => ({ default: mod.AIChatBot }))
+);
 
 // Legal Modal Component
 const LegalModal = ({ title, content, onClose }: { title: string; content: string; onClose: () => void }) => (
@@ -211,7 +214,9 @@ function App() {
               <img 
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80" 
                 className="rounded-[40px] w-full h-[500px] object-cover" 
-                alt="Amplia Solutions" 
+                alt="Amplia Solutions"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -295,7 +300,9 @@ function App() {
         />
       )}
 
-      <AIChatBot t={t.aiBot} lang={lang} />
+      <Suspense fallback={null}>
+        <AIChatBot t={t.aiBot} lang={lang} />
+      </Suspense>
     </div>
   );
 }
