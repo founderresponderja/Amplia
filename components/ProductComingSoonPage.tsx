@@ -23,27 +23,60 @@ export const ProductComingSoonPage: React.FC<Props> = ({
 }) => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = `${title} | Amplia Solutions`;
   }, [title]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = email.trim();
     if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) return;
-    try {
-      const key = `waitlist-${waitlistKey}`;
-      const prev = localStorage.getItem(key);
-      const list = prev ? JSON.parse(prev) : [];
-      if (Array.isArray(list) && !list.includes(trimmed)) list.push(trimmed);
-      localStorage.setItem(key, JSON.stringify(Array.isArray(list) ? list : [trimmed]));
-    } catch {
-      localStorage.setItem(`waitlist-${waitlistKey}-last`, trimmed);
+
+    if (window.location.protocol === 'file:') {
+      setSubmitError('Publica o site ou usa um servidor local (HTTP) para enviar o email.');
+      return;
     }
-    setSubmitted(true);
-    setEmail('');
+
+    setSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          email: trimmed,
+          productKey: waitlistKey,
+          productName: title,
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(typeof data.error === 'string' ? data.error : 'Não foi possível guardar o pedido.');
+      }
+
+      try {
+        const key = `waitlist-${waitlistKey}`;
+        const prev = localStorage.getItem(key);
+        const list = prev ? JSON.parse(prev) : [];
+        if (Array.isArray(list) && !list.includes(trimmed)) list.push(trimmed);
+        localStorage.setItem(key, JSON.stringify(Array.isArray(list) ? list : [trimmed]));
+      } catch {
+        localStorage.setItem(`waitlist-${waitlistKey}-last`, trimmed);
+      }
+
+      setSubmitError(null);
+      setSubmitted(true);
+      setEmail('');
+    } catch (err: unknown) {
+      setSubmitError(err instanceof Error ? err.message : 'Erro ao enviar.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -119,11 +152,17 @@ export const ProductComingSoonPage: React.FC<Props> = ({
               </div>
               <Button
                 type="submit"
-                className="!rounded-2xl !border-0 !bg-[#6BBF3E] !px-8 hover:!bg-[#5aad35] focus:!ring-[#6BBF3E] sm:mb-0"
+                disabled={submitting}
+                className="!rounded-2xl !border-0 !bg-[#6BBF3E] !px-8 hover:!bg-[#5aad35] focus:!ring-[#6BBF3E] sm:mb-0 disabled:opacity-60"
               >
-                Subscrever
+                {submitting ? 'A enviar…' : 'Subscrever'}
               </Button>
             </form>
+          )}
+          {submitError && (
+            <p className="mt-4 text-sm text-rose-400" role="alert">
+              {submitError}
+            </p>
           )}
         </section>
       </main>

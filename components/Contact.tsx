@@ -13,7 +13,7 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
   const [isLocalFile, setIsLocalFile] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const t = content;
-  const contactEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT || "https://formsubmit.co/ajax/ampliasolutions.pt@gmail.com";
+  const contactEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT || '/api/contact';
 
   const sanitizeText = (value: string, max = 1000) => value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, max);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

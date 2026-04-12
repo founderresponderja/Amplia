@@ -1,4 +1,5 @@
 import { GoogleGenAI, Type } from '@google/genai';
+import { sendChatbotLogEmail } from './lib/resend-mail';
 
 type ChatBody = {
   message?: string;
@@ -114,8 +115,16 @@ Language: Respond ONLY in ${LANGUAGE_MAP[lang]}.
       parsed = { text: rawText || 'Ocorreu um erro ao gerar resposta.', options: [] };
     }
 
+    const replyText =
+      typeof parsed.text === 'string' ? parsed.text : 'Ocorreu um erro ao gerar resposta.';
+
+    void sendChatbotLogEmail({
+      userMessage: message,
+      assistantReply: replyText,
+    }).catch((mailErr) => console.error('[api/chat] chatbot email log failed', mailErr));
+
     res.status(200).json({
-      text: typeof parsed.text === 'string' ? parsed.text : 'Ocorreu um erro ao gerar resposta.',
+      text: replyText,
       options: Array.isArray(parsed.options) ? parsed.options.slice(0, 3) : [],
     });
   } catch (err) {
