@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { ExternalLink, Check, Share2, Rocket } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
 import { ScrollReveal } from './ScrollReveal';
-import { Logo as BrandLogo } from './Logo';
 
 export const Services = ({ content }: { content: any }) => {
+  const navigate = useNavigate();
   const renderLogo = (id: string) => {
     const logos: any = {
       opsflow: (
@@ -59,17 +60,26 @@ export const Services = ({ content }: { content: any }) => {
     }
   };
 
+  const shareUrlFor = (p: any) =>
+    p.url.startsWith('/') ? `${window.location.origin}${p.url}` : p.url;
+
   const handleShare = (p: any) => {
+    const url = shareUrlFor(p);
     if (navigator.share) {
       navigator.share({
         title: p.appName,
         text: p.appDescription,
-        url: p.url,
+        url,
       }).catch(console.error);
     } else {
-      navigator.clipboard.writeText(p.url);
+      navigator.clipboard.writeText(url);
       alert('Link copiado para a área de transferência!');
     }
+  };
+
+  const openPrimary = (p: any) => {
+    if (p.url.startsWith('/')) navigate(p.url);
+    else window.open(p.url, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -88,18 +98,14 @@ export const Services = ({ content }: { content: any }) => {
                   <div className="flex items-center gap-4 mb-8">
                     {renderLogo(p.id)}
                     <h4 className="text-3xl font-max text-gray-900 dark:text-white">
-                      {p.id === 'homestudio' ? (
-                        <>
-                          amplia <span className="text-cyan-500 dark:text-cyan-400 uppercase tracking-widest font-bold">Studio</span>
-                        </>
-                      ) : p.appName}
+                      {p.appName}
                     </h4>
                   </div>
                   <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed whitespace-pre-line font-normal">{p.appDescription}</p>
                   <div className="flex gap-4">
                     <Button 
                       className="flex items-center gap-2"
-                      onClick={() => window.open(p.url, '_blank')}
+                      onClick={() => openPrimary(p)}
                     >
                       {p.buttonText} <ExternalLink size={18} />
                     </Button>
