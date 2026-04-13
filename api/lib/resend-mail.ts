@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 
 /** Must be a verified sender in Resend (domain or single sender). Override via env if needed. */
 function getFrom(): string {
-  return process.env.RESEND_FROM?.trim() || 'noreply@ampliasolutions.pt';
+  return process.env.RESEND_FROM?.trim() || 'Amplia Solutions <onboarding@resend.dev>';
 }
 
 function getTo(): string {
