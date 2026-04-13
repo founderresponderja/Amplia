@@ -1,6 +1,6 @@
-import { GoogleGenAI, Type } from '@google/genai';
-import { parseJsonBody } from './lib/parse-body';
-import { sendChatbotLogEmail } from './lib/resend-mail';
+﻿import { GoogleGenAI, Type } from '@google/genai';
+import { parseJsonBody } from './lib/parse-body.js';
+import { sendChatbotLogEmail } from './lib/resend-mail.js';
 
 type ChatBody = {
   message?: string;
@@ -124,3 +124,4 @@ Language: Respond ONLY in ${LANGUAGE_MAP[lang]}.
     res.status(502).json({ error: 'AI service unavailable' });
   }
 }
+

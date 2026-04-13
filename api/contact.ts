@@ -1,6 +1,6 @@
-import { assertSameOrigin } from './lib/origin';
-import { parseJsonBody } from './lib/parse-body';
-import { sendContactEmail } from './lib/resend-mail';
+﻿import { assertSameOrigin } from './lib/origin.js';
+import { parseJsonBody } from './lib/parse-body.js';
+import { sendContactEmail } from './lib/resend-mail.js';
 
 function sanitizeText(value: string, max: number) {
   return value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, max);
@@ -57,3 +57,4 @@ export default async function handler(req: { method?: string; body?: unknown; he
 
   res.status(200).json({ success: true });
 }
+

@@ -1,6 +1,6 @@
-import { assertSameOrigin } from './lib/origin';
-import { parseJsonBody } from './lib/parse-body';
-import { sendProductNotifyEmail } from './lib/resend-mail';
+﻿import { assertSameOrigin } from './lib/origin.js';
+import { parseJsonBody } from './lib/parse-body.js';
+import { sendProductNotifyEmail } from './lib/resend-mail.js';
 
 const ALLOWED_KEYS = new Set(['lia', 'homestudio', 'opsflow']);
 
@@ -42,3 +42,4 @@ export default async function handler(req: { method?: string; body?: unknown; he
 
   res.status(200).json({ success: true });
 }
+
