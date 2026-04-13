@@ -87,6 +87,36 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           paragraphs: ['Tem o direito de apresentar reclamacao junto da CNPD - Comissao Nacional de Protecao de Dados.'],
           link: { label: 'www.cnpd.pt', href: 'https://www.cnpd.pt' },
         },
+        {
+          heading: '9. Operacoes de recolha efetivamente realizadas nesta aplicacao',
+          bullets: [
+            'Formulario de contacto: nome, empresa (opcional), email e mensagem.',
+            'Formulario "Avisa-me quando lancar": email e produto de interesse.',
+            'Chatbot: mensagem do utilizador e resposta da IA (registo tecnico e envio por email operacional).',
+          ],
+        },
+        {
+          heading: '10. Subprocessadores e terceiros',
+          bullets: [
+            'Resend: envio de emails transacionais e notificacoes.',
+            'Google Gemini API: geracao de respostas de IA no chatbot.',
+            'Vercel: alojamento e execucao de funcoes serverless.',
+            'Stripe: processamento de pagamentos (quando aplicavel).',
+            'Clerk: autenticacao para produtos especificos fora deste website institucional (ex.: Responder Ja).',
+          ],
+        },
+        {
+          heading: '11. Menores',
+          paragraphs: [
+            'Os servicos nao sao dirigidos a menores de 16 anos. Se tiver conhecimento de recolha de dados de menor sem autorizacao valida, contacte-nos para eliminacao imediata.',
+          ],
+        },
+        {
+          heading: '12. Exercicios de direitos e apagamento',
+          paragraphs: [
+            'Pedidos de acesso, apagamento, oposicao e portabilidade podem ser enviados para ampliasolutions.pt@gmail.com. Responderemos dentro dos prazos legais aplicaveis.',
+          ],
+        },
       ],
     },
     terms: {
@@ -140,6 +170,12 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           paragraphs: ['Em caso de litigio de consumo, pode recorrer ao Centro de Arbitragem de Conflitos de Consumo de Lisboa.'],
           link: { label: 'www.centroarbitragemlisboa.pt', href: 'https://www.centroarbitragemlisboa.pt' },
         },
+        {
+          heading: '9. Pagamentos e dados de cartao',
+          paragraphs: [
+            'Os pagamentos sao processados pelo Stripe. A Amplia nao armazena numeros completos de cartao nem codigos de seguranca dos utilizadores.',
+          ],
+        },
       ],
     },
     cookies: {
@@ -175,6 +211,19 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           heading: '5. Conformidade legal',
           paragraphs: [
             'A utilizacao de cookies segue a ePrivacy Directive e o RGPD/GDPR, incluindo recolha de consentimento para categorias nao essenciais.',
+          ],
+        },
+        {
+          heading: '6. LocalStorage e preferencias guardadas',
+          bullets: [
+            'cookie-preference: guarda a escolha de consentimento (essenciais vs todos).',
+            'amplia-language: guarda a preferencia de idioma (PT/EN/ES).',
+            'theme: guarda modo visual claro/escuro.',
+            'waitlist-*: pode guardar localmente email submetido para evitar duplicacoes no dispositivo do utilizador.',
+          ],
+          paragraphs: [
+            'O banner aparece na primeira visita (quando nao existe preferencia) e regista a escolha do utilizador.',
+            'Atualmente apenas funcionalidades essenciais sao necessarias para operacao base; categorias opcionais sao tratadas mediante consentimento.',
           ],
         },
       ],
@@ -251,6 +300,36 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           paragraphs: ['You may lodge a complaint with CNPD - Portuguese Data Protection Authority.'],
           link: { label: 'www.cnpd.pt', href: 'https://www.cnpd.pt' },
         },
+        {
+          heading: '9. Data collection operations currently performed in this app',
+          bullets: [
+            'Contact form: name, company (optional), email, and message.',
+            '"Notify me at launch" form: email and selected product.',
+            'Chatbot: user message and AI reply (technical logging and operational email notification).',
+          ],
+        },
+        {
+          heading: '10. Third-party processors',
+          bullets: [
+            'Resend: transactional and notification email delivery.',
+            'Google Gemini API: AI response generation for chatbot.',
+            'Vercel: hosting and serverless functions runtime.',
+            'Stripe: payment processing (where applicable).',
+            'Clerk: authentication provider for specific products outside this institutional website (e.g., Responder Ja).',
+          ],
+        },
+        {
+          heading: '11. Minors',
+          paragraphs: [
+            'Services are not intended for users under 16 years old. If you believe a minor provided data without valid authorization, contact us for immediate deletion.',
+          ],
+        },
+        {
+          heading: '12. Rights requests and erasure',
+          paragraphs: [
+            'Requests for access, erasure, objection, and portability can be sent to ampliasolutions.pt@gmail.com. We will respond within applicable legal deadlines.',
+          ],
+        },
       ],
     },
     terms: {
@@ -304,6 +383,12 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           paragraphs: ['For consumer disputes, you may use the Lisbon Consumer Arbitration Centre.'],
           link: { label: 'www.centroarbitragemlisboa.pt', href: 'https://www.centroarbitragemlisboa.pt' },
         },
+        {
+          heading: '9. Payments and card data',
+          paragraphs: [
+            'Payments are processed by Stripe. Amplia does not store full card numbers or card security codes.',
+          ],
+        },
       ],
     },
     cookies: {
@@ -339,6 +424,19 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           heading: '5. Legal compliance',
           paragraphs: [
             'Cookie usage complies with the ePrivacy Directive and GDPR, including consent collection for non-essential categories.',
+          ],
+        },
+        {
+          heading: '6. LocalStorage and stored preferences',
+          bullets: [
+            'cookie-preference: stores consent choice (essential vs all).',
+            'amplia-language: stores language preference (PT/EN/ES).',
+            'theme: stores light/dark theme preference.',
+            'waitlist-*: may locally store submitted waitlist email to avoid duplicates on user device.',
+          ],
+          paragraphs: [
+            'The consent banner appears on first visit (when no preference exists) and records the user decision.',
+            'At this time, only essential functionality is required for core operation; optional categories are handled through consent.',
           ],
         },
       ],
@@ -415,6 +513,36 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           paragraphs: ['Puede presentar una reclamacion ante la CNPD - autoridad portuguesa de proteccion de datos.'],
           link: { label: 'www.cnpd.pt', href: 'https://www.cnpd.pt' },
         },
+        {
+          heading: '9. Operaciones de recogida realizadas actualmente en esta aplicacion',
+          bullets: [
+            'Formulario de contacto: nombre, empresa (opcional), email y mensaje.',
+            'Formulario "Avisame cuando se lance": email y producto seleccionado.',
+            'Chatbot: mensaje del usuario y respuesta de IA (registro tecnico y envio operativo por email).',
+          ],
+        },
+        {
+          heading: '10. Subencargados y terceros',
+          bullets: [
+            'Resend: envio de emails transaccionales y notificaciones.',
+            'Google Gemini API: generacion de respuestas de IA en el chatbot.',
+            'Vercel: alojamiento y ejecucion de funciones serverless.',
+            'Stripe: procesamiento de pagos (cuando corresponda).',
+            'Clerk: autenticacion para productos especificos fuera de este sitio institucional (por ejemplo, Responder Ja).',
+          ],
+        },
+        {
+          heading: '11. Menores',
+          paragraphs: [
+            'Los servicios no estan dirigidos a menores de 16 anos. Si detecta que un menor facilito datos sin autorizacion valida, contacte para eliminacion inmediata.',
+          ],
+        },
+        {
+          heading: '12. Solicitudes de derechos y supresion',
+          paragraphs: [
+            'Las solicitudes de acceso, supresion, oposicion y portabilidad pueden enviarse a ampliasolutions.pt@gmail.com. Responderemos dentro de los plazos legales aplicables.',
+          ],
+        },
       ],
     },
     terms: {
@@ -468,6 +596,12 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           paragraphs: ['En caso de conflicto de consumo, puede acudir al Centro de Arbitraje de Consumo de Lisboa.'],
           link: { label: 'www.centroarbitragemlisboa.pt', href: 'https://www.centroarbitragemlisboa.pt' },
         },
+        {
+          heading: '9. Pagos y datos de tarjeta',
+          paragraphs: [
+            'Los pagos se procesan mediante Stripe. Amplia no almacena numeros completos de tarjeta ni codigos de seguridad.',
+          ],
+        },
       ],
     },
     cookies: {
@@ -503,6 +637,19 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           heading: '5. Cumplimiento legal',
           paragraphs: [
             'El uso de cookies cumple la ePrivacy Directive y el RGPD/GDPR, incluyendo obtencion de consentimiento para categorias no esenciales.',
+          ],
+        },
+        {
+          heading: '6. LocalStorage y preferencias guardadas',
+          bullets: [
+            'cookie-preference: guarda la eleccion de consentimiento (esenciales vs todas).',
+            'amplia-language: guarda la preferencia de idioma (PT/EN/ES).',
+            'theme: guarda preferencia de tema claro/oscuro.',
+            'waitlist-*: puede guardar localmente el email enviado para evitar duplicados en el dispositivo del usuario.',
+          ],
+          paragraphs: [
+            'El banner aparece en la primera visita (si no existe preferencia) y registra la decision del usuario.',
+            'Actualmente solo la funcionalidad esencial es necesaria para el funcionamiento base; las categorias opcionales se gestionan mediante consentimiento.',
           ],
         },
       ],

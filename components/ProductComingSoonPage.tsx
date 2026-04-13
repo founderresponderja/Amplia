@@ -22,6 +22,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
   waitlistKey,
 }) => {
   const [email, setEmail] = useState('');
+  const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -34,7 +35,10 @@ export const ProductComingSoonPage: React.FC<Props> = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = email.trim();
-    if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) return;
+    if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed) || !consent) {
+      setSubmitError('Confirma o teu consentimento e valida o email.');
+      return;
+    }
 
     if (window.location.protocol === 'file:') {
       setSubmitError('Publica o site ou usa um servidor local (HTTP) para enviar o email.');
@@ -133,31 +137,49 @@ export const ProductComingSoonPage: React.FC<Props> = ({
           {submitted ? (
             <p className="text-gray-300">Obrigado! Vamos avisar-te quando estiver disponível.</p>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:flex-row sm:items-end">
-              <div className="flex-1">
-                <label htmlFor="waitlist-email" className="mb-2 block text-sm text-gray-500">
-                  Email
-                </label>
+            <>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:flex-row sm:items-end">
+                <div className="flex-1">
+                  <label htmlFor="waitlist-email" className="mb-2 block text-sm text-gray-500">
+                    Email
+                  </label>
+                  <input
+                    id="waitlist-email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="nome@email.com"
+                    className="w-full rounded-2xl border border-white/15 bg-[#0c0d10] px-5 py-3.5 text-gray-100 placeholder:text-gray-600 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6BBF3E]"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  disabled={submitting}
+                  className="!rounded-2xl !border-0 !bg-[#6BBF3E] !px-8 hover:!bg-[#5aad35] focus:!ring-[#6BBF3E] sm:mb-0 disabled:opacity-60"
+                >
+                  {submitting ? 'A enviar…' : 'Subscrever'}
+                </Button>
+              </form>
+              <label className="mt-4 flex items-start gap-2 text-xs text-gray-400">
                 <input
-                  id="waitlist-email"
-                  type="email"
-                  name="email"
-                  autoComplete="email"
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-0.5 accent-[#6BBF3E]"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="nome@email.com"
-                  className="w-full rounded-2xl border border-white/15 bg-[#0c0d10] px-5 py-3.5 text-gray-100 placeholder:text-gray-600 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6BBF3E]"
                 />
-              </div>
-              <Button
-                type="submit"
-                disabled={submitting}
-                className="!rounded-2xl !border-0 !bg-[#6BBF3E] !px-8 hover:!bg-[#5aad35] focus:!ring-[#6BBF3E] sm:mb-0 disabled:opacity-60"
-              >
-                {submitting ? 'A enviar…' : 'Subscrever'}
-              </Button>
-            </form>
+                <span>
+                  Aceito o tratamento do meu email para notificacoes de lancamento, conforme a{' '}
+                  <Link to="/privacidade" className="text-[#6BBF3E] hover:underline">
+                    Politica de Privacidade
+                  </Link>
+                  .
+                </span>
+              </label>
+            </>
           )}
           {submitError && (
             <p className="mt-4 text-sm text-rose-400" role="alert">
