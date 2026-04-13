@@ -2,7 +2,8 @@
 import { Link } from 'react-router-dom';
 import { Sun, Moon } from 'lucide-react';
 import { Logo } from './components/Logo';
-import { detectAppLanguage, persistAppLanguage } from './language';
+import { canPersistFunctionalPreferences } from './cookiePreference';
+import { detectAppLanguage, persistAppLanguage, readAppLanguage } from './language';
 import { legalTranslations } from './legalTranslations';
 import { Language } from './types';
 
@@ -25,11 +26,22 @@ function LegalLayout({ pageKey }: LegalLayoutProps) {
     window.scrollTo(0, 0);
   }, [lang, t.title]);
 
+  useEffect(() => {
+    const syncFromConsent = () => {
+      setLang(readAppLanguage());
+      setTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    };
+    window.addEventListener('amplia-cookie-consent-updated', syncFromConsent);
+    return () => window.removeEventListener('amplia-cookie-consent-updated', syncFromConsent);
+  }, []);
+
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
     document.documentElement.classList.toggle('dark', next === 'dark');
-    localStorage.setItem('theme', next);
+    if (canPersistFunctionalPreferences()) {
+      localStorage.setItem('theme', next);
+    }
   };
 
   return (

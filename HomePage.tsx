@@ -12,7 +12,8 @@ import { WhoWeAre } from './components/WhoWeAre';
 import { translations } from './translations';
 import { ScrollReveal } from './components/ScrollReveal';
 import { Language } from './types';
-import { detectAppLanguage, persistAppLanguage } from './language';
+import { canPersistFunctionalPreferences } from './cookiePreference';
+import { detectAppLanguage, persistAppLanguage, readAppLanguage } from './language';
 
 const AIChatBot = lazy(() =>
   import('./components/AIChatBot').then((mod) => ({ default: mod.AIChatBot }))
@@ -50,11 +51,22 @@ export function HomePage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const syncFromConsent = () => {
+      setLang(readAppLanguage());
+      setTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    };
+    window.addEventListener('amplia-cookie-consent-updated', syncFromConsent);
+    return () => window.removeEventListener('amplia-cookie-consent-updated', syncFromConsent);
+  }, []);
+
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', newTheme);
+    if (canPersistFunctionalPreferences()) {
+      localStorage.setItem('theme', newTheme);
+    }
   };
 
   const scrollTo = (id: string) => {

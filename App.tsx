@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { analyticsCookiesAllowed } from './cookiePreference';
 import { HomePage } from './HomePage';
 import { ProductComingSoonPage } from './components/ProductComingSoonPage';
 import { CookieConsentBanner } from './components/CookieConsentBanner';
 import { CookiesPage, PrivacyPage, TermsPage } from './LegalPages';
 import { PRODUCT_SCREENSHOTS } from './productPages';
+
+function VercelAnalyticsIfConsented() {
+  const [on, setOn] = useState(() => analyticsCookiesAllowed());
+  useEffect(() => {
+    const sync = () => setOn(analyticsCookiesAllowed());
+    window.addEventListener('amplia-cookie-consent-updated', sync);
+    return () => window.removeEventListener('amplia-cookie-consent-updated', sync);
+  }, []);
+  return on ? <Analytics /> : null;
+}
 
 function App() {
   return (
@@ -53,7 +64,7 @@ function App() {
         />
       </Routes>
       <CookieConsentBanner />
-      <Analytics />
+      <VercelAnalyticsIfConsented />
     </BrowserRouter>
   );
 }

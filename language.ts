@@ -1,4 +1,6 @@
-﻿export type AppLanguage = 'pt' | 'en' | 'es';
+﻿import { canPersistFunctionalPreferences } from './cookiePreference';
+
+export type AppLanguage = 'pt' | 'en' | 'es';
 
 export const LANGUAGE_STORAGE_KEY = 'amplia-language';
 
@@ -17,10 +19,12 @@ export function detectAppLanguage(): AppLanguage {
 }
 
 export function persistAppLanguage(lang: AppLanguage) {
-  try {
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
-  } catch {
-    // ignore
+  if (canPersistFunctionalPreferences()) {
+    try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+    } catch {
+      // ignore
+    }
   }
   window.dispatchEvent(new CustomEvent('amplia-language-change', { detail: lang }));
 }

@@ -17,6 +17,16 @@ type LegalContent = {
     text: string;
     acceptAll: string;
     essentialOnly: string;
+    configure: string;
+    savePreferences: string;
+    modalTitle: string;
+    essentialLabel: string;
+    essentialDesc: string;
+    functionalLabel: string;
+    functionalDesc: string;
+    analyticsLabel: string;
+    analyticsDesc: string;
+    alwaysOn: string;
     linkLabel: string;
   };
 };
@@ -179,60 +189,73 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
       ],
     },
     cookies: {
-      title: 'Politica de Cookies',
+      title: 'Política de Cookies',
       sections: [
         {
-          heading: '1. Tipos de cookies utilizados',
+          heading: '1. Cookies essenciais',
+          paragraphs: [
+            'São necessários ao funcionamento técnico e seguro do website (por exemplo, encaminhamento de pedidos, equilíbrio de carga e preferência de consentimento). Não podem ser desativados na nossa configuração sem afetar o funcionamento do site.',
+          ],
+        },
+        {
+          heading: '2. Cookies funcionais',
+          paragraphs: [
+            'Permitem memorizar escolhas que melhoram a experiência, como o idioma da interface (PT/EN/ES) e o tema visual (claro ou escuro). Só são utilizados se aceitar esta categoria ou se aceitar todas as opções.',
+          ],
+        },
+        {
+          heading: '3. Cookies analíticos',
+          paragraphs: [
+            'Ajudam a compreender de forma agregada como o site é utilizado (por exemplo, páginas vistas e desempenho), através do Vercel Analytics. Só são carregados com o seu consentimento.',
+          ],
+        },
+        {
+          heading: '4. Duração dos cookies',
+          paragraphs: [
+            'Podem existir cookies de sessão (expiram ao fechar o browser) e cookies persistentes (mantidos por um período definido ou até eliminação manual).',
+          ],
+        },
+        {
+          heading: '5. Como gerir ou desativar cookies',
+          paragraphs: [
+            'Pode gerir cookies no banner deste site ou nas definições do seu browser (Chrome, Firefox, Safari, Edge). A desativação de cookies não essenciais pode limitar certas funcionalidades.',
+          ],
+        },
+        {
+          heading: '6. Conformidade legal',
+          paragraphs: [
+            'A utilização de cookies segue a Diretiva ePrivacy e o RGPD/GDPR, incluindo a recolha de consentimento para categorias não essenciais.',
+          ],
+        },
+        {
+          heading: '7. LocalStorage e preferências guardadas',
           bullets: [
-            'Essenciais: necessarios ao funcionamento tecnico do website.',
-            'Funcionais: memorizam preferencias (ex.: idioma e experiencia de navegacao).',
-            'Analiticos: medem utilizacao e performance para melhoria continua.',
-          ],
-        },
-        {
-          heading: '2. Finalidade de cada categoria',
-          paragraphs: [
-            'Cookies essenciais permitem funcionalidades basicas. Cookies funcionais personalizam a experiencia. Cookies analiticos ajudam a compreender a utilizacao do site e otimizar conteudos e desempenho.',
-          ],
-        },
-        {
-          heading: '3. Duracao dos cookies',
-          paragraphs: [
-            'Podem existir cookies de sessao (expiram ao fechar o browser) e cookies persistentes (mantidos por periodo definido ou ate eliminacao manual).',
-          ],
-        },
-        {
-          heading: '4. Como gerir ou desativar cookies',
-          paragraphs: [
-            'Pode gerir cookies nas definicoes do seu browser (Chrome, Firefox, Safari, Edge). A desativacao de cookies nao essenciais pode limitar certas funcionalidades.',
-          ],
-        },
-        {
-          heading: '5. Conformidade legal',
-          paragraphs: [
-            'A utilizacao de cookies segue a ePrivacy Directive e o RGPD/GDPR, incluindo recolha de consentimento para categorias nao essenciais.',
-          ],
-        },
-        {
-          heading: '6. LocalStorage e preferencias guardadas',
-          bullets: [
-            'cookie-preference: guarda a escolha de consentimento (essenciais vs todos).',
-            'amplia-language: guarda a preferencia de idioma (PT/EN/ES).',
-            'theme: guarda modo visual claro/escuro.',
-            'waitlist-*: pode guardar localmente email submetido para evitar duplicacoes no dispositivo do utilizador.',
+            'cookie-preference: JSON com as categorias aceites (funcionais e analíticos).',
+            'amplia-language: preferência de idioma (apenas se aceitar cookies funcionais).',
+            'theme: modo claro ou escuro (apenas se aceitar cookies funcionais).',
+            'waitlist-*: pode guardar localmente o email submetido para evitar duplicações no dispositivo.',
           ],
           paragraphs: [
-            'O banner aparece na primeira visita (quando nao existe preferencia) e regista a escolha do utilizador.',
-            'Atualmente apenas funcionalidades essenciais sao necessarias para operacao base; categorias opcionais sao tratadas mediante consentimento.',
+            'O banner surge na primeira visita quando ainda não existe uma preferência guardada. Pode alterar as suas escolhas a qualquer momento através do botão «Configurar» no banner (quando visível) ou limpando os dados do site no browser.',
           ],
         },
       ],
     },
     cookieBanner: {
-      text: 'Utilizamos cookies para melhorar a experiencia e garantir o funcionamento do website.',
+      text: 'Utilizamos cookies para melhorar a sua experiência e garantir o funcionamento do website. Pode escolher quais categorias aceita.',
       acceptAll: 'Aceitar todos',
-      essentialOnly: 'So essenciais',
-      linkLabel: 'Ler politica de cookies',
+      essentialOnly: 'Só essenciais',
+      configure: 'Configurar',
+      savePreferences: 'Guardar preferências',
+      modalTitle: 'Configuração de cookies',
+      essentialLabel: 'Cookies essenciais',
+      essentialDesc: 'Necessários ao funcionamento técnico do site e à sua escolha de consentimento.',
+      functionalLabel: 'Cookies funcionais',
+      functionalDesc: 'Idioma da interface e tema visual (claro/escuro).',
+      analyticsLabel: 'Cookies analíticos',
+      analyticsDesc: 'Estatísticas agregadas de utilização através do Vercel Analytics.',
+      alwaysOn: 'Sempre ativos',
+      linkLabel: 'Política de cookies',
     },
   },
   en: {
@@ -395,57 +418,70 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
       title: 'Cookie Policy',
       sections: [
         {
-          heading: '1. Types of cookies used',
-          bullets: [
-            'Essential: required for core website functionality.',
-            'Functional: remember user preferences (e.g., language and browsing experience).',
-            'Analytics: measure usage and performance for continuous improvement.',
-          ],
-        },
-        {
-          heading: '2. Purpose of each category',
+          heading: '1. Essential cookies',
           paragraphs: [
-            'Essential cookies enable basic features. Functional cookies personalize your experience. Analytics cookies help us understand usage and improve content and performance.',
+            'These are required for the technical and secure operation of the website (for example, request routing, load balancing, and storing your consent choice). They cannot be turned off in our configuration without affecting how the site works.',
           ],
         },
         {
-          heading: '3. Cookie duration',
+          heading: '2. Functional cookies',
+          paragraphs: [
+            'They remember choices that improve your experience, such as interface language (PT/EN/ES) and visual theme (light or dark). They are only used if you accept this category or accept all options.',
+          ],
+        },
+        {
+          heading: '3. Analytics cookies',
+          paragraphs: [
+            'They help us understand in aggregate how the site is used (for example, pages viewed and performance) via Vercel Analytics. They are only loaded with your consent.',
+          ],
+        },
+        {
+          heading: '4. Cookie duration',
           paragraphs: [
             'Cookies may be session-based (deleted when the browser closes) or persistent (kept for a defined period or until manually deleted).',
           ],
         },
         {
-          heading: '4. Managing or disabling cookies',
+          heading: '5. Managing or disabling cookies',
           paragraphs: [
-            'You can manage cookies in your browser settings (Chrome, Firefox, Safari, Edge). Disabling non-essential cookies may reduce some site functionality.',
+            'You can manage cookies using the banner on this site or in your browser settings (Chrome, Firefox, Safari, Edge). Disabling non-essential cookies may reduce some site functionality.',
           ],
         },
         {
-          heading: '5. Legal compliance',
+          heading: '6. Legal compliance',
           paragraphs: [
             'Cookie usage complies with the ePrivacy Directive and GDPR, including consent collection for non-essential categories.',
           ],
         },
         {
-          heading: '6. LocalStorage and stored preferences',
+          heading: '7. LocalStorage and stored preferences',
           bullets: [
-            'cookie-preference: stores consent choice (essential vs all).',
-            'amplia-language: stores language preference (PT/EN/ES).',
-            'theme: stores light/dark theme preference.',
-            'waitlist-*: may locally store submitted waitlist email to avoid duplicates on user device.',
+            'cookie-preference: JSON storing accepted categories (functional and analytics).',
+            'amplia-language: language preference (only if you accept functional cookies).',
+            'theme: light or dark mode (only if you accept functional cookies).',
+            'waitlist-*: may locally store submitted waitlist email to avoid duplicates on your device.',
           ],
           paragraphs: [
-            'The consent banner appears on first visit (when no preference exists) and records the user decision.',
-            'At this time, only essential functionality is required for core operation; optional categories are handled through consent.',
+            'The banner appears on the first visit when no preference is stored yet. You can change your choices at any time using the "Configure" button on the banner (when visible) or by clearing site data in your browser.',
           ],
         },
       ],
     },
     cookieBanner: {
-      text: 'We use cookies to improve your experience and ensure website functionality.',
+      text: 'We use cookies to improve your experience and ensure the website works correctly. You can choose which categories to allow.',
       acceptAll: 'Accept all',
       essentialOnly: 'Essential only',
-      linkLabel: 'Read cookie policy',
+      configure: 'Configure',
+      savePreferences: 'Save preferences',
+      modalTitle: 'Cookie settings',
+      essentialLabel: 'Essential cookies',
+      essentialDesc: 'Required for technical operation and storing your consent choice.',
+      functionalLabel: 'Functional cookies',
+      functionalDesc: 'Interface language and light/dark theme.',
+      analyticsLabel: 'Analytics cookies',
+      analyticsDesc: 'Aggregated usage statistics via Vercel Analytics.',
+      alwaysOn: 'Always on',
+      linkLabel: 'Cookie policy',
     },
   },
   es: {
@@ -605,60 +641,73 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
       ],
     },
     cookies: {
-      title: 'Politica de Cookies',
+      title: 'Política de Cookies',
       sections: [
         {
-          heading: '1. Tipos de cookies utilizados',
+          heading: '1. Cookies esenciales',
+          paragraphs: [
+            'Son necesarias para el funcionamiento técnico y seguro del sitio web (por ejemplo, enrutamiento de solicitudes, equilibrio de carga y preferencia de consentimiento). No pueden desactivarse en nuestra configuración sin afectar al funcionamiento del sitio.',
+          ],
+        },
+        {
+          heading: '2. Cookies funcionales',
+          paragraphs: [
+            'Permiten recordar elecciones que mejoran la experiencia, como el idioma de la interfaz (PT/EN/ES) y el tema visual (claro u oscuro). Solo se utilizan si acepta esta categoría o si acepta todas las opciones.',
+          ],
+        },
+        {
+          heading: '3. Cookies analíticas',
+          paragraphs: [
+            'Ayudan a comprender de forma agregada cómo se utiliza el sitio (por ejemplo, páginas vistas y rendimiento), mediante Vercel Analytics. Solo se cargan con su consentimiento.',
+          ],
+        },
+        {
+          heading: '4. Duración de las cookies',
+          paragraphs: [
+            'Pueden existir cookies de sesión (se eliminan al cerrar el navegador) y cookies persistentes (se conservan durante un período definido o hasta su eliminación manual).',
+          ],
+        },
+        {
+          heading: '5. Cómo gestionar o desactivar cookies',
+          paragraphs: [
+            'Puede gestionar las cookies en el banner de este sitio o en la configuración del navegador (Chrome, Firefox, Safari, Edge). Desactivar cookies no esenciales puede limitar ciertas funcionalidades.',
+          ],
+        },
+        {
+          heading: '6. Cumplimiento legal',
+          paragraphs: [
+            'El uso de cookies cumple la Directiva ePrivacy y el RGPD/GDPR, incluida la obtención de consentimiento para categorías no esenciales.',
+          ],
+        },
+        {
+          heading: '7. LocalStorage y preferencias guardadas',
           bullets: [
-            'Esenciales: necesarias para el funcionamiento tecnico del sitio.',
-            'Funcionales: recuerdan preferencias (por ejemplo, idioma y experiencia de navegacion).',
-            'Analiticas: miden uso y rendimiento para mejora continua.',
-          ],
-        },
-        {
-          heading: '2. Finalidad de cada categoria',
-          paragraphs: [
-            'Las cookies esenciales permiten funciones basicas. Las funcionales personalizan la experiencia. Las analiticas ayudan a entender el uso del sitio y mejorar contenido y rendimiento.',
-          ],
-        },
-        {
-          heading: '3. Duracion de las cookies',
-          paragraphs: [
-            'Pueden existir cookies de sesion (se eliminan al cerrar el navegador) y cookies persistentes (se conservan durante un periodo definido o hasta su eliminacion manual).',
-          ],
-        },
-        {
-          heading: '4. Como gestionar o desactivar cookies',
-          paragraphs: [
-            'Puede gestionar cookies en la configuracion del navegador (Chrome, Firefox, Safari, Edge). Desactivar cookies no esenciales puede limitar ciertas funcionalidades.',
-          ],
-        },
-        {
-          heading: '5. Cumplimiento legal',
-          paragraphs: [
-            'El uso de cookies cumple la ePrivacy Directive y el RGPD/GDPR, incluyendo obtencion de consentimiento para categorias no esenciales.',
-          ],
-        },
-        {
-          heading: '6. LocalStorage y preferencias guardadas',
-          bullets: [
-            'cookie-preference: guarda la eleccion de consentimiento (esenciales vs todas).',
-            'amplia-language: guarda la preferencia de idioma (PT/EN/ES).',
-            'theme: guarda preferencia de tema claro/oscuro.',
-            'waitlist-*: puede guardar localmente el email enviado para evitar duplicados en el dispositivo del usuario.',
+            'cookie-preference: JSON con las categorías aceptadas (funcionales y analíticas).',
+            'amplia-language: preferencia de idioma (solo si acepta cookies funcionales).',
+            'theme: modo claro u oscuro (solo si acepta cookies funcionales).',
+            'waitlist-*: puede guardar localmente el correo enviado para evitar duplicados en el dispositivo.',
           ],
           paragraphs: [
-            'El banner aparece en la primera visita (si no existe preferencia) y registra la decision del usuario.',
-            'Actualmente solo la funcionalidad esencial es necesaria para el funcionamiento base; las categorias opcionales se gestionan mediante consentimiento.',
+            'El banner aparece en la primera visita cuando aún no hay una preferencia guardada. Puede cambiar sus elecciones en cualquier momento con el botón «Configurar» del banner (cuando esté visible) o borrando los datos del sitio en el navegador.',
           ],
         },
       ],
     },
     cookieBanner: {
-      text: 'Utilizamos cookies para mejorar su experiencia y garantizar el funcionamiento del sitio web.',
+      text: 'Utilizamos cookies para mejorar su experiencia y garantizar el funcionamiento del sitio web. Puede elegir qué categorías acepta.',
       acceptAll: 'Aceptar todas',
       essentialOnly: 'Solo esenciales',
-      linkLabel: 'Leer politica de cookies',
+      configure: 'Configurar',
+      savePreferences: 'Guardar preferencias',
+      modalTitle: 'Configuración de cookies',
+      essentialLabel: 'Cookies esenciales',
+      essentialDesc: 'Necesarias para el funcionamiento técnico del sitio y para guardar su elección de consentimiento.',
+      functionalLabel: 'Cookies funcionales',
+      functionalDesc: 'Idioma de la interfaz y tema visual (claro/oscuro).',
+      analyticsLabel: 'Cookies analíticas',
+      analyticsDesc: 'Estadísticas agregadas de uso mediante Vercel Analytics.',
+      alwaysOn: 'Siempre activas',
+      linkLabel: 'Política de cookies',
     },
   },
 };
