@@ -1,6 +1,7 @@
 
 import React, { lazy, Suspense, useState, useEffect } from 'react';
-import { Sun, Moon, ShieldCheck, X, Linkedin, Instagram, Github, Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Sun, Moon, X, Linkedin, Instagram, Github, Menu } from 'lucide-react';
 import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
@@ -15,27 +16,6 @@ const AIChatBot = lazy(() =>
   import('./components/AIChatBot').then((mod) => ({ default: mod.AIChatBot }))
 );
 
-const LegalModal = ({ title, content, onClose }: { title: string; content: string; onClose: () => void }) => (
-  <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-    <div className="bg-white dark:bg-amplia-dark w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden border border-gray-100 dark:border-white/10 animate-fade-in-up">
-      <div className="p-6 border-b border-gray-100 dark:border-white/10 flex justify-between items-center">
-        <h3 className="text-2xl font-max font-bold dark:text-white">{title}</h3>
-        <button onClick={onClose} className="p-2 hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors dark:text-white">
-          <X size={24} />
-        </button>
-      </div>
-      <div className="p-8 max-h-[60vh] overflow-y-auto">
-        <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-normal whitespace-pre-line">
-          {content}
-        </p>
-      </div>
-      <div className="p-6 bg-gray-50 dark:bg-black/20 flex justify-end">
-        <Button onClick={onClose} className="!py-2 !px-6">Fechar</Button>
-      </div>
-    </div>
-  </div>
-);
-
 export function HomePage() {
   const [lang, setLang] = useState<Language>(() => {
     const browserLang = navigator.language.split('-')[0];
@@ -46,8 +26,6 @@ export function HomePage() {
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
-  const [showCookieBanner, setShowCookieBanner] = useState(false);
-  const [legalModal, setLegalModal] = useState<'privacy' | 'terms' | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const t = translations[lang];
@@ -68,8 +46,6 @@ export function HomePage() {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
-    const cookiesAccepted = localStorage.getItem('cookies-accepted');
-    if (!cookiesAccepted) setTimeout(() => setShowCookieBanner(true), 2000);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -78,11 +54,6 @@ export function HomePage() {
     setTheme(newTheme);
     document.documentElement.classList.toggle('dark');
     localStorage.setItem('theme', newTheme);
-  };
-
-  const acceptCookies = () => {
-    localStorage.setItem('cookies-accepted', 'true');
-    setShowCookieBanner(false);
   };
 
   const scrollTo = (id: string) => {
@@ -247,50 +218,11 @@ export function HomePage() {
           </div>
           
           <div className="flex gap-8 font-bold text-xs uppercase tracking-widest">
-            <button onClick={() => setLegalModal('privacy')} className="hover:text-amplia-green transition-colors">{t.legal.privacy}</button>
-            <button onClick={() => setLegalModal('terms')} className="hover:text-amplia-green transition-colors">{t.legal.terms}</button>
+            <Link to="/privacidade" className="hover:text-amplia-green transition-colors">{t.legal.privacy}</Link>
+            <Link to="/termos" className="hover:text-amplia-green transition-colors">{t.legal.terms}</Link>
           </div>
         </div>
       </footer>
-
-      {showCookieBanner && (
-        <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:w-[450px] z-[120] animate-fade-in-up">
-          <div className="glass dark:bg-amplia-dark/95 p-6 rounded-3xl border border-amplia-green/20 shadow-2xl flex flex-col gap-4">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-amplia-green/20 text-amplia-green rounded-2xl">
-                <ShieldCheck size={24} />
-              </div>
-              <div>
-                <h4 className="font-max font-bold dark:text-white mb-1">{t.legal.cookieTitle}</h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-normal">
-                  {t.legal.cookieText}
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <Button className="flex-1 !py-2 !text-xs !rounded-xl" onClick={acceptCookies}>{t.legal.accept}</Button>
-              <button className="flex-1 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-amplia-green transition-colors" onClick={acceptCookies}>
-                {t.legal.decline}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {legalModal === 'privacy' && (
-        <LegalModal 
-          title={t.legal.privacyPolicyTitle} 
-          content={t.legal.privacyPolicyText} 
-          onClose={() => setLegalModal(null)} 
-        />
-      )}
-      {legalModal === 'terms' && (
-        <LegalModal 
-          title={t.legal.termsTitle} 
-          content={t.legal.termsText} 
-          onClose={() => setLegalModal(null)} 
-        />
-      )}
 
       <Suspense fallback={null}>
         <AIChatBot t={t.aiBot} lang={lang} />

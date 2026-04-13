@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './HomePage';
 import { ProductComingSoonPage } from './components/ProductComingSoonPage';
+import { CookieConsentBanner } from './components/CookieConsentBanner';
+import { CookiesPage, PrivacyPage, TermsPage } from './LegalPages';
 import { PRODUCT_SCREENSHOTS } from './productPages';
 
 function App() {
@@ -9,6 +11,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/privacidade" element={<PrivacyPage />} />
+        <Route path="/termos" element={<TermsPage />} />
+        <Route path="/cookies" element={<CookiesPage />} />
         <Route
           path="/produtos/lia"
           element={
@@ -46,6 +51,7 @@ function App() {
           }
         />
       </Routes>
+      <CookieConsentBanner />
     </BrowserRouter>
   );
 }

@@ -78,7 +78,6 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
       });
 
       const responseData = await response.json().catch(() => ({}));
-      alert(JSON.stringify(responseData));
 
       if (!response.ok) {
         if (response.status === 403 || (responseData.message && String(responseData.message).toLowerCase().includes("web server"))) {
