@@ -127,10 +127,7 @@ export const translations = {
     },
     whoWeAre: {
       sectionTitle: 'Quem Somos',
-      nameLabel: 'Fundador',
-      roleLabel: 'Função',
-      roleValue: 'Founder & CEO',
-      description: 'Especialista em engenharia de software e inteligência artificial, focado em criar produtos digitais úteis, escaláveis e orientados para resultados.'
+      nameLabel: 'FUNDADOR'
     },
     contact: {
       sectionTitle: 'Contacto',
@@ -305,10 +302,7 @@ export const translations = {
     },
     whoWeAre: {
       sectionTitle: 'Who We Are',
-      nameLabel: 'Founder',
-      roleLabel: 'Role',
-      roleValue: 'Founder & CEO',
-      description: 'Software engineering and AI specialist focused on building practical, scalable, and outcome-driven digital products.'
+      nameLabel: 'FOUNDER'
     },
     contact: {
       sectionTitle: 'Contact',
@@ -483,10 +477,7 @@ export const translations = {
     },
     whoWeAre: {
       sectionTitle: 'Quiénes Somos',
-      nameLabel: 'Fundador',
-      roleLabel: 'Cargo',
-      roleValue: 'Founder & CEO',
-      description: 'Especialista en ingeniería de software e IA, centrado en crear productos digitales prácticos, escalables y orientados a resultados.'
+      nameLabel: 'FUNDADOR'
     },
     contact: {
       sectionTitle: 'Contacto',
