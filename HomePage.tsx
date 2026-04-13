@@ -242,7 +242,7 @@ export function HomePage() {
               &copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.
             </p>
             <p className="text-[10px] opacity-40 uppercase tracking-widest font-bold">
-              Lisboa, Portugal • (+351) 91 346 67 49
+              AGUALVA-CACÉM, Portugal • (+351) 91 346 67 49
             </p>
           </div>
           

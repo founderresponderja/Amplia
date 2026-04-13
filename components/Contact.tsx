@@ -155,8 +155,8 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold font-max text-lg text-gray-900 dark:text-white">Lisboa, Portugal</h4>
-                  <p className="text-gray-600 dark:text-gray-400 font-normal">Impasse da Sagrada Família, N.º 10 R/C Esq.º, 2735 - 374 Agualva - Cacém</p>
+                  <h4 className="font-bold font-max text-lg text-gray-900 dark:text-white">Agualva-Cacém, Portugal</h4>
+                  <p className="text-gray-600 dark:text-gray-400 font-normal">Impasse da Sagrada Família, N.º 10 R/C Esq.º, 2735-374 Agualva-Cacém</p>
                 </div>
               </div>
               
