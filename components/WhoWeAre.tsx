@@ -26,7 +26,7 @@ export const WhoWeAre: React.FC<Props> = ({ content }) => {
           <div className="w-40 h-40 rounded-full bg-[#0b0c10] border-2 border-[#6BBF3E] flex items-center justify-center overflow-hidden">
             {!imageError ? (
               <img
-                src="/founder.jpg"
+                src="/founder.png"
                 alt="Luís Pedrosa Pereira"
                 className="w-full h-full object-cover"
                 onError={() => setImageError(true)}
