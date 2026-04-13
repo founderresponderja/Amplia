@@ -7,6 +7,8 @@ function sanitizeText(value: string, max: number) {
 }
 
 export default async function handler(req: { method?: string; body?: unknown; headers?: any }, res: any) {
+  console.log('[api/contact] received request');
+
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed', message: 'Method not allowed' });
     return;
