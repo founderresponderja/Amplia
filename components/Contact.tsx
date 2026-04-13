@@ -28,13 +28,82 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrorMessage(null);
+
+    if (window.location.protocol === 'file:') {
+      setStatus(FormStatus.ERROR);
+      setErrorMessage("Erro: FormSubmit exige um servidor web (HTTP/HTTPS). Não pode enviar formulários abrindo o ficheiro HTML diretamente.");
+      return;
+    }
+
+    setStatus(FormStatus.SUBMITTING);
+
     const formData = new FormData(e.currentTarget);
-    const name = formData.get('name') as string;
-    const company = formData.get('company') as string;
-    const email = formData.get('email') as string;
-    const message = formData.get('message') as string;
-    alert(`name: "${name}" | email: "${email}" | message: "${message}"`);
-    return;
+    const rawName = formData.get('name');
+    const rawCompany = formData.get('company');
+    const rawEmail = formData.get('email');
+    const rawMessage = formData.get('message');
+
+    const name = sanitizeText(typeof rawName === 'string' ? rawName : '', 120);
+    const company = sanitizeText(typeof rawCompany === 'string' ? rawCompany : '', 120);
+    const email = sanitizeText(typeof rawEmail === 'string' ? rawEmail : '', 160);
+    const message = sanitizeText(typeof rawMessage === 'string' ? rawMessage : '', 3000);
+
+    if (name.length < 2 || message.length < 2 || !emailRegex.test(email)) {
+      setStatus(FormStatus.ERROR);
+      setErrorMessage("Por favor valida os dados: nome, email e mensagem.");
+      return;
+    }
+
+    const payload = { name, company, email, message };
+    const endpoint =
+      contactEndpoint.startsWith('http') || contactEndpoint.startsWith('//')
+        ? contactEndpoint
+        : `${window.location.origin}${contactEndpoint.startsWith('/') ? '' : '/'}${contactEndpoint}`;
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        mode: "cors",
+        credentials: "same-origin",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const responseData = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        const apiErr =
+          (typeof responseData.error === 'string' && responseData.error) ||
+          (typeof responseData.message === 'string' && responseData.message) ||
+          "Erro inesperado do servidor de email.";
+        throw new Error(apiErr);
+      }
+
+      const isSuccess = responseData.success === true || responseData.success === "true";
+      if (isSuccess) {
+        setStatus(FormStatus.SUCCESS);
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => setStatus(FormStatus.IDLE), 5000);
+      } else {
+        const failMsg =
+          (typeof responseData.error === 'string' && responseData.error) ||
+          (typeof responseData.message === 'string' && responseData.message) ||
+          "A submissão falhou no servidor.";
+        throw new Error(failMsg);
+      }
+    } catch (error: any) {
+      console.error("Submission error details:", error);
+      setStatus(FormStatus.ERROR);
+      setErrorMessage(error.message || "Ocorreu um erro ao processar o seu pedido.");
+      setTimeout(() => {
+        setStatus(FormStatus.IDLE);
+        setErrorMessage(null);
+      }, 8000);
+    }
   };
 
   return (
