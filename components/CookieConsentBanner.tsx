@@ -190,7 +190,16 @@ export function CookieConsentBanner() {
     <>
       <div className="fixed bottom-6 left-6 right-6 z-[120] md:left-auto md:right-6 md:w-[460px]">
         <div className="rounded-3xl border border-[#6BBF3E]/30 bg-[#0f1115]/95 p-5 shadow-2xl backdrop-blur-md">
-          <p className="text-sm text-gray-200">{t.text}</p>
+          <p className="text-sm text-gray-200">
+            {t.textBeforePrivacyLink}
+            <Link
+              to="/privacidade"
+              className="font-bold text-[#6BBF3E] hover:underline focus:outline-none focus:ring-2 focus:ring-[#6BBF3E]/50 rounded"
+            >
+              {t.privacyPolicyLinkLabel}
+            </Link>
+            {t.textAfterPrivacyLink}
+          </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <button
               type="button"

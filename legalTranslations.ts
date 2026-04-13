@@ -14,7 +14,9 @@ type LegalContent = {
   terms: { title: string; sections: Section[] };
   cookies: { title: string; sections: Section[] };
   cookieBanner: {
-    text: string;
+    textBeforePrivacyLink: string;
+    privacyPolicyLinkLabel: string;
+    textAfterPrivacyLink: string;
     acceptAll: string;
     essentialOnly: string;
     configure: string;
@@ -242,7 +244,10 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
       ],
     },
     cookieBanner: {
-      text: 'Utilizamos cookies para melhorar a sua experiência e garantir o funcionamento do website. Pode escolher quais categorias aceita.',
+      textBeforePrivacyLink:
+        'Utilizamos cookies para melhorar a sua experiência como utilizador. Pode aceitar todos os cookies ou personalizar a sua configuração para alterar as suas preferências. Saiba mais na nossa ',
+      privacyPolicyLinkLabel: 'Política de Privacidade',
+      textAfterPrivacyLink: '.',
       acceptAll: 'Aceitar todos',
       essentialOnly: 'Só essenciais',
       configure: 'Configurar',
@@ -468,7 +473,10 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
       ],
     },
     cookieBanner: {
-      text: 'We use cookies to improve your experience and ensure the website works correctly. You can choose which categories to allow.',
+      textBeforePrivacyLink:
+        'We use cookies to improve your experience as a user. You can accept all cookies or customize your settings to change your preferences. Learn more in our ',
+      privacyPolicyLinkLabel: 'Privacy Policy',
+      textAfterPrivacyLink: '.',
       acceptAll: 'Accept all',
       essentialOnly: 'Essential only',
       configure: 'Configure',
@@ -694,7 +702,10 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
       ],
     },
     cookieBanner: {
-      text: 'Utilizamos cookies para mejorar su experiencia y garantizar el funcionamiento del sitio web. Puede elegir qué categorías acepta.',
+      textBeforePrivacyLink:
+        'Utilizamos cookies para mejorar su experiencia como usuario. Puede aceptar todas las cookies o personalizar su configuración para cambiar sus preferencias. Más información en nuestra ',
+      privacyPolicyLinkLabel: 'Política de Privacidad',
+      textAfterPrivacyLink: '.',
       acceptAll: 'Aceptar todas',
       essentialOnly: 'Solo esenciales',
       configure: 'Configurar',
