@@ -228,14 +228,11 @@ export function HomePage() {
           <div className="flex flex-col items-center md:items-start gap-4">
             <Logo className="h-6 opacity-40 hover:opacity-100 transition-all cursor-pointer" showText={true} />
             <div className="flex gap-5">
-              <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/ampliasolutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="Instagram">
+              <a href="https://www.instagram.com/ampliasolutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="Instagram">
                 <Instagram size={20} />
-              </a>
-              <a href="https://github.com/amplia-solutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="GitHub">
-                <Github size={20} />
               </a>
             </div>
           </div>
