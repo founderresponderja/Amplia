@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'Max-Regular';
   src: url('/fonts/Max-Regular.woff2') format('woff2');
@@ -12,4 +16,18 @@
 
 html, body, #root {
   font-family: 'Max-Regular', sans-serif !important;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark .glass {
+  background: rgba(15, 17, 21, 0.6);
 }

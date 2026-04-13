@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './HomePage';
 import { ProductComingSoonPage } from './components/ProductComingSoonPage';
@@ -52,6 +53,7 @@ function App() {
         />
       </Routes>
       <CookieConsentBanner />
+      <Analytics />
     </BrowserRouter>
   );
 }

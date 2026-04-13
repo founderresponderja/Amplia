@@ -8,21 +8,15 @@
     <meta name="description" content="A Amplia Solutions transforma desafios complexos em soluções digitais inteligentes. Especialistas em IA, Cloud e Consultoria IT." />
     <meta name="keywords" content="it consulting, software engineering, artificial intelligence, devops, portugal" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://amplia.pt" />
+    <link rel="canonical" href="https://ampliasolutions.pt" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Amplia Solutions — Software Inteligente com IA" />
+    <meta property="og:description" content="Transformamos desafios complexos em produtos de software inteligentes e escaláveis através de IA." />
+    <meta property="og:image" content="https://ampliasolutions.pt/og-image.png" />
+    <meta property="og:url" content="https://ampliasolutions.pt" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://amplia.pt/" />
-    <meta property="og:title" content="Amplia Solutions | Engenharia de Software e IA" />
-    <meta property="og:description" content="Consultoria tecnológica de elite. Soluções inteligentes e escaláveis através de IA e Engenharia." />
-    <meta property="og:image" content="https://amplia.pt/og-image.jpg" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://amplia.pt/" />
-    <meta property="twitter:title" content="Amplia Solutions | Engenharia de Software e IA" />
-    <meta property="twitter:description" content="Consultoria tecnológica de elite. Soluções inteligentes e escaláveis através de IA e Engenharia." />
-    <meta property="twitter:image" content="https://amplia.pt/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -30,11 +24,13 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Amplia Solutions",
-      "url": "https://amplia.pt",
-      "logo": "https://amplia.pt/logo.png",
+      "url": "https://ampliasolutions.pt",
+      "logo": "https://ampliasolutions.pt/logo.png",
+      "telephone": "+351913466749",
       "description": "Consultoria tecnológica de elite especializada em Inteligência Artificial e Engenharia de Software.",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Impasse da Sagrada Família, N.º 10 R/C Esq.º",
         "addressLocality": "Agualva-Cacém",
         "addressRegion": "Lisboa",
         "postalCode": "2735-374",
@@ -47,9 +43,6 @@
     }
     </script>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
     <script>
       (function() {
         try {
@@ -63,47 +56,6 @@
         } catch (e) {}
       })();
     </script>
-
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              amplia: {
-                green: '#8cc63f',
-                dark: '#0f1115',
-                light: '#f9fafb',
-                gray: '#6b7280'
-              }
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
-              'bounce-slow': 'bounce 3s infinite',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-      .glass {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      .dark .glass {
-        background: rgba(15, 17, 21, 0.6);
-      }
-    </style>
   </head>
   <body class="bg-white dark:bg-amplia-dark text-gray-900 dark:text-gray-100">
     <div id="root"></div>

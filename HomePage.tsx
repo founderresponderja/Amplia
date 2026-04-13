@@ -8,6 +8,7 @@ import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { About } from './components/About';
 import { FAQ } from './components/FAQ';
+import { WhoWeAre } from './components/WhoWeAre';
 import { translations } from './translations';
 import { ScrollReveal } from './components/ScrollReveal';
 import { Language } from './types';
@@ -192,6 +193,7 @@ export function HomePage() {
       <About content={t.about} />
       <Services content={t.services} />
       <FAQ content={t.faq} />
+      <WhoWeAre content={t.whoWeAre} />
       <Contact content={t.contact} />
       
       <footer className="py-16 border-t border-gray-100 dark:border-white/5 text-center transition-colors">
