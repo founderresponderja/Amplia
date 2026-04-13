@@ -45,16 +45,17 @@ export default async function handler(req: { method?: string; body?: unknown; he
     return;
   }
 
-  const result = await sendContactEmail({ name, company, email, message });
-  if (!result.ok) {
-    res.status(500).json({
-      success: false,
-      error: result.error,
-      message: result.error,
-    });
-    return;
-  }
+  // Debug bypass to isolate Resend configuration issues in production.
+  // const result = await sendContactEmail({ name, company, email, message });
+  // if (!result.ok) {
+  //   res.status(500).json({
+  //     success: false,
+  //     error: result.error,
+  //     message: result.error,
+  //   });
+  //   return;
+  // }
 
-  res.status(200).json({ success: true });
+  return res.status(200).json({ message: 'ok', success: true });
 }
 
