@@ -11,24 +11,24 @@ import { FAQ } from './components/FAQ';
 import { translations } from './translations';
 import { ScrollReveal } from './components/ScrollReveal';
 import { Language } from './types';
+import { detectAppLanguage, persistAppLanguage } from './language';
 
 const AIChatBot = lazy(() =>
   import('./components/AIChatBot').then((mod) => ({ default: mod.AIChatBot }))
 );
 
 export function HomePage() {
-  const [lang, setLang] = useState<Language>(() => {
-    const browserLang = navigator.language.split('-')[0];
-    if (browserLang === 'en') return 'en';
-    if (browserLang === 'es') return 'es';
-    return 'pt';
-  });
+  const [lang, setLang] = useState<Language>(() => detectAppLanguage());
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const t = translations[lang];
+
+  useEffect(() => {
+    persistAppLanguage(lang);
+  }, [lang]);
 
   useEffect(() => {
     // @ts-ignore
