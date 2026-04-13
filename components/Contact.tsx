@@ -53,25 +53,23 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
       return;
     }
 
-    const payload: any = {
+    const payload = {
       name,
       company,
       email,
       message,
-      _subject: `Novo contacto via Site - ${name}`,
-      _replyto: email,
-      _template: "table",
-      _captcha: "false"
     };
 
-    if (data._honey) {
-      payload._honey = data._honey;
-    }
+    const endpoint =
+      contactEndpoint.startsWith('http') || contactEndpoint.startsWith('//')
+        ? contactEndpoint
+        : `${window.location.origin}${contactEndpoint.startsWith('/') ? '' : '/'}${contactEndpoint}`;
 
     try {
-      const response = await fetch(contactEndpoint, {
+      const response = await fetch(endpoint, {
         method: "POST",
         mode: "cors",
+        credentials: "same-origin",
         headers: { 
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -79,15 +77,17 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
         body: JSON.stringify(payload)
       });
 
-      // Attempt to parse response even if it's not 200 OK
       const responseData = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        // FormSubmit sends a 403 or specific message when it detects no web server origin
-        if (response.status === 403 || (responseData.message && responseData.message.toLowerCase().includes("web server"))) {
+        if (response.status === 403 || (responseData.message && String(responseData.message).toLowerCase().includes("web server"))) {
           throw new Error("O serviço de email bloqueou o envio porque o site não está num servidor web (HTTP/HTTPS).");
         }
-        throw new Error(responseData.message || "Erro inesperado do servidor de email.");
+        const apiErr =
+          (typeof responseData.error === 'string' && responseData.error) ||
+          (typeof responseData.message === 'string' && responseData.message) ||
+          "Erro inesperado do servidor de email.";
+        throw new Error(apiErr);
       }
       
       const isSuccess = responseData.success === true || responseData.success === "true";
@@ -97,7 +97,11 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
         (e.target as HTMLFormElement).reset();
         setTimeout(() => setStatus(FormStatus.IDLE), 5000);
       } else {
-        throw new Error(responseData.message || "A submissão falhou no servidor.");
+        const failMsg =
+          (typeof responseData.error === 'string' && responseData.error) ||
+          (typeof responseData.message === 'string' && responseData.message) ||
+          "A submissão falhou no servidor.";
+        throw new Error(failMsg);
       }
     } catch (error: any) {
       console.error("Submission error details:", error);

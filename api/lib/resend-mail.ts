@@ -1,6 +1,9 @@
 import { Resend } from 'resend';
 
-const FROM = 'noreply@ampliasolutions.pt';
+/** Must be a verified sender in Resend (domain or single sender). Override via env if needed. */
+function getFrom(): string {
+  return process.env.RESEND_FROM?.trim() || 'noreply@ampliasolutions.pt';
+}
 
 function getTo(): string {
   return process.env.CONTACT_EMAIL?.trim() || 'ampliasolutions.pt@gmail.com';
@@ -37,7 +40,7 @@ export async function sendContactEmail(payload: {
   ].join('\n');
 
   const sent = await resend.emails.send({
-    from: FROM,
+    from: getFrom(),
     to: getTo(),
     replyTo: payload.email,
     subject,
@@ -45,8 +48,12 @@ export async function sendContactEmail(payload: {
   });
 
   if (sent.error) {
+    const msg =
+      typeof sent.error === 'object' && sent.error && 'message' in sent.error
+        ? String((sent.error as { message: string }).message)
+        : 'Failed to send email';
     console.error('[resend-mail] contact', sent.error);
-    return { ok: false, error: 'Failed to send email' };
+    return { ok: false, error: msg };
   }
   return { ok: true };
 }
@@ -72,7 +79,7 @@ export async function sendProductNotifyEmail(payload: {
   ].join('\n');
 
   const sent = await resend.emails.send({
-    from: FROM,
+    from: getFrom(),
     to: getTo(),
     replyTo: payload.subscriberEmail,
     subject,
@@ -80,8 +87,12 @@ export async function sendProductNotifyEmail(payload: {
   });
 
   if (sent.error) {
+    const msg =
+      typeof sent.error === 'object' && sent.error && 'message' in sent.error
+        ? String((sent.error as { message: string }).message)
+        : 'Failed to send email';
     console.error('[resend-mail] notify', sent.error);
-    return { ok: false, error: 'Failed to send email' };
+    return { ok: false, error: msg };
   }
   return { ok: true };
 }
@@ -109,15 +120,19 @@ export async function sendChatbotLogEmail(payload: {
   ].join('\n');
 
   const sent = await resend.emails.send({
-    from: FROM,
+    from: getFrom(),
     to: getTo(),
     subject,
     text,
   });
 
   if (sent.error) {
+    const msg =
+      typeof sent.error === 'object' && sent.error && 'message' in sent.error
+        ? String((sent.error as { message: string }).message)
+        : 'Failed to send email';
     console.error('[resend-mail] chatbot-log', sent.error);
-    return { ok: false, error: 'Failed to send email' };
+    return { ok: false, error: msg };
   }
   return { ok: true };
 }

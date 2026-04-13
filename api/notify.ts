@@ -1,20 +1,8 @@
 import { assertSameOrigin } from './lib/origin';
+import { parseJsonBody } from './lib/parse-body';
 import { sendProductNotifyEmail } from './lib/resend-mail';
 
 const ALLOWED_KEYS = new Set(['lia', 'homestudio', 'opsflow']);
-
-function parseBody(raw: unknown): Record<string, unknown> {
-  if (raw == null) return {};
-  if (typeof raw === 'string') {
-    try {
-      return JSON.parse(raw) as Record<string, unknown>;
-    } catch {
-      return {};
-    }
-  }
-  if (typeof raw === 'object') return raw as Record<string, unknown>;
-  return {};
-}
 
 function sanitizeText(value: string, max: number) {
   return value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, max);
@@ -31,7 +19,7 @@ export default async function handler(req: { method?: string; body?: unknown; he
     return;
   }
 
-  const body = parseBody(req.body);
+  const body = parseJsonBody(req.body);
   const subscriberEmail = sanitizeText(String(body.email || ''), 160);
   const productKey = sanitizeText(String(body.productKey || body.product || ''), 64);
   const productName = sanitizeText(String(body.productName || ''), 160);

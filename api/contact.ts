@@ -1,18 +1,6 @@
 import { assertSameOrigin } from './lib/origin';
+import { parseJsonBody } from './lib/parse-body';
 import { sendContactEmail } from './lib/resend-mail';
-
-function parseBody(raw: unknown): Record<string, unknown> {
-  if (raw == null) return {};
-  if (typeof raw === 'string') {
-    try {
-      return JSON.parse(raw) as Record<string, unknown>;
-    } catch {
-      return {};
-    }
-  }
-  if (typeof raw === 'object') return raw as Record<string, unknown>;
-  return {};
-}
 
 function sanitizeText(value: string, max: number) {
   return value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, max);
@@ -20,16 +8,21 @@ function sanitizeText(value: string, max: number) {
 
 export default async function handler(req: { method?: string; body?: unknown; headers?: any }, res: any) {
   if (req.method !== 'POST') {
-    res.status(405).json({ error: 'Method not allowed' });
+    res.status(405).json({ error: 'Method not allowed', message: 'Method not allowed' });
     return;
   }
 
   if (!assertSameOrigin(req)) {
-    res.status(403).json({ error: 'Forbidden origin' });
+    console.error('[api/contact] forbidden origin', {
+      origin: req.headers?.origin,
+      host: req.headers?.host,
+      xfh: req.headers?.['x-forwarded-host'],
+    });
+    res.status(403).json({ error: 'Forbidden origin', message: 'Forbidden origin' });
     return;
   }
 
-  const body = parseBody(req.body);
+  const body = parseJsonBody(req.body);
   const name = sanitizeText(String(body.name || ''), 120);
   const company = sanitizeText(String(body.company || ''), 120);
   const email = sanitizeText(String(body.email || ''), 160);
@@ -37,13 +30,26 @@ export default async function handler(req: { method?: string; body?: unknown; he
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (name.length < 2 || message.length < 10 || !emailRegex.test(email)) {
-    res.status(400).json({ error: 'Invalid payload' });
+    console.error('[api/contact] invalid payload', {
+      hasName: name.length >= 2,
+      msgLen: message.length,
+      emailOk: emailRegex.test(email),
+      bodyKeys: Object.keys(body),
+    });
+    res.status(400).json({
+      error: 'Invalid payload',
+      message: 'Invalid payload',
+    });
     return;
   }
 
   const result = await sendContactEmail({ name, company, email, message });
   if (!result.ok) {
-    res.status(500).json({ error: result.error });
+    res.status(500).json({
+      success: false,
+      error: result.error,
+      message: result.error,
+    });
     return;
   }
 

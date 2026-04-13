@@ -1,18 +1,6 @@
 import { assertSameOrigin } from './lib/origin';
+import { parseJsonBody } from './lib/parse-body';
 import { sendChatbotLogEmail } from './lib/resend-mail';
-
-function parseBody(raw: unknown): Record<string, unknown> {
-  if (raw == null) return {};
-  if (typeof raw === 'string') {
-    try {
-      return JSON.parse(raw) as Record<string, unknown>;
-    } catch {
-      return {};
-    }
-  }
-  if (typeof raw === 'object') return raw as Record<string, unknown>;
-  return {};
-}
 
 function sanitizeText(value: string, max: number) {
   return value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, max);
@@ -29,7 +17,7 @@ export default async function handler(req: { method?: string; body?: unknown; he
     return;
   }
 
-  const body = parseBody(req.body);
+  const body = parseJsonBody(req.body);
   const userMessage = sanitizeText(String(body.userMessage || ''), 4000);
   const assistantReply = sanitizeText(String(body.assistantReply || ''), 12000);
 

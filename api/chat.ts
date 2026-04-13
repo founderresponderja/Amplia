@@ -1,4 +1,5 @@
 import { GoogleGenAI, Type } from '@google/genai';
+import { parseJsonBody } from './lib/parse-body';
 import { sendChatbotLogEmail } from './lib/resend-mail';
 
 type ChatBody = {
@@ -39,16 +40,7 @@ function sanitizeInput(value: string): string {
 }
 
 function parseBody(raw: unknown): ChatBody {
-  if (raw == null) return {};
-  if (typeof raw === 'string') {
-    try {
-      return JSON.parse(raw) as ChatBody;
-    } catch {
-      return {};
-    }
-  }
-  if (typeof raw === 'object') return raw as ChatBody;
-  return {};
+  return parseJsonBody(raw) as ChatBody;
 }
 
 export default async function handler(req: any, res: any) {
