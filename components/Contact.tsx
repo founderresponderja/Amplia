@@ -40,12 +40,18 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
     setStatus(FormStatus.SUBMITTING);
     
     const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
 
-    const name = sanitizeText(String(data.name || ''), 120);
-    const company = sanitizeText(String(data.company || ''), 120);
-    const email = sanitizeText(String(data.email || ''), 160);
-    const message = sanitizeText(String(data.message || ''), 3000);
+    const rawName = formData.get('name');
+    const rawCompany = formData.get('company');
+    const rawEmail = formData.get('email');
+    const rawMessage = formData.get('message');
+
+    const name = sanitizeText(typeof rawName === 'string' ? rawName : '', 120);
+    const company = sanitizeText(typeof rawCompany === 'string' ? rawCompany : '', 120);
+    const email = sanitizeText(typeof rawEmail === 'string' ? rawEmail : '', 160);
+    const message = sanitizeText(typeof rawMessage === 'string' ? rawMessage : '', 3000);
+
+    console.log('form values:', { name, email, message });
 
     if (name.length < 2 || message.length < 10 || !emailRegex.test(email)) {
       setStatus(FormStatus.ERROR);
