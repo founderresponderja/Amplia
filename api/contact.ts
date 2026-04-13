@@ -31,7 +31,7 @@ export default async function handler(req: { method?: string; body?: unknown; he
   const message = sanitizeText(String(body.message || ''), 3000);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (name.length < 2 || message.length < 10 || !emailRegex.test(email)) {
+  if (name.length < 2 || message.length < 2 || !emailRegex.test(email)) {
     console.error('[api/contact] invalid payload', {
       hasName: name.length >= 2,
       msgLen: message.length,
