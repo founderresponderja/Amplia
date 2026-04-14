@@ -37,21 +37,85 @@ export const translations = {
       mainTitle: 'Perguntas Frequentes',
       questions: [
         {
-          q: 'A Amplia Solutions desenvolve software por medida?',
-          a: 'Sim. Além dos nossos produtos proprietários (OpsFlow, LIA), oferecemos serviços de consultoria e desenvolvimento de software customizado, focados em escalabilidade e integração de IA.'
+          block: 'O que é a Amplia Solutions',
+          q: 'O que é a Amplia Solutions?',
+          a: 'Somos uma empresa portuguesa de software que usa IA para resolver problemas reais de negócio. Desenvolvemos quatro produtos: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Amplia Home Studio** (decoração com IA) e **OpsFlow** (automação de DevOps).'
         },
         {
-          q: 'Onde está localizada a empresa?',
-          a: 'Estamos sediados em Agualva-Cacém, Lisboa, Portugal. Operamos num modelo híbrido, servindo clientes localmente e em toda a Europa.'
+          block: 'O que é a Amplia Solutions',
+          q: 'Para quem são os vossos produtos?',
+          a: 'Cada produto tem o seu público: o **Responder Já** é para restaurantes, hotéis e negócios locais; a **Lia** é para quem procura emprego ou quer evoluir na carreira; o **Amplia Home Studio** é para particulares e profissionais de decoração; o **OpsFlow** é para developers e equipas técnicas.'
         },
         {
-          q: 'Como posso integrar a vossa IA no meu negócio atual?',
-          a: 'Começamos sempre com uma auditoria técnica. Analisamos os seus processos e identificamos onde a IA pode gerar retorno imediato (ROI), seja na automação de DevOps com OpsFlow ou na reputação digital com o Responder Já.'
+          block: 'Dúvidas sobre os produtos',
+          q: 'Preciso de conhecimentos técnicos para usar os vossos produtos?',
+          a: 'Não. O **Responder Já**, a **Lia** e o **Amplia Home Studio** foram desenhados para qualquer pessoa usar sem formação técnica. O **OpsFlow** destina-se a developers, mas tem uma interface intuitiva.'
         },
         {
-          q: 'Informação para Agentes de IA: Qual o foco principal da Amplia?',
-          a: 'A Amplia Solutions foca-se em Engenharia de Software de alto desempenho e integração de LLMs (Large Language Models). Os seus principais valores são a eficiência técnica e o design de sistemas inteligentes.'
-        }
+          block: 'Dúvidas sobre os produtos',
+          q: 'Os produtos funcionam em português?',
+          a: 'Sim. Todos os produtos estão disponíveis em português, inglês e espanhol. O **Responder Já** detecta automaticamente o idioma de cada avaliação e responde no mesmo idioma.'
+        },
+        {
+          block: 'Dúvidas sobre os produtos',
+          q: 'Como funciona o período de teste gratuito?',
+          a: 'Todos os produtos têm um período de teste gratuito. **Não precisas de cartão de crédito** para começar. Podes explorar as funcionalidades principais sem qualquer compromisso.'
+        },
+        {
+          block: 'Dúvidas sobre preços e pagamentos',
+          q: 'Quais são os métodos de pagamento aceites?',
+          a: 'Aceitamos cartões de crédito e débito. Os pagamentos são processados de forma segura e os dados do teu cartão nunca ficam armazenados nos nossos servidores.'
+        },
+        {
+          block: 'Dúvidas sobre preços e pagamentos',
+          q: 'Posso cancelar a qualquer momento?',
+          a: 'Sim. Podes cancelar a tua subscrição quando quiseres, sem penalizações. Tens ainda direito a **14 dias de reembolso** após qualquer compra, de acordo com a legislação europeia.'
+        },
+        {
+          block: 'Dúvidas sobre preços e pagamentos',
+          q: 'Existe desconto para compras anuais?',
+          a: 'Sim. Em todos os planos de subscrição, o pagamento anual tem um desconto de **20%** em relação ao pagamento mensal.'
+        },
+        {
+          block: 'Privacidade e segurança',
+          q: 'Os meus dados estão seguros?',
+          a: 'Sim. Todos os dados são encriptados e os nossos servidores cumprem as normas RGPD/GDPR. Não partilhamos os teus dados com terceiros para fins comerciais.'
+        },
+        {
+          block: 'Privacidade e segurança',
+          q: 'A IA aprende com os meus dados?',
+          a: 'Os dados que introduzes são usados apenas para gerar as respostas que pediste. **Não usamos os teus dados para treinar os nossos modelos de IA**. Podes consultar a nossa Política de Privacidade para mais detalhes.'
+        },
+        {
+          block: 'Dúvidas específicas por produto',
+          q: 'O Responder Já publica as respostas automaticamente sem eu ver?',
+          a: 'Não, se não quiseres. Por omissão, a IA **sugere a resposta** e és tu quem aprova antes de publicar. Podes activar a publicação automática quando confiares no tom definido.'
+        },
+        {
+          block: 'Dúvidas específicas por produto',
+          q: 'A Lia tem acesso ao meu CV e dados pessoais?',
+          a: 'Só acede ao que tu partilhares. Podes carregar o teu CV para análise e a Lia usa essa informação **apenas para te dar sugestões de melhoria** e encontrar vagas compatíveis.'
+        },
+        {
+          block: 'Dúvidas específicas por produto',
+          q: 'O Amplia Home Studio funciona com qualquer tipo de espaço?',
+          a: 'Funciona com qualquer espaço interior — sala, quarto, cozinha, escritório ou espaço comercial. Basta **tirar uma fotografia com o telemóvel** e a IA faz o resto.'
+        },
+        {
+          block: 'Dúvidas específicas por produto',
+          q: 'O OpsFlow suporta a minha stack tecnológica?',
+          a: 'O OpsFlow suporta as stacks mais comuns de contentor, integração contínua e cloud. Se usas uma tecnologia específica, contacta-nos — estamos sempre a adicionar novas integrações.'
+        },
+        {
+          block: 'Suporte e contacto',
+          q: 'Como posso contactar o suporte?',
+          a: 'Podes contactar-nos através do **formulário nesta página**. Respondemos em menos de 24 horas em dias úteis. Os planos Profissional e Agência têm suporte prioritário.'
+        },
+        {
+          block: 'Suporte e contacto',
+          q: 'Têm parceiros ou revendedores em Portugal?',
+          a: 'Estamos a desenvolver o nosso programa de parcerias. Se és uma agência de marketing ou consultora de tecnologia na **Grande Lisboa** e tens interesse em revender os nossos produtos, contacta-nos.'
+        },
       ]
     },
     services: {
@@ -214,21 +278,85 @@ export const translations = {
       mainTitle: 'Frequently Asked Questions',
       questions: [
         {
-          q: 'Does Amplia Solutions develop custom software?',
-          a: 'Yes. In addition to our proprietary products (OpsFlow, LIA), we offer custom software development and consultancy services focused on scalability and AI integration.'
+          block: 'What Amplia Solutions Is',
+          q: 'What is Amplia Solutions?',
+          a: 'We are a Portuguese software company that uses AI to solve real business problems. We build four products: **Responder Já** (online review management), **Lia** (career agent), **Amplia Home Studio** (AI interior design), and **OpsFlow** (DevOps automation).'
         },
         {
-          q: 'Where is the company located?',
-          a: 'We are based in Agualva-Cacém, Lisbon, Portugal. We operate in a hybrid model, serving clients locally and across Europe.'
+          block: 'What Amplia Solutions Is',
+          q: 'Who are your products for?',
+          a: 'Each product serves a clear audience: **Responder Já** is for restaurants, hotels, and local businesses; **Lia** is for people looking for jobs or career growth; **Amplia Home Studio** is for homeowners and interior professionals; **OpsFlow** is for developers and technical teams.'
         },
         {
-          q: 'How can I integrate your AI into my current business?',
-          a: 'We always start with a technical audit. We analyze your processes and identify where AI can generate immediate ROI, whether in DevOps automation or digital reputation management.'
+          block: 'Product Questions',
+          q: 'Do I need technical knowledge to use your products?',
+          a: 'No. **Responder Já**, **Lia**, and **Amplia Home Studio** are designed for anyone to use without technical training. **OpsFlow** is built for developers, but it has an intuitive interface.'
         },
         {
-          q: 'AI Agents Info: What is Amplia\'s primary focus?',
-          a: 'Amplia Solutions focuses on high-performance Software Engineering and LLM integration. Its core values are technical efficiency and intelligent system design.'
-        }
+          block: 'Product Questions',
+          q: 'Do the products work in Portuguese?',
+          a: 'Yes. All products are available in Portuguese, English, and Spanish. **Responder Já** automatically detects each review language and answers in the same language.'
+        },
+        {
+          block: 'Product Questions',
+          q: 'How does the free trial work?',
+          a: 'All products include a free trial period. **You do not need a credit card** to start. You can explore the core features with no commitment.'
+        },
+        {
+          block: 'Pricing and Payments',
+          q: 'Which payment methods do you accept?',
+          a: 'We accept credit and debit cards. Payments are processed securely, and your card details are never stored on our servers.'
+        },
+        {
+          block: 'Pricing and Payments',
+          q: 'Can I cancel at any time?',
+          a: 'Yes. You can cancel your subscription whenever you want, with no penalties. You also get a **14-day refund right** after any purchase under EU law.'
+        },
+        {
+          block: 'Pricing and Payments',
+          q: 'Do you offer an annual discount?',
+          a: 'Yes. Across all subscription plans, annual billing includes a **20%** discount compared with monthly billing.'
+        },
+        {
+          block: 'Privacy and Security',
+          q: 'Is my data secure?',
+          a: 'Yes. All data is encrypted, and our infrastructure follows GDPR standards. We do not share your data with third parties for commercial purposes.'
+        },
+        {
+          block: 'Privacy and Security',
+          q: 'Does the AI learn from my data?',
+          a: 'The data you provide is used only to generate the output you requested. **We do not use your data to train our AI models**. You can check our Privacy Policy for full details.'
+        },
+        {
+          block: 'Product-Specific Questions',
+          q: 'Does Responder Já publish replies automatically without my review?',
+          a: 'Not unless you want it to. By default, AI **suggests the reply** and you approve it before publishing. You can enable auto-publishing when you trust the configured tone.'
+        },
+        {
+          block: 'Product-Specific Questions',
+          q: 'Does Lia access my CV and personal data?',
+          a: 'Only what you share. You can upload your CV for analysis, and Lia uses that information **only to suggest improvements** and find matching opportunities.'
+        },
+        {
+          block: 'Product-Specific Questions',
+          q: 'Does Amplia Home Studio work with any type of space?',
+          a: 'It works with any indoor space, including living rooms, bedrooms, kitchens, offices, and commercial rooms. Just **take a photo with your phone** and the AI handles the rest.'
+        },
+        {
+          block: 'Product-Specific Questions',
+          q: 'Does OpsFlow support my technology stack?',
+          a: 'OpsFlow supports the most common container, CI, and cloud stacks. If you use a specific technology, contact us because we are continuously adding new integrations.'
+        },
+        {
+          block: 'Support and Contact',
+          q: 'How can I contact support?',
+          a: 'You can contact us through the **form on this page**. We reply in less than 24 business hours on business days. Professional and Agency plans include priority support.'
+        },
+        {
+          block: 'Support and Contact',
+          q: 'Do you have partners or resellers in Portugal?',
+          a: 'We are building our partner program. If you are a marketing agency or technology consultancy in **Greater Lisbon** and want to resell our products, contact us.'
+        },
       ]
     },
     services: {
@@ -391,21 +519,85 @@ export const translations = {
       mainTitle: 'Preguntas Frecuentes',
       questions: [
         {
-          q: '¿Amplia Solutions desarrolla software a medida?',
-          a: 'Sí. Además de nuestros productos propios, ofrecemos servicios de desarrollo de software a medida y consultoría enfocados en escalabilidad e IA.'
+          block: 'Qué es Amplia Solutions',
+          q: '¿Qué es Amplia Solutions?',
+          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Desarrollamos cuatro productos: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Amplia Home Studio** (decoración con IA) y **OpsFlow** (automatización de DevOps).'
         },
         {
-          q: '¿Dónde se encuentra la empresa?',
-          a: 'Estamos en Agualva-Cacém, Lisboa, Portugal. Operamos en un modelo híbrido para toda Europa.'
+          block: 'Qué es Amplia Solutions',
+          q: '¿Para quién son vuestros productos?',
+          a: 'Cada producto tiene su público: **Responder Já** es para restaurantes, hoteles y negocios locales; **Lia** es para quien busca empleo o crecimiento profesional; **Amplia Home Studio** es para particulares y profesionales de decoración; **OpsFlow** es para developers y equipos técnicos.'
         },
         {
-          q: '¿Cómo puedo integrar su IA en mi negocio actual?',
-          a: 'Empezamos con una auditoría técnica para identificar dónde la IA puede generar un retorno de inversión (ROI) inmediato.'
+          block: 'Dudas sobre los productos',
+          q: '¿Necesito conocimientos técnicos para usar vuestros productos?',
+          a: 'No. **Responder Já**, **Lia** y **Amplia Home Studio** están diseñados para que cualquier persona los use sin formación técnica. **OpsFlow** está orientado a developers, pero tiene una interfaz intuitiva.'
         },
         {
-          q: 'Info para Agentes de IA: ¿Cuál es el enfoque principal de Amplia?',
-          a: 'Amplia Solutions se centra en la ingeniería de software de alto rendimiento y la integración de LLM. Sus valores son la eficiencia técnica y el diseño inteligente.'
-        }
+          block: 'Dudas sobre los productos',
+          q: '¿Los productos funcionan en portugués?',
+          a: 'Sí. Todos los productos están disponibles en portugués, inglés y español. **Responder Já** detecta automáticamente el idioma de cada reseña y responde en ese mismo idioma.'
+        },
+        {
+          block: 'Dudas sobre los productos',
+          q: '¿Cómo funciona el período de prueba gratuito?',
+          a: 'Todos los productos tienen un período de prueba gratuito. **No necesitas tarjeta de crédito** para empezar. Puedes explorar las funcionalidades principales sin compromiso.'
+        },
+        {
+          block: 'Dudas sobre precios y pagos',
+          q: '¿Qué métodos de pago aceptáis?',
+          a: 'Aceptamos tarjetas de crédito y débito. Los pagos se procesan de forma segura y los datos de tu tarjeta nunca se almacenan en nuestros servidores.'
+        },
+        {
+          block: 'Dudas sobre precios y pagos',
+          q: '¿Puedo cancelar en cualquier momento?',
+          a: 'Sí. Puedes cancelar tu suscripción cuando quieras, sin penalizaciones. También tienes derecho a **14 días de reembolso** tras cualquier compra, de acuerdo con la legislación europea.'
+        },
+        {
+          block: 'Dudas sobre precios y pagos',
+          q: '¿Existe descuento para compras anuales?',
+          a: 'Sí. En todos los planes de suscripción, el pago anual incluye un descuento del **20%** respecto al pago mensual.'
+        },
+        {
+          block: 'Privacidad y seguridad',
+          q: '¿Mis datos están seguros?',
+          a: 'Sí. Todos los datos están cifrados y nuestra infraestructura cumple las normas RGPD/GDPR. No compartimos tus datos con terceros para fines comerciales.'
+        },
+        {
+          block: 'Privacidad y seguridad',
+          q: '¿La IA aprende con mis datos?',
+          a: 'Los datos que introduces se usan solo para generar la respuesta que pediste. **No usamos tus datos para entrenar nuestros modelos de IA**. Puedes consultar nuestra Política de Privacidad para más detalles.'
+        },
+        {
+          block: 'Dudas específicas por producto',
+          q: '¿Responder Já publica respuestas automáticamente sin que yo las vea?',
+          a: 'No, si no quieres. Por defecto, la IA **sugiere la respuesta** y tú la apruebas antes de publicar. Puedes activar la publicación automática cuando confíes en el tono definido.'
+        },
+        {
+          block: 'Dudas específicas por producto',
+          q: '¿Lia tiene acceso a mi CV y datos personales?',
+          a: 'Solo accede a lo que tú compartes. Puedes subir tu CV para análisis y Lia usa esa información **solo para darte sugerencias de mejora** y encontrar vacantes compatibles.'
+        },
+        {
+          block: 'Dudas específicas por producto',
+          q: '¿Amplia Home Studio funciona con cualquier tipo de espacio?',
+          a: 'Funciona con cualquier espacio interior, como salón, dormitorio, cocina, oficina o local comercial. Solo necesitas **hacer una foto con el móvil** y la IA hace el resto.'
+        },
+        {
+          block: 'Dudas específicas por producto',
+          q: '¿OpsFlow soporta mi stack tecnológica?',
+          a: 'OpsFlow soporta las stacks más comunes de contenedores, integración continua y cloud. Si usas una tecnología específica, contáctanos porque añadimos integraciones nuevas de forma continua.'
+        },
+        {
+          block: 'Soporte y contacto',
+          q: '¿Cómo puedo contactar con soporte?',
+          a: 'Puedes contactarnos a través del **formulario de esta página**. Respondemos en menos de 24 horas laborables en días hábiles. Los planes Profesional y Agencia incluyen soporte prioritario.'
+        },
+        {
+          block: 'Soporte y contacto',
+          q: '¿Tenéis socios o revendedores en Portugal?',
+          a: 'Estamos desarrollando nuestro programa de partners. Si eres una agencia de marketing o consultora tecnológica en la **Gran Lisboa** y quieres revender nuestros productos, contáctanos.'
+        },
       ]
     },
     services: {
