@@ -68,6 +68,7 @@ export function HomePage() {
     if (canPersistFunctionalPreferences()) {
       localStorage.setItem('theme', newTheme);
     }
+    window.dispatchEvent(new CustomEvent('amplia-theme-change', { detail: newTheme }));
   };
 
   const scrollTo = (id: string) => {

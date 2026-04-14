@@ -43,6 +43,7 @@ function LegalLayout({ pageKey }: LegalLayoutProps) {
     if (canPersistFunctionalPreferences()) {
       localStorage.setItem('theme', next);
     }
+    window.dispatchEvent(new CustomEvent('amplia-theme-change', { detail: next }));
   };
 
   return (
