@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Send, AlertCircle, CheckCircle2, Globe } from 'lucide-react';
+import { Send, AlertCircle, CheckCircle2, Globe } from 'lucide-react';
 import { Button } from './Button';
 import { FormStatus } from '../types';
 
@@ -127,51 +127,18 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
-          <div>
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center">
             <h2 className="text-amplia-green font-bold tracking-widest uppercase text-xs mb-2">{t.sectionTitle}</h2>
-            <h3 className="text-4xl md:text-5xl font-max font-bold mb-8">
+            <h3 className="text-4xl md:text-5xl font-max font-bold mb-6">
               {t.mainTitlePrefix} <span className="text-amplia-green">{t.mainTitleHighlight}</span>{t.mainTitleSuffix}
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg mb-12 font-normal leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 text-lg mb-10 font-normal leading-relaxed">
               {t.description}
             </p>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 group">
-                <div className="p-3 bg-white dark:bg-white/5 shadow-md dark:shadow-none rounded-xl text-amplia-green transition-transform group-hover:scale-110">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold font-max text-lg text-gray-900 dark:text-white">Agualva-Cacém, Portugal</h4>
-                  <p className="text-gray-600 dark:text-gray-400 font-normal">Impasse da Sagrada Família, N.º 10 R/C Esq.º, 2735-374 Agualva-Cacém</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4 group">
-                <div className="p-3 bg-white dark:bg-white/5 shadow-md dark:shadow-none rounded-xl text-amplia-green transition-transform group-hover:scale-110">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold font-max text-lg text-gray-900 dark:text-white">Email Direto</h4>
-                  <p className="text-gray-600 dark:text-gray-400 font-normal">ampliasolutions.pt@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 group">
-                <div className="p-3 bg-white dark:bg-white/5 shadow-md dark:shadow-none rounded-xl text-amplia-green transition-transform group-hover:scale-110">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold font-max text-lg text-gray-900 dark:text-white">Contacto Telefónico</h4>
-                  <p className="text-gray-600 dark:text-gray-400 font-normal">(+351) 91 346 67 49</p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <div className="bg-white dark:bg-neutral-800 rounded-[40px] p-8 lg:p-12 text-gray-900 dark:text-white shadow-2xl border border-gray-100 dark:border-white/5 transition-all duration-300">
+          <div className="bg-white dark:bg-neutral-800 rounded-[40px] p-6 sm:p-8 lg:p-10 text-gray-900 dark:text-white shadow-2xl border border-gray-100 dark:border-white/5 transition-all duration-300">
             <h4 className="text-2xl font-bold font-max mb-8">{t.formTitle}</h4>
             <form onSubmit={handleSubmit} className="space-y-6">
               <input type="text" name="_honey" style={{ display: 'none' }} />
