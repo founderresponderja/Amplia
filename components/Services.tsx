@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Check, Share2, Rocket } from 'lucide-react';
+import { ExternalLink, Check, Rocket } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
 import { ScrollReveal } from './ScrollReveal';
@@ -60,23 +60,6 @@ export const Services = ({ content }: { content: any }) => {
     }
   };
 
-  const shareUrlFor = (p: any) =>
-    p.url.startsWith('/') ? `${window.location.origin}${p.url}` : p.url;
-
-  const handleShare = (p: any) => {
-    const url = shareUrlFor(p);
-    if (navigator.share) {
-      navigator.share({
-        title: p.appName,
-        text: p.appDescription,
-        url,
-      }).catch(console.error);
-    } else {
-      navigator.clipboard.writeText(url);
-      alert('Link copiado para a área de transferência!');
-    }
-  };
-
   const openPrimary = (p: any) => {
     if (p.url.startsWith('/')) navigate(p.url);
     else window.open(p.url, '_blank', 'noopener,noreferrer');
@@ -111,13 +94,6 @@ export const Services = ({ content }: { content: any }) => {
                     >
                       {p.buttonText} <ExternalLink size={18} />
                     </Button>
-                    <button 
-                      onClick={() => handleShare(p)}
-                      className="p-3 rounded-full bg-gray-100 dark:bg-neutral-800 text-gray-500 hover:text-amplia-green transition-colors"
-                      title="Partilhar"
-                    >
-                      <Share2 size={20} />
-                    </button>
                   </div>
                 </div>
 
