@@ -17,10 +17,11 @@ export const translations = {
       features: ['Suporte 24/7', 'Equipa Sénior', 'IA Nativa']
     },
     about: {
-      sectionTitle: 'Quem Somos',
+      sectionTitle: 'Missão e Valores',
       mainTitle: 'Engenharia de Elite para a Era da Inteligência',
       description1: 'A Amplia Solutions é mais do que uma consultora de informática; somos um centro de engenharia dedicado a construir o futuro da produtividade digital. Nascemos com a missão de democratizar o acesso a soluções complexas de software, integrando Inteligência Artificial no núcleo de cada produto.',
       description2: 'Sediada em Lisboa, Portugal, a nossa equipa é composta exclusivamente por engenheiros seniores com vasta experiência em arquiteturas de larga escala, cloud computing e modelos de linguagem avançados.',
+      description3: 'A nossa missão é transformar problemas complexos em soluções simples, elegantes e escaláveis. Acreditamos que a tecnologia deve trabalhar para as pessoas — não o contrário. Construímos com rigor, entregamos com honestidade e evoluímos sem pedir licença.',
       uniqueTitle: 'O que nos torna únicos?',
       uniquePoints: [
         { title: 'IA Nativa', text: 'Integramos IA de raiz; os nossos sistemas são concebidos com IA desde o primeiro dia.' },
@@ -193,7 +194,9 @@ export const translations = {
     },
     whoWeAre: {
       sectionTitle: 'Quem Somos',
-      nameLabel: 'FUNDADOR'
+      nameLabel: 'Fundador',
+      quote:
+        'Construímos o que ainda não existe para resolver o que já incomoda há demasiado tempo. Porque os melhores produtos nascem da frustração, não da inspiração.'
     },
     contact: {
       sectionTitle: 'Contacto',
@@ -258,10 +261,11 @@ export const translations = {
       features: ['24/7 Support', 'Senior Team', 'Native AI']
     },
     about: {
-      sectionTitle: 'About Us',
+      sectionTitle: 'Mission and Values',
       mainTitle: 'Elite Engineering for the Intelligence Era',
       description1: 'Amplia Solutions is more than an IT consultancy; we are an engineering hub dedicated to building the future of digital productivity. We were born with the mission to democratize access to complex software solutions, integrating Artificial Intelligence at the core of every product.',
       description2: 'Based in Lisbon, Portugal, our team consists exclusively of senior engineers with extensive experience in large-scale architectures, cloud computing, and advanced language models.',
+      description3: 'Our mission is to transform complex problems into simple, elegant and scalable solutions. We believe technology should work for people — not the other way around. We build with rigour, deliver with honesty and evolve without asking permission.',
       uniqueTitle: 'What makes us unique?',
       uniquePoints: [
         { title: 'AI-Native', text: 'We build AI in from the start; our systems are designed with AI from day one.' },
@@ -434,7 +438,9 @@ export const translations = {
     },
     whoWeAre: {
       sectionTitle: 'Who We Are',
-      nameLabel: 'FOUNDER'
+      nameLabel: 'Fundador',
+      quote:
+        "We build what doesn't exist yet to solve what has been frustrating for too long. Because the best products are born from frustration, not inspiration."
     },
     contact: {
       sectionTitle: 'Contact',
@@ -499,10 +505,11 @@ export const translations = {
       features: ['Soporte 24/7', 'Equipo Senior', 'IA Nativa']
     },
     about: {
-      sectionTitle: 'Sobre Nosotros',
+      sectionTitle: 'Misión y Valores',
       mainTitle: 'Ingeniería de Élite para la Era de la Inteligencia',
       description1: 'Amplia Solutions es más que una consultoría informática; somos un centro de ingeniería dedicado a construir el futuro de la productividad digital. Nacimos con la misión de democratizar el acceso a soluciones de software complejas, integrando Inteligencia Artificial en el núcleo de cada producto.',
       description2: 'Con sede en Lisboa, Portugal, nuestro equipo está formado exclusivamente por ingenieros senior con amplia experiencia en arquitecturas a gran escala, computación en la nube y modelos de lenguaje avanzados.',
+      description3: 'Nuestra misión es transformar problemas complejos en soluciones simples, elegantes y escalables. Creemos que la tecnología debe trabajar para las personas — no al revés. Construimos con rigor, entregamos con honestidad y evolucionamos sin pedir permiso.',
       uniqueTitle: '¿Qué nos hace únicos?',
       uniquePoints: [
         { title: 'IA Nativa', text: 'Integramos IA desde el origen; nuestros sistemas se diseñan con IA desde el primer día.' },
@@ -675,7 +682,9 @@ export const translations = {
     },
     whoWeAre: {
       sectionTitle: 'Quiénes Somos',
-      nameLabel: 'FUNDADOR'
+      nameLabel: 'Fundador',
+      quote:
+        'Construimos lo que aún no existe para resolver lo que lleva demasiado tiempo molestando. Porque los mejores productos nacen de la frustración, no de la inspiración.'
     },
     contact: {
       sectionTitle: 'Contacto',

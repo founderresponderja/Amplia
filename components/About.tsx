@@ -21,6 +21,11 @@ export const About = ({ content }: { content: any }) => {
                 {content.description2}
               </p>
             </div>
+            {content.description3 && (
+              <p className="mt-8 text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl">
+                {content.description3}
+              </p>
+            )}
           </div>
         </ScrollReveal>
 

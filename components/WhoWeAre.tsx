@@ -4,6 +4,7 @@ type Props = {
   content: {
     sectionTitle: string;
     nameLabel: string;
+    quote?: string;
   };
 };
 
@@ -11,7 +12,7 @@ export const WhoWeAre: React.FC<Props> = ({ content }) => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <section id="who-we-are" className="py-24 bg-gray-50 dark:bg-[#0f1115] text-gray-900 dark:text-white transition-colors duration-300">
+    <section id="who-we-are" className="py-24 bg-gray-50 dark:bg-[#0f1115] text-gray-900 dark:text-white transition-colors duration-300 border-t border-gray-200/70 dark:border-white/10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-amplia-green font-bold uppercase tracking-[0.2em] text-xs mb-4">
@@ -38,6 +39,11 @@ export const WhoWeAre: React.FC<Props> = ({ content }) => {
             <p className="text-sm uppercase tracking-wider text-[#6BBF3E] font-bold">
               {content.nameLabel}
             </p>
+            {content.quote && (
+              <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300 italic">
+                {content.quote}
+              </p>
+            )}
           </div>
         </div>
       </div>
