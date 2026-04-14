@@ -82,6 +82,8 @@ export const Services = ({ content }: { content: any }) => {
     else window.open(p.url, '_blank', 'noopener,noreferrer');
   };
 
+  const plans = (p: any) => (Array.isArray(p.pricingPlans) ? p.pricingPlans : []);
+
   return (
     <section id="services" className="py-24 bg-white dark:bg-transparent transition-colors">
       <div className="max-w-7xl mx-auto px-4">
@@ -121,21 +123,51 @@ export const Services = ({ content }: { content: any }) => {
 
                 <div className="lg:w-2/5 bg-gray-50 dark:bg-[#0c0d10] p-10 lg:p-16 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-gray-100 dark:border-white/5 transition-colors">
                   <div className="bg-white dark:bg-[#0f1115] p-10 rounded-3xl shadow-lg dark:shadow-2xl text-left border border-gray-100 dark:border-white/5 relative overflow-hidden">
-                    <h4 className="text-2xl font-max font-bold text-gray-900 dark:text-white mb-6 tracking-tight">{p.pricingTitle}</h4>
-                    
-                    <div className="flex items-baseline gap-1 mb-10">
-                      <span className="text-5xl font-max font-bold text-gray-900 dark:text-white tracking-tight">{p.pricingPrice}</span>
-                      <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">{p.pricingPeriod}</span>
-                    </div>
-
-                    <ul className="space-y-5">
-                      {[p.pricingFeature1, p.pricingFeature2, p.pricingFeature3, p.pricingFeature4].filter(Boolean).map((f, i) => (
-                        <li key={i} className="flex items-start gap-3 text-[15px] text-gray-600 dark:text-gray-300">
-                          <Check size={18} className={`${getThemeColors(p.theme)} mt-1 flex-shrink-0`} /> 
-                          <span className="leading-snug">{formatFeatureText(f)}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {plans(p).length > 0 ? (
+                      <div className="space-y-4">
+                        <h4 className="text-2xl font-max font-bold text-gray-900 dark:text-white tracking-tight">
+                          {p.pricingTitle}
+                        </h4>
+                        {plans(p).map((plan: any, idx: number) => (
+                          <div
+                            key={`${plan.name}-${idx}`}
+                            className="rounded-2xl border border-gray-100 bg-gray-50/70 p-4 dark:border-white/10 dark:bg-white/5"
+                          >
+                            <div className="flex items-baseline justify-between gap-2">
+                              <p className="text-sm font-bold text-gray-900 dark:text-white">{plan.name}</p>
+                              <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">
+                                {plan.price}
+                                {plan.period ? <span className="ml-1 text-xs font-medium">{plan.period}</span> : null}
+                              </p>
+                            </div>
+                            <ul className="mt-3 space-y-2">
+                              {(plan.features || []).map((f: string, i: number) => (
+                                <li key={i} className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300">
+                                  <Check size={14} className={`${getThemeColors(p.theme)} mt-0.5 flex-shrink-0`} />
+                                  <span className="leading-snug">{formatFeatureText(f)}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <>
+                        <h4 className="text-2xl font-max font-bold text-gray-900 dark:text-white mb-6 tracking-tight">{p.pricingTitle}</h4>
+                        <div className="flex items-baseline gap-1 mb-10">
+                          <span className="text-5xl font-max font-bold text-gray-900 dark:text-white tracking-tight">{p.pricingPrice}</span>
+                          <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">{p.pricingPeriod}</span>
+                        </div>
+                        <ul className="space-y-5">
+                          {[p.pricingFeature1, p.pricingFeature2, p.pricingFeature3, p.pricingFeature4].filter(Boolean).map((f, i) => (
+                            <li key={i} className="flex items-start gap-3 text-[15px] text-gray-600 dark:text-gray-300">
+                              <Check size={18} className={`${getThemeColors(p.theme)} mt-1 flex-shrink-0`} />
+                              <span className="leading-snug">{formatFeatureText(f)}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

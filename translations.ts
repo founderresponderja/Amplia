@@ -67,13 +67,13 @@ export const translations = {
           appDescription: 'Gera ficheiros de configuração, pipelines de integração contínua e configurações cloud com IA. Liga o teu código à produção com passos automatizados e consistentes. Lança novas versões em minutos com mais confiança.',
           buttonText: 'Saber Mais',
           url: '/produtos/opsflow',
-          pricingTitle: 'Basic IA',
-          pricingPrice: '€9.99',
-          pricingPeriod: '/mês',
-          pricingFeature1: '10 implementações /mês',
-          pricingFeature2: 'Suporte por email',
-          pricingFeature3: 'Análise de segurança padrão',
-          pricingFeature4: 'Automação CI/CD'
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Plano Gratuito', price: '0€', period: '', features: ['5 configurações/mês', 'Dockerfile e docker-compose'] },
+            { name: 'Plano Inicial', price: '14,99€', period: '/mês', features: ['50 configurações/mês', 'CI/CD, GitHub Actions', 'AWS, GCP e Azure'] },
+            { name: 'Plano Profissional', price: '39,99€', period: '/mês', features: ['Configurações ilimitadas', 'Kubernetes e Terraform', 'Integração Git'] },
+            { name: 'Plano Agência', price: '99,99€', period: '/mês', features: ['Até 10 utilizadores', 'Pipelines personalizados', 'SLA e gestor dedicado'] },
+          ]
         },
         {
           id: 'responderja',
@@ -83,13 +83,13 @@ export const translations = {
           appDescription: 'Responde automaticamente às avaliações do Google, Booking e TripAdvisor com IA, no teu tom de voz, em segundos. Centraliza respostas e acompanha o impacto no teu SEO local num único fluxo. Poupa até 15 horas por semana.',
           buttonText: 'Saber Mais',
           url: 'https://responderja.pt',
-          pricingTitle: 'Starter',
-          pricingPrice: '€19.99',
-          pricingPeriod: '/mês',
-          pricingFeature1: '50 respostas IA inteligentes',
-          pricingFeature2: '1 utilizador(es)',
-          pricingFeature3: 'Painel de SEO e análises',
-          pricingFeature4: ''
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Plano Gratuito', price: '0€', period: '', features: ['Período de teste com funcionalidades essenciais'] },
+            { name: 'Plano Inicial', price: '19,99€', period: '/mês', features: ['Automação base de respostas com IA'] },
+            { name: 'Plano Profissional', price: '49,99€', period: '/mês', features: ['Mais volume e recursos avançados de reputação'] },
+            { name: 'Plano Agência', price: '149,99€', period: '/mês', features: ['Gestão multi-negócio e operação escalável'] },
+          ]
         },
         {
           id: 'lia',
@@ -99,13 +99,13 @@ export const translations = {
           appDescription: 'Optimiza o teu CV com IA e ajusta o teu perfil às funções certas. Encontra vagas compatíveis com a tua experiência e recebe sugestões acionáveis. Prepara-te para entrevistas com mais segurança e foco.',
           buttonText: 'Saber Mais',
           url: '/produtos/lia',
-          pricingTitle: 'Pro',
-          pricingPrice: '€14.99',
-          pricingPeriod: '/mês',
-          pricingFeature1: 'CV com IA ilimitado',
-          pricingFeature2: 'Pesquisa automática de vagas',
-          pricingFeature3: 'Entrevistas simuladas',
-          pricingFeature4: ''
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Plano Gratuito', price: '0€', period: '', features: ['Período de teste com funcionalidades essenciais'] },
+            { name: 'Plano Inicial', price: '9,99€', period: '/mês', features: ['Funcionalidades base de carreira assistida por IA'] },
+            { name: 'Plano Profissional', price: '24,99€', period: '/mês', features: ['Mais popular', 'Preparação avançada para entrevistas'] },
+            { name: 'Plano Agência', price: '49,99€', period: '/mês', features: ['Gestão de múltiplos perfis e equipas'] },
+          ]
         },
         {
           id: 'homestudio',
@@ -115,13 +115,15 @@ export const translations = {
           appDescription: 'Carrega uma foto do teu espaço e recebe em segundos um projecto de decoração completo com lista de materiais e estimativa de custos. Ajusta estilos, orçamento e detalhes visuais num processo guiado. Decide mais rápido com uma proposta pronta a executar.',
           buttonText: 'Saber Mais',
           url: '/produtos/amplia-home-studio',
-          pricingTitle: 'Acesso Studio',
-          pricingPrice: 'Gratuito',
-          pricingPeriod: '/beta',
-          pricingFeature1: 'Prototipagem rápida com IA',
-          pricingFeature2: 'Modelos Gemini Pro',
-          pricingFeature3: 'Exportação direta',
-          pricingFeature4: 'Espaço de trabalho colaborativo'
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Plano Gratuito', price: '0€', period: '', features: ['1 espaço por mês', '3 estilos de decoração', 'Lista de materiais básica', 'Sem compra online', 'Com marca de água nos resultados'] },
+            { name: 'Compra única 1 espaço', price: '4,99€', period: '', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
+            { name: 'Compra única 3 espaços', price: '11,99€', period: '', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
+            { name: 'Compra única 10 espaços', price: '29,99€', period: '', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
+            { name: 'Plano Profissional', price: '29,99€', period: '/mês', features: ['Projectos ilimitados', 'Remodelações simples', 'Comparação de preços', 'Exportação PDF'] },
+            { name: 'Plano Agência', price: '79,99€', period: '/mês', features: ['Tudo do Profissional', 'Gestão de múltiplos clientes', 'Relatórios com marca própria'] },
+          ]
         }
       ]
     },
@@ -242,13 +244,13 @@ export const translations = {
           appDescription: 'Generate configuration files, continuous integration pipelines, and cloud settings with AI. Connect your code to production with automated, consistent steps. Release updates in minutes with greater confidence.',
           buttonText: 'Learn More',
           url: '/produtos/opsflow',
-          pricingTitle: 'Basic AI',
-          pricingPrice: '€9.99',
-          pricingPeriod: '/month',
-          pricingFeature1: '10 deployments /month',
-          pricingFeature2: 'Email Support',
-          pricingFeature3: 'Standard Security Scan',
-          pricingFeature4: 'CI/CD Automation'
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Free Plan', price: '€0', period: '', features: ['5 configurations/month', 'Dockerfile and docker-compose'] },
+            { name: 'Starter Plan', price: '€14.99', period: '/month', features: ['50 configurations/month', 'CI/CD and GitHub Actions', 'AWS, GCP, and Azure'] },
+            { name: 'Professional Plan', price: '€39.99', period: '/month', features: ['Unlimited configurations', 'Kubernetes and Terraform', 'Git integration'] },
+            { name: 'Agency Plan', price: '€99.99', period: '/month', features: ['Up to 10 users', 'Custom pipelines', 'SLA and dedicated manager'] },
+          ]
         },
         {
           id: 'responderja',
@@ -258,13 +260,13 @@ export const translations = {
           appDescription: 'Respond automatically to Google, Booking, and TripAdvisor reviews with AI in your brand voice in seconds. Organize replies and track local SEO impact in one streamlined flow. Save up to 15 hours per week.',
           buttonText: 'Learn More',
           url: 'https://responderja.pt',
-          pricingTitle: 'Starter',
-          pricingPrice: '€19.99',
-          pricingPeriod: '/month',
-          pricingFeature1: '50 smart AI responses',
-          pricingFeature2: '1 user(s)',
-          pricingFeature3: 'SEO and analytics panel',
-          pricingFeature4: ''
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Free Plan', price: '€0', period: '', features: ['Free access with essential features'] },
+            { name: 'Starter Plan', price: '€19.99', period: '/month', features: ['Core AI response automation'] },
+            { name: 'Professional Plan', price: '€49.99', period: '/month', features: ['Higher volume and advanced reputation tools'] },
+            { name: 'Agency Plan', price: '€149.99', period: '/month', features: ['Multi-business management and scalable operation'] },
+          ]
         },
         {
           id: 'lia',
@@ -274,13 +276,13 @@ export const translations = {
           appDescription: 'Optimize your CV with AI and tailor your profile to the right roles. Find openings that match your background and get actionable suggestions. Prepare for interviews with stronger confidence and focus.',
           buttonText: 'Learn More',
           url: '/produtos/lia',
-          pricingTitle: 'Pro',
-          pricingPrice: '€14.99',
-          pricingPeriod: '/month',
-          pricingFeature1: 'Unlimited AI CVs',
-          pricingFeature2: 'Automated job search',
-          pricingFeature3: 'Mock interviews',
-          pricingFeature4: ''
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Free Plan', price: '€0', period: '', features: ['Free access with essential features'] },
+            { name: 'Starter Plan', price: '€9.99', period: '/month', features: ['Core AI-assisted career features'] },
+            { name: 'Professional Plan', price: '€24.99', period: '/month', features: ['Most popular', 'Advanced interview preparation'] },
+            { name: 'Agency Plan', price: '€49.99', period: '/month', features: ['Multiple profile and team management'] },
+          ]
         },
         {
           id: 'homestudio',
@@ -290,13 +292,15 @@ export const translations = {
           appDescription: 'Upload a photo of your space and get a complete interior design project in seconds with materials and cost estimates. Adjust style, budget, and visual details in a guided flow. Make faster decisions with an execution-ready plan.',
           buttonText: 'Learn More',
           url: '/produtos/amplia-home-studio',
-          pricingTitle: 'Studio access',
-          pricingPrice: 'Free',
-          pricingPeriod: '/beta',
-          pricingFeature1: 'Rapid prototyping with AI',
-          pricingFeature2: 'Gemini Pro Models',
-          pricingFeature3: 'Direct export',
-          pricingFeature4: 'Collaborative workspace'
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Free Plan', price: '€0', period: '', features: ['1 space per month', '3 decoration styles', 'Basic materials list', 'No online checkout', 'Watermark on results'] },
+            { name: 'One-time purchase 1 space', price: '€4.99', period: '', features: ['Complete shopping list', 'Integrated online checkout (soon)'] },
+            { name: 'One-time purchase 3 spaces', price: '€11.99', period: '', features: ['Complete shopping list', 'Integrated online checkout (soon)'] },
+            { name: 'One-time purchase 10 spaces', price: '€29.99', period: '', features: ['Complete shopping list', 'Integrated online checkout (soon)'] },
+            { name: 'Professional Plan', price: '€29.99', period: '/month', features: ['Unlimited projects', 'Simple remodeling', 'Price comparison', 'PDF export'] },
+            { name: 'Agency Plan', price: '€79.99', period: '/month', features: ['Everything in Professional', 'Multi-client management', 'White-label reports'] },
+          ]
         }
       ]
     },
@@ -417,13 +421,13 @@ export const translations = {
           appDescription: 'Genera archivos de configuración, canalizaciones de integración continua y configuraciones cloud con IA. Conecta tu código con producción mediante pasos automatizados y consistentes. Publica nuevas versiones en minutos con mayor confianza.',
           buttonText: 'Saber más',
           url: '/produtos/opsflow',
-          pricingTitle: 'Basic IA',
-          pricingPrice: '€9.99',
-          pricingPeriod: '/mes',
-          pricingFeature1: '10 Despliegues /mes',
-          pricingFeature2: 'Soporte por email',
-          pricingFeature3: 'Escaneo de Seguridad Estándar',
-          pricingFeature4: 'Automatización CI/CD'
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Plan Gratuito', price: '0€', period: '', features: ['5 configuraciones/mes', 'Dockerfile y docker-compose'] },
+            { name: 'Plan Inicial', price: '14,99€', period: '/mes', features: ['50 configuraciones/mes', 'CI/CD y GitHub Actions', 'AWS, GCP y Azure'] },
+            { name: 'Plan Profesional', price: '39,99€', period: '/mes', features: ['Configuraciones ilimitadas', 'Kubernetes y Terraform', 'Integración Git'] },
+            { name: 'Plan Agencia', price: '99,99€', period: '/mes', features: ['Hasta 10 usuarios', 'Pipelines personalizados', 'SLA y gestor dedicado'] },
+          ]
         },
         {
           id: 'responderja',
@@ -433,13 +437,13 @@ export const translations = {
           appDescription: 'Responde automáticamente a las reseñas de Google, Booking y TripAdvisor con IA, con tu tono de voz, en segundos. Centraliza respuestas y sigue el impacto en tu SEO local en un solo flujo. Ahorra hasta 15 horas por semana.',
           buttonText: 'Saber más',
           url: 'https://responderja.pt',
-          pricingTitle: 'Starter',
-          pricingPrice: '€19.99',
-          pricingPeriod: '/mes',
-          pricingFeature1: '50 respuestas IA inteligentes',
-          pricingFeature2: '1 usuario(s)',
-          pricingFeature3: 'Panel de SEO y análisis',
-          pricingFeature4: ''
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Plan Gratuito', price: '0€', period: '', features: ['Período de prueba con funciones esenciales'] },
+            { name: 'Plan Inicial', price: '19,99€', period: '/mes', features: ['Automatización base de respuestas con IA'] },
+            { name: 'Plan Profesional', price: '49,99€', period: '/mes', features: ['Mayor volumen y herramientas avanzadas de reputación'] },
+            { name: 'Plan Agencia', price: '149,99€', period: '/mes', features: ['Gestión multiempresa y operación escalable'] },
+          ]
         },
         {
           id: 'lia',
@@ -449,13 +453,13 @@ export const translations = {
           appDescription: 'Optimiza tu CV con IA y adapta tu perfil a los puestos adecuados. Encuentra vacantes compatibles con tu experiencia y recibe recomendaciones accionables. Prepárate para entrevistas con más seguridad y enfoque.',
           buttonText: 'Saber más',
           url: '/produtos/lia',
-          pricingTitle: 'Pro',
-          pricingPrice: '€14.99',
-          pricingPeriod: '/mes',
-          pricingFeature1: 'CV con IA ilimitado',
-          pricingFeature2: 'Piloto Automático de Búsqueda',
-          pricingFeature3: 'Entrevistas simuladas',
-          pricingFeature4: ''
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Plan Gratuito', price: '0€', period: '', features: ['Período de prueba con funciones esenciales'] },
+            { name: 'Plan Inicial', price: '9,99€', period: '/mes', features: ['Funciones base de carrera asistida por IA'] },
+            { name: 'Plan Profesional', price: '24,99€', period: '/mes', features: ['Más popular', 'Preparación avanzada para entrevistas'] },
+            { name: 'Plan Agencia', price: '49,99€', period: '/mes', features: ['Gestión de múltiples perfiles y equipos'] },
+          ]
         },
         {
           id: 'homestudio',
@@ -465,13 +469,15 @@ export const translations = {
           appDescription: 'Sube una foto de tu espacio y recibe en segundos un proyecto de decoración completo con lista de materiales y estimación de costes. Ajusta estilos, presupuesto y detalles visuales en un flujo guiado. Toma decisiones más rápidas con un plan listo para ejecutar.',
           buttonText: 'Saber más',
           url: '/produtos/amplia-home-studio',
-          pricingTitle: 'Acceso Studio',
-          pricingPrice: 'Gratis',
-          pricingPeriod: '/beta',
-          pricingFeature1: 'Prototipado rápido con IA',
-          pricingFeature2: 'Modelos Gemini Pro',
-          pricingFeature3: 'Exportación directa',
-          pricingFeature4: 'Espacio de trabajo colaborativo'
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Plan Gratuito', price: '0€', period: '', features: ['1 espacio por mes', '3 estilos de decoración', 'Lista básica de materiales', 'Sin compra online', 'Con marca de agua en resultados'] },
+            { name: 'Compra única 1 espacio', price: '4,99€', period: '', features: ['Lista completa de compras', 'Compra online integrada (próximamente)'] },
+            { name: 'Compra única 3 espacios', price: '11,99€', period: '', features: ['Lista completa de compras', 'Compra online integrada (próximamente)'] },
+            { name: 'Compra única 10 espacios', price: '29,99€', period: '', features: ['Lista completa de compras', 'Compra online integrada (próximamente)'] },
+            { name: 'Plan Profesional', price: '29,99€', period: '/mes', features: ['Proyectos ilimitados', 'Remodelaciones simples', 'Comparación de precios', 'Exportación PDF'] },
+            { name: 'Plan Agencia', price: '79,99€', period: '/mes', features: ['Todo lo del Profesional', 'Gestión de múltiples clientes', 'Informes con marca propia'] },
+          ]
         }
       ]
     },

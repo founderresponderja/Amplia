@@ -12,6 +12,12 @@ type Props = {
   imageUrl: string;
   imageAlt: string;
   waitlistKey: ProductWaitlistKey;
+  pricingPlans?: Array<{
+    name: string;
+    price: string;
+    period?: string;
+    features: string[];
+  }>;
 };
 
 export const ProductComingSoonPage: React.FC<Props> = ({
@@ -20,6 +26,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
   imageUrl,
   imageAlt,
   waitlistKey,
+  pricingPlans = [],
 }) => {
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
@@ -129,6 +136,32 @@ export const ProductComingSoonPage: React.FC<Props> = ({
           {title}
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-gray-400">{description}</p>
+
+        {pricingPlans.length > 0 && (
+          <section className="mt-10 rounded-[28px] border border-white/10 bg-[#12141a]/80 p-8 md:p-10">
+            <h2 className="mb-6 text-lg font-max font-bold" style={{ color: ACCENT }}>
+              Planos e preços
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {pricingPlans.map((plan) => (
+                <div key={plan.name} className="rounded-2xl border border-white/10 bg-[#0c0d10] p-5">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <p className="text-sm font-bold text-white">{plan.name}</p>
+                    <p className="text-sm font-semibold text-gray-300">
+                      {plan.price}
+                      {plan.period ? <span className="ml-1 text-xs text-gray-500">{plan.period}</span> : null}
+                    </p>
+                  </div>
+                  <ul className="mt-3 space-y-1.5 text-xs text-gray-400">
+                    {plan.features.map((f) => (
+                      <li key={f}>• {f}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="mt-12 rounded-[28px] border border-white/10 bg-[#12141a]/80 p-8 md:p-10">
           <h2 className="mb-6 text-lg font-max font-bold" style={{ color: ACCENT }}>
