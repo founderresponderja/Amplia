@@ -1,7 +1,7 @@
 
 import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Moon, X, Linkedin, Instagram, Github, Menu } from 'lucide-react';
+import { Sun, Moon, X, Linkedin, Instagram, Menu } from 'lucide-react';
 import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
@@ -164,7 +164,6 @@ export function HomePage() {
             <div className="flex justify-center gap-8 pt-12 text-gray-400">
                <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Linkedin size={24} /></a>
                <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Instagram size={24} /></a>
-               <a href="https://github.com/amplia-solutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Github size={24} /></a>
             </div>
           </div>
         </div>
