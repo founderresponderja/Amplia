@@ -1,4 +1,4 @@
-﻿import { AppLanguage } from './language';
+import { AppLanguage } from './language';
 
 type Section = {
   heading: string;

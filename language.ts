@@ -1,4 +1,4 @@
-﻿import { canPersistFunctionalPreferences } from './cookiePreference';
+import { canPersistFunctionalPreferences } from './cookiePreference';
 
 export type AppLanguage = 'pt' | 'en' | 'es';
 
