@@ -19,18 +19,18 @@ export const translations = {
     about: {
       sectionTitle: 'Quem Somos',
       mainTitle: 'Engenharia de Elite para a Era da Inteligência',
-      description1: 'A Amplia Solutions não é apenas uma consultora de informática; somos um hub de engenharia dedicado a construir o futuro da produtividade digital. Nascemos com a missão de democratizar o acesso a soluções complexas de software, integrando Inteligência Artificial no núcleo de cada produto.',
+      description1: 'A Amplia Solutions é mais do que uma consultora de informática; somos um hub de engenharia dedicado a construir o futuro da produtividade digital. Nascemos com a missão de democratizar o acesso a soluções complexas de software, integrando Inteligência Artificial no núcleo de cada produto.',
       description2: 'Sediada em Lisboa, Portugal, a nossa equipa é composta exclusivamente por engenheiros seniores com vasta experiência em arquiteturas de larga escala, cloud computing e modelos de linguagem avançados.',
       uniqueTitle: 'O que nos torna únicos?',
       uniquePoints: [
-        { title: 'IA Nativa', text: 'Não "adicionamos" IA; os nossos sistemas são concebidos com IA desde o primeiro dia.' },
-        { title: 'Transparência Total', text: 'Código limpo, documentação rigorosa e comunicação direta sem intermediários.' },
-        { title: 'Foco em Produto', text: 'Pensamos como donos do produto, garantindo que a tecnologia serve o negócio e não o contrário.' }
+        { title: 'IA Nativa', text: 'Integramos IA de raiz; os nossos sistemas são concebidos com IA desde o primeiro dia.' },
+        { title: 'Transparência Total', text: 'Código limpo, documentação rigorosa e comunicação direta com interlocução dedicada.' },
+        { title: 'Foco em Produto', text: 'Pensamos como donos do produto, alinhando a tecnologia com os objetivos do negócio.' }
       ],
       credentialsTitle: 'Expertise e Credenciais',
       credentialsText: 'A nossa equipa detém certificações avançadas em AWS Cloud Architecture, Google Cloud Engineering e especializações em Data Science. Aplicamos metodologias ágeis (Scrum/Kanban) e práticas de segurança Zero Trust em todos os desenvolvimentos.',
       misinformationTitle: 'Esclarecimentos sobre a Marca',
-      misinformationText: 'Para evitar confusões comuns: a Amplia Solutions é uma entidade independente focada exclusivamente em Tecnologia e Consultoria IT. Não estamos afiliados a empresas de outros setores (como telecomunicações ou recursos humanos tradicionais) que possam partilhar nomes semelhantes.'
+      misinformationText: 'Para garantir clareza de marca: a Amplia Solutions é uma entidade independente focada exclusivamente em Tecnologia e Consultoria IT, com posicionamento próprio e atuação dedicada neste setor.'
     },
     faq: {
       sectionTitle: 'FAQ',
@@ -165,7 +165,7 @@ export const translations = {
       accept: 'Aceitar Todos',
       decline: 'Essenciais Apenas',
       privacyPolicyTitle: 'Política de Privacidade',
-      privacyPolicyText: 'Na Amplia Solutions, a proteção dos seus dados pessoais é uma prioridade absoluta. Em conformidade com o RGPD, informamos que os dados recolhidos através do nosso formulário de contacto são utilizados exclusivamente para processar o seu pedido de informação e não são partilhados com terceiros sem consentimento explícito.',
+      privacyPolicyText: 'Na Amplia Solutions, a proteção dos seus dados pessoais é uma prioridade absoluta. Em conformidade com o RGPD, informamos que os dados recolhidos através do nosso formulário de contacto são utilizados exclusivamente para processar o seu pedido de informação e são partilhados com terceiros apenas mediante consentimento explícito.',
       termsTitle: 'Termos e Condições',
       termsText: 'Ao utilizar o site da Amplia Solutions, concorda com os termos de utilização aqui descritos. O conteúdo deste site é propriedade intelectual da Amplia Solutions e está protegido por direitos de autor.'
     },
@@ -194,18 +194,18 @@ export const translations = {
     about: {
       sectionTitle: 'About Us',
       mainTitle: 'Elite Engineering for the Intelligence Era',
-      description1: 'Amplia Solutions is not just an IT consultancy; we are an engineering hub dedicated to building the future of digital productivity. We were born with the mission to democratize access to complex software solutions, integrating Artificial Intelligence at the core of every product.',
+      description1: 'Amplia Solutions is more than an IT consultancy; we are an engineering hub dedicated to building the future of digital productivity. We were born with the mission to democratize access to complex software solutions, integrating Artificial Intelligence at the core of every product.',
       description2: 'Based in Lisbon, Portugal, our team consists exclusively of senior engineers with extensive experience in large-scale architectures, cloud computing, and advanced language models.',
       uniqueTitle: 'What makes us unique?',
       uniquePoints: [
-        { title: 'AI-Native', text: 'We don\'t "add" AI; our systems are designed with AI from day one.' },
-        { title: 'Total Transparency', text: 'Clean code, rigorous documentation, and direct communication without intermediaries.' },
-        { title: 'Product Focus', text: 'We think like product owners, ensuring technology serves the business, not the other way around.' }
+        { title: 'AI-Native', text: 'We build AI in from the start; our systems are designed with AI from day one.' },
+        { title: 'Total Transparency', text: 'Clean code, rigorous documentation, and direct communication with dedicated points of contact.' },
+        { title: 'Product Focus', text: 'We think like product owners, aligning technology with business goals.' }
       ],
       credentialsTitle: 'Expertise & Credentials',
       credentialsText: 'Our team holds advanced certifications in AWS Cloud Architecture, Google Cloud Engineering, and Data Science specializations. We apply agile methodologies and Zero Trust security practices in all developments.',
       misinformationTitle: 'Brand Clarifications',
-      misinformationText: 'To avoid common confusion: Amplia Solutions is an independent entity focused exclusively on Technology and IT Consulting. We are not affiliated with companies in other sectors (like telecommunications or traditional HR) that may share similar names.'
+      misinformationText: 'For clear brand positioning: Amplia Solutions is an independent entity focused exclusively on Technology and IT Consulting, with its own identity and dedicated market focus.'
     },
     faq: {
       sectionTitle: 'FAQ',
@@ -369,18 +369,18 @@ export const translations = {
     about: {
       sectionTitle: 'Sobre Nosotros',
       mainTitle: 'Ingeniería de Élite para la Era de la Inteligencia',
-      description1: 'Amplia Solutions no es solo una consultoría informática; somos un centro de ingeniería dedicado a construir el futuro de la productividad digital. Nacimos con la misión de democratizar el acceso a soluciones de software complejas, integrando Inteligencia Artificial en el núcleo de cada producto.',
+      description1: 'Amplia Solutions es más que una consultoría informática; somos un centro de ingeniería dedicado a construir el futuro de la productividad digital. Nacimos con la misión de democratizar el acceso a soluciones de software complejas, integrando Inteligencia Artificial en el núcleo de cada producto.',
       description2: 'Con sede en Lisboa, Portugal, nuestro equipo está formado exclusivamente por ingenieros senior con amplia experiencia en arquitecturas a gran escala, computación en la nube y modelos de lenguaje avanzados.',
       uniqueTitle: '¿Qué nos hace únicos?',
       uniquePoints: [
-        { title: 'IA Nativa', text: 'No "añadimos" IA; nuestros sistemas se diseñan con IA desde el primer día.' },
-        { title: 'Transparencia Total', text: 'Código limpio, documentación rigurosa y comunicación directa sin intermediarios.' },
+        { title: 'IA Nativa', text: 'Integramos IA desde el origen; nuestros sistemas se diseñan con IA desde el primer día.' },
+        { title: 'Transparencia Total', text: 'Código limpio, documentación rigurosa y comunicación directa con interlocución dedicada.' },
         { title: 'Enfoque en Producto', text: 'Pensamos como dueños del producto, asegurando que la tecnología sirva al negocio.' }
       ],
       credentialsTitle: 'Experiencia y Credenciales',
       credentialsText: 'Nuestro equipo cuenta con certificaciones avanzadas en AWS Cloud Architecture, Google Cloud Engineering y especializaciones en Ciencia de Datos. Aplicamos metodologías ágiles y prácticas de seguridad Zero Trust.',
       misinformationTitle: 'Aclaraciones de Marca',
-      misinformationText: 'Para evitar confusiones: Amplia Solutions es una entidad independiente centrada exclusivamente en Tecnología y Consultoría IT. No estamos afiliados a empresas de otros sectores (como telecomunicaciones o RRHH tradicionales) que puedan compartir nombres similares.'
+      misinformationText: 'Para reforzar la claridad de marca: Amplia Solutions es una entidad independiente centrada exclusivamente en Tecnología y Consultoría IT, con identidad propia y enfoque dedicado en este sector.'
     },
     faq: {
       sectionTitle: 'FAQ',
