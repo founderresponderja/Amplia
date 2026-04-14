@@ -203,16 +203,16 @@ export const translations = {
       description: 'Pronto para elevar a sua tecnologia ao próximo nível? A nossa equipa de especialistas está aqui para ajudar.',
       formTitle: 'Envie-nos uma Mensagem',
       labels: {
-        name: 'Nome Completo',
+        name: 'Nome',
         company: 'Empresa (Opcional)',
-        email: 'Email Profissional',
+        email: 'Email',
         message: 'Como podemos ajudar?',
         privacy: 'Aceito o tratamento dos meus dados de acordo com a Política de Privacidade.'
       },
       placeholders: {
-        name: 'Seu nome',
+        name: 'Nome',
         company: 'Sua empresa',
-        email: 'exemplo@empresa.com',
+        email: 'Email',
         message: 'Descreva o seu projeto ou desafio...'
       },
       button: {
@@ -444,16 +444,16 @@ export const translations = {
       description: 'Ready to take your technology to the next level? Our team of experts is here to help.',
       formTitle: 'Send us a Message',
       labels: {
-        name: 'Full Name',
+        name: 'Name',
         company: 'Company (Optional)',
-        email: 'Business Email',
+        email: 'Email',
         message: 'How can we help?',
         privacy: 'I accept the processing of my data according to the Privacy Policy.'
       },
       placeholders: {
-        name: 'Your name',
+        name: 'Name',
         company: 'Your company',
-        email: 'example@company.com',
+        email: 'Email',
         message: 'Describe your project or challenge...'
       },
       button: {
@@ -685,16 +685,16 @@ export const translations = {
       description: '¿Listo para llevar su tecnología al siguiente nivel? Nuestro equipo de expertos está aquí para ayudarle.',
       formTitle: 'Envíenos un Mensaje',
       labels: {
-        name: 'Nombre Completo',
+        name: 'Nombre',
         company: 'Empresa (Opcional)',
-        email: 'Email Profesional',
+        email: 'Email',
         message: '¿Cómo podemos ayudar?',
         privacy: 'Acepto el tratamiento de mis datos de acuerdo con la Política de Privacidade.'
       },
       placeholders: {
-        name: 'Su nombre',
+        name: 'Nombre',
         company: 'Su empresa',
-        email: 'ejemplo@empresa.com',
+        email: 'Email',
         message: 'Describa su proyecto o desafio...'
       },
       button: {
