@@ -6,6 +6,7 @@ import { Logo } from './components/Logo';
 import { Button } from './components/Button';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 import { About } from './components/About';
 import { FAQ } from './components/FAQ';
 import { WhoWeAre } from './components/WhoWeAre';
@@ -208,35 +209,7 @@ export function HomePage() {
       <WhoWeAre content={t.whoWeAre} />
       <Contact content={t.contact} />
       
-      <footer className="py-16 border-t border-gray-100 dark:border-white/5 text-center transition-colors">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 text-gray-400 text-sm">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <Logo className="h-6 opacity-40 hover:opacity-100 transition-all cursor-pointer" showText={true} />
-            <div className="flex gap-5">
-              <a href="https://www.linkedin.com/company/ampliasolutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://www.instagram.com/ampliasolutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-all transform hover:scale-110" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-            </div>
-          </div>
-          
-          <div className="flex flex-col items-center gap-2">
-            <p className="max-w-xs md:max-w-none font-medium opacity-60 transition-opacity hover:opacity-100">
-              &copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.
-            </p>
-            <p className="text-[10px] opacity-40 uppercase tracking-widest font-bold">
-              AGUALVA-CACÉM, Portugal • (+351) 91 346 67 49
-            </p>
-          </div>
-          
-          <div className="flex gap-8 font-bold text-xs uppercase tracking-widest">
-            <Link to="/privacidade" className="hover:text-amplia-green transition-colors">{t.legal.privacy}</Link>
-            <Link to="/termos" className="hover:text-amplia-green transition-colors">{t.legal.terms}</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <Suspense fallback={null}>
         <AIChatBot t={t.aiBot} lang={lang} />

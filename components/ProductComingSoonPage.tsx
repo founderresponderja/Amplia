@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { Button } from './Button';
+import { Footer } from './Footer';
 import type { ProductWaitlistKey } from '../productPages';
 
 const ACCENT = '#6BBF3E';
@@ -221,6 +222,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
           )}
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
