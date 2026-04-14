@@ -1,4 +1,4 @@
-import { AppLanguage } from './language';
+﻿import { AppLanguage } from './language';
 
 type Section = {
   heading: string;
@@ -38,34 +38,34 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
     back: '<- Voltar',
     languageLabel: 'Idioma',
     privacy: {
-      title: 'Politica de Privacidade',
+      title: 'Política de Privacidade',
       sections: [
         {
-          heading: '1. Identidade e contactos do responsavel pelo tratamento',
+          heading: '1. Identidade e contactos do responsável pelo tratamento',
           paragraphs: [
-            'A entidade responsavel pelo tratamento dos dados pessoais e a Amplia Solutions, com sede em Agualva-Cacem, Portugal.',
+            'A entidade responsável pelo tratamento dos dados pessoais é a Amplia Solutions, com sede em Agualva-Cacém, Portugal.',
             'Contacto para assuntos de privacidade: ampliasolutions.pt@gmail.com.',
           ],
         },
         {
           heading: '2. Dados pessoais recolhidos',
           bullets: [
-            'Dados de identificacao e contacto: nome e email.',
+            'Dados de identificação e contacto: nome e email.',
             'Conteudo de mensagens enviadas atraves do formulario de contacto.',
-            'Dados tecnicos e de uso do website (ex.: logs tecnicos, preferencia de idioma e cookies).',
+            'Dados técnicos e de uso do website (ex.: logs técnicos, preferência de idioma e cookies).',
           ],
         },
         {
           heading: '3. Finalidades e base legal do tratamento',
           bullets: [
-            'Resposta a pedidos de contacto e informacao comercial (diligencias pre-contratuais e interesse legitimo).',
-            'Prestacao, manutencao e melhoria dos servicos e produtos digitais (execucao contratual e interesse legitimo).',
-            'Cumprimento de obrigacoes legais e fiscais (obrigacao juridica).',
+            'Resposta a pedidos de contacto e informação comercial (diligências pré-contratuais e interesse legítimo).',
+            'Prestação, manutenção e melhoria dos serviços e produtos digitais (execução contratual e interesse legítimo).',
+            'Cumprimento de obrigações legais e fiscais (obrigação jurídica).',
             'Comunicacoes de marketing apenas quando exista consentimento valido (consentimento).',
           ],
         },
         {
-          heading: '4. Prazo de conservacao',
+          heading: '4. Prazo de conservação',
           paragraphs: [
             'Os dados sao conservados apenas pelo periodo necessario as finalidades que justificaram a recolha, incluindo prazos legais de arquivo e defesa de direitos. Quando o tratamento se baseia em consentimento, os dados sao conservados ate retirada desse consentimento.',
           ],
@@ -76,101 +76,101 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
             'Direito de acesso aos dados pessoais.',
             'Direito de rectificacao de dados inexatos ou incompletos.',
             'Direito ao apagamento (quando legalmente aplicavel).',
-            'Direito a limitacao do tratamento.',
+            'Direito à limitação do tratamento.',
             'Direito a portabilidade dos dados.',
-            'Direito de oposicao ao tratamento.',
+            'Direito de oposição ao tratamento.',
           ],
-          paragraphs: ['Pode exercer os seus direitos atraves do email ampliasolutions.pt@gmail.com.'],
+          paragraphs: ['Pode exercer os seus direitos através do email ampliasolutions.pt@gmail.com.'],
         },
         {
-          heading: '6. Transferencias internacionais de dados',
+          heading: '6. Transferências internacionais de dados',
           paragraphs: [
-            'Sempre que exista transferencia internacional de dados para fora do Espaco Economico Europeu, a Amplia adota salvaguardas adequadas, incluindo Clausulas Contratuais-Tipo aprovadas pela Comissao Europeia e outras medidas legalmente exigidas.',
+            'Sempre que exista transferência internacional de dados para fora do Espaço Económico Europeu, a Amplia adota salvaguardas adequadas, incluindo Cláusulas Contratuais-Tipo aprovadas pela Comissão Europeia e outras medidas legalmente exigidas.',
           ],
         },
         {
           heading: '7. Uso de cookies',
           paragraphs: [
-            'Utilizamos cookies essenciais e, mediante consentimento, cookies funcionais e analiticos para melhorar a experiencia de utilizacao. Consulte os detalhes em /cookies.',
+            'Utilizamos cookies essenciais e, mediante consentimento, cookies funcionais e analíticos para melhorar a experiência de utilização. Consulte os detalhes em /cookies.',
           ],
         },
         {
           heading: '8. Autoridade de controlo',
-          paragraphs: ['Tem o direito de apresentar reclamacao junto da CNPD - Comissao Nacional de Protecao de Dados.'],
+          paragraphs: ['Tem o direito de apresentar reclamação junto da CNPD - Comissão Nacional de Proteção de Dados.'],
           link: { label: 'www.cnpd.pt', href: 'https://www.cnpd.pt' },
         },
         {
-          heading: '9. Operacoes de recolha efetivamente realizadas nesta aplicacao',
+          heading: '9. Operações de recolha efetivamente realizadas nesta aplicação',
           bullets: [
-            'Formulario de contacto: nome, empresa (opcional), email e mensagem.',
-            'Formulario "Avisa-me quando lancar": email e produto de interesse.',
+            'Formulário de contacto: nome, empresa (opcional), email e mensagem.',
+            'Formulário "Avisa-me quando lançar": email e produto de interesse.',
             'Chatbot: mensagem do utilizador e resposta da IA (registo tecnico e envio por email operacional).',
           ],
         },
         {
           heading: '10. Subprocessadores e terceiros',
           bullets: [
-            'Resend: envio de emails transacionais e notificacoes.',
-            'Google Gemini API: geracao de respostas de IA no chatbot.',
-            'Vercel: alojamento e execucao de funcoes serverless.',
+            'Resend: envio de emails transacionais e notificações.',
+            'Google Gemini API: geração de respostas de IA no chatbot.',
+            'Vercel: alojamento e execução de funções serverless.',
             'Stripe: processamento de pagamentos (quando aplicavel).',
-            'Clerk: autenticacao para produtos especificos fora deste website institucional (ex.: Responder Ja).',
+            'Clerk: autenticação para produtos específicos fora deste website institucional (ex.: Responder Já).',
           ],
         },
         {
           heading: '11. Menores',
           paragraphs: [
-            'Os servicos nao sao dirigidos a menores de 16 anos. Se tiver conhecimento de recolha de dados de menor sem autorizacao valida, contacte-nos para eliminacao imediata.',
+            'Os serviços não são dirigidos a menores de 16 anos. Se tiver conhecimento de recolha de dados de menor sem autorização válida, contacte-nos para eliminação imediata.',
           ],
         },
         {
-          heading: '12. Exercicios de direitos e apagamento',
+          heading: '12. Exercícios de direitos e apagamento',
           paragraphs: [
-            'Pedidos de acesso, apagamento, oposicao e portabilidade podem ser enviados para ampliasolutions.pt@gmail.com. Responderemos dentro dos prazos legais aplicaveis.',
+            'Pedidos de acesso, apagamento, oposição e portabilidade podem ser enviados para ampliasolutions.pt@gmail.com. Responderemos dentro dos prazos legais aplicáveis.',
           ],
         },
       ],
     },
     terms: {
-      title: 'Termos e Condicoes',
+      title: 'Termos e Condições',
       sections: [
         {
-          heading: '1. Identificacao da empresa',
+          heading: '1. Identificação da empresa',
           paragraphs: [
-            'A Amplia Solutions e uma empresa sediada em Agualva-Cacem, Portugal, com contacto eletrónico em ampliasolutions.pt@gmail.com.',
+            'A Amplia Solutions é uma empresa sediada em Agualva-Cacém, Portugal, com contacto eletrónico em ampliasolutions.pt@gmail.com.',
           ],
         },
         {
-          heading: '2. Descricao dos servicos',
+          heading: '2. Descrição dos serviços',
           bullets: [
-            'Responder Ja - plataforma de IA para resposta a avaliacoes online.',
+            'Responder Já - plataforma de IA para resposta a avaliações online.',
             'Lia - agente de carreira com IA.',
-            'Amplia Home Studio - redesenho de espacos com IA.',
-            'OpsFlow - geracao inteligente de configuracoes DevOps e cloud.',
+            'Amplia Home Studio - redesenho de espaços com IA.',
+            'OpsFlow - geração inteligente de configurações DevOps e cloud.',
           ],
         },
         {
-          heading: '3. Condicoes de uso e subscricao',
+          heading: '3. Condições de uso e subscrição',
           paragraphs: [
-            'O utilizador compromete-se a usar os servicos de forma licita, sem violar direitos de terceiros nem regras de seguranca. A subscricao pode incluir renovacao automatica, limites de uso e condicoes especificas por plano.',
+            'O utilizador compromete-se a usar os serviços de forma lícita, sem violar direitos de terceiros nem regras de segurança. A subscrição pode incluir renovação automática, limites de uso e condições específicas por plano.',
           ],
         },
         {
-          heading: '4. Precos e pagamentos',
+          heading: '4. Preços e pagamentos',
           paragraphs: [
-            'Os precos aplicaveis sao apresentados no momento da contratacao. Os pagamentos sao processados por prestadores terceiros, incluindo Stripe, estando sujeitos aos respetivos termos e politicas.',
+            'Os preços aplicáveis são apresentados no momento da contratação. Os pagamentos são processados por prestadores terceiros, incluindo Stripe, estando sujeitos aos respetivos termos e políticas.',
           ],
         },
         {
           heading: '5. Cancelamento e reembolso',
           paragraphs: [
-            'Nos termos da legislacao da Uniao Europeia, consumidores podem beneficiar do direito de arrependimento de 14 dias quando aplicavel. Podem existir excecoes para servicos digitais iniciados com consentimento expresso do utilizador.',
+            'Nos termos da legislação da União Europeia, os consumidores podem beneficiar do direito de arrependimento de 14 dias, quando aplicável. Podem existir exceções para serviços digitais iniciados com consentimento expresso do utilizador.',
           ],
         },
         {
-          heading: '6. Limitacao de responsabilidade',
+          heading: '6. Limitação de responsabilidade',
           paragraphs: [
-            'A Amplia nao responde por danos indiretos, lucros cessantes ou indisponibilidade de servicos de terceiros, salvo nos limites imperativos da lei e em casos de dolo ou culpa grave.',
+            'A Amplia não responde por danos indiretos, lucros cessantes ou indisponibilidade de serviços de terceiros, salvo nos limites imperativos da lei e em casos de dolo ou culpa grave.',
           ],
         },
         {
@@ -178,14 +178,14 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           paragraphs: ['Estes termos regem-se pela lei portuguesa.'],
         },
         {
-          heading: '8. Resolucao de litigios',
+          heading: '8. Resolução de litígios',
           paragraphs: ['Em caso de litigio de consumo, pode recorrer ao Centro de Arbitragem de Conflitos de Consumo de Lisboa.'],
           link: { label: 'www.centroarbitragemlisboa.pt', href: 'https://www.centroarbitragemlisboa.pt' },
         },
         {
           heading: '9. Pagamentos e dados de cartao',
           paragraphs: [
-            'Os pagamentos sao processados pelo Stripe. A Amplia nao armazena numeros completos de cartao nem codigos de seguranca dos utilizadores.',
+            'Os pagamentos são processados pelo Stripe. A Amplia não armazena números completos de cartão nem códigos de segurança dos utilizadores.',
           ],
         },
       ],
@@ -272,7 +272,7 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
         {
           heading: '1. Controller identity and contacts',
           paragraphs: [
-            'The data controller is Amplia Solutions, based in Agualva-Cacem, Portugal.',
+            'The data controller is Amplia Solutions, based in Agualva-Cacém, Portugal.',
             'Privacy contact: ampliasolutions.pt@gmail.com.',
           ],
         },
@@ -366,7 +366,7 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
         {
           heading: '1. Company identification',
           paragraphs: [
-            'Amplia Solutions is based in Agualva-Cacem, Portugal, and can be contacted at ampliasolutions.pt@gmail.com.',
+            'Amplia Solutions is based in Agualva-Cacém, Portugal, and can be contacted at ampliasolutions.pt@gmail.com.',
           ],
         },
         {
@@ -496,30 +496,30 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
     back: '<- Volver',
     languageLabel: 'Idioma',
     privacy: {
-      title: 'Politica de Privacidad',
+      title: 'Política de Privacidad',
       sections: [
         {
           heading: '1. Identidad y contacto del responsable del tratamiento',
           paragraphs: [
-            'El responsable del tratamiento es Amplia Solutions, con sede en Agualva-Cacem, Portugal.',
+            'El responsable del tratamiento es Amplia Solutions, con sede en Agualva-Cacém, Portugal.',
             'Contacto de privacidad: ampliasolutions.pt@gmail.com.',
           ],
         },
         {
           heading: '2. Datos personales recogidos',
           bullets: [
-            'Datos de identificacion y contacto: nombre y correo electronico.',
+            'Datos de identificación y contacto: nombre y correo electrónico.',
             'Contenido de mensajes enviados mediante el formulario de contacto.',
-            'Datos tecnicos y de uso del sitio (por ejemplo, logs tecnicos, preferencia de idioma y cookies).',
+            'Datos técnicos y de uso del sitio (por ejemplo, logs técnicos, preferencia de idioma y cookies).',
           ],
         },
         {
           heading: '3. Finalidad y base legal del tratamiento',
           bullets: [
-            'Responder solicitudes de contacto e informacion comercial (diligencias precontractuales e interes legitimo).',
-            'Prestar, mantener y mejorar servicios y productos digitales (ejecucion contractual e interes legitimo).',
-            'Cumplir obligaciones legales y fiscales (obligacion legal).',
-            'Comunicaciones comerciales solo con consentimiento valido (consentimiento).',
+            'Responder solicitudes de contacto e información comercial (diligencias precontractuales e interés legítimo).',
+            'Prestar, mantener y mejorar servicios y productos digitales (ejecución contractual e interés legítimo).',
+            'Cumplir obligaciones legales y fiscales (obligación legal).',
+            'Comunicaciones comerciales solo con consentimiento válido (consentimiento).',
           ],
         },
         {
@@ -543,107 +543,107 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
         {
           heading: '6. Transferencias internacionales',
           paragraphs: [
-            'Si existen transferencias fuera del EEE, Amplia aplicara garantias adecuadas, incluidas Clausulas Contractuales Tipo de la Comision Europea y otros mecanismos exigidos por la ley.',
+            'Si existen transferencias fuera del EEE, Amplia aplicará garantías adecuadas, incluidas Cláusulas Contractuales Tipo de la Comisión Europea y otros mecanismos exigidos por la ley.',
           ],
         },
         {
           heading: '7. Uso de cookies',
           paragraphs: [
-            'Utilizamos cookies esenciales y, con consentimiento, cookies funcionales y analiticas. Consulte detalles en /cookies.',
+            'Utilizamos cookies esenciales y, con consentimiento, cookies funcionales y analíticas. Consulte detalles en /cookies.',
           ],
         },
         {
           heading: '8. Autoridad de control',
-          paragraphs: ['Puede presentar una reclamacion ante la CNPD - autoridad portuguesa de proteccion de datos.'],
+          paragraphs: ['Puede presentar una reclamación ante la CNPD - autoridad portuguesa de protección de datos.'],
           link: { label: 'www.cnpd.pt', href: 'https://www.cnpd.pt' },
         },
         {
-          heading: '9. Operaciones de recogida realizadas actualmente en esta aplicacion',
+          heading: '9. Operaciones de recogida realizadas actualmente en esta aplicación',
           bullets: [
             'Formulario de contacto: nombre, empresa (opcional), email y mensaje.',
-            'Formulario "Avisame cuando se lance": email y producto seleccionado.',
+            'Formulario "Avísame cuando se lance": email y producto seleccionado.',
             'Chatbot: mensaje del usuario y respuesta de IA (registro tecnico y envio operativo por email).',
           ],
         },
         {
           heading: '10. Subencargados y terceros',
           bullets: [
-            'Resend: envio de emails transaccionales y notificaciones.',
-            'Google Gemini API: generacion de respuestas de IA en el chatbot.',
-            'Vercel: alojamiento y ejecucion de funciones serverless.',
+            'Resend: envío de emails transaccionales y notificaciones.',
+            'Google Gemini API: generación de respuestas de IA en el chatbot.',
+            'Vercel: alojamiento y ejecución de funciones serverless.',
             'Stripe: procesamiento de pagos (cuando corresponda).',
-            'Clerk: autenticacion para productos especificos fuera de este sitio institucional (por ejemplo, Responder Ja).',
+            'Clerk: autenticación para productos específicos fuera de este sitio institucional (por ejemplo, Responder Já).',
           ],
         },
         {
           heading: '11. Menores',
           paragraphs: [
-            'Los servicios no estan dirigidos a menores de 16 anos. Si detecta que un menor facilito datos sin autorizacion valida, contacte para eliminacion inmediata.',
+            'Los servicios no están dirigidos a menores de 16 años. Si detecta que un menor facilitó datos sin autorización válida, contacte para eliminación inmediata.',
           ],
         },
         {
           heading: '12. Solicitudes de derechos y supresion',
           paragraphs: [
-            'Las solicitudes de acceso, supresion, oposicion y portabilidad pueden enviarse a ampliasolutions.pt@gmail.com. Responderemos dentro de los plazos legales aplicables.',
+            'Las solicitudes de acceso, supresión, oposición y portabilidad pueden enviarse a ampliasolutions.pt@gmail.com. Responderemos dentro de los plazos legales aplicables.',
           ],
         },
       ],
     },
     terms: {
-      title: 'Terminos y Condiciones',
+      title: 'Términos y Condiciones',
       sections: [
         {
-          heading: '1. Identificacion de la empresa',
+          heading: '1. Identificación de la empresa',
           paragraphs: [
-            'Amplia Solutions tiene sede en Agualva-Cacem, Portugal, y contacto en ampliasolutions.pt@gmail.com.',
+            'Amplia Solutions tiene sede en Agualva-Cacém, Portugal, y contacto en ampliasolutions.pt@gmail.com.',
           ],
         },
         {
-          heading: '2. Descripcion de servicios',
+          heading: '2. Descripción de servicios',
           bullets: [
-            'Responder Ja - plataforma de IA para respuestas a resenas online.',
+            'Responder Já - plataforma de IA para respuestas a reseñas online.',
             'Lia - agente de carrera profesional con IA.',
             'Amplia Home Studio - rediseño de espacios con IA.',
-            'OpsFlow - generacion inteligente de configuraciones DevOps y cloud.',
+            'OpsFlow - generación inteligente de configuraciones DevOps y cloud.',
           ],
         },
         {
-          heading: '3. Condiciones de uso y suscripcion',
+          heading: '3. Condiciones de uso y suscripción',
           paragraphs: [
-            'El usuario se compromete a utilizar los servicios de forma licita, sin vulnerar derechos de terceros ni reglas de seguridad. La suscripcion puede incluir renovacion automatica, limites de uso y condiciones por plan.',
+            'El usuario se compromete a utilizar los servicios de forma lícita, sin vulnerar derechos de terceros ni reglas de seguridad. La suscripción puede incluir renovación automática, límites de uso y condiciones por plan.',
           ],
         },
         {
           heading: '4. Precios y pagos',
           paragraphs: [
-            'Los precios aplicables se muestran en el momento de contratacion. Los pagos son procesados por terceros, incluido Stripe, bajo sus propios terminos y politicas.',
+            'Los precios aplicables se muestran en el momento de contratación. Los pagos son procesados por terceros, incluido Stripe, bajo sus propios términos y políticas.',
           ],
         },
         {
           heading: '5. Cancelacion y reembolso',
           paragraphs: [
-            'Segun la normativa de la UE, los consumidores pueden disponer de un derecho de desistimiento de 14 dias cuando sea aplicable. Pueden existir excepciones legales para servicios digitales iniciados con consentimiento expreso.',
+            'Según la normativa de la UE, los consumidores pueden disponer de un derecho de desistimiento de 14 días cuando sea aplicable. Pueden existir excepciones legales para servicios digitales iniciados con consentimiento expreso.',
           ],
         },
         {
           heading: '6. Limitacion de responsabilidad',
           paragraphs: [
-            'Amplia no responde por danos indirectos, lucro cesante o indisponibilidad de servicios de terceros, salvo en los limites imperativos de la ley y en casos de dolo o negligencia grave.',
+            'Amplia no responde por daños indirectos, lucro cesante o indisponibilidad de servicios de terceros, salvo en los límites imperativos de la ley y en casos de dolo o negligencia grave.',
           ],
         },
         {
           heading: '7. Ley aplicable',
-          paragraphs: ['Estos terminos se rigen por la ley portuguesa.'],
+          paragraphs: ['Estos términos se rigen por la ley portuguesa.'],
         },
         {
-          heading: '8. Resolucion de conflictos',
+          heading: '8. Resolución de conflictos',
           paragraphs: ['En caso de conflicto de consumo, puede acudir al Centro de Arbitraje de Consumo de Lisboa.'],
           link: { label: 'www.centroarbitragemlisboa.pt', href: 'https://www.centroarbitragemlisboa.pt' },
         },
         {
           heading: '9. Pagos y datos de tarjeta',
           paragraphs: [
-            'Los pagos se procesan mediante Stripe. Amplia no almacena numeros completos de tarjeta ni codigos de seguridad.',
+            'Los pagos se procesan mediante Stripe. Amplia no almacena números completos de tarjeta ni códigos de seguridad.',
           ],
         },
       ],

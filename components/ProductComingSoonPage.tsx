@@ -109,7 +109,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
             className="rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest"
             style={{ backgroundColor: '#facc15', color: '#1a1a1a' }}
           >
-            Em Breve
+            Em breve
           </span>
         </div>
       </header>
@@ -206,9 +206,9 @@ export const ProductComingSoonPage: React.FC<Props> = ({
                   required
                 />
                 <span>
-                  Aceito o tratamento do meu email para notificacoes de lancamento, conforme a{' '}
+                  Aceito o tratamento do meu email para notificações de lançamento, conforme a{' '}
                   <Link to="/privacidade" className="text-[#6BBF3E] hover:underline">
-                    Politica de Privacidade
+                    Política de Privacidade
                   </Link>
                   .
                 </span>

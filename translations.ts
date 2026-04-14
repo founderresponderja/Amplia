@@ -54,7 +54,7 @@ export const translations = {
         {
           block: 'Dúvidas sobre os produtos',
           q: 'Os produtos funcionam em português?',
-          a: 'Sim. Todos os produtos estão disponíveis em português, inglês e espanhol. O **Responder Já** detecta automaticamente o idioma de cada avaliação e responde no mesmo idioma.'
+          a: 'Sim. Todos os produtos estão disponíveis em português, inglês e espanhol. O **Responder Já** deteta automaticamente o idioma de cada avaliação e responde no mesmo idioma.'
         },
         {
           block: 'Dúvidas sobre os produtos',
@@ -89,7 +89,7 @@ export const translations = {
         {
           block: 'Dúvidas específicas por produto',
           q: 'O Responder Já publica as respostas automaticamente sem eu ver?',
-          a: 'Não, se não quiseres. Por omissão, a IA **sugere a resposta** e és tu quem aprova antes de publicar. Podes activar a publicação automática quando confiares no tom definido.'
+          a: 'Não, se não quiseres. Por omissão, a IA **sugere a resposta** e és tu quem aprova antes de publicar. Podes ativar a publicação automática quando confiares no tom definido.'
         },
         {
           block: 'Dúvidas específicas por produto',
@@ -160,7 +160,7 @@ export const translations = {
           theme: 'violet',
           title: 'Carreira e talento',
           appName: 'Lia',
-          appDescription: 'Optimiza o teu CV com IA e ajusta o teu perfil às funções certas. Encontra vagas compatíveis com a tua experiência e recebe sugestões acionáveis. Prepara-te para entrevistas com mais segurança e foco.',
+          appDescription: 'Otimiza o teu CV com IA e ajusta o teu perfil às funções certas. Encontra vagas compatíveis com a tua experiência e recebe sugestões acionáveis. Prepara-te para entrevistas com mais segurança e foco.',
           buttonText: 'Saber Mais',
           url: '/produtos/lia',
           pricingTitle: 'Planos',
@@ -176,7 +176,7 @@ export const translations = {
           theme: 'green',
           title: 'Estúdio de criação IA',
           appName: 'Amplia Home Studio',
-          appDescription: 'Carrega uma foto do teu espaço e recebe em segundos um projecto de decoração completo com lista de materiais e estimativa de custos. Ajusta estilos, orçamento e detalhes visuais num processo guiado. Decide mais rápido com uma proposta pronta a executar.',
+          appDescription: 'Carrega uma foto do teu espaço e recebe, em segundos, um projeto de decoração completo com lista de materiais e estimativa de custos. Ajusta estilos, orçamento e detalhes visuais num processo guiado. Decide mais rápido com uma proposta pronta a executar.',
           buttonText: 'Saber Mais',
           url: '/produtos/amplia-home-studio',
           pricingTitle: 'Planos',

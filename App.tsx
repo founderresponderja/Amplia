@@ -31,7 +31,7 @@ function App() {
           element={
             <ProductComingSoonPage
               title="Lia — Agente de Carreira com IA"
-              description="Optimiza o teu CV com IA, encontra vagas compatíveis com o teu perfil e prepara-te para entrevistas. O teu agente pessoal de carreira."
+              description="Otimiza o teu CV com IA, encontra vagas compatíveis com o teu perfil e prepara-te para entrevistas. O teu agente pessoal de carreira."
               imageUrl={PRODUCT_SCREENSHOTS.lia}
               imageAlt="Pré-visualização do projeto Lia no GitHub"
               waitlistKey="lia"
@@ -49,7 +49,7 @@ function App() {
           element={
             <ProductComingSoonPage
               title="Amplia Home Studio"
-              description="Carrega uma foto do teu espaço e recebe em segundos um projecto de decoração completo com lista de materiais e estimativa de custos."
+              description="Carrega uma foto do teu espaço e recebe, em segundos, um projeto de decoração completo com lista de materiais e estimativa de custos."
               imageUrl={PRODUCT_SCREENSHOTS.homestudio}
               imageAlt="Pré-visualização do Amplia Home Studio no GitHub"
               waitlistKey="homestudio"
