@@ -21,7 +21,7 @@ export const WhoWeAre: React.FC<Props> = ({ content }) => {
         </div>
 
         <div className="max-w-3xl mx-auto rounded-[32px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#12141a] p-10 shadow-2xl flex flex-col md:flex-row items-center gap-8 transition-colors duration-300">
-          <div className="w-40 h-40 aspect-square rounded-full bg-gray-100 dark:bg-[#0b0c10] border-2 border-[#6BBF3E] flex items-center justify-center overflow-hidden">
+          <div className="w-40 h-40 min-w-[10rem] min-h-[10rem] shrink-0 rounded-full bg-gray-100 dark:bg-[#0b0c10] border-2 border-[#6BBF3E] flex items-center justify-center overflow-hidden">
             {!imageError ? (
               <img
                 src="/founder.png"
