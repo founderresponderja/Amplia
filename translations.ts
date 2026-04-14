@@ -236,7 +236,7 @@ export const translations = {
       termsText: 'Ao utilizar o site da Amplia Solutions, concorda com os termos de utilização aqui descritos. O conteúdo deste site é propriedade intelectual da Amplia Solutions e está protegido por direitos de autor.'
     },
     aiBot: {
-      welcome: 'Olá! Sou o assistente da Amplia. Informo que sou uma IA treinada para ajudar. Como posso ser útil?',
+      welcome: 'Olá! Sou a Amplia, a tua assistente aqui na Amplia Solutions. Em que te posso ajudar hoje?',
       placeholder: 'Pergunte sobre os nossos serviços...',
       error: 'Desculpe, tive um problema ao processar. Tente novamente.'
     }

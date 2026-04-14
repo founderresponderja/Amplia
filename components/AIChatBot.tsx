@@ -15,11 +15,7 @@ export const AIChatBot = ({ t, lang }: { t: any; lang: Language }) => {
     { 
       role: 'bot', 
       text: t.welcome,
-      options: lang === 'pt' 
-        ? ['Sobre a Amplia', 'Conhecer Produtos IA', 'Falar com Consultor']
-        : lang === 'es'
-        ? ['Sobre Amplia', 'Conocer Productos IA', 'Hablar con Consultor']
-        : ['About Amplia', 'Explore AI Products', 'Talk to Consultant']
+      options: ['Quero uma app à medida', 'Conhecer os produtos', 'Falar com a equipa']
     }
   ]);
   const [input, setInput] = useState('');
@@ -85,8 +81,8 @@ export const AIChatBot = ({ t, lang }: { t: any; lang: Language }) => {
                 <Bot size={22} />
               </div>
               <div>
-                <p className="font-bold text-sm leading-none">Amplia Intelligence</p>
-                <p className="text-[10px] opacity-80 uppercase tracking-widest mt-1">Sempre Online</p>
+                <p className="font-bold text-sm leading-none">Amplia</p>
+                <p className="text-[10px] opacity-80 tracking-wide mt-1">Assistente da Amplia Solutions</p>
               </div>
             </div>
             <button 
