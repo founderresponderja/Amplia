@@ -60,10 +60,7 @@ export const Services = ({ content }: { content: any }) => {
     }
   };
 
-  const openPrimary = (p: any) => {
-    if (p.url.startsWith('/')) navigate(p.url);
-    else window.open(p.url, '_blank', 'noopener,noreferrer');
-  };
+  const isInternalUrl = (url: string) => url.startsWith('/');
 
   const plans = (p: any) => (Array.isArray(p.pricingPlans) ? p.pricingPlans : []);
 
@@ -88,12 +85,25 @@ export const Services = ({ content }: { content: any }) => {
                   </div>
                   <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed whitespace-pre-line font-normal">{p.appDescription}</p>
                   <div className="flex gap-4">
-                    <Button 
-                      className="flex items-center gap-2"
-                      onClick={() => openPrimary(p)}
-                    >
-                      {p.buttonText} <ExternalLink size={18} />
-                    </Button>
+                    {isInternalUrl(p.url) ? (
+                      <Button
+                        className="flex items-center gap-2"
+                        onClick={() => navigate(p.url)}
+                      >
+                        {p.buttonText} <ExternalLink size={18} />
+                      </Button>
+                    ) : (
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex"
+                      >
+                        <Button className="flex items-center gap-2" type="button">
+                          {p.buttonText} <ExternalLink size={18} />
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </div>
 

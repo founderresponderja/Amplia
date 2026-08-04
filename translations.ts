@@ -141,6 +141,19 @@ export const translations = {
           ]
         },
         {
+          id: 'subly',
+          theme: 'green',
+          title: 'Subscrições e despesas',
+          appName: 'Subly',
+          appDescription: 'Gestor de subscrições e despesas recorrentes. Em breve.',
+          buttonText: 'Saber Mais',
+          url: '/produtos/subly',
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
+          ]
+        },
+        {
           id: 'responderja',
           theme: 'blue',
           title: 'Reputação digital',
@@ -385,6 +398,19 @@ export const translations = {
           ]
         },
         {
+          id: 'subly',
+          theme: 'green',
+          title: 'Subscriptions and expenses',
+          appName: 'Subly',
+          appDescription: 'Subscription and recurring expense manager. Coming soon.',
+          buttonText: 'Learn More',
+          url: '/produtos/subly',
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist available'] },
+          ]
+        },
+        {
           id: 'responderja',
           theme: 'blue',
           title: 'Digital reputation',
@@ -626,6 +652,19 @@ export const translations = {
             { name: 'Plan Inicial', price: '14,99€', period: '/mes', features: ['50 configuraciones/mes', 'CI/CD y GitHub Actions', 'AWS, GCP y Azure'] },
             { name: 'Plan Profesional', price: '39,99€', period: '/mes', features: ['Configuraciones ilimitadas', 'Kubernetes y Terraform', 'Integración Git'] },
             { name: 'Plan Agencia', price: '99,99€', period: '/mes', features: ['Hasta 10 usuarios', 'Pipelines personalizados', 'SLA y gestor dedicado'] },
+          ]
+        },
+        {
+          id: 'subly',
+          theme: 'green',
+          title: 'Suscripciones y gastos',
+          appName: 'Subly',
+          appDescription: 'Gestor de suscripciones y gastos recurrentes. Próximamente.',
+          buttonText: 'Saber más',
+          url: '/produtos/subly',
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera disponible'] },
           ]
         },
         {

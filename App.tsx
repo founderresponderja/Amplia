@@ -82,6 +82,21 @@ function App() {
             />
           }
         />
+        <Route
+          path="/produtos/subly"
+          element={
+            <ProductComingSoonPage
+              title="Subly"
+              description="Gestor de subscrições e despesas recorrentes. Em breve."
+              imageUrl={PRODUCT_SCREENSHOTS.subly}
+              imageAlt="Pré-visualização do Subly"
+              waitlistKey="subly"
+              pricingPlans={[
+                { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
+              ]}
+            />
+          }
+        />
       </Routes>
       <CookieConsentBanner />
       <VercelAnalyticsIfConsented />
