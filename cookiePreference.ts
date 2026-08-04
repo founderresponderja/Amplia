@@ -4,7 +4,16 @@ export type CookiePreferenceV2 = {
   v: 2;
   functional: boolean;
   analytics: boolean;
+  /** ISO 8601 timestamp for when consent was last set/updated. Legacy v2 records may not have it. */
+  timestamp?: string;
 };
+
+function isIso8601(value: unknown): value is string {
+  return (
+    typeof value === 'string' &&
+    /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(value)
+  );
+}
 
 export function readCookiePreference(): CookiePreferenceV2 | null {
   try {
@@ -18,7 +27,12 @@ export function readCookiePreference(): CookiePreferenceV2 | null {
       typeof parsed.functional === 'boolean' &&
       typeof parsed.analytics === 'boolean'
     ) {
-      return { v: 2, functional: parsed.functional, analytics: parsed.analytics };
+      return {
+        v: 2,
+        functional: parsed.functional,
+        analytics: parsed.analytics,
+        timestamp: isIso8601(parsed.timestamp) ? parsed.timestamp : undefined,
+      };
     }
   } catch {
     // ignore
@@ -27,7 +41,7 @@ export function readCookiePreference(): CookiePreferenceV2 | null {
 }
 
 export function saveCookiePreference(pref: { functional: boolean; analytics: boolean }) {
-  const full: CookiePreferenceV2 = { v: 2, ...pref };
+  const full: CookiePreferenceV2 = { v: 2, ...pref, timestamp: new Date().toISOString() };
   localStorage.setItem(COOKIE_PREFERENCE_KEY, JSON.stringify(full));
   if (!pref.functional) {
     try {
