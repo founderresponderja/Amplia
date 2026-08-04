@@ -1,11 +1,15 @@
 ﻿import { GoogleGenAI, Type } from '@google/genai';
-import { parseJsonBody } from './lib/parse-body.js';
+import { checkRateLimit, getClientIp, parseJsonBodyWithLimit } from './lib/request-security.js';
 import { sendChatbotLogEmail } from './lib/resend-mail.js';
 
 type ChatBody = {
   message?: string;
   lang?: 'pt' | 'en' | 'es';
 };
+
+const CHAT_BODY_LIMIT_BYTES = 8 * 1024;
+const CHAT_RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const CHAT_RATE_LIMIT_MAX_REQUESTS = 10;
 
 const LANGUAGE_MAP: Record<string, string> = {
   pt: 'Portuguese',
@@ -39,8 +43,12 @@ function sanitizeInput(value: string): string {
   return value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, 1000);
 }
 
-function parseBody(raw: unknown): ChatBody {
-  return parseJsonBody(raw) as ChatBody;
+function isValidLang(value: unknown): value is 'pt' | 'en' | 'es' {
+  return typeof value === 'string' && Object.hasOwn(LANGUAGE_MAP, value);
+}
+
+function buildPreview(value: string, max: number): string {
+  return value.slice(0, max);
 }
 
 export default async function handler(req: any, res: any) {
@@ -54,25 +62,47 @@ export default async function handler(req: any, res: any) {
     process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
     process.env.GOOGLE_AI_API_KEY;
   if (!apiKey) {
-    console.error('[api/chat] Missing GEMINI_API_KEY (or GOOGLE_GENERATIVE_AI_API_KEY)');
+    console.error('[api/chat] Missing AI API key');
     res.status(500).json({ error: 'Server is not configured' });
     return;
   }
 
-  const body = parseBody(req.body);
+  const parsedBody = parseJsonBodyWithLimit(req.body, CHAT_BODY_LIMIT_BYTES);
+  if (!parsedBody.ok) {
+    if (parsedBody.code === 'body_too_large') {
+      res.status(413).json({ error: 'Payload too large' });
+      return;
+    }
+    res.status(400).json({ error: 'Invalid JSON payload' });
+    return;
+  }
+
+  const body = parsedBody.body as ChatBody;
   const origin = String(req.headers?.origin || '');
   const host = String(req.headers?.host || '');
   const forwardedHost = String(req.headers?.['x-forwarded-host'] || '');
   if (origin && (host || forwardedHost) && !isAllowedOrigin(origin, host, forwardedHost)) {
-    console.error('[api/chat] Forbidden origin', { origin, host });
+    console.warn('[api/chat] Forbidden origin');
     res.status(403).json({ error: 'Forbidden origin' });
     return;
   }
 
-  const lang = body.lang && LANGUAGE_MAP[body.lang] ? body.lang : 'pt';
+  const clientIp = getClientIp(req);
+  const limit = checkRateLimit({
+    key: `chat:${clientIp}`,
+    limit: CHAT_RATE_LIMIT_MAX_REQUESTS,
+    windowMs: CHAT_RATE_LIMIT_WINDOW_MS,
+  });
+  if (!limit.allowed) {
+    res.setHeader('Retry-After', String(limit.retryAfterSec));
+    res.status(429).json({ error: 'Too many requests' });
+    return;
+  }
+
+  const lang = isValidLang(body.lang) ? body.lang : 'pt';
   const message = typeof body.message === 'string' ? sanitizeInput(body.message) : '';
 
-  if (!message) {
+  if (!message || message.length < 2) {
     res.status(400).json({ error: 'Message is required' });
     return;
   }
@@ -135,17 +165,18 @@ Apresenta o produto mais relevante para o problema da pessoa. Menciona o períod
     const replyText =
       typeof parsed.text === 'string' ? parsed.text : 'Ocorreu um erro ao gerar resposta.';
 
+    // Avoid storing full conversation content in logs/email by default.
     void sendChatbotLogEmail({
-      userMessage: message,
-      assistantReply: replyText,
-    }).catch((mailErr) => console.error('[api/chat] chatbot email log failed', mailErr));
+      userMessage: `[len:${message.length}] ${buildPreview(message, 240)}`,
+      assistantReply: `[len:${replyText.length}] ${buildPreview(replyText, 240)}`,
+    }).catch(() => console.error('[api/chat] chatbot email log failed'));
 
     res.status(200).json({
       text: replyText,
       options: Array.isArray(parsed.options) ? parsed.options.slice(0, 3) : [],
     });
-  } catch (err) {
-    console.error('[api/chat] Gemini error', err);
+  } catch {
+    console.error('[api/chat] AI provider request failed');
     res.status(502).json({ error: 'AI service unavailable' });
   }
 }
