@@ -110,7 +110,7 @@ export default async function handler(req: any, res: any) {
   try {
     const ai = new GoogleGenAI({ apiKey });
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash-lite',
       contents: message,
       config: {
         responseMimeType: 'application/json',
@@ -175,8 +175,17 @@ Apresenta o produto mais relevante para o problema da pessoa. Menciona o períod
       text: replyText,
       options: Array.isArray(parsed.options) ? parsed.options.slice(0, 3) : [],
     });
-  } catch {
-    console.error('[api/chat] AI provider request failed');
+  } catch (err) {
+    // Log only the provider status and billing flag: never the error text or conversation content.
+    const providerError = (typeof err === 'object' && err !== null ? err : {}) as {
+      status?: unknown;
+      message?: unknown;
+    };
+    const status = String(providerError.status ?? 'unknown');
+    const prepayDepleted = /prepayment credits/i.test(String(providerError.message ?? ''));
+    console.error(
+      `[api/chat] AI provider request failed (status: ${status}, prepayDepleted: ${prepayDepleted})`,
+    );
     res.status(502).json({ error: 'AI service unavailable' });
   }
 }
