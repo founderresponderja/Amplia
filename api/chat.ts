@@ -1,4 +1,4 @@
-﻿import { GoogleGenAI, Type } from '@google/genai';
+﻿import { GoogleGenAI, ThinkingLevel, Type } from '@google/genai';
 import { checkRateLimit, getClientIp, parseJsonBodyWithLimit } from './lib/request-security.js';
 import { sendChatbotLogEmail } from './lib/resend-mail.js';
 
@@ -11,10 +11,15 @@ const CHAT_BODY_LIMIT_BYTES = 8 * 1024;
 const CHAT_RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const CHAT_RATE_LIMIT_MAX_REQUESTS = 10;
 
-// EU multi-region endpoint: keeps AI processing inside the European Union.
-const VERTEX_LOCATION = 'eu';
+// Frankfurt (EU) by default. Do not use europe-west2: it is London, outside the EU.
+const DEFAULT_VERTEX_LOCATION = 'europe-west3';
+const DEFAULT_GEMINI_MODEL = 'gemini-3.5-flash';
+// The SDK does not build the correct host for the EU multi-region location.
 const VERTEX_EU_BASE_URL = 'https://aiplatform.eu.rep.googleapis.com/';
-const VERTEX_API_VERSION = 'v1';
+const AI_REQUEST_TIMEOUT_MS = 20 * 1000;
+// Gemini 3 thinking counts as output tokens, so leave room for the visible reply.
+const AI_MAX_OUTPUT_TOKENS = 1024;
+const AI_ERROR_LOG_MAX_LENGTH = 300;
 
 type VertexServiceAccount = {
   project_id: string;
@@ -65,7 +70,9 @@ function buildPreview(value: string, max: number): string {
 function parseVertexServiceAccount(raw: string | undefined): VertexServiceAccount | null {
   if (!raw) return null;
   try {
-    const parsed = JSON.parse(raw) as Partial<VertexServiceAccount>;
+    const trimmed = raw.trim();
+    const json = trimmed.startsWith('{') ? trimmed : Buffer.from(trimmed, 'base64').toString('utf8');
+    const parsed = JSON.parse(json) as Partial<VertexServiceAccount>;
     if (!parsed.project_id || !parsed.client_email || !parsed.private_key) return null;
     return {
       project_id: parsed.project_id,
@@ -131,12 +138,15 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
+    const location = process.env.GOOGLE_CLOUD_LOCATION || DEFAULT_VERTEX_LOCATION;
     const ai = new GoogleGenAI({
       vertexai: true,
-      project: serviceAccount.project_id,
-      location: VERTEX_LOCATION,
-      apiVersion: VERTEX_API_VERSION,
-      httpOptions: { baseUrl: VERTEX_EU_BASE_URL },
+      project: process.env.GOOGLE_CLOUD_PROJECT || serviceAccount.project_id,
+      location,
+      httpOptions: {
+        timeout: AI_REQUEST_TIMEOUT_MS,
+        ...(location === 'eu' ? { baseUrl: VERTEX_EU_BASE_URL } : {}),
+      },
       googleAuthOptions: {
         credentials: {
           client_email: serviceAccount.client_email,
@@ -145,9 +155,11 @@ export default async function handler(req: any, res: any) {
       },
     });
     const response = await ai.models.generateContent({
-      model: 'gemini-3.5-flash-lite',
+      model: process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL,
       contents: message,
       config: {
+        maxOutputTokens: AI_MAX_OUTPUT_TOKENS,
+        thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
         responseMimeType: 'application/json',
         responseSchema: {
           type: Type.OBJECT,
@@ -211,16 +223,16 @@ Apresenta o produto mais relevante para o problema da pessoa. Menciona o períod
       options: Array.isArray(parsed.options) ? parsed.options.slice(0, 3) : [],
     });
   } catch (err) {
-    // Log only the provider status and billing flag: never the error text or conversation content.
+    // Log the provider's status and error only: never the visitor's conversation.
     const providerError = (typeof err === 'object' && err !== null ? err : {}) as {
       status?: unknown;
       message?: unknown;
     };
     const status = String(providerError.status ?? 'unknown');
-    const prepayDepleted = /prepayment credits/i.test(String(providerError.message ?? ''));
-    console.error(
-      `[api/chat] AI provider request failed (status: ${status}, prepayDepleted: ${prepayDepleted})`,
-    );
+    const detail = String(providerError.message ?? 'unknown error')
+      .replace(/\s+/g, ' ')
+      .slice(0, AI_ERROR_LOG_MAX_LENGTH);
+    console.error(`[api/chat] AI provider request failed (status: ${status}): ${detail}`);
     res.status(502).json({ error: 'AI service unavailable' });
   }
 }
