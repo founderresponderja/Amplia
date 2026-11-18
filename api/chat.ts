@@ -11,6 +11,17 @@ const CHAT_BODY_LIMIT_BYTES = 8 * 1024;
 const CHAT_RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const CHAT_RATE_LIMIT_MAX_REQUESTS = 10;
 
+// EU multi-region endpoint: keeps AI processing inside the European Union.
+const VERTEX_LOCATION = 'eu';
+const VERTEX_EU_BASE_URL = 'https://aiplatform.eu.rep.googleapis.com/';
+const VERTEX_API_VERSION = 'v1';
+
+type VertexServiceAccount = {
+  project_id: string;
+  client_email: string;
+  private_key: string;
+};
+
 const LANGUAGE_MAP: Record<string, string> = {
   pt: 'Portuguese',
   en: 'English',
@@ -51,18 +62,30 @@ function buildPreview(value: string, max: number): string {
   return value.slice(0, max);
 }
 
+function parseVertexServiceAccount(raw: string | undefined): VertexServiceAccount | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw) as Partial<VertexServiceAccount>;
+    if (!parsed.project_id || !parsed.client_email || !parsed.private_key) return null;
+    return {
+      project_id: parsed.project_id,
+      client_email: parsed.client_email,
+      private_key: parsed.private_key.replace(/\\n/g, '\n'),
+    };
+  } catch {
+    return null;
+  }
+}
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
     return;
   }
 
-  const apiKey =
-    process.env.GEMINI_API_KEY ||
-    process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
-    process.env.GOOGLE_AI_API_KEY;
-  if (!apiKey) {
-    console.error('[api/chat] Missing AI API key');
+  const serviceAccount = parseVertexServiceAccount(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
+  if (!serviceAccount) {
+    console.error('[api/chat] Missing or invalid Vertex AI service account');
     res.status(500).json({ error: 'Server is not configured' });
     return;
   }
@@ -108,7 +131,19 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenAI({
+      vertexai: true,
+      project: serviceAccount.project_id,
+      location: VERTEX_LOCATION,
+      apiVersion: VERTEX_API_VERSION,
+      httpOptions: { baseUrl: VERTEX_EU_BASE_URL },
+      googleAuthOptions: {
+        credentials: {
+          client_email: serviceAccount.client_email,
+          private_key: serviceAccount.private_key,
+        },
+      },
+    });
     const response = await ai.models.generateContent({
       model: 'gemini-3.5-flash-lite',
       contents: message,

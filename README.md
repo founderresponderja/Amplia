@@ -39,14 +39,12 @@ cp .env.example .env.local
 
 3. Configurar variáveis necessárias (sem usar valores reais no repositório):
 
-- `GEMINI_API_KEY` (obrigatória para `/api/chat`)
+- `GOOGLE_SERVICE_ACCOUNT_JSON` (obrigatória para `/api/chat`: chave JSON de uma conta de serviço Google Cloud com a função Vertex AI User)
 - `RESEND_API_KEY` (obrigatória para envio de email em `/api/contact`)
 - `CONTACT_EMAIL` (destinatário dos contactos)
 
 Variáveis opcionais suportadas:
 
-- `GOOGLE_GENERATIVE_AI_API_KEY`
-- `GOOGLE_AI_API_KEY`
 - `RESEND_FROM`
 - `VITE_CONTACT_ENDPOINT`
 
