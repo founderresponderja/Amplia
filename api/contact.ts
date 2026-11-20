@@ -15,7 +15,7 @@ function normalizeEmail(value: string): string {
 }
 
 function isValidName(value: string): boolean {
-  return /^[\p{L}0-9 .,'-]{2,120}$/u.test(value);
+  return value.length >= 2 && value.length <= 120;
 }
 
 function isValidEmail(value: string): boolean {
@@ -41,7 +41,7 @@ export default async function handler(req: { method?: string; body?: unknown; he
   });
   if (!rate.allowed) {
     res.setHeader('Retry-After', String(rate.retryAfterSec));
-    res.status(429).json({ error: 'Too many requests' });
+    res.status(429).json({ error: 'rate_limited' });
     return;
   }
 
@@ -61,9 +61,13 @@ export default async function handler(req: { method?: string; body?: unknown; he
   const email = normalizeEmail(String(body.email || ''));
   const message = sanitizeText(String(body.message || ''), 3000);
 
-  if (!isValidName(name) || !isValidEmail(email) || message.length < 5 || message.length > 3000) {
-    console.warn('[api/contact] Invalid payload');
-    res.status(400).json({ error: 'Invalid payload' });
+  const invalid = !isValidName(name) ? 'invalid_name'
+    : !isValidEmail(email) ? 'invalid_email'
+    : message.length < 2 || message.length > 3000 ? 'invalid_message'
+    : null;
+  if (invalid) {
+    console.warn('[api/contact] Invalid payload:', invalid);
+    res.status(400).json({ error: invalid });
     return;
   }
 

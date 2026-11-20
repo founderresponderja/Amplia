@@ -51,7 +51,7 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
 
     if (name.length < 2 || message.length < 2 || !emailRegex.test(email)) {
       setStatus(FormStatus.ERROR);
-      setErrorMessage("Por favor valida os dados: nome, email e mensagem.");
+      setErrorMessage(t.errors.invalid);
       return;
     }
 
@@ -79,7 +79,7 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
         const apiErr =
           (typeof responseData.error === 'string' && responseData.error) ||
           (typeof responseData.message === 'string' && responseData.message) ||
-          "Erro inesperado do servidor de email.";
+          'generic';
         throw new Error(apiErr);
       }
 
@@ -92,13 +92,14 @@ export const Contact: React.FC<ContactProps> = ({ content }) => {
         const failMsg =
           (typeof responseData.error === 'string' && responseData.error) ||
           (typeof responseData.message === 'string' && responseData.message) ||
-          "A submissão falhou no servidor.";
+          'generic';
         throw new Error(failMsg);
       }
     } catch (error: any) {
       console.error("Submission error details:", error);
       setStatus(FormStatus.ERROR);
-      setErrorMessage(error.message || "Ocorreu um erro ao processar o seu pedido.");
+      const code = String(error?.message || 'generic');
+      setErrorMessage(t.errors[code] || t.errors.generic);
       setTimeout(() => {
         setStatus(FormStatus.IDLE);
         setErrorMessage(null);

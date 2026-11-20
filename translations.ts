@@ -251,6 +251,14 @@ export const translations = {
         message: 'Como podemos ajudar?',
         privacy: 'Aceito o tratamento dos meus dados de acordo com a Política de Privacidade.'
       },
+      errors: {
+        invalid: 'Confirme o nome, o email e a mensagem.',
+        invalid_name: 'Indique o seu nome (pelo menos 2 caracteres).',
+        invalid_email: 'O email não parece válido. Confirme, por favor.',
+        invalid_message: 'Escreva uma mensagem (até 3000 caracteres).',
+        rate_limited: 'Recebemos vários pedidos seguidos. Tente de novo dentro de alguns minutos.',
+        generic: 'Não foi possível enviar. Tente de novo ou escreva para ampliasolutions.pt@gmail.com.'
+      },
       placeholders: {
         name: 'Nome',
         company: 'Sua empresa',
@@ -536,6 +544,14 @@ export const translations = {
         message: 'How can we help?',
         privacy: 'I accept the processing of my data according to the Privacy Policy.'
       },
+      errors: {
+        invalid: 'Please check your name, email and message.',
+        invalid_name: 'Please enter your name (at least 2 characters).',
+        invalid_email: 'That email does not look valid. Please check it.',
+        invalid_message: 'Please write a message (up to 3000 characters).',
+        rate_limited: 'Too many requests in a row. Please try again in a few minutes.',
+        generic: 'We could not send it. Try again or write to ampliasolutions.pt@gmail.com.'
+      },
       placeholders: {
         name: 'Name',
         company: 'Your company',
@@ -820,6 +836,14 @@ export const translations = {
         email: 'Email',
         message: '¿Cómo podemos ayudar?',
         privacy: 'Acepto el tratamiento de mis datos de acuerdo con la Política de Privacidade.'
+      },
+      errors: {
+        invalid: 'Revise el nombre, el email y el mensaje.',
+        invalid_name: 'Indique su nombre (al menos 2 caracteres).',
+        invalid_email: 'El email no parece válido. Revíselo, por favor.',
+        invalid_message: 'Escriba un mensaje (hasta 3000 caracteres).',
+        rate_limited: 'Hemos recibido varias solicitudes seguidas. Inténtelo de nuevo en unos minutos.',
+        generic: 'No se pudo enviar. Inténtelo de nuevo o escriba a ampliasolutions.pt@gmail.com.'
       },
       placeholders: {
         name: 'Nombre',
