@@ -54,7 +54,9 @@
     <script>
       (function() {
         try {
-          const localTheme = localStorage.getItem('theme');
+          localStorage.removeItem('theme');
+          localStorage.removeItem('amplia-language');
+          const localTheme = localStorage.getItem('amplia-theme-v2');
           document.documentElement.classList.toggle('dark', localTheme !== 'light');
         } catch (e) {}
       })();

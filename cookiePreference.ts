@@ -45,8 +45,8 @@ export function saveCookiePreference(pref: { functional: boolean; analytics: boo
   localStorage.setItem(COOKIE_PREFERENCE_KEY, JSON.stringify(full));
   if (!pref.functional) {
     try {
-      localStorage.removeItem('amplia-language');
-      localStorage.removeItem('theme');
+      localStorage.removeItem('amplia-lang-v2');
+      localStorage.removeItem('amplia-theme-v2');
     } catch {
       // ignore
     }

@@ -40,7 +40,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     if (typeof document === 'undefined') return 'dark';
     try {
-      const stored = localStorage.getItem('theme');
+      const stored = localStorage.getItem('amplia-theme-v2');
       if (stored === 'dark' || stored === 'light') return stored;
     } catch {
       // ignore
@@ -133,7 +133,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
     setTheme(next);
     document.documentElement.classList.toggle('dark', next === 'dark');
     if (canPersistFunctionalPreferences()) {
-      localStorage.setItem('theme', next);
+      localStorage.setItem('amplia-theme-v2', next);
     }
     window.dispatchEvent(new CustomEvent('amplia-theme-change', { detail: next }));
   };

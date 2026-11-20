@@ -41,7 +41,7 @@ function LegalLayout({ pageKey }: LegalLayoutProps) {
     setTheme(next);
     document.documentElement.classList.toggle('dark', next === 'dark');
     if (canPersistFunctionalPreferences()) {
-      localStorage.setItem('theme', next);
+      localStorage.setItem('amplia-theme-v2', next);
     }
     window.dispatchEvent(new CustomEvent('amplia-theme-change', { detail: next }));
   };

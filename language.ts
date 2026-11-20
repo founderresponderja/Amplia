@@ -2,7 +2,7 @@ import { canPersistFunctionalPreferences } from './cookiePreference';
 
 export type AppLanguage = 'pt' | 'en' | 'es';
 
-export const LANGUAGE_STORAGE_KEY = 'amplia-language';
+export const LANGUAGE_STORAGE_KEY = 'amplia-lang-v2';
 
 export function detectAppLanguage(): AppLanguage {
   if (typeof window === 'undefined') return 'pt';

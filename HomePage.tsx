@@ -80,7 +80,7 @@ export function HomePage() {
     setTheme(newTheme);
     document.documentElement.classList.toggle('dark');
     if (canPersistFunctionalPreferences()) {
-      localStorage.setItem('theme', newTheme);
+      localStorage.setItem('amplia-theme-v2', newTheme);
     }
     window.dispatchEvent(new CustomEvent('amplia-theme-change', { detail: newTheme }));
   };
