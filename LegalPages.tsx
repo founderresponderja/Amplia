@@ -17,7 +17,7 @@ type LegalLayoutProps = {
 function LegalLayout({ pageKey }: LegalLayoutProps) {
   const [lang, setLang] = useState<Language>(() => detectAppLanguage());
   const [theme, setTheme] = useState<'light' | 'dark'>(() =>
-    document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+    typeof document === 'undefined' || document.documentElement.classList.contains('dark') ? 'dark' : 'light'
   );
   const t = legalTranslations[lang][pageKey];
 

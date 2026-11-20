@@ -38,6 +38,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
 }) => {
   const [lang, setLang] = useState<Language>(() => detectAppLanguage());
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof document === 'undefined') return 'dark';
     try {
       const stored = localStorage.getItem('theme');
       if (stored === 'dark' || stored === 'light') return stored;

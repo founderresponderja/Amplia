@@ -50,8 +50,7 @@ export function saveCookiePreference(pref: { functional: boolean; analytics: boo
     } catch {
       // ignore
     }
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.classList.toggle('dark', systemDark);
+    document.documentElement.classList.add('dark');
   }
   window.dispatchEvent(new CustomEvent('amplia-cookie-consent-updated'));
   window.dispatchEvent(new CustomEvent('amplia-language-change'));

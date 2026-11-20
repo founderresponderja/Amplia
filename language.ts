@@ -5,6 +5,7 @@ export type AppLanguage = 'pt' | 'en' | 'es';
 export const LANGUAGE_STORAGE_KEY = 'amplia-language';
 
 export function detectAppLanguage(): AppLanguage {
+  if (typeof window === 'undefined') return 'pt';
   try {
     const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
     if (saved === 'pt' || saved === 'en' || saved === 'es') return saved;
@@ -12,9 +13,7 @@ export function detectAppLanguage(): AppLanguage {
     // ignore
   }
 
-  const browserLang = navigator.language.split('-')[0];
-  if (browserLang === 'en') return 'en';
-  if (browserLang === 'es') return 'es';
+  // Português por omissão; o visitante muda no seletor de língua.
   return 'pt';
 }
 
@@ -30,6 +29,7 @@ export function persistAppLanguage(lang: AppLanguage) {
 }
 
 export function readAppLanguage(): AppLanguage {
+  if (typeof window === 'undefined') return 'pt';
   try {
     const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
     if (saved === 'pt' || saved === 'en' || saved === 'es') return saved;
