@@ -386,7 +386,7 @@ export const translations = {
         {
           block: 'Pricing and Payments',
           q: 'Do you offer an annual discount?',
-          a: 'Some plans offer a discount for annual billing. The amount is shown on each product's pricing page.'
+          a: 'Some plans offer a discount for annual billing. The amount is shown on the pricing page of each product.'
         },
         {
           block: 'Privacy and Security',
