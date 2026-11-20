@@ -57,8 +57,8 @@ export const ProductComingSoonPage: React.FC<Props> = ({
     badge: lang === 'pt' ? 'Em breve' : lang === 'en' ? 'Coming soon' : 'Próximamente',
     back: lang === 'pt' ? '← Voltar' : lang === 'en' ? '← Back' : '← Volver',
     plans: lang === 'pt' ? 'Planos e preços' : lang === 'en' ? 'Plans and pricing' : 'Planes y precios',
-    notify: lang === 'pt' ? 'Avisa-me quando lançar' : lang === 'en' ? 'Notify me at launch' : 'Avísame cuando se lance',
-    thanks: lang === 'pt' ? 'Obrigado! Vamos avisar-te quando estiver disponível.' : lang === 'en' ? "Thanks! We'll let you know when it becomes available." : 'Gracias. Te avisaremos cuando esté disponible.',
+    notify: lang === 'pt' ? 'Avisem-me quando lançar' : lang === 'en' ? 'Notify me at launch' : 'Avísame cuando se lance',
+    thanks: lang === 'pt' ? 'Obrigado! Vamos avisá-lo quando estiver disponível.' : lang === 'en' ? "Thanks! We'll let you know when it becomes available." : 'Gracias. Te avisaremos cuando esté disponible.',
     emailLabel: 'Email',
     emailPlaceholder: lang === 'pt' ? 'nome@email.com' : lang === 'en' ? 'name@email.com' : 'nombre@email.com',
     consentBefore:
@@ -72,7 +72,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
     subscribe: lang === 'pt' ? 'Subscrever' : lang === 'en' ? 'Subscribe' : 'Suscribirme',
     consentError:
       lang === 'pt'
-        ? 'Confirma o teu consentimento e valida o email.'
+        ? 'Confirme o seu consentimento e valide o email.'
         : lang === 'en'
         ? 'Please confirm your consent and validate your email.'
         : 'Confirma tu consentimiento y valida tu email.',
