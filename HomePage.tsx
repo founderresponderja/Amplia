@@ -10,6 +10,8 @@ import { Footer } from './components/Footer';
 import { About } from './components/About';
 import { FAQ } from './components/FAQ';
 import { WhoWeAre } from './components/WhoWeAre';
+import { Packages } from './components/Packages';
+import { HowWeWork } from './components/HowWeWork';
 import { translations } from './translations';
 import { ScrollReveal } from './components/ScrollReveal';
 import { Language } from './types';
@@ -28,6 +30,18 @@ export function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const t = translations[lang];
+  const [reduceMotion, setReduceMotion] = useState(false);
+  useEffect(() => {
+    try {
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      setReduceMotion(mq.matches);
+      const onChange = (e: MediaQueryListEvent) => setReduceMotion(e.matches);
+      mq.addEventListener?.('change', onChange);
+      return () => mq.removeEventListener?.('change', onChange);
+    } catch {
+      return undefined;
+    }
+  }, []);
 
   useEffect(() => {
     persistAppLanguage(lang);
@@ -84,6 +98,7 @@ export function HomePage() {
             <Logo className="h-8 md:h-10 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
             
             <div className="hidden lg:flex items-center gap-8">
+              <button onClick={() => scrollTo('pacotes')} className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-amplia-green transition-colors">{t.nav.packages}</button>
               <button onClick={() => scrollTo('about')} className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-amplia-green transition-colors">{t.nav.about}</button>
               <button onClick={() => scrollTo('services')} className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-amplia-green transition-colors">{t.nav.services}</button>
               <button onClick={() => scrollTo('faq')} className="text-sm font-bold uppercase tracking-widest text-gray-500 hover:text-amplia-green transition-colors">{t.nav.faq}</button>
@@ -150,6 +165,7 @@ export function HomePage() {
               ))}
             </div>
             
+            <button onClick={() => scrollTo('pacotes')} className="text-3xl font-max font-bold dark:text-white text-left border-b border-gray-100 dark:border-white/5 pb-4">{t.nav.packages}</button>
             <button onClick={() => scrollTo('about')} className="text-3xl font-max font-bold dark:text-white text-left border-b border-gray-100 dark:border-white/5 pb-4">{t.nav.about}</button>
             <button onClick={() => scrollTo('services')} className="text-3xl font-max font-bold dark:text-white text-left border-b border-gray-100 dark:border-white/5 pb-4">{t.nav.services}</button>
             <button onClick={() => scrollTo('faq')} className="text-3xl font-max font-bold dark:text-white text-left border-b border-gray-100 dark:border-white/5 pb-4">{t.nav.faq}</button>
@@ -163,7 +179,7 @@ export function HomePage() {
             </Button>
 
             <div className="flex justify-center gap-8 pt-12 text-gray-400">
-               <a href="https://www.linkedin.com/in/amplia-solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Linkedin size={24} /></a>
+               <a href="https://www.linkedin.com/company/ampliasolutions" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Linkedin size={24} /></a>
                <a href="https://www.instagram.com/ampliasolutions/" target="_blank" rel="noopener noreferrer" className="hover:text-amplia-green transition-colors"><Instagram size={24} /></a>
             </div>
           </div>
@@ -176,7 +192,7 @@ export function HomePage() {
           <ScrollReveal>
             <div className="space-y-8">
               <span className="px-4 py-2 bg-amplia-green/10 text-amplia-green rounded-full text-[11px] font-bold uppercase tracking-[0.2em]">{t.hero.badge}</span>
-              <h1 className="text-5xl md:text-8xl font-max leading-[1.1] dark:text-white tracking-tight">
+              <h1 className="text-5xl md:text-7xl font-max leading-[1.1] dark:text-white tracking-tight">
                 {t.hero.titleLine1} <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amplia-green to-emerald-400 font-bold">{t.hero.titleLine2}</span>
               </h1>
@@ -184,27 +200,49 @@ export function HomePage() {
                 {t.hero.description}
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button className="px-10 py-4 shadow-xl shadow-amplia-green/20 font-bold text-lg" onClick={() => scrollTo('about')}>{t.hero.ctaPrimary}</Button>
+                <Button className="px-10 py-4 shadow-xl shadow-amplia-green/20 font-bold text-lg" onClick={() => scrollTo('contact')}>{t.hero.ctaPrimary}</Button>
+                <Button variant="outline" className="px-10 py-4 font-bold text-lg" onClick={() => scrollTo('pacotes')}>{t.hero.ctaSecondary}</Button>
               </div>
+              <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+                {t.hero.features.map((f: string) => (
+                  <li key={f} className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-amplia-green" />{f}</li>
+                ))}
+              </ul>
             </div>
           </ScrollReveal>
           
           <div className="relative hidden lg:block animate-fade-in-up">
             <div className="relative z-10 p-4 bg-white dark:bg-neutral-800 rounded-[50px] shadow-2xl border border-gray-100 dark:border-white/5">
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80" 
-                className="rounded-[40px] w-full h-[500px] object-cover" 
-                alt="Amplia Solutions"
-                loading="lazy"
-                decoding="async"
-              />
+              {reduceMotion ? (
+                <img
+                  src="/brand/amplia-hero-poster.jpg"
+                  alt={t.hero.videoLabel}
+                  className="rounded-[40px] w-full h-[500px] object-cover bg-[#1B1A1C]"
+                />
+              ) : (
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/brand/amplia-hero-poster.jpg"
+                  aria-label={t.hero.videoLabel}
+                  className="rounded-[40px] w-full h-[500px] object-cover bg-[#1B1A1C]"
+                >
+                  <source src="/brand/amplia-hero.webm" type="video/webm" />
+                  <source src="/brand/amplia-hero.mp4" type="video/mp4" />
+                </video>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      <About content={t.about} />
+      <Packages content={t.packages} onCta={() => scrollTo('contact')} />
+      <HowWeWork content={t.howWeWork} />
       <Services content={t.services} />
+      <About content={t.about} />
       <FAQ content={t.faq} />
       <WhoWeAre content={t.whoWeAre} />
       <Contact content={t.contact} />

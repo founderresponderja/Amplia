@@ -45,7 +45,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center gap-2">
           <p className="max-w-xs md:max-w-none font-medium opacity-60 transition-opacity hover:opacity-100">
-            &copy; {new Date().getFullYear()} Amplia Solutions. Engineering the Intelligence Era.
+            &copy; {new Date().getFullYear()} Amplia Solutions. {t.legal.footerTagline}
           </p>
         </div>
 
@@ -56,6 +56,14 @@ export function Footer() {
           <Link to="/termos" className="hover:text-amplia-green transition-colors">
             {t.legal.terms}
           </Link>
+          <a
+            href="https://www.livroreclamacoes.pt"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-amplia-green transition-colors"
+          >
+            {t.legal.complaintsBook}
+          </a>
         </div>
       </div>
     </footer>

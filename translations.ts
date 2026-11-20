@@ -2,36 +2,57 @@
 export const translations = {
   pt: {
     seo: {
-      title: 'Amplia Solutions | Consultoria IT, Engenharia de Software e IA em Portugal',
-      description: 'Consultoria tecnológica de elite em Lisboa. Especialistas em IA, Cloud, DevOps com OpsFlow e suporte à carreira com LIA. Transformamos o seu negócio digital.',
-      keywords: 'consultoria informática, inteligência artificial, engenharia de software portugal, devops ai, responder já, lia ai, amplia studio'
+      title: 'Desenvolvimento de apps à medida para empresas | Amplia Solutions',
+      description: 'Apps web e móveis à medida para pequenas empresas, em semanas e a preço fechado, com inteligência artificial integrada. Pacotes a partir de 4.900 €.',
+      keywords: 'apps à medida, desenvolvimento de aplicações, criar app para empresa, app para restaurante, app de marcações, inteligência artificial para PME, Lisboa'
     },
-    nav: { home: 'Início', about: 'Sobre', services: 'Serviços', faq: 'FAQ', contact: 'Contacto', button: 'Fale Connosco' },
+    nav: { home: 'Início', about: 'Sobre', packages: 'Pacotes', services: 'Portfólio', faq: 'FAQ', contact: 'Contacto', button: 'Fale Connosco' },
     hero: {
-      badge: 'Inovação Constante',
-      titleLine1: 'Amplie o seu',
-      titleLine2: 'Potencial Digital',
-      description: 'Transformamos desafios complexos em produtos de software inteligentes e escaláveis através de IA.',
-      ctaPrimary: 'Começar Agora',
-      ctaSecondary: 'Nossos Serviços',
-      features: ['Suporte 24/7', 'Equipa Sénior', 'IA Nativa']
+      badge: 'Apps à medida para PME',
+      titleLine1: 'Apps à medida.',
+      titleLine2: 'Em semanas, não em meses.',
+      description: 'Do primeiro esboço à app nas mãos dos seus clientes, a preço fechado. Com inteligência artificial integrada.',
+      ctaPrimary: 'Marcar conversa de 20 minutos',
+      ctaSecondary: 'Ver pacotes e preços',
+      features: ['Preço fechado', 'Entrega em 6–8 semanas', 'IA integrada'],
+      videoLabel: 'Símbolo animado da Amplia Solutions'
+    },
+    packages: {
+      sectionTitle: 'Pacotes e preços',
+      mainTitle: 'Sabe quanto custa antes de começar',
+      popular: 'Mais escolhido',
+      cta: 'Marcar conversa de 20 minutos',
+      note: 'Preços sem IVA. Alterações fora do âmbito acordado: 55 €/hora.',
+      items: [
+        { name: 'Sprint de descoberta', description: 'Reunião de levantamento, protótipo clicável e orçamento fechado.', duration: '1–2 semanas', price: '490 €', priceNote: 'descontado se avançar' },
+        { name: 'MVP web', description: 'App web com login, base de dados, painel de gestão e até 5 ecrãs principais.', duration: '6–8 semanas', price: '4.900 €', priceNote: '', popular: true },
+        { name: 'App profissional', description: 'Web + Android/iOS, pagamentos, notificações e painel de administração.', duration: '10–14 semanas', price: '12.900 €', priceNote: '' },
+        { name: 'Integração de IA', description: 'Assistente, respostas automáticas ou leitura de documentos ligada aos seus sistemas.', duration: '2–3 semanas', price: '2.500 €', priceNote: '' },
+        { name: 'Manutenção e alojamento', description: 'Alojamento, cópias de segurança, atualizações e pequenas evoluções.', duration: 'Mensal', price: 'desde 150 €', priceNote: 'por mês' }
+      ]
+    },
+    howWeWork: {
+      sectionTitle: 'Como trabalhamos',
+      mainTitle: 'Quatro passos, sem surpresas',
+      steps: [
+        { title: 'Conversa de 20 minutos', text: 'Percebemos o problema e se uma app é a resposta certa.' },
+        { title: 'Sprint de descoberta', text: 'Protótipo clicável e preço fechado por escrito.' },
+        { title: 'Desenvolvimento em ciclos de 2 semanas', text: 'Vê a app a crescer e dá a sua opinião em cada ciclo.' },
+        { title: 'Entrega e manutenção', text: 'Formação curta, código entregue e acompanhamento mensal.' }
+      ]
     },
     about: {
-      sectionTitle: 'Missão e Valores',
-      mainTitle: 'Engenharia de Elite para a Era da Inteligência',
-      description1: 'A Amplia Solutions é mais do que uma consultora de informática; somos um centro de engenharia dedicado a construir o futuro da produtividade digital. Nascemos com a missão de democratizar o acesso a soluções complexas de software, integrando Inteligência Artificial no núcleo de cada produto.',
-      description2: 'Sediada em Lisboa, Portugal, a nossa equipa é composta exclusivamente por engenheiros seniores com vasta experiência em arquiteturas de larga escala, cloud computing e modelos de linguagem avançados.',
-      description3: 'A nossa missão é transformar problemas complexos em soluções simples, elegantes e escaláveis. Acreditamos que a tecnologia deve trabalhar para as pessoas — não o contrário. Construímos com rigor, entregamos com honestidade e evoluímos sem pedir licença.',
-      uniqueTitle: 'O que nos torna únicos?',
+      sectionTitle: 'Sobre nós',
+      mainTitle: 'Apps feitas à medida do seu negócio',
+      description1: 'A Amplia Solutions cria aplicações web e móveis para pequenas empresas que precisam de uma ferramenta própria e não encontram um software genérico que sirva.',
+      description2: 'A Amplia é um estúdio de desenvolvimento fundado por Luís Pedrosa. Trabalhamos com desenvolvimento assistido por inteligência artificial e reaproveitamos componentes já testados nos nossos próprios produtos, o que nos permite entregar mais depressa e a preço fechado.',
+      description3: 'Acreditamos que a tecnologia deve trabalhar para as pessoas — não o contrário. Dizemos o que custa e quanto demora, e cumprimos.',
+      uniqueTitle: 'O que nos torna diferentes?',
       uniquePoints: [
-        { title: 'IA Nativa', text: 'Integramos IA de raiz; os nossos sistemas são concebidos com IA desde o primeiro dia.' },
-        { title: 'Transparência Total', text: 'Código limpo, documentação rigorosa e comunicação direta com interlocução dedicada.' },
-        { title: 'Foco em Produto', text: 'Pensamos como donos do produto, alinhando a tecnologia com os objetivos do negócio.' }
-      ],
-      credentialsTitle: 'Expertise e Credenciais',
-      credentialsText: 'A nossa equipa detém certificações avançadas em AWS Cloud Architecture, Google Cloud Engineering e especializações em Data Science. Aplicamos metodologias ágeis (Scrum/Kanban) e práticas de segurança Zero Trust em todos os desenvolvimentos.',
-      misinformationTitle: 'Esclarecimentos sobre a Marca',
-      misinformationText: 'Para garantir clareza de marca: a Amplia Solutions é uma entidade independente focada exclusivamente em Tecnologia e Consultoria IT, com posicionamento próprio e atuação dedicada neste setor.'
+        { title: 'IA integrada', text: 'Usamos inteligência artificial para desenvolver mais depressa e para pôr IA útil dentro das apps que entregamos.' },
+        { title: 'Preço fechado', text: 'Âmbito escrito, preço fechado e prazos claros. Sem faturas inesperadas.' },
+        { title: 'Foco no negócio', text: 'Começamos pelo problema do seu negócio, não pela tecnologia.' }
+      ]
     },
     faq: {
       sectionTitle: 'FAQ',
@@ -39,8 +60,13 @@ export const translations = {
       questions: [
         {
           block: 'O que é a Amplia Solutions',
+          q: 'Fazem apps à medida para a minha empresa?',
+          a: 'Sim, é a nossa atividade principal. Veja os **pacotes e preços** acima ou marque uma conversa de 20 minutos através do formulário.'
+        },
+        {
+          block: 'O que é a Amplia Solutions',
           q: 'O que é a Amplia Solutions?',
-          a: 'Somos uma empresa portuguesa de software que usa IA para resolver problemas reais de negócio. Desenvolvemos quatro produtos: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Amplia Home Studio** (decoração com IA) e **OpsFlow** (automação de DevOps).'
+          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos cinco produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Amplia Home Studio** (decoração com IA), **OpsFlow** (automação de DevOps) e **Subly** (gestão de subscrições, em breve).'
         },
         {
           block: 'O que é a Amplia Solutions',
@@ -55,47 +81,47 @@ export const translations = {
         {
           block: 'Dúvidas sobre os produtos',
           q: 'Os produtos funcionam em português?',
-          a: 'Sim. Todos os produtos estão disponíveis em português, inglês e espanhol. O **Responder Já** deteta automaticamente o idioma de cada avaliação e responde no mesmo idioma.'
+          a: 'Sim. Os nossos produtos estão disponíveis em português, e a maioria também em inglês e espanhol. O **Responder Já** deteta automaticamente o idioma de cada avaliação e responde no mesmo idioma.'
         },
         {
           block: 'Dúvidas sobre os produtos',
           q: 'Como funciona o período de teste gratuito?',
-          a: 'Todos os produtos têm um período de teste gratuito. **Não precisas de cartão de crédito** para começar. Podes explorar as funcionalidades principais sem qualquer compromisso.'
+          a: 'Os nossos produtos têm um plano gratuito ou um período de teste. Pode explorar as funcionalidades principais sem compromisso; as condições de cada produto aparecem na respetiva página.'
         },
         {
           block: 'Dúvidas sobre preços e pagamentos',
           q: 'Quais são os métodos de pagamento aceites?',
-          a: 'Aceitamos cartões de crédito e débito. Os pagamentos são processados de forma segura e os dados do teu cartão nunca ficam armazenados nos nossos servidores.'
+          a: 'Aceitamos cartões de crédito e débito. Os pagamentos são processados de forma segura e os dados do seu cartão nunca ficam armazenados nos nossos servidores.'
         },
         {
           block: 'Dúvidas sobre preços e pagamentos',
           q: 'Posso cancelar a qualquer momento?',
-          a: 'Sim. Podes cancelar a tua subscrição quando quiseres, sem penalizações. Tens ainda direito a **14 dias de reembolso** após qualquer compra, de acordo com a legislação europeia.'
+          a: 'Sim. Pode cancelar a sua subscrição quando quiser, sem penalizações. As condições de reembolso de cada produto estão nos respetivos termos e condições.'
         },
         {
           block: 'Dúvidas sobre preços e pagamentos',
           q: 'Existe desconto para compras anuais?',
-          a: 'Sim. Em todos os planos de subscrição, o pagamento anual tem um desconto de **20%** em relação ao pagamento mensal.'
+          a: 'Alguns planos têm desconto no pagamento anual. O valor aparece na página de preços de cada produto.'
         },
         {
           block: 'Privacidade e segurança',
           q: 'Os meus dados estão seguros?',
-          a: 'Sim. Todos os dados são encriptados e os nossos servidores cumprem as normas RGPD/GDPR. Não partilhamos os teus dados com terceiros para fins comerciais.'
+          a: 'Sim. Todos os dados são encriptados e os nossos servidores cumprem as normas RGPD/GDPR. Não partilhamos os seus dados com terceiros para fins comerciais.'
         },
         {
           block: 'Privacidade e segurança',
           q: 'A IA aprende com os meus dados?',
-          a: 'Os dados que introduzes são usados apenas para gerar as respostas que pediste. **Não usamos os teus dados para treinar os nossos modelos de IA**. Podes consultar a nossa Política de Privacidade para mais detalhes.'
+          a: 'Os dados que introduz são usados apenas para gerar as respostas que pediu. **Não usamos os seus dados para treinar modelos de IA**. Pode consultar a nossa Política de Privacidade para mais detalhes.'
         },
         {
           block: 'Dúvidas específicas por produto',
           q: 'O Responder Já publica as respostas automaticamente sem eu ver?',
-          a: 'Não, se não quiseres. Por omissão, a IA **sugere a resposta** e és tu quem aprova antes de publicar. Podes ativar a publicação automática quando confiares no tom definido.'
+          a: 'Não, se não quiser. Por omissão, a IA **sugere a resposta** e é você quem aprova antes de publicar. Pode ativar a publicação automática quando confiar no tom definido.'
         },
         {
           block: 'Dúvidas específicas por produto',
           q: 'A Lia tem acesso ao meu CV e dados pessoais?',
-          a: 'Só acede ao que tu partilhares. Podes carregar o teu CV para análise e a Lia usa essa informação **apenas para te dar sugestões de melhoria** e encontrar vagas compatíveis.'
+          a: 'Só acede ao que partilhar. Pode carregar o seu CV para análise e a Lia usa essa informação **apenas para lhe dar sugestões de melhoria** e encontrar vagas compatíveis.'
         },
         {
           block: 'Dúvidas específicas por produto',
@@ -105,31 +131,31 @@ export const translations = {
         {
           block: 'Dúvidas específicas por produto',
           q: 'O OpsFlow suporta a minha stack tecnológica?',
-          a: 'O OpsFlow suporta as stacks mais comuns de contentor, integração contínua e cloud. Se usas uma tecnologia específica, contacta-nos — estamos sempre a adicionar novas integrações.'
+          a: 'O OpsFlow suporta as stacks mais comuns de contentor, integração contínua e cloud. Se usa uma tecnologia específica, contacte-nos — estamos sempre a adicionar novas integrações.'
         },
         {
           block: 'Suporte e contacto',
           q: 'Como posso contactar o suporte?',
-          a: 'Podes contactar-nos através do **formulário nesta página**. Respondemos em menos de 24 horas em dias úteis. Os planos Profissional e Agência têm suporte prioritário.'
+          a: 'Pode contactar-nos através do **formulário nesta página**. Respondemos em 1 dia útil. Os planos Profissional e Agência têm suporte prioritário.'
         },
         {
           block: 'Suporte e contacto',
           q: 'Têm parceiros ou revendedores em Portugal?',
-          a: 'Estamos a desenvolver o nosso programa de parcerias. Se és uma agência de marketing ou consultora de tecnologia na **Grande Lisboa** e tens interesse em revender os nossos produtos, contacta-nos.'
+          a: 'Estamos a desenvolver o nosso programa de parcerias. Se é uma agência de marketing, um contabilista ou uma consultora e tem clientes que precisam de apps, contacte-nos.'
         },
       ]
     },
     services: {
-      sectionTitle: 'O Que Fazemos',
-      mainTitle: 'Soluções Inteligentes',
-      description: 'Produtos proprietários e serviços de engenharia desenhados para a nova era digital.',
+      sectionTitle: 'O nosso portfólio',
+      mainTitle: 'Produtos que criámos com a mesma tecnologia',
+      description: 'Estes produtos próprios mostram o que construímos para os nossos clientes.',
       portfolios: [
         {
           id: 'opsflow',
           theme: 'cyan',
           title: 'Infraestrutura inteligente',
           appName: 'OpsFlow AI',
-          appDescription: 'Gera ficheiros de configuração, pipelines de integração contínua e configurações cloud com IA. Liga o teu código à produção com passos automatizados e consistentes. Lança novas versões em minutos com mais confiança.',
+          appDescription: 'Gera ficheiros de configuração, pipelines de integração contínua e configurações cloud com IA. Ligue o seu código à produção com passos automatizados e consistentes. Lance novas versões em minutos com mais confiança.',
           buttonText: 'Saber Mais',
           url: '/produtos/opsflow',
           pricingTitle: 'Planos',
@@ -158,7 +184,7 @@ export const translations = {
           theme: 'blue',
           title: 'Reputação digital',
           appName: 'Responder Já',
-          appDescription: 'Responde automaticamente às avaliações do Google, Booking e TripAdvisor com IA, no teu tom de voz, em segundos. Centraliza respostas e acompanha o impacto no teu SEO local num único fluxo. Poupa até 15 horas por semana.',
+          appDescription: 'Responde automaticamente às avaliações do Google, Booking e TripAdvisor com IA, no tom de voz do seu negócio, em segundos. Centralize as respostas e acompanhe o impacto no SEO local num único fluxo.',
           buttonText: 'Saber Mais',
           url: 'https://responderja.pt',
           pricingTitle: 'Planos',
@@ -174,7 +200,7 @@ export const translations = {
           theme: 'violet',
           title: 'Carreira e talento',
           appName: 'Lia',
-          appDescription: 'Otimiza o teu CV com IA e ajusta o teu perfil às funções certas. Encontra vagas compatíveis com a tua experiência e recebe sugestões acionáveis. Prepara-te para entrevistas com mais segurança e foco.',
+          appDescription: 'Otimize o seu CV com IA e ajuste o seu perfil às funções certas. Encontre vagas compatíveis com a sua experiência e receba sugestões práticas. Prepare-se para entrevistas com mais segurança e foco.',
           buttonText: 'Saber Mais',
           url: '/produtos/lia',
           pricingTitle: 'Planos',
@@ -190,7 +216,7 @@ export const translations = {
           theme: 'green',
           title: 'Estúdio de criação IA',
           appName: 'Amplia Home Studio',
-          appDescription: 'Carrega uma foto do teu espaço e recebe, em segundos, um projeto de decoração completo com lista de materiais e estimativa de custos. Ajusta estilos, orçamento e detalhes visuais num processo guiado. Decide mais rápido com uma proposta pronta a executar.',
+          appDescription: 'Carregue uma foto do seu espaço e receba, em segundos, um projeto de decoração completo com lista de materiais e estimativa de custos. Ajuste estilos, orçamento e detalhes visuais num processo guiado. Decida mais depressa com uma proposta pronta a executar.',
           buttonText: 'Saber Mais',
           url: '/produtos/amplia-home-studio',
           pricingTitle: 'Planos',
@@ -216,7 +242,7 @@ export const translations = {
       mainTitlePrefix: 'Vamos ',
       mainTitleHighlight: 'Ampliar',
       mainTitleSuffix: ' o seu Negócio',
-      description: 'Pronto para elevar a sua tecnologia ao próximo nível? A nossa equipa de especialistas está aqui para ajudar.',
+      description: 'Conte-nos o que precisa. Respondo pessoalmente em 1 dia útil, com uma primeira ideia de prazo e preço.',
       formTitle: 'Envie-nos uma Mensagem',
       labels: {
         name: 'Nome',
@@ -242,6 +268,8 @@ export const translations = {
       privacy: 'Privacidade',
       terms: 'Termos',
       cookies: 'Cookies',
+      complaintsBook: 'Livro de Reclamações',
+      footerTagline: 'Apps à medida para pequenas empresas.',
       cookieTitle: 'Valorizamos a sua Privacidade',
       cookieText: 'Utilizamos cookies para melhorar a sua experiência e garantir o funcionamento técnico do site.',
       accept: 'Aceitar Todos',
@@ -252,43 +280,64 @@ export const translations = {
       termsText: 'Ao utilizar o site da Amplia Solutions, concorda com os termos de utilização aqui descritos. O conteúdo deste site é propriedade intelectual da Amplia Solutions e está protegido por direitos de autor.'
     },
     aiBot: {
-      welcome: 'Olá! Sou a Amplia, a tua assistente aqui na Amplia Solutions. Em que te posso ajudar hoje?',
+      welcome: 'Olá! Sou a Amplia, a assistente da Amplia Solutions. Em que posso ajudar?',
       placeholder: 'Pergunte sobre os nossos serviços...',
       error: 'Desculpe, tive um problema ao processar. Tente novamente.'
     }
   },
   en: {
     seo: {
-      title: 'Amplia Solutions | IT Consulting, Software Engineering & AI Portugal',
-      description: 'Elite tech consultancy in Lisbon. Specialists in AI, Cloud, DevOps with OpsFlow, and career support with LIA. Amplify your digital business.',
-      keywords: 'it consulting, artificial intelligence, software engineering portugal, devops ai, responder ja, lia ai, amplia studio'
+      title: 'Custom app development for businesses | Amplia Solutions',
+      description: 'Custom web and mobile apps for small businesses, in weeks and at a fixed price, with built-in artificial intelligence. Packages from €4,900.',
+      keywords: 'custom apps, app development, build an app for my business, restaurant app, booking app, AI for small business, Lisbon, Portugal'
     },
-    nav: { home: 'Home', about: 'About', services: 'Services', faq: 'FAQ', contact: 'Contact', button: 'Get in Touch' },
+    nav: { home: 'Home', about: 'About', packages: 'Packages', services: 'Portfolio', faq: 'FAQ', contact: 'Contact', button: 'Get in Touch' },
     hero: {
-      badge: 'Constant Innovation',
-      titleLine1: 'Amplify your',
-      titleLine2: 'Digital Potential',
-      description: 'We transform complex challenges into intelligent and scalable software products through cutting-edge AI.',
-      ctaPrimary: 'Get Started',
-      ctaSecondary: 'Our Services',
-      features: ['24/7 Support', 'Senior Team', 'Native AI']
+      badge: 'Custom apps for small businesses',
+      titleLine1: 'Custom apps.',
+      titleLine2: 'In weeks, not months.',
+      description: 'From the first sketch to the app in your customers\' hands, at a fixed price. With built-in artificial intelligence.',
+      ctaPrimary: 'Book a 20-minute call',
+      ctaSecondary: 'See packages and prices',
+      features: ['Fixed price', 'Delivered in 6–8 weeks', 'Built-in AI'],
+      videoLabel: 'Amplia Solutions animated symbol'
+    },
+    packages: {
+      sectionTitle: 'Packages and prices',
+      mainTitle: 'Know the cost before you start',
+      popular: 'Most chosen',
+      cta: 'Book a 20-minute call',
+      note: 'Prices exclude VAT. Changes outside the agreed scope: €55/hour.',
+      items: [
+        { name: 'Discovery sprint', description: 'Requirements meeting, clickable prototype and a fixed quote.', duration: '1–2 weeks', price: '€490', priceNote: 'deducted if you go ahead' },
+        { name: 'Web MVP', description: 'Web app with login, database, admin dashboard and up to 5 main screens.', duration: '6–8 weeks', price: '€4,900', priceNote: '', popular: true },
+        { name: 'Professional app', description: 'Web + Android/iOS, payments, notifications and admin dashboard.', duration: '10–14 weeks', price: '€12,900', priceNote: '' },
+        { name: 'AI integration', description: 'Assistant, automatic replies or document reading connected to your systems.', duration: '2–3 weeks', price: '€2,500', priceNote: '' },
+        { name: 'Maintenance and hosting', description: 'Hosting, backups, updates and small improvements.', duration: 'Monthly', price: 'from €150', priceNote: 'per month' }
+      ]
+    },
+    howWeWork: {
+      sectionTitle: 'How we work',
+      mainTitle: 'Four steps, no surprises',
+      steps: [
+        { title: '20-minute call', text: 'We understand the problem and whether an app is the right answer.' },
+        { title: 'Discovery sprint', text: 'Clickable prototype and a fixed price in writing.' },
+        { title: 'Development in 2-week cycles', text: 'You see the app grow and give feedback in every cycle.' },
+        { title: 'Delivery and maintenance', text: 'Short training, code handed over and monthly follow-up.' }
+      ]
     },
     about: {
-      sectionTitle: 'Mission and Values',
-      mainTitle: 'Elite Engineering for the Intelligence Era',
-      description1: 'Amplia Solutions is more than an IT consultancy; we are an engineering hub dedicated to building the future of digital productivity. We were born with the mission to democratize access to complex software solutions, integrating Artificial Intelligence at the core of every product.',
-      description2: 'Based in Lisbon, Portugal, our team consists exclusively of senior engineers with extensive experience in large-scale architectures, cloud computing, and advanced language models.',
-      description3: 'Our mission is to transform complex problems into simple, elegant and scalable solutions. We believe technology should work for people — not the other way around. We build with rigour, deliver with honesty and evolve without asking permission.',
-      uniqueTitle: 'What makes us unique?',
+      sectionTitle: 'About us',
+      mainTitle: 'Apps built around your business',
+      description1: 'Amplia Solutions builds web and mobile apps for small businesses that need a tool of their own and cannot find off-the-shelf software that fits.',
+      description2: 'Amplia is a development studio founded by Luís Pedrosa. We use AI-assisted development and reuse components already tested in our own products, which lets us deliver faster and at a fixed price.',
+      description3: 'We believe technology should work for people — not the other way around. We tell you what it costs and how long it takes, and we deliver.',
+      uniqueTitle: 'What makes us different?',
       uniquePoints: [
-        { title: 'AI-Native', text: 'We build AI in from the start; our systems are designed with AI from day one.' },
-        { title: 'Total Transparency', text: 'Clean code, rigorous documentation, and direct communication with dedicated points of contact.' },
-        { title: 'Product Focus', text: 'We think like product owners, aligning technology with business goals.' }
-      ],
-      credentialsTitle: 'Expertise & Credentials',
-      credentialsText: 'Our team holds advanced certifications in AWS Cloud Architecture, Google Cloud Engineering, and Data Science specializations. We apply agile methodologies and Zero Trust security practices in all developments.',
-      misinformationTitle: 'Brand Clarifications',
-      misinformationText: 'For clear brand positioning: Amplia Solutions is an independent entity focused exclusively on Technology and IT Consulting, with its own identity and dedicated market focus.'
+        { title: 'Built-in AI', text: 'We use artificial intelligence to build faster and to put useful AI inside the apps we deliver.' },
+        { title: 'Fixed price', text: 'Written scope, fixed price and clear deadlines. No unexpected invoices.' },
+        { title: 'Business first', text: 'We start from your business problem, not from the technology.' }
+      ]
     },
     faq: {
       sectionTitle: 'FAQ',
@@ -296,8 +345,13 @@ export const translations = {
       questions: [
         {
           block: 'What Amplia Solutions Is',
+          q: 'Do you build custom apps for my business?',
+          a: 'Yes, it is our main business. See the **packages and prices** above or book a 20-minute call through the form.'
+        },
+        {
+          block: 'What Amplia Solutions Is',
           q: 'What is Amplia Solutions?',
-          a: 'We are a Portuguese software company that uses AI to solve real business problems. We build four products: **Responder Já** (online review management), **Lia** (career agent), **Amplia Home Studio** (AI interior design), and **OpsFlow** (DevOps automation).'
+          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build five products of our own: **Responder Já** (online review management), **Lia** (career agent), **Amplia Home Studio** (AI interior design), **OpsFlow** (DevOps automation) and **Subly** (subscription management, coming soon). Our main business is building custom apps for small businesses.'
         },
         {
           block: 'What Amplia Solutions Is',
@@ -312,12 +366,12 @@ export const translations = {
         {
           block: 'Product Questions',
           q: 'Do the products work in Portuguese?',
-          a: 'Yes. All products are available in Portuguese, English, and Spanish. **Responder Já** automatically detects each review language and answers in the same language.'
+          a: 'Yes. Our products are available in Portuguese, and most also in English and Spanish. **Responder Já** automatically detects each review language and answers in the same language.'
         },
         {
           block: 'Product Questions',
           q: 'How does the free trial work?',
-          a: 'All products include a free trial period. **You do not need a credit card** to start. You can explore the core features with no commitment.'
+          a: 'Our products have a free plan or a trial period. You can explore the core features with no commitment; each product page shows its conditions.'
         },
         {
           block: 'Pricing and Payments',
@@ -332,7 +386,7 @@ export const translations = {
         {
           block: 'Pricing and Payments',
           q: 'Do you offer an annual discount?',
-          a: 'Yes. Across all subscription plans, annual billing includes a **20%** discount compared with monthly billing.'
+          a: 'Some plans offer a discount for annual billing. The amount is shown on each product's pricing page.'
         },
         {
           block: 'Privacy and Security',
@@ -377,9 +431,9 @@ export const translations = {
       ]
     },
     services: {
-      sectionTitle: 'What We Do',
-      mainTitle: 'Intelligent Solutions',
-      description: 'Proprietary products and engineering services designed for the new digital era.',
+      sectionTitle: 'Our portfolio',
+      mainTitle: 'Products we built with the same technology',
+      description: 'These products of our own show what we build for our clients.',
       portfolios: [
         {
           id: 'opsflow',
@@ -415,7 +469,7 @@ export const translations = {
           theme: 'blue',
           title: 'Digital reputation',
           appName: 'Responder Já',
-          appDescription: 'Respond automatically to Google, Booking, and TripAdvisor reviews with AI in your brand voice in seconds. Organize replies and track local SEO impact in one streamlined flow. Save up to 15 hours per week.',
+          appDescription: 'Respond automatically to Google, Booking, and TripAdvisor reviews with AI in your brand voice in seconds. Organize replies and track local SEO impact in one streamlined flow.',
           buttonText: 'Learn More',
           url: 'https://responderja.pt',
           pricingTitle: 'Plans',
@@ -473,7 +527,7 @@ export const translations = {
       mainTitlePrefix: 'Let\'s ',
       mainTitleHighlight: 'Amplify',
       mainTitleSuffix: ' your Business',
-      description: 'Ready to take your technology to the next level? Our team of experts is here to help.',
+      description: 'Tell us what you need. I reply personally within 1 business day, with a first idea of timing and price.',
       formTitle: 'Send us a Message',
       labels: {
         name: 'Name',
@@ -499,6 +553,8 @@ export const translations = {
       privacy: 'Privacy',
       terms: 'Terms',
       cookies: 'Cookies',
+      complaintsBook: 'Complaints Book',
+      footerTagline: 'Custom apps for small businesses.',
       cookieTitle: 'We Value your Privacy',
       cookieText: 'We use cookies to improve your experience and ensure the technical functioning of the site.',
       accept: 'Accept All',
@@ -516,36 +572,57 @@ export const translations = {
   },
   es: {
     seo: {
-      title: 'Amplia Solutions | Consultoría IT, Ingeniería de Software e IA Portugal',
-      description: 'Consultoría tecnológica de élite en Lisboa. Especialistas en IA, Cloud, DevOps con OpsFlow y soporte profesional con LIA. Amplíe su negocio digital.',
-      keywords: 'consultoría it, inteligencia artificial, ingeniería de software portugal, devops ai, responder ja, lia ai, amplia studio'
+      title: 'Desarrollo de apps a medida para empresas | Amplia Solutions',
+      description: 'Apps web y móviles a medida para pequeñas empresas, en semanas y a precio cerrado, con inteligencia artificial integrada. Paquetes desde 4.900 €.',
+      keywords: 'apps a medida, desarrollo de aplicaciones, crear app para empresa, app para restaurante, app de reservas, inteligencia artificial para pymes'
     },
-    nav: { home: 'Inicio', about: 'Sobre nosotros', services: 'Servicios', faq: 'FAQ', contact: 'Contacto', button: 'Contáctanos' },
+    nav: { home: 'Inicio', about: 'Sobre nosotros', packages: 'Paquetes', services: 'Portfolio', faq: 'FAQ', contact: 'Contacto', button: 'Contáctenos' },
     hero: {
-      badge: 'Innovación Constante',
-      titleLine1: 'Amplíe su',
-      titleLine2: 'Potencial Digital',
-      description: 'Transformamos desafíos complejos en productos de software inteligentes e escalables a través de IA.',
-      ctaPrimary: 'Empezar Ahora',
-      ctaSecondary: 'Nuestros Servicios',
-      features: ['Soporte 24/7', 'Equipo Senior', 'IA Nativa']
+      badge: 'Apps a medida para pymes',
+      titleLine1: 'Apps a medida.',
+      titleLine2: 'En semanas, no en meses.',
+      description: 'Del primer boceto a la app en manos de sus clientes, a precio cerrado. Con inteligencia artificial integrada.',
+      ctaPrimary: 'Reservar llamada de 20 minutos',
+      ctaSecondary: 'Ver paquetes y precios',
+      features: ['Precio cerrado', 'Entrega en 6–8 semanas', 'IA integrada'],
+      videoLabel: 'Símbolo animado de Amplia Solutions'
+    },
+    packages: {
+      sectionTitle: 'Paquetes y precios',
+      mainTitle: 'Sepa cuánto cuesta antes de empezar',
+      popular: 'El más elegido',
+      cta: 'Reservar llamada de 20 minutos',
+      note: 'Precios sin IVA. Cambios fuera del alcance acordado: 55 €/hora.',
+      items: [
+        { name: 'Sprint de descubrimiento', description: 'Reunión de requisitos, prototipo clicable y presupuesto cerrado.', duration: '1–2 semanas', price: '490 €', priceNote: 'descontado si sigue adelante' },
+        { name: 'MVP web', description: 'App web con login, base de datos, panel de gestión y hasta 5 pantallas principales.', duration: '6–8 semanas', price: '4.900 €', priceNote: '', popular: true },
+        { name: 'App profesional', description: 'Web + Android/iOS, pagos, notificaciones y panel de administración.', duration: '10–14 semanas', price: '12.900 €', priceNote: '' },
+        { name: 'Integración de IA', description: 'Asistente, respuestas automáticas o lectura de documentos conectada a sus sistemas.', duration: '2–3 semanas', price: '2.500 €', priceNote: '' },
+        { name: 'Mantenimiento y alojamiento', description: 'Alojamiento, copias de seguridad, actualizaciones y pequeñas mejoras.', duration: 'Mensual', price: 'desde 150 €', priceNote: 'al mes' }
+      ]
+    },
+    howWeWork: {
+      sectionTitle: 'Cómo trabajamos',
+      mainTitle: 'Cuatro pasos, sin sorpresas',
+      steps: [
+        { title: 'Llamada de 20 minutos', text: 'Entendemos el problema y si una app es la respuesta adecuada.' },
+        { title: 'Sprint de descubrimiento', text: 'Prototipo clicable y precio cerrado por escrito.' },
+        { title: 'Desarrollo en ciclos de 2 semanas', text: 'Ve crecer la app y da su opinión en cada ciclo.' },
+        { title: 'Entrega y mantenimiento', text: 'Formación breve, código entregado y seguimiento mensual.' }
+      ]
     },
     about: {
-      sectionTitle: 'Misión y Valores',
-      mainTitle: 'Ingeniería de Élite para la Era de la Inteligencia',
-      description1: 'Amplia Solutions es más que una consultoría informática; somos un centro de ingeniería dedicado a construir el futuro de la productividad digital. Nacimos con la misión de democratizar el acceso a soluciones de software complejas, integrando Inteligencia Artificial en el núcleo de cada producto.',
-      description2: 'Con sede en Lisboa, Portugal, nuestro equipo está formado exclusivamente por ingenieros senior con amplia experiencia en arquitecturas a gran escala, computación en la nube y modelos de lenguaje avanzados.',
-      description3: 'Nuestra misión es transformar problemas complejos en soluciones simples, elegantes y escalables. Creemos que la tecnología debe trabajar para las personas — no al revés. Construimos con rigor, entregamos con honestidad y evolucionamos sin pedir permiso.',
-      uniqueTitle: '¿Qué nos hace únicos?',
+      sectionTitle: 'Sobre nosotros',
+      mainTitle: 'Apps hechas a la medida de su negocio',
+      description1: 'Amplia Solutions crea aplicaciones web y móviles para pequeñas empresas que necesitan una herramienta propia y no encuentran un software genérico que les sirva.',
+      description2: 'Amplia es un estudio de desarrollo fundado por Luís Pedrosa. Trabajamos con desarrollo asistido por inteligencia artificial y reutilizamos componentes ya probados en nuestros propios productos, lo que nos permite entregar más rápido y a precio cerrado.',
+      description3: 'Creemos que la tecnología debe trabajar para las personas, no al revés. Decimos lo que cuesta y cuánto tarda, y cumplimos.',
+      uniqueTitle: '¿Qué nos hace diferentes?',
       uniquePoints: [
-        { title: 'IA Nativa', text: 'Integramos IA desde el origen; nuestros sistemas se diseñan con IA desde el primer día.' },
-        { title: 'Transparencia Total', text: 'Código limpio, documentación rigurosa y comunicación directa con interlocución dedicada.' },
-        { title: 'Enfoque en Producto', text: 'Pensamos como dueños del producto, asegurando que la tecnología sirva al negocio.' }
-      ],
-      credentialsTitle: 'Experiencia y Credenciales',
-      credentialsText: 'Nuestro equipo cuenta con certificaciones avanzadas en AWS Cloud Architecture, Google Cloud Engineering y especializaciones en Ciencia de Datos. Aplicamos metodologías ágiles y prácticas de seguridad Zero Trust.',
-      misinformationTitle: 'Aclaraciones de Marca',
-      misinformationText: 'Para reforzar la claridad de marca: Amplia Solutions es una entidad independiente centrada exclusivamente en Tecnología y Consultoría IT, con identidad propia y enfoque dedicado en este sector.'
+        { title: 'IA integrada', text: 'Usamos inteligencia artificial para desarrollar más rápido y para poner IA útil dentro de las apps que entregamos.' },
+        { title: 'Precio cerrado', text: 'Alcance por escrito, precio cerrado y plazos claros. Sin facturas inesperadas.' },
+        { title: 'El negocio primero', text: 'Empezamos por el problema de su negocio, no por la tecnología.' }
+      ]
     },
     faq: {
       sectionTitle: 'FAQ',
@@ -553,8 +630,13 @@ export const translations = {
       questions: [
         {
           block: 'Qué es Amplia Solutions',
+          q: '¿Hacen apps a medida para mi empresa?',
+          a: 'Sí, es nuestra actividad principal. Vea los **paquetes y precios** arriba o reserve una llamada de 20 minutos a través del formulario.'
+        },
+        {
+          block: 'Qué es Amplia Solutions',
           q: '¿Qué es Amplia Solutions?',
-          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Desarrollamos cuatro productos: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Amplia Home Studio** (decoración con IA) y **OpsFlow** (automatización de DevOps).'
+          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos cinco productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Amplia Home Studio** (decoración con IA), **OpsFlow** (automatización de DevOps) y **Subly** (gestión de suscripciones, próximamente).'
         },
         {
           block: 'Qué es Amplia Solutions',
@@ -569,12 +651,12 @@ export const translations = {
         {
           block: 'Dudas sobre los productos',
           q: '¿Los productos funcionan en portugués?',
-          a: 'Sí. Todos los productos están disponibles en portugués, inglés y español. **Responder Já** detecta automáticamente el idioma de cada reseña y responde en ese mismo idioma.'
+          a: 'Sí. Nuestros productos están disponibles en portugués, y la mayoría también en inglés y español. **Responder Já** detecta automáticamente el idioma de cada reseña y responde en ese mismo idioma.'
         },
         {
           block: 'Dudas sobre los productos',
           q: '¿Cómo funciona el período de prueba gratuito?',
-          a: 'Todos los productos tienen un período de prueba gratuito. **No necesitas tarjeta de crédito** para empezar. Puedes explorar las funcionalidades principales sin compromiso.'
+          a: 'Nuestros productos tienen un plan gratuito o un período de prueba. Puede explorar las funcionalidades principales sin compromiso; las condiciones de cada producto aparecen en su página.'
         },
         {
           block: 'Dudas sobre precios y pagos',
@@ -589,7 +671,7 @@ export const translations = {
         {
           block: 'Dudas sobre precios y pagos',
           q: '¿Existe descuento para compras anuales?',
-          a: 'Sí. En todos los planes de suscripción, el pago anual incluye un descuento del **20%** respecto al pago mensual.'
+          a: 'Algunos planes tienen descuento en el pago anual. El importe aparece en la página de precios de cada producto.'
         },
         {
           block: 'Privacidad y seguridad',
@@ -624,7 +706,7 @@ export const translations = {
         {
           block: 'Soporte y contacto',
           q: '¿Cómo puedo contactar con soporte?',
-          a: 'Puedes contactarnos a través del **formulario de esta página**. Respondemos en menos de 24 horas laborables en días hábiles. Los planes Profesional y Agencia incluyen soporte prioritario.'
+          a: 'Puedes contactarnos a través del **formulario de esta página**. Respondemos en 1 día laborable. Los planes Profesional y Agencia incluyen soporte prioritario.'
         },
         {
           block: 'Soporte y contacto',
@@ -634,9 +716,9 @@ export const translations = {
       ]
     },
     services: {
-      sectionTitle: 'Qué Hacemos',
-      mainTitle: 'Soluciones Inteligentes',
-      description: 'Productos propios y servicios de ingeniería diseñados para la nova era digital.',
+      sectionTitle: 'Nuestro portfolio',
+      mainTitle: 'Productos que creamos con la misma tecnología',
+      description: 'Estos productos propios muestran lo que construimos para nuestros clientes.',
       portfolios: [
         {
           id: 'opsflow',
@@ -672,7 +754,7 @@ export const translations = {
           theme: 'blue',
           title: 'Reputación digital',
           appName: 'Responder Já',
-          appDescription: 'Responde automáticamente a las reseñas de Google, Booking y TripAdvisor con IA, con tu tono de voz, en segundos. Centraliza respuestas y sigue el impacto en tu SEO local en un solo flujo. Ahorra hasta 15 horas por semana.',
+          appDescription: 'Responde automáticamente a las reseñas de Google, Booking y TripAdvisor con IA, con tu tono de voz, en segundos. Centraliza respuestas y sigue el impacto en tu SEO local en un solo flujo.',
           buttonText: 'Saber más',
           url: 'https://responderja.pt',
           pricingTitle: 'Planes',
@@ -730,7 +812,7 @@ export const translations = {
       mainTitlePrefix: 'Vamos a ',
       mainTitleHighlight: 'Ampliar',
       mainTitleSuffix: ' su Negocio',
-      description: '¿Listo para llevar su tecnología al siguiente nivel? Nuestro equipo de expertos está aquí para ayudarle.',
+      description: 'Cuéntenos lo que necesita. Respondo personalmente en 1 día laborable, con una primera idea de plazo y precio.',
       formTitle: 'Envíenos un Mensaje',
       labels: {
         name: 'Nombre',
@@ -756,6 +838,8 @@ export const translations = {
       privacy: 'Privacidade',
       terms: 'Termos',
       cookies: 'Cookies',
+      complaintsBook: 'Libro de Reclamaciones',
+      footerTagline: 'Apps a medida para pequeñas empresas.',
       cookieTitle: 'Valoramos su Privacidad',
       cookieText: 'Utilizamos cookies para mejorar su experiencia y garantizar el funcionamiento técnico del sitio.',
       accept: 'Aceptar Todo',

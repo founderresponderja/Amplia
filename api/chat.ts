@@ -193,6 +193,15 @@ Para além do desenvolvimento à medida, temos quatro produtos próprios dispon�
 
 4. OpsFlow — gera automaticamente ficheiros de configuração, pipelines de integração contínua e configurações cloud. Para developers e equipas técnicas.
 
+Pacotes de desenvolvimento à medida (preços sem IVA):
+- Sprint de descoberta: 490 €, 1–2 semanas (descontado se o cliente avançar).
+- MVP web: 4.900 €, 6–8 semanas.
+- App profissional (web + Android/iOS): 12.900 €, 10–14 semanas.
+- Integração de IA: 2.500 €, 2–3 semanas.
+- Manutenção e alojamento: desde 150 €/mês.
+- Alterações fora do âmbito: 55 €/hora.
+Estes valores são de referência; o preço final é fechado por escrito depois do sprint de descoberta. Respondemos aos contactos em 1 dia útil.
+
 Quando alguém perguntar sobre desenvolvimento à medida:
 Explica que é o nosso serviço principal. Pergunta o que precisam de construir e recolhe informação básica (tipo de app, problema que resolve, prazo, orçamento aproximado). Encaminha sempre para o formulário de contacto para uma conversa mais detalhada.
 
