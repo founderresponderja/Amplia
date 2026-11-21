@@ -217,7 +217,7 @@ export function HomePage() {
                 <img
                   src="/media/video-atual.jpg"
                   alt={t.hero.videoLabel}
-                  className="rounded-[40px] w-full max-w-[440px] mx-auto aspect-[4/5] object-cover bg-[#1B1A1C]"
+                  className="rounded-[40px] w-full max-w-[300px] mx-auto aspect-[9/16] object-cover bg-[#1B1A1C]"
                 />
               ) : (
                 <video
@@ -228,9 +228,9 @@ export function HomePage() {
                   preload="metadata"
                   poster="/media/video-atual.jpg"
                   aria-label={t.hero.videoLabel}
-                  className="rounded-[40px] w-full max-w-[440px] mx-auto aspect-[4/5] object-cover bg-[#1B1A1C]"
+                  className="rounded-[40px] w-full max-w-[300px] mx-auto aspect-[9/16] object-cover bg-[#1B1A1C]"
                 >
-                  {/* Vídeo mais recente da Amplia: substituir o ficheiro com o mesmo nome a cada vídeo novo */}
+                  {/* Último vídeo do Instagram (9:16): substituir o ficheiro com o mesmo nome a cada reel novo */}
                   <source src="/media/video-atual.mp4" type="video/mp4" />
                 </video>
               )}
