@@ -62,13 +62,16 @@ Conversa com o Luís no calendário (segunda-feira entre os dias 18 e 24, 21:00)
 Só depois se produz o vídeo.
 
 ## Ficheiros de media (regras do Luís)
-- **Imagens e carrosséis**: ficam em `marketing/posts/` apenas até serem publicados. Logo a seguir à publicação
-  (depois de confirmar que a publicação existe), apagar o ficheiro do ramo `marketing` (commit + push).
-  Nota: o histórico do Git guarda versões antigas; o link público deixa de funcionar.
-- **Vídeos**: o vídeo novo (formato 4:5, 1080 × 1350) substitui `public/media/video-atual.mp4` e a capa
-  `public/media/video-atual.jpg` no ramo `main` do site, com o mesmo nome, sem alterar código. Aparece no topo
-  da página no computador. Publicar no site só com o «sim» do Luís ao vídeo.
-  Para o Instagram, a versão 9:16 vai para `public/media/reel-atual.mp4` e é apagada depois de o reel estar publicado.
+- **O site só é usado para conteúdos do Instagram.** Conteúdos do LinkedIn nunca vão para o site.
+- **Vídeos do Instagram (reels, 9:16, 1080 × 1920)**: substituem `public/media/video-atual.mp4` e a capa
+  `public/media/video-atual.jpg` no ramo `main` do site, com o mesmo nome, sem alterar código. Servem de URL público
+  para publicar no Instagram e ficam no topo da página (computador) até ao reel seguinte, para manter o site dinâmico.
+  Atualizar o site só com o «sim» do Luís ao vídeo.
+- **Imagens e carrosséis do Instagram**: ficam em `public/media/instagram/` só até serem publicados; apagar logo a seguir
+  à publicação (depois de confirmar que existe).
+- **LinkedIn**: imagens ficam em `marketing/posts/` (ramo `marketing`, URL público do GitHub) só até serem publicadas;
+  apagar logo a seguir. Vídeos do LinkedIn não passam pelo site nem pelo repositório: o Luís carrega-os à mão.
+- Nota: o histórico do Git guarda versões antigas; o link público deixa de funcionar.
 - **Lembrete obrigatório**: sempre que houver media novo (imagem, carrossel ou vídeo), lembrar o Luís de o
   descarregar para o repositório local dele, enviando-lhe o ficheiro (SendUserFile) na mesma mensagem.
 
