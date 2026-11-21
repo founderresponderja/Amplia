@@ -15,7 +15,7 @@ export const translations = {
       ctaPrimary: 'Marcar conversa de 20 minutos',
       ctaSecondary: 'Ver pacotes e preços',
       features: ['Preço fechado', 'Entrega em 6–8 semanas', 'IA integrada'],
-      videoLabel: 'Símbolo animado da Amplia Solutions'
+      videoLabel: 'Vídeo de apresentação da Amplia Solutions'
     },
     packages: {
       sectionTitle: 'Pacotes e preços',
@@ -308,7 +308,7 @@ export const translations = {
       ctaPrimary: 'Book a 20-minute call',
       ctaSecondary: 'See packages and prices',
       features: ['Fixed price', 'Delivered in 6–8 weeks', 'Built-in AI'],
-      videoLabel: 'Amplia Solutions animated symbol'
+      videoLabel: 'Amplia Solutions presentation video'
     },
     packages: {
       sectionTitle: 'Packages and prices',
@@ -601,7 +601,7 @@ export const translations = {
       ctaPrimary: 'Reservar llamada de 20 minutos',
       ctaSecondary: 'Ver paquetes y precios',
       features: ['Precio cerrado', 'Entrega en 6–8 semanas', 'IA integrada'],
-      videoLabel: 'Símbolo animado de Amplia Solutions'
+      videoLabel: 'Vídeo de presentación de Amplia Solutions'
     },
     packages: {
       sectionTitle: 'Paquetes y precios',

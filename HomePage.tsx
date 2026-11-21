@@ -215,9 +215,9 @@ export function HomePage() {
             <div className="relative z-10 p-4 bg-white dark:bg-neutral-800 rounded-[50px] shadow-2xl border border-gray-100 dark:border-white/5">
               {reduceMotion ? (
                 <img
-                  src="/brand/amplia-hero-poster.jpg"
+                  src="/media/video-atual.jpg"
                   alt={t.hero.videoLabel}
-                  className="rounded-[40px] w-full h-[500px] object-cover bg-[#1B1A1C]"
+                  className="rounded-[40px] w-full max-w-[440px] mx-auto aspect-[4/5] object-cover bg-[#1B1A1C]"
                 />
               ) : (
                 <video
@@ -226,12 +226,12 @@ export function HomePage() {
                   loop
                   playsInline
                   preload="metadata"
-                  poster="/brand/amplia-hero-poster.jpg"
+                  poster="/media/video-atual.jpg"
                   aria-label={t.hero.videoLabel}
-                  className="rounded-[40px] w-full h-[500px] object-cover bg-[#1B1A1C]"
+                  className="rounded-[40px] w-full max-w-[440px] mx-auto aspect-[4/5] object-cover bg-[#1B1A1C]"
                 >
-                  <source src="/brand/amplia-hero.webm" type="video/webm" />
-                  <source src="/brand/amplia-hero.mp4" type="video/mp4" />
+                  {/* Vídeo mais recente da Amplia: substituir o ficheiro com o mesmo nome a cada vídeo novo */}
+                  <source src="/media/video-atual.mp4" type="video/mp4" />
                 </video>
               )}
             </div>
