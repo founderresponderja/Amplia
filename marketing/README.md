@@ -61,5 +61,16 @@ Dia 18: briefing com os temas mais quentes do mês nas áreas acima (3–5 temas
 Conversa com o Luís no calendário (segunda-feira entre os dias 18 e 24, 21:00) para decidir tema e abordagem.
 Só depois se produz o vídeo.
 
+## Ficheiros de media (regras do Luís)
+- **Imagens e carrosséis**: ficam em `marketing/posts/` apenas até serem publicados. Logo a seguir à publicação
+  (depois de confirmar que a publicação existe), apagar o ficheiro do ramo `marketing` (commit + push).
+  Nota: o histórico do Git guarda versões antigas; o link público deixa de funcionar.
+- **Vídeos**: o vídeo novo (formato 4:5, 1080 × 1350) substitui `public/media/video-atual.mp4` e a capa
+  `public/media/video-atual.jpg` no ramo `main` do site, com o mesmo nome, sem alterar código. Aparece no topo
+  da página no computador. Publicar no site só com o «sim» do Luís ao vídeo.
+  Para o Instagram, a versão 9:16 vai para `public/media/reel-atual.mp4` e é apagada depois de o reel estar publicado.
+- **Lembrete obrigatório**: sempre que houver media novo (imagem, carrossel ou vídeo), lembrar o Luís de o
+  descarregar para o repositório local dele, enviando-lhe o ficheiro (SendUserFile) na mesma mensagem.
+
 ## Registo
 Depois de publicar, acrescentar uma linha a `posts/registo.md`: data · tipo · tema · link da publicação.
