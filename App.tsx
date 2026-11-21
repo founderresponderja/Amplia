@@ -97,13 +97,13 @@ export function AppRoutes() {
         }
       />
       <Route
-        path="/produtos/amplia-social"
+        path="/produtos/ressoa"
         element={
           <ProductComingSoonPage
-            title="Amplia Social"
+            title="Ressoa"
             description="Escreva uma ideia e receba as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas. Em breve."
             imageUrl={PRODUCT_SCREENSHOTS.social}
-            imageAlt="Pré-visualização da Amplia Social"
+            imageAlt="Pré-visualização da Ressoa"
             waitlistKey="social"
             pricingPlans={[
               { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },

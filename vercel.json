@@ -42,5 +42,12 @@
       ]
     }
   ],
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/produtos/amplia-social",
+      "destination": "/produtos/ressoa",
+      "permanent": true
+    }
+  ]
 }

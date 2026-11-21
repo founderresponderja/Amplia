@@ -66,7 +66,7 @@ export const translations = {
         {
           block: 'O que é a Amplia Solutions',
           q: 'O que é a Amplia Solutions?',
-          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos seis produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Amplia Home Studio** (decoração com IA), **OpsFlow** (automação de DevOps), **Subly** (gestão de subscrições, em breve) e **Amplia Social** (conteúdo para redes sociais, em breve).'
+          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos seis produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Amplia Home Studio** (decoração com IA), **OpsFlow** (automação de DevOps), **Subly** (gestão de subscrições, em breve) e **Ressoa** (conteúdo para redes sociais, em breve).'
         },
         {
           block: 'O que é a Amplia Solutions',
@@ -183,10 +183,10 @@ export const translations = {
           id: 'social',
           theme: 'violet',
           title: 'Conteúdo para redes sociais',
-          appName: 'Amplia Social',
-          appDescription: 'Escreva uma ideia e a Amplia Social cria as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas para várias línguas. Junte imagens geradas por IA ou as suas, e guarde o histórico. Em breve.',
+          appName: 'Ressoa',
+          appDescription: 'Escreva uma ideia e a Ressoa cria as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas para várias línguas. Junte imagens geradas por IA ou as suas, e guarde o histórico. Em breve.',
           buttonText: 'Saber Mais',
-          url: '/produtos/amplia-social',
+          url: '/produtos/ressoa',
           pricingTitle: 'Planos',
           pricingPlans: [
             { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
@@ -372,7 +372,7 @@ export const translations = {
         {
           block: 'What Amplia Solutions Is',
           q: 'What is Amplia Solutions?',
-          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build six products of our own: **Responder Já** (online review management), **Lia** (career agent), **Amplia Home Studio** (AI interior design), **OpsFlow** (DevOps automation), **Subly** (subscription management, coming soon) and **Amplia Social** (social media content, coming soon). Our main business is building custom apps for small businesses.'
+          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build six products of our own: **Responder Já** (online review management), **Lia** (career agent), **Amplia Home Studio** (AI interior design), **OpsFlow** (DevOps automation), **Subly** (subscription management, coming soon) and **Ressoa** (social media content, coming soon). Our main business is building custom apps for small businesses.'
         },
         {
           block: 'What Amplia Solutions Is',
@@ -489,10 +489,10 @@ export const translations = {
           id: 'social',
           theme: 'violet',
           title: 'Social media content',
-          appName: 'Amplia Social',
-          appDescription: 'Write one idea and Amplia Social creates the posts for LinkedIn, Instagram, Facebook, X and TikTok, tailored to each network and translated into several languages. Add AI-generated images or your own, and keep a history. Coming soon.',
+          appName: 'Ressoa',
+          appDescription: 'Write one idea and Ressoa creates the posts for LinkedIn, Instagram, Facebook, X and TikTok, tailored to each network and translated into several languages. Add AI-generated images or your own, and keep a history. Coming soon.',
           buttonText: 'Learn More',
-          url: '/produtos/amplia-social',
+          url: '/produtos/ressoa',
           pricingTitle: 'Plans',
           pricingPlans: [
             { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist available'] },
@@ -678,7 +678,7 @@ export const translations = {
         {
           block: 'Qué es Amplia Solutions',
           q: '¿Qué es Amplia Solutions?',
-          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos seis productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Amplia Home Studio** (decoración con IA), **OpsFlow** (automatización de DevOps), **Subly** (gestión de suscripciones, próximamente) y **Amplia Social** (contenido para redes sociales, próximamente).'
+          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos seis productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Amplia Home Studio** (decoración con IA), **OpsFlow** (automatización de DevOps), **Subly** (gestión de suscripciones, próximamente) y **Ressoa** (contenido para redes sociales, próximamente).'
         },
         {
           block: 'Qué es Amplia Solutions',
@@ -795,10 +795,10 @@ export const translations = {
           id: 'social',
           theme: 'violet',
           title: 'Contenido para redes sociales',
-          appName: 'Amplia Social',
-          appDescription: 'Escriba una idea y Amplia Social crea las publicaciones para LinkedIn, Instagram, Facebook, X y TikTok, adaptadas a cada red y traducidas a varios idiomas. Añada imágenes generadas por IA o las suyas, y guarde el historial. Próximamente.',
+          appName: 'Ressoa',
+          appDescription: 'Escriba una idea y Ressoa crea las publicaciones para LinkedIn, Instagram, Facebook, X y TikTok, adaptadas a cada red y traducidas a varios idiomas. Añada imágenes generadas por IA o las suyas, y guarde el historial. Próximamente.',
           buttonText: 'Saber más',
-          url: '/produtos/amplia-social',
+          url: '/produtos/ressoa',
           pricingTitle: 'Planes',
           pricingPlans: [
             { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera disponible'] },

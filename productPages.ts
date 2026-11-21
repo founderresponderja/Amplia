@@ -4,7 +4,7 @@ export const PRODUCT_SCREENSHOTS = {
   homestudio: '/produtos/homestudio-preview.png',
   opsflow: '/produtos/opsflow-preview.png',
   subly: '/produtos/subly-preview.png',
-  social: '/produtos/social-preview.png',
+  social: '/produtos/ressoa-preview.png',
 } as const;
 
 export type ProductWaitlistKey = keyof typeof PRODUCT_SCREENSHOTS;
