@@ -42,5 +42,10 @@
       ]
     }
   ],
-  "cleanUrls": true
+  "cleanUrls": true,
+  "git": {
+    "deploymentEnabled": {
+      "marketing": false
+    }
+  }
 }
