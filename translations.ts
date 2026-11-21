@@ -151,55 +151,13 @@ export const translations = {
       description: 'Estes produtos próprios mostram o que construímos para os nossos clientes.',
       portfolios: [
         {
-          id: 'opsflow',
-          theme: 'cyan',
-          title: 'Infraestrutura inteligente',
-          appName: 'Zarpa',
-          appDescription: 'Gera ficheiros de configuração, pipelines de integração contínua e configurações cloud com IA. Ligue o seu código à produção com passos automatizados e consistentes. Lance novas versões em minutos com mais confiança.',
-          buttonText: 'Saber Mais',
-          url: '/produtos/zarpa',
-          pricingTitle: 'Planos',
-          pricingPlans: [
-            { name: 'Plano Gratuito', price: '0€', period: '', features: ['5 configurações/mês', 'Dockerfile e docker-compose'] },
-            { name: 'Plano Inicial', price: '14,99€', period: '/mês', features: ['50 configurações/mês', 'CI/CD, GitHub Actions', 'AWS, GCP e Azure'] },
-            { name: 'Plano Profissional', price: '39,99€', period: '/mês', features: ['Configurações ilimitadas', 'Kubernetes e Terraform', 'Integração Git'] },
-            { name: 'Plano Agência', price: '99,99€', period: '/mês', features: ['Até 10 utilizadores', 'Pipelines personalizados', 'SLA e gestor dedicado'] },
-          ]
-        },
-        {
-          id: 'subly',
-          theme: 'green',
-          title: 'Subscrições e despesas',
-          appName: 'Subly',
-          appDescription: 'Gestor de subscrições e despesas recorrentes. Em breve.',
-          buttonText: 'Saber Mais',
-          url: '/produtos/subly',
-          pricingTitle: 'Planos',
-          pricingPlans: [
-            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
-          ]
-        },
-        {
-          id: 'social',
-          theme: 'violet',
-          title: 'Conteúdo para redes sociais',
-          appName: 'Ressoa',
-          appDescription: 'Escreva uma ideia e a Ressoa cria as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas para várias línguas. Junte imagens geradas por IA ou as suas, e guarde o histórico. Em breve.',
-          buttonText: 'Saber Mais',
-          url: '/produtos/ressoa',
-          pricingTitle: 'Planos',
-          pricingPlans: [
-            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
-          ]
-        },
-        {
           id: 'responderja',
           theme: 'blue',
           title: 'Reputação digital',
           appName: 'Responder Já',
-          appDescription: 'Responde automaticamente às avaliações do Google, Booking e TripAdvisor com IA, no tom de voz do seu negócio, em segundos. Centralize as respostas e acompanhe o impacto no SEO local num único fluxo.',
-          buttonText: 'Saber Mais',
-          url: 'https://responderja.pt',
+          appDescription: 'Responde às avaliações do Google, Booking e TripAdvisor com IA, no tom de voz do seu negócio. Aprove cada resposta antes de publicar e acompanhe a reputação num só painel.',
+          buttonText: 'Saber mais',
+          url: '/produtos/responder-ja',
           pricingTitle: 'Planos',
           pricingPlans: [
             { name: 'Plano Gratuito', price: '0€', period: '', features: ['Período de teste com funcionalidades essenciais'] },
@@ -211,10 +169,10 @@ export const translations = {
         {
           id: 'lia',
           theme: 'violet',
-          title: 'Carreira e talento',
+          title: 'Carreira e emprego',
           appName: 'Lia',
-          appDescription: 'Otimize o seu CV com IA e ajuste o seu perfil às funções certas. Encontre vagas compatíveis com a sua experiência e receba sugestões práticas. Prepare-se para entrevistas com mais segurança e foco.',
-          buttonText: 'Saber Mais',
+          appDescription: 'O seu agente de carreira com IA: adapta o CV a cada vaga, encontra ofertas compatíveis com a sua experiência e prepara-o para as entrevistas com conselhos práticos.',
+          buttonText: 'Saber mais',
           url: '/produtos/lia',
           pricingTitle: 'Planos',
           pricingPlans: [
@@ -227,10 +185,10 @@ export const translations = {
         {
           id: 'homestudio',
           theme: 'green',
-          title: 'Estúdio de criação IA',
+          title: 'Remodelação e decoração',
           appName: 'Home Studio',
-          appDescription: 'Carregue uma foto do seu espaço e receba, em segundos, um projeto de decoração completo com lista de materiais e estimativa de custos. Ajuste estilos, orçamento e detalhes visuais num processo guiado. Decida mais depressa com uma proposta pronta a executar.',
-          buttonText: 'Saber Mais',
+          appDescription: 'Indique as medidas ou carregue uma foto da divisão e escolha um estilo. O Home Studio gera o ambiente, desenha a planta 2D e lista os produtos de lojas portuguesas, com preços.',
+          buttonText: 'Saber mais',
           url: '/produtos/amplia-home-studio',
           pricingTitle: 'Planos',
           pricingPlans: [
@@ -240,6 +198,48 @@ export const translations = {
             { name: 'Compra única 10 espaços', price: '29,99€', period: '', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
             { name: 'Plano Profissional', price: '29,99€', period: '/mês', features: ['Projectos ilimitados', 'Remodelações simples', 'Comparação de preços', 'Exportação PDF'] },
             { name: 'Plano Agência', price: '79,99€', period: '/mês', features: ['Tudo do Profissional', 'Gestão de múltiplos clientes', 'Relatórios com marca própria'] },
+          ]
+        },
+        {
+          id: 'opsflow',
+          theme: 'cyan',
+          title: 'Deploy com IA',
+          appName: 'Zarpa',
+          appDescription: 'Ligue o seu repositório e a Zarpa gera o Dockerfile, a pipeline de CI/CD e a infraestrutura na cloud, com o custo mensal estimado. Reveja os ficheiros e publique.',
+          buttonText: 'Saber mais',
+          url: '/produtos/zarpa',
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Plano Gratuito', price: '0€', period: '', features: ['5 configurações/mês', 'Dockerfile e docker-compose'] },
+            { name: 'Plano Inicial', price: '14,99€', period: '/mês', features: ['50 configurações/mês', 'CI/CD, GitHub Actions', 'AWS, GCP e Azure'] },
+            { name: 'Plano Profissional', price: '39,99€', period: '/mês', features: ['Configurações ilimitadas', 'Kubernetes e Terraform', 'Integração Git'] },
+            { name: 'Plano Agência', price: '99,99€', period: '/mês', features: ['Até 10 utilizadores', 'Pipelines personalizados', 'SLA e gestor dedicado'] },
+          ]
+        },
+        {
+          id: 'social',
+          theme: 'violet',
+          title: 'Conteúdo para redes sociais',
+          appName: 'Ressoa',
+          appDescription: 'Escreva uma ideia e a Ressoa cria as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas. Junte imagens geradas por IA ou as suas, reveja e agende.',
+          buttonText: 'Saber mais',
+          url: '/produtos/ressoa',
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
+          ]
+        },
+        {
+          id: 'subly',
+          theme: 'green',
+          title: 'Subscrições e despesas',
+          appName: 'Subly',
+          appDescription: 'Junta num só sítio o streaming, o ginásio, o telemóvel, os seguros e as outras despesas recorrentes. Mostra quanto gasta por mês e avisa antes de cada renovação, para cancelar o que já não usa.',
+          buttonText: 'Saber mais',
+          url: '/produtos/subly',
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
           ]
         }
       ]
@@ -457,55 +457,13 @@ export const translations = {
       description: 'These products of our own show what we build for our clients.',
       portfolios: [
         {
-          id: 'opsflow',
-          theme: 'cyan',
-          title: 'Smart infrastructure',
-          appName: 'Zarpa',
-          appDescription: 'Generate configuration files, continuous integration pipelines, and cloud settings with AI. Connect your code to production with automated, consistent steps. Release updates in minutes with greater confidence.',
-          buttonText: 'Learn More',
-          url: '/produtos/zarpa',
-          pricingTitle: 'Plans',
-          pricingPlans: [
-            { name: 'Free Plan', price: '€0', period: '', features: ['5 configurations/month', 'Dockerfile and docker-compose'] },
-            { name: 'Starter Plan', price: '€14.99', period: '/month', features: ['50 configurations/month', 'CI/CD and GitHub Actions', 'AWS, GCP, and Azure'] },
-            { name: 'Professional Plan', price: '€39.99', period: '/month', features: ['Unlimited configurations', 'Kubernetes and Terraform', 'Git integration'] },
-            { name: 'Agency Plan', price: '€99.99', period: '/month', features: ['Up to 10 users', 'Custom pipelines', 'SLA and dedicated manager'] },
-          ]
-        },
-        {
-          id: 'subly',
-          theme: 'green',
-          title: 'Subscriptions and expenses',
-          appName: 'Subly',
-          appDescription: 'Subscription and recurring expense manager. Coming soon.',
-          buttonText: 'Learn More',
-          url: '/produtos/subly',
-          pricingTitle: 'Plans',
-          pricingPlans: [
-            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist available'] },
-          ]
-        },
-        {
-          id: 'social',
-          theme: 'violet',
-          title: 'Social media content',
-          appName: 'Ressoa',
-          appDescription: 'Write one idea and Ressoa creates the posts for LinkedIn, Instagram, Facebook, X and TikTok, tailored to each network and translated into several languages. Add AI-generated images or your own, and keep a history. Coming soon.',
-          buttonText: 'Learn More',
-          url: '/produtos/ressoa',
-          pricingTitle: 'Plans',
-          pricingPlans: [
-            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist available'] },
-          ]
-        },
-        {
           id: 'responderja',
           theme: 'blue',
-          title: 'Digital reputation',
+          title: 'Online reputation',
           appName: 'Responder Já',
-          appDescription: 'Respond automatically to Google, Booking, and TripAdvisor reviews with AI in your brand voice in seconds. Organize replies and track local SEO impact in one streamlined flow.',
-          buttonText: 'Learn More',
-          url: 'https://responderja.pt',
+          appDescription: 'Replies to Google, Booking and TripAdvisor reviews with AI, in your business’s tone of voice. Approve each reply before it goes live and follow your reputation in one dashboard.',
+          buttonText: 'Learn more',
+          url: '/produtos/responder-ja',
           pricingTitle: 'Plans',
           pricingPlans: [
             { name: 'Free Plan', price: '€0', period: '', features: ['Free access with essential features'] },
@@ -517,10 +475,10 @@ export const translations = {
         {
           id: 'lia',
           theme: 'violet',
-          title: 'Career and talent',
+          title: 'Career and jobs',
           appName: 'Lia',
-          appDescription: 'Optimize your CV with AI and tailor your profile to the right roles. Find openings that match your background and get actionable suggestions. Prepare for interviews with stronger confidence and focus.',
-          buttonText: 'Learn More',
+          appDescription: 'Your AI career agent: tailors your CV to each job, finds openings that match your experience and prepares you for interviews with practical advice.',
+          buttonText: 'Learn more',
           url: '/produtos/lia',
           pricingTitle: 'Plans',
           pricingPlans: [
@@ -533,10 +491,10 @@ export const translations = {
         {
           id: 'homestudio',
           theme: 'green',
-          title: 'AI creation studio',
+          title: 'Renovation and interiors',
           appName: 'Home Studio',
-          appDescription: 'Upload a photo of your space and get a complete interior design project in seconds with materials and cost estimates. Adjust style, budget, and visual details in a guided flow. Make faster decisions with an execution-ready plan.',
-          buttonText: 'Learn More',
+          appDescription: 'Enter the room size or upload a photo and pick a style. Home Studio generates the room, draws the 2D floor plan and lists products from Portuguese stores, with prices.',
+          buttonText: 'Learn more',
           url: '/produtos/amplia-home-studio',
           pricingTitle: 'Plans',
           pricingPlans: [
@@ -546,6 +504,48 @@ export const translations = {
             { name: 'One-time purchase 10 spaces', price: '€29.99', period: '', features: ['Complete shopping list', 'Integrated online checkout (soon)'] },
             { name: 'Professional Plan', price: '€29.99', period: '/month', features: ['Unlimited projects', 'Simple remodeling', 'Price comparison', 'PDF export'] },
             { name: 'Agency Plan', price: '€79.99', period: '/month', features: ['Everything in Professional', 'Multi-client management', 'White-label reports'] },
+          ]
+        },
+        {
+          id: 'opsflow',
+          theme: 'cyan',
+          title: 'AI-powered deploys',
+          appName: 'Zarpa',
+          appDescription: 'Connect your repository and Zarpa generates the Dockerfile, the CI/CD pipeline and the cloud infrastructure, with the estimated monthly cost. Review the files and ship.',
+          buttonText: 'Learn more',
+          url: '/produtos/zarpa',
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Free Plan', price: '€0', period: '', features: ['5 configurations/month', 'Dockerfile and docker-compose'] },
+            { name: 'Starter Plan', price: '€14.99', period: '/month', features: ['50 configurations/month', 'CI/CD and GitHub Actions', 'AWS, GCP, and Azure'] },
+            { name: 'Professional Plan', price: '€39.99', period: '/month', features: ['Unlimited configurations', 'Kubernetes and Terraform', 'Git integration'] },
+            { name: 'Agency Plan', price: '€99.99', period: '/month', features: ['Up to 10 users', 'Custom pipelines', 'SLA and dedicated manager'] },
+          ]
+        },
+        {
+          id: 'social',
+          theme: 'violet',
+          title: 'Social media content',
+          appName: 'Ressoa',
+          appDescription: 'Write one idea and Ressoa creates the posts for LinkedIn, Instagram, Facebook, X and TikTok, tailored to each network and translated. Add AI images or your own, review and schedule.',
+          buttonText: 'Learn more',
+          url: '/produtos/ressoa',
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
+          ]
+        },
+        {
+          id: 'subly',
+          theme: 'green',
+          title: 'Subscriptions and bills',
+          appName: 'Subly',
+          appDescription: 'Brings streaming, gym, phone, insurance and your other recurring bills into one place. Shows what you spend each month and warns you before every renewal, so you can cancel what you no longer use.',
+          buttonText: 'Learn more',
+          url: '/produtos/subly',
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
           ]
         }
       ]
@@ -763,55 +763,13 @@ export const translations = {
       description: 'Estos productos propios muestran lo que construimos para nuestros clientes.',
       portfolios: [
         {
-          id: 'opsflow',
-          theme: 'cyan',
-          title: 'Infraestructura inteligente',
-          appName: 'Zarpa',
-          appDescription: 'Genera archivos de configuración, canalizaciones de integración continua y configuraciones cloud con IA. Conecta tu código con producción mediante pasos automatizados y consistentes. Publica nuevas versiones en minutos con mayor confianza.',
-          buttonText: 'Saber más',
-          url: '/produtos/zarpa',
-          pricingTitle: 'Planes',
-          pricingPlans: [
-            { name: 'Plan Gratuito', price: '0€', period: '', features: ['5 configuraciones/mes', 'Dockerfile y docker-compose'] },
-            { name: 'Plan Inicial', price: '14,99€', period: '/mes', features: ['50 configuraciones/mes', 'CI/CD y GitHub Actions', 'AWS, GCP y Azure'] },
-            { name: 'Plan Profesional', price: '39,99€', period: '/mes', features: ['Configuraciones ilimitadas', 'Kubernetes y Terraform', 'Integración Git'] },
-            { name: 'Plan Agencia', price: '99,99€', period: '/mes', features: ['Hasta 10 usuarios', 'Pipelines personalizados', 'SLA y gestor dedicado'] },
-          ]
-        },
-        {
-          id: 'subly',
-          theme: 'green',
-          title: 'Suscripciones y gastos',
-          appName: 'Subly',
-          appDescription: 'Gestor de suscripciones y gastos recurrentes. Próximamente.',
-          buttonText: 'Saber más',
-          url: '/produtos/subly',
-          pricingTitle: 'Planes',
-          pricingPlans: [
-            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera disponible'] },
-          ]
-        },
-        {
-          id: 'social',
-          theme: 'violet',
-          title: 'Contenido para redes sociales',
-          appName: 'Ressoa',
-          appDescription: 'Escriba una idea y Ressoa crea las publicaciones para LinkedIn, Instagram, Facebook, X y TikTok, adaptadas a cada red y traducidas a varios idiomas. Añada imágenes generadas por IA o las suyas, y guarde el historial. Próximamente.',
-          buttonText: 'Saber más',
-          url: '/produtos/ressoa',
-          pricingTitle: 'Planes',
-          pricingPlans: [
-            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera disponible'] },
-          ]
-        },
-        {
           id: 'responderja',
           theme: 'blue',
           title: 'Reputación digital',
           appName: 'Responder Já',
-          appDescription: 'Responde automáticamente a las reseñas de Google, Booking y TripAdvisor con IA, con tu tono de voz, en segundos. Centraliza respuestas y sigue el impacto en tu SEO local en un solo flujo.',
+          appDescription: 'Responde a las reseñas de Google, Booking y TripAdvisor con IA, con el tono de tu negocio. Aprueba cada respuesta antes de publicarla y sigue tu reputación en un solo panel.',
           buttonText: 'Saber más',
-          url: 'https://responderja.pt',
+          url: '/produtos/responder-ja',
           pricingTitle: 'Planes',
           pricingPlans: [
             { name: 'Plan Gratuito', price: '0€', period: '', features: ['Período de prueba con funciones esenciales'] },
@@ -823,9 +781,9 @@ export const translations = {
         {
           id: 'lia',
           theme: 'violet',
-          title: 'Carrera y talento',
+          title: 'Carrera y empleo',
           appName: 'Lia',
-          appDescription: 'Optimiza tu CV con IA y adapta tu perfil a los puestos adecuados. Encuentra vacantes compatibles con tu experiencia y recibe recomendaciones accionables. Prepárate para entrevistas con más seguridad y enfoque.',
+          appDescription: 'Tu agente de carrera con IA: adapta tu CV a cada oferta, encuentra empleos compatibles con tu experiencia y te prepara para las entrevistas con consejos prácticos.',
           buttonText: 'Saber más',
           url: '/produtos/lia',
           pricingTitle: 'Planes',
@@ -839,9 +797,9 @@ export const translations = {
         {
           id: 'homestudio',
           theme: 'green',
-          title: 'Estudio de creación IA',
+          title: 'Reforma y decoración',
           appName: 'Home Studio',
-          appDescription: 'Sube una foto de tu espacio y recibe en segundos un proyecto de decoración completo con lista de materiales y estimación de costes. Ajusta estilos, presupuesto y detalles visuales en un flujo guiado. Toma decisiones más rápidas con un plan listo para ejecutar.',
+          appDescription: 'Indica las medidas o sube una foto de la estancia y elige un estilo. Home Studio genera el ambiente, dibuja el plano 2D y enumera productos de tiendas portuguesas, con precios.',
           buttonText: 'Saber más',
           url: '/produtos/amplia-home-studio',
           pricingTitle: 'Planes',
@@ -852,6 +810,48 @@ export const translations = {
             { name: 'Compra única 10 espacios', price: '29,99€', period: '', features: ['Lista completa de compras', 'Compra online integrada (próximamente)'] },
             { name: 'Plan Profesional', price: '29,99€', period: '/mes', features: ['Proyectos ilimitados', 'Remodelaciones simples', 'Comparación de precios', 'Exportación PDF'] },
             { name: 'Plan Agencia', price: '79,99€', period: '/mes', features: ['Todo lo del Profesional', 'Gestión de múltiples clientes', 'Informes con marca propia'] },
+          ]
+        },
+        {
+          id: 'opsflow',
+          theme: 'cyan',
+          title: 'Despliegue con IA',
+          appName: 'Zarpa',
+          appDescription: 'Conecta tu repositorio y Zarpa genera el Dockerfile, la pipeline de CI/CD y la infraestructura en la nube, con el coste mensual estimado. Revisa los archivos y publica.',
+          buttonText: 'Saber más',
+          url: '/produtos/zarpa',
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Plan Gratuito', price: '0€', period: '', features: ['5 configuraciones/mes', 'Dockerfile y docker-compose'] },
+            { name: 'Plan Inicial', price: '14,99€', period: '/mes', features: ['50 configuraciones/mes', 'CI/CD y GitHub Actions', 'AWS, GCP y Azure'] },
+            { name: 'Plan Profesional', price: '39,99€', period: '/mes', features: ['Configuraciones ilimitadas', 'Kubernetes y Terraform', 'Integración Git'] },
+            { name: 'Plan Agencia', price: '99,99€', period: '/mes', features: ['Hasta 10 usuarios', 'Pipelines personalizados', 'SLA y gestor dedicado'] },
+          ]
+        },
+        {
+          id: 'social',
+          theme: 'violet',
+          title: 'Contenido para redes sociales',
+          appName: 'Ressoa',
+          appDescription: 'Escribe una idea y Ressoa crea las publicaciones para LinkedIn, Instagram, Facebook, X y TikTok, adaptadas a cada red y traducidas. Añade imágenes con IA o las tuyas, revisa y programa.',
+          buttonText: 'Saber más',
+          url: '/produtos/ressoa',
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
+          ]
+        },
+        {
+          id: 'subly',
+          theme: 'green',
+          title: 'Suscripciones y gastos',
+          appName: 'Subly',
+          appDescription: 'Reúne en un solo lugar el streaming, el gimnasio, el móvil, los seguros y el resto de gastos recurrentes. Muestra cuánto gastas al mes y avisa antes de cada renovación, para cancelar lo que ya no usas.',
+          buttonText: 'Saber más',
+          url: '/produtos/subly',
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
           ]
         }
       ]

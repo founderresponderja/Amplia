@@ -19,6 +19,8 @@ type Props = {
   imageAlt: string;
   waitlistKey: ProductWaitlistKey;
   titleByLang?: Record<Language, string>;
+  /** App já publicada: mostra um botão para a abrir em vez da lista de espera */
+  liveUrl?: string;
   pricingPlans?: Array<{
     name: string;
     price: string;
@@ -34,6 +36,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
   imageAlt,
   waitlistKey,
   titleByLang,
+  liveUrl,
   pricingPlans = [],
 }) => {
   const [lang, setLang] = useState<Language>(() => detectAppLanguage());
@@ -56,6 +59,14 @@ export const ProductComingSoonPage: React.FC<Props> = ({
   const locale = {
     badge: lang === 'pt' ? 'Em breve' : lang === 'en' ? 'Coming soon' : 'Próximamente',
     back: lang === 'pt' ? '← Voltar' : lang === 'en' ? '← Back' : '← Volver',
+    live: lang === 'pt' ? 'Disponível' : lang === 'en' ? 'Available' : 'Disponible',
+    open: lang === 'pt' ? 'Abrir a app' : lang === 'en' ? 'Open the app' : 'Abrir la app',
+    openHint:
+      lang === 'pt'
+        ? 'Crie a conta e experimente com o plano gratuito.'
+        : lang === 'en'
+        ? 'Create an account and try it on the free plan.'
+        : 'Crea tu cuenta y pruébala con el plan gratuito.',
     plans: lang === 'pt' ? 'Planos e preços' : lang === 'en' ? 'Plans and pricing' : 'Planes y precios',
     notify: lang === 'pt' ? 'Avisem-me quando lançar' : lang === 'en' ? 'Notify me at launch' : 'Avísame cuando se lance',
     thanks: lang === 'pt' ? 'Obrigado! Vamos avisá-lo quando estiver disponível.' : lang === 'en' ? "Thanks! We'll let you know when it becomes available." : 'Gracias. Te avisaremos cuando esté disponible.',
@@ -226,9 +237,9 @@ export const ProductComingSoonPage: React.FC<Props> = ({
             </button>
             <span
               className="rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest"
-              style={{ backgroundColor: '#facc15', color: '#1a1a1a' }}
+              style={liveUrl ? { backgroundColor: ACCENT, color: '#0a0b0e' } : { backgroundColor: '#facc15', color: '#1a1a1a' }}
             >
-              {locale.badge}
+              {liveUrl ? locale.live : locale.badge}
             </span>
           </div>
         </div>
@@ -253,9 +264,12 @@ export const ProductComingSoonPage: React.FC<Props> = ({
           />
         </div>
 
-        <h1 className="mt-10 text-3xl font-max font-bold tracking-tight md:text-4xl" style={{ color: ACCENT }}>
-          {effectiveTitle}
-        </h1>
+        <div className="mt-10 flex items-center gap-4">
+          <img src={`/brand/produtos/${waitlistKey}.svg`} alt="" aria-hidden="true" className="h-14 w-14 shrink-0" />
+          <h1 className="text-3xl font-max font-bold tracking-tight md:text-4xl" style={{ color: ACCENT }}>
+            {effectiveTitle}
+          </h1>
+        </div>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">{effectiveDescription}</p>
 
         {effectivePlans.length > 0 && (
@@ -284,6 +298,20 @@ export const ProductComingSoonPage: React.FC<Props> = ({
           </section>
         )}
 
+        {liveUrl ? (
+          <section className="mt-12 flex flex-col gap-4 rounded-[28px] border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-[#12141a]/80 p-8 md:flex-row md:items-center md:justify-between md:p-10 transition-colors duration-300">
+            <p className="text-gray-700 dark:text-gray-300">{locale.openHint}</p>
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center justify-center rounded-2xl px-8 py-3.5 font-bold text-[#0a0b0e] transition-opacity hover:opacity-90"
+              style={{ backgroundColor: ACCENT }}
+            >
+              {locale.open} ↗
+            </a>
+          </section>
+        ) : (
         <section className="mt-12 rounded-[28px] border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-[#12141a]/80 p-8 md:p-10 transition-colors duration-300">
           <h2 className="mb-6 text-lg font-max font-bold" style={{ color: ACCENT }}>
             {locale.notify}
@@ -341,6 +369,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
             </p>
           )}
         </section>
+        )}
       </main>
       <Footer />
     </div>

@@ -1,10 +1,11 @@
-/** Product previews served from public/produtos */
+/** Mockups das apps (public/produtos), com a identidade de cada marca */
 export const PRODUCT_SCREENSHOTS = {
-  lia: '/produtos/lia-preview.png',
-  homestudio: '/produtos/homestudio-preview.png',
-  opsflow: '/produtos/zarpa-preview.png',
-  subly: '/produtos/subly-preview.png',
-  social: '/produtos/ressoa-preview.png',
+  responderja: '/produtos/responderja-mockup.jpg',
+  lia: '/produtos/lia-mockup.jpg',
+  homestudio: '/produtos/homestudio-mockup.jpg',
+  opsflow: '/produtos/opsflow-mockup.jpg',
+  subly: '/produtos/subly-mockup.jpg',
+  social: '/produtos/social-mockup.jpg',
 } as const;
 
 export type ProductWaitlistKey = keyof typeof PRODUCT_SCREENSHOTS;
