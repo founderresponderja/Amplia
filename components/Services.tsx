@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Check, Rocket } from 'lucide-react';
+import { ExternalLink, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
 import { ScrollReveal } from './ScrollReveal';
@@ -8,36 +8,9 @@ import { ScrollReveal } from './ScrollReveal';
 export const Services = ({ content }: { content: any }) => {
   const navigate = useNavigate();
   const renderLogo = (id: string) => {
-    const logos: any = {
-      opsflow: (
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#52b6ff] to-[#a46eff] flex items-center justify-center text-white shadow-lg">
-          <Rocket size={24} fill="currentColor" fillOpacity={0.2} />
-        </div>
-      ),
-      lia: (
-        <div className="w-12 h-12 flex items-center justify-center">
-          <svg viewBox="0 0 100 100" className="w-10 h-10 drop-shadow-md">
-             <path d="M50 5 L95 90 L5 90 Z" fill="#8cc63f" />
-          </svg>
-        </div>
-      ),
-      responderja: (
-        <div className="w-12 h-12 flex items-center justify-center">
-          <svg viewBox="0 0 100 100" className="w-10 h-10 drop-shadow-md" fill="none">
-             <circle cx="50" cy="48" r="32" stroke="#38bdf8" strokeWidth="8" />
-             <path d="M30 72 L20 84 L28 78" stroke="#38bdf8" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-      ),
-      homestudio: (
-        <div className="w-12 h-12 flex items-center justify-center">
-          <svg viewBox="0 0 100 100" className="w-10 h-10 drop-shadow-lg">
-             <path d="M50 5 L89 27.5 L89 72.5 L50 95 L11 72.5 L11 27.5 Z" fill="none" stroke="#22d3ee" strokeWidth="2" opacity="0.2" />
-             <path d="M50 50 L50 5 M50 50 L11 72.5 M50 50 L89 72.5" fill="none" stroke="#22d3ee" strokeWidth="6" strokeLinecap="round" />
-          </svg>
-        </div>
-      )
-    };
+    // Símbolos das marcas (capítulo «Marcas» do manual da Amplia)
+    const ids = ['responderja', 'lia', 'homestudio', 'opsflow', 'subly', 'social'];
+    if (ids.includes(id)) return <img src={`/brand/produtos/${id}.svg`} alt="" aria-hidden="true" className="w-12 h-12" />;
     return logos[id] || <div className="w-12 h-12 rounded-xl bg-gray-200" />;
   };
 

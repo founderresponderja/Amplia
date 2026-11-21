@@ -145,8 +145,8 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           bullets: [
             'Responder Já - plataforma de IA para resposta a avaliações online.',
             'Lia - agente de carreira com IA.',
-            'Amplia Home Studio - redesenho de espaços com IA.',
-            'OpsFlow - geração inteligente de configurações DevOps e cloud.',
+            'Home Studio - redesenho de espaços com IA.',
+            'Zarpa - geração inteligente de configurações DevOps e cloud.',
           ],
         },
         {
@@ -374,8 +374,8 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           bullets: [
             'Responder Ja - AI platform for online review responses.',
             'Lia - AI career agent.',
-            'Amplia Home Studio - AI-powered interior redesign.',
-            'OpsFlow - intelligent DevOps and cloud configuration generation.',
+            'Home Studio - AI-powered interior redesign.',
+            'Zarpa - intelligent DevOps and cloud configuration generation.',
           ],
         },
         {
@@ -603,8 +603,8 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
           bullets: [
             'Responder Já - plataforma de IA para respuestas a reseñas online.',
             'Lia - agente de carrera profesional con IA.',
-            'Amplia Home Studio - rediseño de espacios con IA.',
-            'OpsFlow - generación inteligente de configuraciones DevOps y cloud.',
+            'Home Studio - rediseño de espacios con IA.',
+            'Zarpa - generación inteligente de configuraciones DevOps y cloud.',
           ],
         },
         {

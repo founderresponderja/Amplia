@@ -66,17 +66,17 @@ export const translations = {
         {
           block: 'O que é a Amplia Solutions',
           q: 'O que é a Amplia Solutions?',
-          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos seis produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Amplia Home Studio** (decoração com IA), **OpsFlow** (automação de DevOps), **Subly** (gestão de subscrições, em breve) e **Ressoa** (conteúdo para redes sociais, em breve).'
+          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos seis produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Home Studio** (decoração com IA), **Zarpa** (deploy com IA), **Subly** (gestão de subscrições, em breve) e **Ressoa** (conteúdo para redes sociais, em breve).'
         },
         {
           block: 'O que é a Amplia Solutions',
           q: 'Para quem são os vossos produtos?',
-          a: 'Cada produto tem o seu público: o **Responder Já** é para restaurantes, hotéis e negócios locais; a **Lia** é para quem procura emprego ou quer evoluir na carreira; o **Amplia Home Studio** é para particulares e profissionais de decoração; o **OpsFlow** é para developers e equipas técnicas.'
+          a: 'Cada produto tem o seu público: o **Responder Já** é para restaurantes, hotéis e negócios locais; a **Lia** é para quem procura emprego ou quer evoluir na carreira; o **Home Studio** é para particulares e profissionais de decoração; a **Zarpa** é para developers e equipas técnicas.'
         },
         {
           block: 'Dúvidas sobre os produtos',
           q: 'Preciso de conhecimentos técnicos para usar os vossos produtos?',
-          a: 'Não. O **Responder Já**, a **Lia** e o **Amplia Home Studio** foram desenhados para qualquer pessoa usar sem formação técnica. O **OpsFlow** destina-se a developers, mas tem uma interface intuitiva.'
+          a: 'Não. O **Responder Já**, a **Lia** e o **Home Studio** foram desenhados para qualquer pessoa usar sem formação técnica. A **Zarpa** destina-se a developers, mas tem uma interface intuitiva.'
         },
         {
           block: 'Dúvidas sobre os produtos',
@@ -125,13 +125,13 @@ export const translations = {
         },
         {
           block: 'Dúvidas específicas por produto',
-          q: 'O Amplia Home Studio funciona com qualquer tipo de espaço?',
+          q: 'O Home Studio funciona com qualquer tipo de espaço?',
           a: 'Funciona com qualquer espaço interior — sala, quarto, cozinha, escritório ou espaço comercial. Basta **tirar uma fotografia com o telemóvel** e a IA faz o resto.'
         },
         {
           block: 'Dúvidas específicas por produto',
-          q: 'O OpsFlow suporta a minha stack tecnológica?',
-          a: 'O OpsFlow suporta as stacks mais comuns de contentor, integração contínua e cloud. Se usa uma tecnologia específica, contacte-nos — estamos sempre a adicionar novas integrações.'
+          q: 'A Zarpa suporta a minha stack tecnológica?',
+          a: 'A Zarpa suporta as stacks mais comuns de contentor, integração contínua e cloud. Se usa uma tecnologia específica, contacte-nos — estamos sempre a adicionar novas integrações.'
         },
         {
           block: 'Suporte e contacto',
@@ -154,10 +154,10 @@ export const translations = {
           id: 'opsflow',
           theme: 'cyan',
           title: 'Infraestrutura inteligente',
-          appName: 'OpsFlow AI',
+          appName: 'Zarpa',
           appDescription: 'Gera ficheiros de configuração, pipelines de integração contínua e configurações cloud com IA. Ligue o seu código à produção com passos automatizados e consistentes. Lance novas versões em minutos com mais confiança.',
           buttonText: 'Saber Mais',
-          url: '/produtos/opsflow',
+          url: '/produtos/zarpa',
           pricingTitle: 'Planos',
           pricingPlans: [
             { name: 'Plano Gratuito', price: '0€', period: '', features: ['5 configurações/mês', 'Dockerfile e docker-compose'] },
@@ -228,7 +228,7 @@ export const translations = {
           id: 'homestudio',
           theme: 'green',
           title: 'Estúdio de criação IA',
-          appName: 'Amplia Home Studio',
+          appName: 'Home Studio',
           appDescription: 'Carregue uma foto do seu espaço e receba, em segundos, um projeto de decoração completo com lista de materiais e estimativa de custos. Ajuste estilos, orçamento e detalhes visuais num processo guiado. Decida mais depressa com uma proposta pronta a executar.',
           buttonText: 'Saber Mais',
           url: '/produtos/amplia-home-studio',
@@ -372,17 +372,17 @@ export const translations = {
         {
           block: 'What Amplia Solutions Is',
           q: 'What is Amplia Solutions?',
-          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build six products of our own: **Responder Já** (online review management), **Lia** (career agent), **Amplia Home Studio** (AI interior design), **OpsFlow** (DevOps automation), **Subly** (subscription management, coming soon) and **Ressoa** (social media content, coming soon). Our main business is building custom apps for small businesses.'
+          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build six products of our own: **Responder Já** (online review management), **Lia** (career agent), **Home Studio** (AI interior design), **Zarpa** (AI-powered deploys), **Subly** (subscription management, coming soon) and **Ressoa** (social media content, coming soon). Our main business is building custom apps for small businesses.'
         },
         {
           block: 'What Amplia Solutions Is',
           q: 'Who are your products for?',
-          a: 'Each product serves a clear audience: **Responder Já** is for restaurants, hotels, and local businesses; **Lia** is for people looking for jobs or career growth; **Amplia Home Studio** is for homeowners and interior professionals; **OpsFlow** is for developers and technical teams.'
+          a: 'Each product serves a clear audience: **Responder Já** is for restaurants, hotels, and local businesses; **Lia** is for people looking for jobs or career growth; **Home Studio** is for homeowners and interior professionals; **Zarpa** is for developers and technical teams.'
         },
         {
           block: 'Product Questions',
           q: 'Do I need technical knowledge to use your products?',
-          a: 'No. **Responder Já**, **Lia**, and **Amplia Home Studio** are designed for anyone to use without technical training. **OpsFlow** is built for developers, but it has an intuitive interface.'
+          a: 'No. **Responder Já**, **Lia**, and **Home Studio** are designed for anyone to use without technical training. **Zarpa** is built for developers, but it has an intuitive interface.'
         },
         {
           block: 'Product Questions',
@@ -431,13 +431,13 @@ export const translations = {
         },
         {
           block: 'Product-Specific Questions',
-          q: 'Does Amplia Home Studio work with any type of space?',
+          q: 'Does Home Studio work with any type of space?',
           a: 'It works with any indoor space, including living rooms, bedrooms, kitchens, offices, and commercial rooms. Just **take a photo with your phone** and the AI handles the rest.'
         },
         {
           block: 'Product-Specific Questions',
-          q: 'Does OpsFlow support my technology stack?',
-          a: 'OpsFlow supports the most common container, CI, and cloud stacks. If you use a specific technology, contact us because we are continuously adding new integrations.'
+          q: 'Does Zarpa support my technology stack?',
+          a: 'Zarpa supports the most common container, CI, and cloud stacks. If you use a specific technology, contact us because we are continuously adding new integrations.'
         },
         {
           block: 'Support and Contact',
@@ -460,10 +460,10 @@ export const translations = {
           id: 'opsflow',
           theme: 'cyan',
           title: 'Smart infrastructure',
-          appName: 'OpsFlow AI',
+          appName: 'Zarpa',
           appDescription: 'Generate configuration files, continuous integration pipelines, and cloud settings with AI. Connect your code to production with automated, consistent steps. Release updates in minutes with greater confidence.',
           buttonText: 'Learn More',
-          url: '/produtos/opsflow',
+          url: '/produtos/zarpa',
           pricingTitle: 'Plans',
           pricingPlans: [
             { name: 'Free Plan', price: '€0', period: '', features: ['5 configurations/month', 'Dockerfile and docker-compose'] },
@@ -534,7 +534,7 @@ export const translations = {
           id: 'homestudio',
           theme: 'green',
           title: 'AI creation studio',
-          appName: 'Amplia Home Studio',
+          appName: 'Home Studio',
           appDescription: 'Upload a photo of your space and get a complete interior design project in seconds with materials and cost estimates. Adjust style, budget, and visual details in a guided flow. Make faster decisions with an execution-ready plan.',
           buttonText: 'Learn More',
           url: '/produtos/amplia-home-studio',
@@ -678,17 +678,17 @@ export const translations = {
         {
           block: 'Qué es Amplia Solutions',
           q: '¿Qué es Amplia Solutions?',
-          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos seis productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Amplia Home Studio** (decoración con IA), **OpsFlow** (automatización de DevOps), **Subly** (gestión de suscripciones, próximamente) y **Ressoa** (contenido para redes sociales, próximamente).'
+          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos seis productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Home Studio** (decoración con IA), **Zarpa** (despliegue con IA), **Subly** (gestión de suscripciones, próximamente) y **Ressoa** (contenido para redes sociales, próximamente).'
         },
         {
           block: 'Qué es Amplia Solutions',
           q: '¿Para quién son vuestros productos?',
-          a: 'Cada producto tiene su público: **Responder Já** es para restaurantes, hoteles y negocios locales; **Lia** es para quien busca empleo o crecimiento profesional; **Amplia Home Studio** es para particulares y profesionales de decoración; **OpsFlow** es para developers y equipos técnicos.'
+          a: 'Cada producto tiene su público: **Responder Já** es para restaurantes, hoteles y negocios locales; **Lia** es para quien busca empleo o crecimiento profesional; **Home Studio** es para particulares y profesionales de decoración; **Zarpa** es para developers y equipos técnicos.'
         },
         {
           block: 'Dudas sobre los productos',
           q: '¿Necesito conocimientos técnicos para usar vuestros productos?',
-          a: 'No. **Responder Já**, **Lia** y **Amplia Home Studio** están diseñados para que cualquier persona los use sin formación técnica. **OpsFlow** está orientado a developers, pero tiene una interfaz intuitiva.'
+          a: 'No. **Responder Já**, **Lia** y **Home Studio** están diseñados para que cualquier persona los use sin formación técnica. **Zarpa** está orientado a developers, pero tiene una interfaz intuitiva.'
         },
         {
           block: 'Dudas sobre los productos',
@@ -737,13 +737,13 @@ export const translations = {
         },
         {
           block: 'Dudas específicas por producto',
-          q: '¿Amplia Home Studio funciona con cualquier tipo de espacio?',
+          q: '¿Home Studio funciona con cualquier tipo de espacio?',
           a: 'Funciona con cualquier espacio interior, como salón, dormitorio, cocina, oficina o local comercial. Solo necesitas **hacer una foto con el móvil** y la IA hace el resto.'
         },
         {
           block: 'Dudas específicas por producto',
-          q: '¿OpsFlow soporta mi stack tecnológica?',
-          a: 'OpsFlow soporta las stacks más comunes de contenedores, integración continua y cloud. Si usas una tecnología específica, contáctanos porque añadimos integraciones nuevas de forma continua.'
+          q: '¿Zarpa soporta mi stack tecnológica?',
+          a: 'Zarpa soporta las stacks más comunes de contenedores, integración continua y cloud. Si usas una tecnología específica, contáctanos porque añadimos integraciones nuevas de forma continua.'
         },
         {
           block: 'Soporte y contacto',
@@ -766,10 +766,10 @@ export const translations = {
           id: 'opsflow',
           theme: 'cyan',
           title: 'Infraestructura inteligente',
-          appName: 'OpsFlow AI',
+          appName: 'Zarpa',
           appDescription: 'Genera archivos de configuración, canalizaciones de integración continua y configuraciones cloud con IA. Conecta tu código con producción mediante pasos automatizados y consistentes. Publica nuevas versiones en minutos con mayor confianza.',
           buttonText: 'Saber más',
-          url: '/produtos/opsflow',
+          url: '/produtos/zarpa',
           pricingTitle: 'Planes',
           pricingPlans: [
             { name: 'Plan Gratuito', price: '0€', period: '', features: ['5 configuraciones/mes', 'Dockerfile y docker-compose'] },
@@ -840,7 +840,7 @@ export const translations = {
           id: 'homestudio',
           theme: 'green',
           title: 'Estudio de creación IA',
-          appName: 'Amplia Home Studio',
+          appName: 'Home Studio',
           appDescription: 'Sube una foto de tu espacio y recibe en segundos un proyecto de decoración completo con lista de materiales y estimación de costes. Ajusta estilos, presupuesto y detalles visuales en un flujo guiado. Toma decisiones más rápidas con un plan listo para ejecutar.',
           buttonText: 'Saber más',
           url: '/produtos/amplia-home-studio',

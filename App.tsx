@@ -47,10 +47,10 @@ export function AppRoutes() {
         path="/produtos/amplia-home-studio"
         element={
           <ProductComingSoonPage
-            title="Amplia Home Studio"
+            title="Home Studio"
             description="Carregue uma foto do seu espaço e receba, em segundos, um projeto de decoração completo com lista de materiais e estimativa de custos."
             imageUrl={PRODUCT_SCREENSHOTS.homestudio}
-            imageAlt="Pré-visualização do Amplia Home Studio no GitHub"
+            imageAlt="Pré-visualização do Home Studio no GitHub"
             waitlistKey="homestudio"
             pricingPlans={[
               { name: 'Plano Gratuito', price: '0€', features: ['1 espaço por mês', '3 estilos de decoração', 'Lista de materiais básica', 'Sem compra online', 'Com marca de água nos resultados'] },
@@ -64,13 +64,13 @@ export function AppRoutes() {
         }
       />
       <Route
-        path="/produtos/opsflow"
+        path="/produtos/zarpa"
         element={
           <ProductComingSoonPage
-            title="OpsFlow AI"
+            title="Zarpa"
             description="Gere ficheiros de configuração, pipelines de integração contínua e configurações cloud com IA. Do código à produção em minutos."
             imageUrl={PRODUCT_SCREENSHOTS.opsflow}
-            imageAlt="Pré-visualização do OpsFlow no GitHub"
+            imageAlt="Pré-visualização da Zarpa"
             waitlistKey="opsflow"
             pricingPlans={[
               { name: 'Plano Gratuito', price: '0€', features: ['5 configurações/mês', 'Dockerfile e docker-compose'] },

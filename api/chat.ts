@@ -189,9 +189,9 @@ Para além do desenvolvimento à medida, temos quatro produtos próprios dispon�
 
 2. Lia — agente de carreira com IA que optimiza CVs, encontra vagas compatíveis e prepara para entrevistas. Para quem procura emprego ou quer evoluir profissionalmente.
 
-3. Amplia Home Studio — transforma fotografias de espaços em projectos de decoração completos com lista de materiais e estimativa de custos. Para particulares e profissionais de decoração.
+3. Home Studio — transforma fotografias de espaços em projectos de decoração completos com lista de materiais e estimativa de custos. Para particulares e profissionais de decoração.
 
-4. OpsFlow — gera automaticamente ficheiros de configuração, pipelines de integração contínua e configurações cloud. Para developers e equipas técnicas.
+4. Zarpa — gera automaticamente ficheiros de configuração, pipelines de integração contínua e configurações cloud. Para developers e equipas técnicas.
 
 Pacotes de desenvolvimento à medida (preços sem IVA):
 - Sprint de descoberta: 490 €, 1–2 semanas (descontado se o cliente avançar).
