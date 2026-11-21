@@ -2,7 +2,7 @@
 import { parseJsonBody } from './lib/parse-body.js';
 import { sendProductNotifyEmail } from './lib/resend-mail.js';
 
-const ALLOWED_KEYS = new Set(['lia', 'homestudio', 'opsflow']);
+const ALLOWED_KEYS = new Set(['lia', 'homestudio', 'opsflow', 'subly', 'social']);
 
 function sanitizeText(value: string, max: number) {
   return value.replace(/[\u0000-\u001F\u007F]/g, '').trim().slice(0, max);

@@ -96,6 +96,21 @@ export function AppRoutes() {
           />
         }
       />
+      <Route
+        path="/produtos/amplia-social"
+        element={
+          <ProductComingSoonPage
+            title="Amplia Social"
+            description="Escreva uma ideia e receba as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas. Em breve."
+            imageUrl={PRODUCT_SCREENSHOTS.social}
+            imageAlt="Pré-visualização da Amplia Social"
+            waitlistKey="social"
+            pricingPlans={[
+              { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
+            ]}
+          />
+        }
+      />
     </Routes>
   );
 }
