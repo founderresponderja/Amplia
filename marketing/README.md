@@ -79,6 +79,12 @@ Dia 18: briefing com os temas mais quentes do mês nas áreas acima (3–5 temas
 Conversa com o Luís no calendário (segunda-feira entre os dias 18 e 24, 21:00) para decidir tema e abordagem.
 Só depois se produz o vídeo.
 
+## Imagens de fundo (desde 22/11/2026)
+As publicações passam a usar fotografias e cenários, não só tipografia. Fonte: `marketing/banco-imagens/`
+(fotografias de bancos gratuitos e cenários gerados por IA, postos pelo Luís; regras e licenças nessa pasta).
+Sem rostos gerados por IA. Se não houver imagem adequada no banco, usar só tipografia e pedir ao Luís
+imagens para o tema (sugerir um prompt de `banco-imagens/prompts-ia.md`).
+
 ## Ficheiros de media (regras do Luís)
 - **O site só é usado para conteúdos do Instagram.** Conteúdos do LinkedIn nunca vão para o site.
 - **Vídeos do Instagram (reels, 9:16, 1080 × 1920)**: substituem `public/media/video-atual.mp4` e a capa
