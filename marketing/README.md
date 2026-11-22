@@ -8,6 +8,7 @@ Não é publicado no site (ver `vercel.json`).
   Ações: `create_post` (texto e/ou link), `create_image_post` (imagem por URL público), `upload_image`.
   Não há publicação de vídeo pelo conector: vídeos são carregados à mão pelo Luís.
 - Instagram: **@ampliasolutions** — conector `instagram`, conta `17841479978024868`.
+  Ações: `create_image_post`, `create_carousel_post`, `create_video_post` (reels), `create_story` (por URL público).
 - Perfil da Empresa no Google: ainda não existe.
 
 ## Regra de publicação (obrigatória)
@@ -38,15 +39,32 @@ Foco geográfico: Portugal primeiro; Espanha e Brasil como interesse secundário
   uma pergunta no fim para gerar comentários, 3 hashtags no máximo.
 - Mencionar a Amplia só quando acrescenta valor; no máximo 1 em cada 3 publicações com chamada comercial.
 
+## Calendário e horários (hora de Lisboa, desde 22/11/2026)
+Baseado nos estudos de 2026 da Buffer e da Sprout Social: no LinkedIn as manhãs rendem menos; o pico é à tarde, a meio da semana.
+O rascunho é preparado de manhã; depois do «sim» do Luís, a sessão agenda a publicação (send_later) para a hora marcada.
+
+| Rede | Dia | Publicação | Hora |
+|---|---|---|---|
+| LinkedIn | seg, ter, qui, sex | Partilha comentada | 13:40 |
+| LinkedIn | quarta | Imagem original | 15:40 |
+| LinkedIn | última sexta do mês | Vídeo (carregado à mão) | ~15:00 |
+| Instagram | quarta | Reel, carrossel ou imagem | 12:40 |
+| Instagram | quinta | Reel, carrossel ou imagem | 20:10 |
+
+- **No LinkedIn, um dia com publicação principal não leva mais nada:** sem partilha à quarta nem na última sexta do mês.
+- **Instagram:** à segunda (18:47) a tarefa propõe tema e formato para as duas publicações da semana; discute-se com o Luís,
+  só depois se gera, e só se publica depois do «sim».
+- Rever os horários com os dados das próprias contas (Windsor.ai) a partir de janeiro de 2027.
+
 ## Publicações
-### Diária — partilha comentada (dias úteis)
+### Diária — partilha comentada (seg, ter, qui, sex; 13:40)
 1. Pesquisar notícias e artigos das últimas 48 h sobre os temas acima (fontes de qualidade:
    imprensa portuguesa e espanhola de economia e tecnologia, relatórios, blogs oficiais, artigos públicos no LinkedIn).
 2. Escolher **uma** que seja útil a donos de pequenas empresas e capaz de gerar conversa.
 3. Escrever o comentário da Amplia (60–150 palavras): o que diz, porque importa para uma PME, uma pergunta.
 4. `create_post` com `commentary`, `link`, `link_title` (título da notícia) e `link_description`.
 
-### Semanal — imagem original (quarta-feira)
+### Semanal — imagem original (quarta-feira, 15:40)
 1. Escolher um tema que não se repita nas últimas 6 semanas (ver `posts/registo.md`). Formatos a rodar:
    dica prática · número/estatística com fonte · bastidores de um produto · pergunta à comunidade.
 2. Criar a especificação JSON e gerar a imagem:
@@ -56,7 +74,7 @@ Foco geográfico: Portugal primeiro; Espanha e Brasil como interesse secundário
    `https://raw.githubusercontent.com/founderresponderja/Amplia/marketing/marketing/posts/AAAA-MM-DD.png`
 4. Texto de 80–200 palavras + `create_image_post` com `image_url` e `commentary`.
 
-### Mensal — vídeo (última sexta-feira do mês)
+### Mensal — vídeo (última sexta-feira do mês, ~15:00)
 Dia 18: briefing com os temas mais quentes do mês nas áreas acima (3–5 temas, porquê, ângulo sugerido).
 Conversa com o Luís no calendário (segunda-feira entre os dias 18 e 24, 21:00) para decidir tema e abordagem.
 Só depois se produz o vídeo.
