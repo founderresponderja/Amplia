@@ -17,8 +17,11 @@ spec.json:
      {"tipo": "passo",  "passo": 1, "titulo": "Agradeça o comentário", "texto": "..."},      # linkedin
      {"tipo": "lista",  "titulo": ["4 passos para", "responder bem."], "itens": [["Agradeça", "o comentário"]]},  # linkedin
      {"tipo": "cta",    "titulo": ["Responder Já"], "texto": "...", "botao": "responderja.pt"},
+     {"tipo": "capa",   "titulo": ["1 estrela."], "video": "marketing/banco-imagens/videos/x.mp4", "inicio": 2.5},  # só reel
      ...], 
    "duracoes": [0.9, 0.9, 2.4]}                # só reel (segundos por ecrã; cortes secos)
+No reel, cada ecrã pode ter "video" (MP4 do banco, recortado ao centro para 9:16, a começar em "inicio" segundos)
+em vez de "foto"; o texto fica por cima com o mesmo véu escuro. Os vídeos saem sem som.
 Saída: carrossel/imagem -> JPEG 1080x1350 (nome-1.jpg …); reel -> JPEG 1080x1920 por ecrã + nome.mp4.
 Regras: a fonte Max não tem € – —; esses carateres saem em Inter. Os algarismos da Max descem abaixo da linha:
 o texto por baixo de um número grande já tem a folga certa. Sem rostos gerados por IA nas fotografias.
@@ -59,10 +62,17 @@ def photo(path, x, y, w, h):
     return f'<image x="{x}" y="{y}" width="{w}" height="{h}" preserveAspectRatio="xMidYMid slice" href="data:image/jpeg;base64,{d}"/>'
 
 # ---------- Instagram (arrojado) ----------
+VEU = ('<defs><linearGradient id="veu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1A1C" stop-opacity=".25"/>'
+       '<stop offset=".55" stop-color="#1B1A1C" stop-opacity=".72"/><stop offset="1" stop-color="#1B1A1C" stop-opacity=".92"/></linearGradient></defs>')
+
 def ig(s, i, n, W, H):
     bg, fg = (LIMA, CARV) if i % 2 == 1 else (CARV, LIMA)
     b = [f'<rect width="{W}" height="{H}" fill="{bg}"/>']
-    if s.get('foto'):
+    if s.get('video'):
+        bg, fg = CARV, LIMA
+        b = [VEU, f'<rect width="{W}" height="{H}" fill="url(#veu)"/>']   # transparente: o vídeo fica por baixo
+        s = dict(s, foto=True)
+    elif s.get('foto'):
         bg, fg = CARV, LIMA
         b = [f'<rect width="{W}" height="{H}" fill="{CARV}"/>', photo(s['foto'], 0, 0, W, H),
              f'<defs><linearGradient id="veu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B1A1C" stop-opacity=".25"/>'
@@ -121,25 +131,47 @@ def li(s, i, n, W, H):
     b.append(T('amplia solutions', 80, H - 70, 30, CARV) + T('ampliasolutions.pt', W - 80, H - 70, 28, FLOR, 'inter', 'end'))
     return ''.join(b)
 
+def _abs(p): return p if os.path.isabs(p) else os.path.join(REPO, p)
+
 def main(spec, outdir):
     os.makedirs(outdir, exist_ok=True)
     reel = spec.get('formato') == 'reel'
     W, H = (1080, 1920) if reel else (1080, 1350)
     fn = ig if spec['estilo'] == 'instagram' else li
     sl = spec['slides']; nome = spec.get('nome', 'post'); files = []
+    from PIL import Image
     for i, s in enumerate(sl, 1):
         svgp = os.path.join(outdir, f'{nome}-{i}.svg'); png = svgp[:-4] + '.png'; jpg = svgp[:-4] + '.jpg'
         open(svgp, 'w').write(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">{fn(s, i, 1 if reel else len(sl), W, H)}</svg>')
-        subprocess.run(['rsvg-convert', '-w', str(W), '-o', png, svgp], check=True)
-        from PIL import Image
-        Image.open(png).convert('RGB').save(jpg, quality=90); os.remove(png); os.remove(svgp); files.append(jpg)
+        subprocess.run(['rsvg-convert', '-w', str(W), '-o', png, svgp], check=True); os.remove(svgp)
+        if reel and s.get('video'):
+            ov = svgp[:-4] + '-texto.png'; os.replace(png, ov)              # camada de texto transparente
+            fr = svgp[:-4] + '-fundo.png'                                   # 1.º fotograma do vídeo, para a pré-visualização
+            subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', str(s.get('inicio', 0)), '-i', _abs(s['video']), '-frames:v', '1',
+                            '-vf', f'scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}', fr], check=True)
+            im = Image.open(fr).convert('RGBA'); im.alpha_composite(Image.open(ov).convert('RGBA'))
+            im.convert('RGB').save(jpg, quality=90); os.remove(fr); files.append(jpg)
+        else:
+            Image.open(png).convert('RGB').save(jpg, quality=90); os.remove(png); files.append(jpg)
     if reel:
         d = spec.get('duracoes') or [1.2] * len(files)
-        args = ['ffmpeg', '-y', '-loglevel', 'error']
-        for f, t in zip(files, d): args += ['-loop', '1', '-t', str(t), '-framerate', '30', '-i', f]
-        flt = ''.join(f'[{k}:v]' for k in range(len(files))) + f'concat=n={len(files)}:v=1:a=0,format=yuv420p[o]'
+        args = ['ffmpeg', '-y', '-loglevel', 'error']; parts = []
+        for k, (s, f, t) in enumerate(zip(sl, files, d)):
+            if s.get('video'):
+                ov = f[:-4] + '-texto.png'
+                args += ['-ss', str(s.get('inicio', 0)), '-t', str(t), '-i', _abs(s['video']), '-loop', '1', '-t', str(t), '-framerate', '30', '-i', ov]
+                vi = len([a for a in args if a == '-i']) - 2
+                parts.append(f'[{vi}:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps=30,setsar=1,trim=duration={t},setpts=PTS-STARTPTS[b{k}];'
+                             f'[b{k}][{vi+1}:v]overlay=0:0:shortest=1,format=yuv420p[s{k}]')
+            else:
+                args += ['-loop', '1', '-t', str(t), '-framerate', '30', '-i', f]
+                vi = len([a for a in args if a == '-i']) - 1
+                parts.append(f'[{vi}:v]scale={W}:{H},fps=30,setsar=1,format=yuv420p[s{k}]')
+        flt = ';'.join(parts) + ';' + ''.join(f'[s{k}]' for k in range(len(files))) + f'concat=n={len(files)}:v=1:a=0[o]'
         mp4 = os.path.join(outdir, f'{nome}.mp4')
         subprocess.run(args + ['-filter_complex', flt, '-map', '[o]', '-r', '30', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-movflags', '+faststart', mp4], check=True)
+        for f in files:
+            if os.path.exists(f[:-4] + '-texto.png'): os.remove(f[:-4] + '-texto.png')
         files.append(mp4)
     print('\n'.join(files))
 
