@@ -31,6 +31,17 @@ Apps e transformação digital para PME · IA aplicada a pequenos negócios · a
 DevOps e produtividade de equipas técnicas (OpsFlow) · subscrições e despesas recorrentes (Subly).
 Foco geográfico: Portugal primeiro; Espanha e Brasil como interesse secundário.
 
+## Estilos por rede (decididos pelo Luís a 22/11/2026)
+Gerador: `python3 marketing/tools/estilo.py spec.json pasta_saida` (ver a docstring). Exemplos completos dos dois estilos:
+documento «Amplia_Estilos_de_Conteudo» (propostas A e C).
+- **LinkedIn: conservador e profissional.** Fundo claro, muito espaço, passos numerados, verde-floresta; fotografia do
+  banco no terço de cima quando ajudar. Tom calmo e útil, de quem sabe do assunto: guias práticos, boas práticas,
+  números com fonte. Sem frases de choque, sem pontos de exclamação, sem chamadas comerciais agressivas.
+- **Instagram: arrojado.** Verde-lima e carvão alternados, frases de 2 a 4 palavras, números enormes, fotografia do banco
+  como fundo com véu escuro. Reels de 8–15 s com cortes secos ao ritmo (sem transições suaves). Direto, provocador, com humor,
+  mas nunca ofensivo nem alarmista; números sempre com fonte, mesmo que em letra pequena.
+- O limite de 1 publicação comercial em cada 3 vale para as duas redes.
+
 ## Tom de voz (do Manual de Identidade Visual)
 - Português de Portugal, trata o leitor por **«você»**. Frases curtas, concretas, sem jargão.
 - Profissional e útil: nada alarmista, sensacionalista, político ou polémico. Sem promessas que não se provem
