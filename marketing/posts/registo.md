@@ -6,3 +6,4 @@
 | 2026-11-20 | vídeo (manual) | Apresentação da Amplia Solutions — LinkedIn | — |
 | 2026-11-23 | partilha | IA lidera prioridades de investimento digital das empresas portuguesas (estudo ACEPI, via PCGuia) | https://www.linkedin.com/feed/update/urn:li:share:7530751860589314051/ |
 | 2026-11-23 | imagem | Avaliação negativa: 4 passos para responder (guia prático; avaliações online) | https://www.linkedin.com/feed/update/urn:li:share:7530767215764275201/ |
+| 2026-11-24 | partilha | Roadshow PME DIGITAL+ do IAPMEI sobre IA para PME (via Jornal Económico) | https://www.linkedin.com/feed/update/urn:li:share:7530988870675382272/ |
