@@ -176,10 +176,7 @@ export const translations = {
           url: '/produtos/lia',
           pricingTitle: 'Planos',
           pricingPlans: [
-            { name: 'Plano Gratuito', price: '0€', period: '', features: ['Período de teste com funcionalidades essenciais'] },
-            { name: 'Plano Inicial', price: '9,99€', period: '/mês', features: ['Funcionalidades base de carreira assistida por IA'] },
-            { name: 'Plano Profissional', price: '24,99€', period: '/mês', features: ['Mais popular', 'Preparação avançada para entrevistas'] },
-            { name: 'Plano Agência', price: '49,99€', period: '/mês', features: ['Gestão de múltiplos perfis e equipas'] },
+            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
           ]
         },
         {
@@ -192,12 +189,7 @@ export const translations = {
           url: '/produtos/amplia-home-studio',
           pricingTitle: 'Planos',
           pricingPlans: [
-            { name: 'Plano Gratuito', price: '0€', period: '', features: ['1 espaço por mês', '3 estilos de decoração', 'Lista de materiais básica', 'Sem compra online', 'Com marca de água nos resultados'] },
-            { name: 'Compra única 1 espaço', price: '4,99€', period: '', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
-            { name: 'Compra única 3 espaços', price: '11,99€', period: '', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
-            { name: 'Compra única 10 espaços', price: '29,99€', period: '', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
-            { name: 'Plano Profissional', price: '29,99€', period: '/mês', features: ['Projectos ilimitados', 'Remodelações simples', 'Comparação de preços', 'Exportação PDF'] },
-            { name: 'Plano Agência', price: '79,99€', period: '/mês', features: ['Tudo do Profissional', 'Gestão de múltiplos clientes', 'Relatórios com marca própria'] },
+            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
           ]
         },
         {
@@ -210,10 +202,7 @@ export const translations = {
           url: '/produtos/zarpa',
           pricingTitle: 'Planos',
           pricingPlans: [
-            { name: 'Plano Gratuito', price: '0€', period: '', features: ['5 configurações/mês', 'Dockerfile e docker-compose'] },
-            { name: 'Plano Inicial', price: '14,99€', period: '/mês', features: ['50 configurações/mês', 'CI/CD, GitHub Actions', 'AWS, GCP e Azure'] },
-            { name: 'Plano Profissional', price: '39,99€', period: '/mês', features: ['Configurações ilimitadas', 'Kubernetes e Terraform', 'Integração Git'] },
-            { name: 'Plano Agência', price: '99,99€', period: '/mês', features: ['Até 10 utilizadores', 'Pipelines personalizados', 'SLA e gestor dedicado'] },
+            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
           ]
         },
         {
@@ -482,10 +471,7 @@ export const translations = {
           url: '/produtos/lia',
           pricingTitle: 'Plans',
           pricingPlans: [
-            { name: 'Free Plan', price: '€0', period: '', features: ['Free access with essential features'] },
-            { name: 'Starter Plan', price: '€9.99', period: '/month', features: ['Core AI-assisted career features'] },
-            { name: 'Professional Plan', price: '€24.99', period: '/month', features: ['Most popular', 'Advanced interview preparation'] },
-            { name: 'Agency Plan', price: '€49.99', period: '/month', features: ['Multiple profile and team management'] },
+            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
           ]
         },
         {
@@ -498,12 +484,7 @@ export const translations = {
           url: '/produtos/amplia-home-studio',
           pricingTitle: 'Plans',
           pricingPlans: [
-            { name: 'Free Plan', price: '€0', period: '', features: ['1 space per month', '3 decoration styles', 'Basic materials list', 'No online checkout', 'Watermark on results'] },
-            { name: 'One-time purchase 1 space', price: '€4.99', period: '', features: ['Complete shopping list', 'Integrated online checkout (soon)'] },
-            { name: 'One-time purchase 3 spaces', price: '€11.99', period: '', features: ['Complete shopping list', 'Integrated online checkout (soon)'] },
-            { name: 'One-time purchase 10 spaces', price: '€29.99', period: '', features: ['Complete shopping list', 'Integrated online checkout (soon)'] },
-            { name: 'Professional Plan', price: '€29.99', period: '/month', features: ['Unlimited projects', 'Simple remodeling', 'Price comparison', 'PDF export'] },
-            { name: 'Agency Plan', price: '€79.99', period: '/month', features: ['Everything in Professional', 'Multi-client management', 'White-label reports'] },
+            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
           ]
         },
         {
@@ -516,10 +497,7 @@ export const translations = {
           url: '/produtos/zarpa',
           pricingTitle: 'Plans',
           pricingPlans: [
-            { name: 'Free Plan', price: '€0', period: '', features: ['5 configurations/month', 'Dockerfile and docker-compose'] },
-            { name: 'Starter Plan', price: '€14.99', period: '/month', features: ['50 configurations/month', 'CI/CD and GitHub Actions', 'AWS, GCP, and Azure'] },
-            { name: 'Professional Plan', price: '€39.99', period: '/month', features: ['Unlimited configurations', 'Kubernetes and Terraform', 'Git integration'] },
-            { name: 'Agency Plan', price: '€99.99', period: '/month', features: ['Up to 10 users', 'Custom pipelines', 'SLA and dedicated manager'] },
+            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
           ]
         },
         {
@@ -788,10 +766,7 @@ export const translations = {
           url: '/produtos/lia',
           pricingTitle: 'Planes',
           pricingPlans: [
-            { name: 'Plan Gratuito', price: '0€', period: '', features: ['Período de prueba con funciones esenciales'] },
-            { name: 'Plan Inicial', price: '9,99€', period: '/mes', features: ['Funciones base de carrera asistida por IA'] },
-            { name: 'Plan Profesional', price: '24,99€', period: '/mes', features: ['Más popular', 'Preparación avanzada para entrevistas'] },
-            { name: 'Plan Agencia', price: '49,99€', period: '/mes', features: ['Gestión de múltiples perfiles y equipos'] },
+            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
           ]
         },
         {
@@ -804,12 +779,7 @@ export const translations = {
           url: '/produtos/amplia-home-studio',
           pricingTitle: 'Planes',
           pricingPlans: [
-            { name: 'Plan Gratuito', price: '0€', period: '', features: ['1 espacio por mes', '3 estilos de decoración', 'Lista básica de materiales', 'Sin compra online', 'Con marca de agua en resultados'] },
-            { name: 'Compra única 1 espacio', price: '4,99€', period: '', features: ['Lista completa de compras', 'Compra online integrada (próximamente)'] },
-            { name: 'Compra única 3 espacios', price: '11,99€', period: '', features: ['Lista completa de compras', 'Compra online integrada (próximamente)'] },
-            { name: 'Compra única 10 espacios', price: '29,99€', period: '', features: ['Lista completa de compras', 'Compra online integrada (próximamente)'] },
-            { name: 'Plan Profesional', price: '29,99€', period: '/mes', features: ['Proyectos ilimitados', 'Remodelaciones simples', 'Comparación de precios', 'Exportación PDF'] },
-            { name: 'Plan Agencia', price: '79,99€', period: '/mes', features: ['Todo lo del Profesional', 'Gestión de múltiples clientes', 'Informes con marca propia'] },
+            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
           ]
         },
         {
@@ -822,10 +792,7 @@ export const translations = {
           url: '/produtos/zarpa',
           pricingTitle: 'Planes',
           pricingPlans: [
-            { name: 'Plan Gratuito', price: '0€', period: '', features: ['5 configuraciones/mes', 'Dockerfile y docker-compose'] },
-            { name: 'Plan Inicial', price: '14,99€', period: '/mes', features: ['50 configuraciones/mes', 'CI/CD y GitHub Actions', 'AWS, GCP y Azure'] },
-            { name: 'Plan Profesional', price: '39,99€', period: '/mes', features: ['Configuraciones ilimitadas', 'Kubernetes y Terraform', 'Integración Git'] },
-            { name: 'Plan Agencia', price: '99,99€', period: '/mes', features: ['Hasta 10 usuarios', 'Pipelines personalizados', 'SLA y gestor dedicado'] },
+            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
           ]
         },
         {

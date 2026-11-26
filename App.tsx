@@ -49,10 +49,7 @@ export function AppRoutes() {
             imageAlt="Ecrã da Lia com a pontuação do CV e as sugestões de melhoria"
             waitlistKey="lia"
             pricingPlans={[
-              { name: 'Plano Gratuito', price: '0€', features: ['Período de teste com funcionalidades essenciais'] },
-              { name: 'Plano Inicial', price: '9,99€', period: '/mês', features: ['Funcionalidades base de carreira assistida por IA'] },
-              { name: 'Plano Profissional', price: '24,99€', period: '/mês', features: ['Mais popular', 'Preparação avançada para entrevistas'] },
-              { name: 'Plano Agência', price: '49,99€', period: '/mês', features: ['Gestão de múltiplos perfis e equipas'] },
+              { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
             ]}
           />
         }
@@ -67,12 +64,7 @@ export function AppRoutes() {
             imageAlt="Ecrã do Home Studio com o ambiente gerado e a lista de produtos com preços"
             waitlistKey="homestudio"
             pricingPlans={[
-              { name: 'Plano Gratuito', price: '0€', features: ['1 espaço por mês', '3 estilos de decoração', 'Lista de materiais básica', 'Sem compra online', 'Com marca de água nos resultados'] },
-              { name: 'Compra única 1 espaço', price: '4,99€', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
-              { name: 'Compra única 3 espaços', price: '11,99€', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
-              { name: 'Compra única 10 espaços', price: '29,99€', features: ['Lista de compras completa', 'Compra online integrada (em breve)'] },
-              { name: 'Plano Profissional', price: '29,99€', period: '/mês', features: ['Projectos ilimitados', 'Remodelações simples', 'Comparação de preços', 'Exportação PDF'] },
-              { name: 'Plano Agência', price: '79,99€', period: '/mês', features: ['Tudo do Profissional', 'Gestão de múltiplos clientes', 'Relatórios com marca própria'] },
+              { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
             ]}
           />
         }
@@ -87,10 +79,7 @@ export function AppRoutes() {
             imageAlt="Ecrã da Zarpa com o repositório ligado e os ficheiros de deploy gerados"
             waitlistKey="opsflow"
             pricingPlans={[
-              { name: 'Plano Gratuito', price: '0€', features: ['5 configurações/mês', 'Dockerfile e docker-compose'] },
-              { name: 'Plano Inicial', price: '14,99€', period: '/mês', features: ['50 configurações/mês', 'CI/CD', 'GitHub Actions', 'AWS/GCP/Azure'] },
-              { name: 'Plano Profissional', price: '39,99€', period: '/mês', features: ['Ilimitado', 'Kubernetes', 'Terraform', 'Integração Git'] },
-              { name: 'Plano Agência', price: '99,99€', period: '/mês', features: ['Até 10 utilizadores', 'Pipelines personalizados', 'SLA', 'Gestor dedicado'] },
+              { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
             ]}
           />
         }
