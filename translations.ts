@@ -66,7 +66,7 @@ export const translations = {
         {
           block: 'O que é a Amplia Solutions',
           q: 'O que é a Amplia Solutions?',
-          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos quatro produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Home Studio** (decoração com IA) e **Ressoa** (conteúdo para redes sociais, em breve).'
+          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos três produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira) e **Home Studio** (decoração com IA).'
         },
         {
           block: 'O que é a Amplia Solutions',
@@ -182,19 +182,6 @@ export const translations = {
           appDescription: 'Indique as medidas ou carregue uma foto da divisão e escolha um estilo. O Home Studio gera o ambiente, desenha a planta 2D e lista os produtos de lojas portuguesas, com preços.',
           buttonText: 'Saber mais',
           url: '/produtos/amplia-home-studio',
-          pricingTitle: 'Planos',
-          pricingPlans: [
-            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
-          ]
-        },
-        {
-          id: 'social',
-          theme: 'violet',
-          title: 'Conteúdo para redes sociais',
-          appName: 'Ressoa',
-          appDescription: 'Escreva uma ideia e a Ressoa cria as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas. Junte imagens geradas por IA ou as suas, reveja e agende.',
-          buttonText: 'Saber mais',
-          url: '/produtos/ressoa',
           pricingTitle: 'Planos',
           pricingPlans: [
             { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
@@ -330,7 +317,7 @@ export const translations = {
         {
           block: 'What Amplia Solutions Is',
           q: 'What is Amplia Solutions?',
-          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build four products of our own: **Responder Já** (online review management), **Lia** (career agent), **Home Studio** (AI interior design) and **Ressoa** (social media content, coming soon). Our main business is building custom apps for small businesses.'
+          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build three products of our own: **Responder Já** (online review management), **Lia** (career agent) and **Home Studio** (AI interior design). Our main business is building custom apps for small businesses.'
         },
         {
           block: 'What Amplia Solutions Is',
@@ -446,19 +433,6 @@ export const translations = {
           appDescription: 'Enter the room size or upload a photo and pick a style. Home Studio generates the room, draws the 2D floor plan and lists products from Portuguese stores, with prices.',
           buttonText: 'Learn more',
           url: '/produtos/amplia-home-studio',
-          pricingTitle: 'Plans',
-          pricingPlans: [
-            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
-          ]
-        },
-        {
-          id: 'social',
-          theme: 'violet',
-          title: 'Social media content',
-          appName: 'Ressoa',
-          appDescription: 'Write one idea and Ressoa creates the posts for LinkedIn, Instagram, Facebook, X and TikTok, tailored to each network and translated. Add AI images or your own, review and schedule.',
-          buttonText: 'Learn more',
-          url: '/produtos/ressoa',
           pricingTitle: 'Plans',
           pricingPlans: [
             { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
@@ -594,7 +568,7 @@ export const translations = {
         {
           block: 'Qué es Amplia Solutions',
           q: '¿Qué es Amplia Solutions?',
-          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos cuatro productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Home Studio** (decoración con IA) y **Ressoa** (contenido para redes sociales, próximamente).'
+          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos tres productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera) y **Home Studio** (decoración con IA).'
         },
         {
           block: 'Qué es Amplia Solutions',
@@ -710,19 +684,6 @@ export const translations = {
           appDescription: 'Indica las medidas o sube una foto de la estancia y elige un estilo. Home Studio genera el ambiente, dibuja el plano 2D y enumera productos de tiendas portuguesas, con precios.',
           buttonText: 'Saber más',
           url: '/produtos/amplia-home-studio',
-          pricingTitle: 'Planes',
-          pricingPlans: [
-            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
-          ]
-        },
-        {
-          id: 'social',
-          theme: 'violet',
-          title: 'Contenido para redes sociales',
-          appName: 'Ressoa',
-          appDescription: 'Escribe una idea y Ressoa crea las publicaciones para LinkedIn, Instagram, Facebook, X y TikTok, adaptadas a cada red y traducidas. Añade imágenes con IA o las tuyas, revisa y programa.',
-          buttonText: 'Saber más',
-          url: '/produtos/ressoa',
           pricingTitle: 'Planes',
           pricingPlans: [
             { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },

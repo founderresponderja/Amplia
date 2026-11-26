@@ -50,9 +50,9 @@
       "permanent": false
     },
     {
-      "source": "/produtos/amplia-social",
-      "destination": "/produtos/ressoa",
-      "permanent": true
+      "source": "/produtos/:slug(ressoa|amplia-social)",
+      "destination": "/produtos/responder-ja",
+      "permanent": false
     }
   ]
 }

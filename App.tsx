@@ -69,21 +69,6 @@ export function AppRoutes() {
           />
         }
       />
-      <Route
-        path="/produtos/ressoa"
-        element={
-          <ProductComingSoonPage
-            title="Ressoa"
-            description="Escreva uma ideia e receba as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas. Em breve."
-            imageUrl={PRODUCT_SCREENSHOTS.social}
-            imageAlt="Ecrã da Ressoa com uma ideia transformada em publicações para cada rede"
-            waitlistKey="social"
-            pricingPlans={[
-              { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
-            ]}
-          />
-        }
-      />
     </Routes>
   );
 }
