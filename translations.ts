@@ -28,6 +28,8 @@ export const translations = {
         { name: 'MVP web', description: 'App web com login, base de dados, painel de gestão e até 5 ecrãs principais.', duration: '6–8 semanas', price: '4.900 €', priceNote: '', popular: true },
         { name: 'App profissional', description: 'Web + Android/iOS, pagamentos, notificações e painel de administração.', duration: '10–14 semanas', price: '12.900 €', priceNote: '' },
         { name: 'Integração de IA', description: 'Assistente, respostas automáticas ou leitura de documentos ligada aos seus sistemas.', duration: '2–3 semanas', price: '2.500 €', priceNote: '' },
+        { name: 'Diagnóstico de acessibilidade', description: 'Revisão de 5 páginas do seu site, relatório em linguagem simples e declaração de acessibilidade, como pede o Ato Europeu da Acessibilidade.', duration: '5 dias úteis', price: '290 €', priceNote: '' },
+        { name: 'Auditoria de acessibilidade', description: 'Até 10 páginas e o percurso de compra, segundo as regras WCAG 2.2 AA, com a lista de correções por prioridade.', duration: '2 semanas', price: '790 €', priceNote: 'descontado se corrigirmos' },
         { name: 'Manutenção e alojamento', description: 'Alojamento, cópias de segurança, atualizações e pequenas evoluções.', duration: 'Mensal', price: 'desde 150 €', priceNote: 'por mês' }
       ]
     },
@@ -156,9 +158,9 @@ export const translations = {
           pricingTitle: 'Planos',
           pricingPlans: [
             { name: 'Plano Gratuito', price: '0€', period: '', features: ['Período de teste com funcionalidades essenciais'] },
-            { name: 'Plano Inicial', price: '19,99€', period: '/mês', features: ['Automação base de respostas com IA'] },
-            { name: 'Plano Profissional', price: '49,99€', period: '/mês', features: ['Mais volume e recursos avançados de reputação'] },
-            { name: 'Plano Agência', price: '149,99€', period: '/mês', features: ['Gestão multi-negócio e operação escalável'] },
+            { name: 'Plano Essencial', price: '19 €', period: '/mês + IVA', features: ['Automação base de respostas com IA'] },
+            { name: 'Plano Profissional', price: '49 €', period: '/mês + IVA', features: ['Mais volume e recursos avançados de reputação'] },
+            { name: 'Plano Agência', price: '149 €', period: '/mês + IVA', features: ['Gestão multi-negócio e operação escalável'] },
           ]
         },
         {
@@ -292,6 +294,8 @@ export const translations = {
         { name: 'Web MVP', description: 'Web app with login, database, admin dashboard and up to 5 main screens.', duration: '6–8 weeks', price: '€4,900', priceNote: '', popular: true },
         { name: 'Professional app', description: 'Web + Android/iOS, payments, notifications and admin dashboard.', duration: '10–14 weeks', price: '€12,900', priceNote: '' },
         { name: 'AI integration', description: 'Assistant, automatic replies or document reading connected to your systems.', duration: '2–3 weeks', price: '€2,500', priceNote: '' },
+        { name: 'Accessibility check', description: 'Review of 5 pages of your website, a plain-language report and an accessibility statement, as required by the European Accessibility Act.', duration: '5 working days', price: '€290', priceNote: '' },
+        { name: 'Accessibility audit', description: 'Up to 10 pages and the checkout journey, against WCAG 2.2 AA, with a prioritised list of fixes.', duration: '2 weeks', price: '€790', priceNote: 'deducted if we do the fixes' },
         { name: 'Maintenance and hosting', description: 'Hosting, backups, updates and small improvements.', duration: 'Monthly', price: 'from €150', priceNote: 'per month' }
       ]
     },
@@ -420,9 +424,9 @@ export const translations = {
           pricingTitle: 'Plans',
           pricingPlans: [
             { name: 'Free Plan', price: '€0', period: '', features: ['Free access with essential features'] },
-            { name: 'Starter Plan', price: '€19.99', period: '/month', features: ['Core AI response automation'] },
-            { name: 'Professional Plan', price: '€49.99', period: '/month', features: ['Higher volume and advanced reputation tools'] },
-            { name: 'Agency Plan', price: '€149.99', period: '/month', features: ['Multi-business management and scalable operation'] },
+            { name: 'Essential Plan', price: '€19', period: '/month + VAT', features: ['Core AI response automation'] },
+            { name: 'Professional Plan', price: '€49', period: '/month + VAT', features: ['Higher volume and advanced reputation tools'] },
+            { name: 'Agency Plan', price: '€149', period: '/month + VAT', features: ['Multi-business management and scalable operation'] },
           ]
         },
         {
@@ -556,6 +560,8 @@ export const translations = {
         { name: 'MVP web', description: 'App web con login, base de datos, panel de gestión y hasta 5 pantallas principales.', duration: '6–8 semanas', price: '4.900 €', priceNote: '', popular: true },
         { name: 'App profesional', description: 'Web + Android/iOS, pagos, notificaciones y panel de administración.', duration: '10–14 semanas', price: '12.900 €', priceNote: '' },
         { name: 'Integración de IA', description: 'Asistente, respuestas automáticas o lectura de documentos conectada a sus sistemas.', duration: '2–3 semanas', price: '2.500 €', priceNote: '' },
+        { name: 'Diagnóstico de accesibilidad', description: 'Revisión de 5 páginas de tu web, informe en lenguaje sencillo y declaración de accesibilidad, como exige la Ley Europea de Accesibilidad.', duration: '5 días hábiles', price: '290 €', priceNote: '' },
+        { name: 'Auditoría de accesibilidad', description: 'Hasta 10 páginas y el proceso de compra, según las pautas WCAG 2.2 AA, con la lista de correcciones por prioridad.', duration: '2 semanas', price: '790 €', priceNote: 'descontado si lo corregimos' },
         { name: 'Mantenimiento y alojamiento', description: 'Alojamiento, copias de seguridad, actualizaciones y pequeñas mejoras.', duration: 'Mensual', price: 'desde 150 €', priceNote: 'al mes' }
       ]
     },
@@ -684,9 +690,9 @@ export const translations = {
           pricingTitle: 'Planes',
           pricingPlans: [
             { name: 'Plan Gratuito', price: '0€', period: '', features: ['Período de prueba con funciones esenciales'] },
-            { name: 'Plan Inicial', price: '19,99€', period: '/mes', features: ['Automatización base de respuestas con IA'] },
-            { name: 'Plan Profesional', price: '49,99€', period: '/mes', features: ['Mayor volumen y herramientas avanzadas de reputación'] },
-            { name: 'Plan Agencia', price: '149,99€', period: '/mes', features: ['Gestión multiempresa y operación escalable'] },
+            { name: 'Plan Esencial', price: '19 €', period: '/mes + IVA', features: ['Automatización base de respuestas con IA'] },
+            { name: 'Plan Profesional', price: '49 €', period: '/mes + IVA', features: ['Mayor volumen y herramientas avanzadas de reputación'] },
+            { name: 'Plan Agencia', price: '149 €', period: '/mes + IVA', features: ['Gestión multiempresa y operación escalable'] },
           ]
         },
         {
