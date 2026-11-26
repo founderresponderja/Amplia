@@ -69,6 +69,21 @@ export function AppRoutes() {
           />
         }
       />
+      <Route
+        path="/produtos/subly"
+        element={
+          <ProductComingSoonPage
+            title="Subly"
+            description="Encontra nos extratos e na caixa de correio todas as subscrições pagas e newsletters. Avisa antes de cada renovação e cancela as newsletters que já não lê num clique."
+            imageUrl={PRODUCT_SCREENSHOTS.subly}
+            imageAlt="Ecrã do Subly com o total do mês e as próximas cobranças"
+            waitlistKey="subly"
+            pricingPlans={[
+              { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
+            ]}
+          />
+        }
+      />
     </Routes>
   );
 }

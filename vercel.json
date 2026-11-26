@@ -45,7 +45,7 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/produtos/:slug(zarpa|subly|opsflow)",
+      "source": "/produtos/:slug(zarpa|opsflow)",
       "destination": "/",
       "permanent": false
     },
