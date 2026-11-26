@@ -8,3 +8,4 @@
 | 2026-11-23 | imagem | Avaliação negativa: 4 passos para responder (guia prático; avaliações online) | https://www.linkedin.com/feed/update/urn:li:share:7530767215764275201/ |
 | 2026-11-24 | partilha | Roadshow PME DIGITAL+ do IAPMEI sobre IA para PME (via Jornal Económico) | https://www.linkedin.com/feed/update/urn:li:share:7530988870675382272/ |
 | 2026-11-25 | imagem | Uso da nuvem nas empresas: 34% em Portugal vs 47% na UE (número com fonte; Comissão Europeia, Década Digital 2026) | https://www.linkedin.com/feed/update/urn:li:share:7531381465775890432/ |
+| 2026-11-26 | partilha | 71% dos consumidores já usam IA nas compras; site e avaliações são onde confirmam (estudo Observatório IPAM, via ECO) | https://www.linkedin.com/feed/update/urn:li:share:7531713814577192960/ |
