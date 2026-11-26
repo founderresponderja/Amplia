@@ -66,17 +66,17 @@ export const translations = {
         {
           block: 'O que é a Amplia Solutions',
           q: 'O que é a Amplia Solutions?',
-          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos seis produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Home Studio** (decoração com IA), **Zarpa** (deploy com IA), **Subly** (gestão de subscrições, em breve) e **Ressoa** (conteúdo para redes sociais, em breve).'
+          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos quatro produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Home Studio** (decoração com IA) e **Ressoa** (conteúdo para redes sociais, em breve).'
         },
         {
           block: 'O que é a Amplia Solutions',
           q: 'Para quem são os vossos produtos?',
-          a: 'Cada produto tem o seu público: o **Responder Já** é para restaurantes, hotéis e negócios locais; a **Lia** é para quem procura emprego ou quer evoluir na carreira; o **Home Studio** é para particulares e profissionais de decoração; a **Zarpa** é para developers e equipas técnicas.'
+          a: 'Cada produto tem o seu público: o **Responder Já** é para restaurantes, hotéis e negócios locais; a **Lia** é para quem procura emprego ou quer evoluir na carreira; o **Home Studio** é para particulares e profissionais de decoração.'
         },
         {
           block: 'Dúvidas sobre os produtos',
           q: 'Preciso de conhecimentos técnicos para usar os vossos produtos?',
-          a: 'Não. O **Responder Já**, a **Lia** e o **Home Studio** foram desenhados para qualquer pessoa usar sem formação técnica. A **Zarpa** destina-se a developers, mas tem uma interface intuitiva.'
+          a: 'Não. O **Responder Já**, a **Lia** e o **Home Studio** foram desenhados para qualquer pessoa usar sem formação técnica.'
         },
         {
           block: 'Dúvidas sobre os produtos',
@@ -127,11 +127,6 @@ export const translations = {
           block: 'Dúvidas específicas por produto',
           q: 'O Home Studio funciona com qualquer tipo de espaço?',
           a: 'Funciona com qualquer espaço interior — sala, quarto, cozinha, escritório ou espaço comercial. Basta **tirar uma fotografia com o telemóvel** e a IA faz o resto.'
-        },
-        {
-          block: 'Dúvidas específicas por produto',
-          q: 'A Zarpa suporta a minha stack tecnológica?',
-          a: 'A Zarpa suporta as stacks mais comuns de contentor, integração contínua e cloud. Se usa uma tecnologia específica, contacte-nos — estamos sempre a adicionar novas integrações.'
         },
         {
           block: 'Suporte e contacto',
@@ -193,19 +188,6 @@ export const translations = {
           ]
         },
         {
-          id: 'opsflow',
-          theme: 'cyan',
-          title: 'Deploy com IA',
-          appName: 'Zarpa',
-          appDescription: 'Ligue o seu repositório e a Zarpa gera o Dockerfile, a pipeline de CI/CD e a infraestrutura na cloud, com o custo mensal estimado. Reveja os ficheiros e publique.',
-          buttonText: 'Saber mais',
-          url: '/produtos/zarpa',
-          pricingTitle: 'Planos',
-          pricingPlans: [
-            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
-          ]
-        },
-        {
           id: 'social',
           theme: 'violet',
           title: 'Conteúdo para redes sociais',
@@ -213,19 +195,6 @@ export const translations = {
           appDescription: 'Escreva uma ideia e a Ressoa cria as publicações para LinkedIn, Instagram, Facebook, X e TikTok, adaptadas a cada rede e traduzidas. Junte imagens geradas por IA ou as suas, reveja e agende.',
           buttonText: 'Saber mais',
           url: '/produtos/ressoa',
-          pricingTitle: 'Planos',
-          pricingPlans: [
-            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
-          ]
-        },
-        {
-          id: 'subly',
-          theme: 'green',
-          title: 'Subscrições e despesas',
-          appName: 'Subly',
-          appDescription: 'Junta num só sítio o streaming, o ginásio, o telemóvel, os seguros e as outras despesas recorrentes. Mostra quanto gasta por mês e avisa antes de cada renovação, para cancelar o que já não usa.',
-          buttonText: 'Saber mais',
-          url: '/produtos/subly',
           pricingTitle: 'Planos',
           pricingPlans: [
             { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
@@ -361,17 +330,17 @@ export const translations = {
         {
           block: 'What Amplia Solutions Is',
           q: 'What is Amplia Solutions?',
-          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build six products of our own: **Responder Já** (online review management), **Lia** (career agent), **Home Studio** (AI interior design), **Zarpa** (AI-powered deploys), **Subly** (subscription management, coming soon) and **Ressoa** (social media content, coming soon). Our main business is building custom apps for small businesses.'
+          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build four products of our own: **Responder Já** (online review management), **Lia** (career agent), **Home Studio** (AI interior design) and **Ressoa** (social media content, coming soon). Our main business is building custom apps for small businesses.'
         },
         {
           block: 'What Amplia Solutions Is',
           q: 'Who are your products for?',
-          a: 'Each product serves a clear audience: **Responder Já** is for restaurants, hotels, and local businesses; **Lia** is for people looking for jobs or career growth; **Home Studio** is for homeowners and interior professionals; **Zarpa** is for developers and technical teams.'
+          a: 'Each product serves a clear audience: **Responder Já** is for restaurants, hotels, and local businesses; **Lia** is for people looking for jobs or career growth; **Home Studio** is for homeowners and interior professionals.'
         },
         {
           block: 'Product Questions',
           q: 'Do I need technical knowledge to use your products?',
-          a: 'No. **Responder Já**, **Lia**, and **Home Studio** are designed for anyone to use without technical training. **Zarpa** is built for developers, but it has an intuitive interface.'
+          a: 'No. **Responder Já**, **Lia**, and **Home Studio** are designed for anyone to use without technical training.'
         },
         {
           block: 'Product Questions',
@@ -422,11 +391,6 @@ export const translations = {
           block: 'Product-Specific Questions',
           q: 'Does Home Studio work with any type of space?',
           a: 'It works with any indoor space, including living rooms, bedrooms, kitchens, offices, and commercial rooms. Just **take a photo with your phone** and the AI handles the rest.'
-        },
-        {
-          block: 'Product-Specific Questions',
-          q: 'Does Zarpa support my technology stack?',
-          a: 'Zarpa supports the most common container, CI, and cloud stacks. If you use a specific technology, contact us because we are continuously adding new integrations.'
         },
         {
           block: 'Support and Contact',
@@ -488,19 +452,6 @@ export const translations = {
           ]
         },
         {
-          id: 'opsflow',
-          theme: 'cyan',
-          title: 'AI-powered deploys',
-          appName: 'Zarpa',
-          appDescription: 'Connect your repository and Zarpa generates the Dockerfile, the CI/CD pipeline and the cloud infrastructure, with the estimated monthly cost. Review the files and ship.',
-          buttonText: 'Learn more',
-          url: '/produtos/zarpa',
-          pricingTitle: 'Plans',
-          pricingPlans: [
-            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
-          ]
-        },
-        {
           id: 'social',
           theme: 'violet',
           title: 'Social media content',
@@ -508,19 +459,6 @@ export const translations = {
           appDescription: 'Write one idea and Ressoa creates the posts for LinkedIn, Instagram, Facebook, X and TikTok, tailored to each network and translated. Add AI images or your own, review and schedule.',
           buttonText: 'Learn more',
           url: '/produtos/ressoa',
-          pricingTitle: 'Plans',
-          pricingPlans: [
-            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
-          ]
-        },
-        {
-          id: 'subly',
-          theme: 'green',
-          title: 'Subscriptions and bills',
-          appName: 'Subly',
-          appDescription: 'Brings streaming, gym, phone, insurance and your other recurring bills into one place. Shows what you spend each month and warns you before every renewal, so you can cancel what you no longer use.',
-          buttonText: 'Learn more',
-          url: '/produtos/subly',
           pricingTitle: 'Plans',
           pricingPlans: [
             { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
@@ -656,17 +594,17 @@ export const translations = {
         {
           block: 'Qué es Amplia Solutions',
           q: '¿Qué es Amplia Solutions?',
-          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos seis productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Home Studio** (decoración con IA), **Zarpa** (despliegue con IA), **Subly** (gestión de suscripciones, próximamente) y **Ressoa** (contenido para redes sociales, próximamente).'
+          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos cuatro productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Home Studio** (decoración con IA) y **Ressoa** (contenido para redes sociales, próximamente).'
         },
         {
           block: 'Qué es Amplia Solutions',
           q: '¿Para quién son vuestros productos?',
-          a: 'Cada producto tiene su público: **Responder Já** es para restaurantes, hoteles y negocios locales; **Lia** es para quien busca empleo o crecimiento profesional; **Home Studio** es para particulares y profesionales de decoración; **Zarpa** es para developers y equipos técnicos.'
+          a: 'Cada producto tiene su público: **Responder Já** es para restaurantes, hoteles y negocios locales; **Lia** es para quien busca empleo o crecimiento profesional; **Home Studio** es para particulares y profesionales de decoración.'
         },
         {
           block: 'Dudas sobre los productos',
           q: '¿Necesito conocimientos técnicos para usar vuestros productos?',
-          a: 'No. **Responder Já**, **Lia** y **Home Studio** están diseñados para que cualquier persona los use sin formación técnica. **Zarpa** está orientado a developers, pero tiene una interfaz intuitiva.'
+          a: 'No. **Responder Já**, **Lia** y **Home Studio** están diseñados para que cualquier persona los use sin formación técnica.'
         },
         {
           block: 'Dudas sobre los productos',
@@ -717,11 +655,6 @@ export const translations = {
           block: 'Dudas específicas por producto',
           q: '¿Home Studio funciona con cualquier tipo de espacio?',
           a: 'Funciona con cualquier espacio interior, como salón, dormitorio, cocina, oficina o local comercial. Solo necesitas **hacer una foto con el móvil** y la IA hace el resto.'
-        },
-        {
-          block: 'Dudas específicas por producto',
-          q: '¿Zarpa soporta mi stack tecnológica?',
-          a: 'Zarpa soporta las stacks más comunes de contenedores, integración continua y cloud. Si usas una tecnología específica, contáctanos porque añadimos integraciones nuevas de forma continua.'
         },
         {
           block: 'Soporte y contacto',
@@ -783,19 +716,6 @@ export const translations = {
           ]
         },
         {
-          id: 'opsflow',
-          theme: 'cyan',
-          title: 'Despliegue con IA',
-          appName: 'Zarpa',
-          appDescription: 'Conecta tu repositorio y Zarpa genera el Dockerfile, la pipeline de CI/CD y la infraestructura en la nube, con el coste mensual estimado. Revisa los archivos y publica.',
-          buttonText: 'Saber más',
-          url: '/produtos/zarpa',
-          pricingTitle: 'Planes',
-          pricingPlans: [
-            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
-          ]
-        },
-        {
           id: 'social',
           theme: 'violet',
           title: 'Contenido para redes sociales',
@@ -803,19 +723,6 @@ export const translations = {
           appDescription: 'Escribe una idea y Ressoa crea las publicaciones para LinkedIn, Instagram, Facebook, X y TikTok, adaptadas a cada red y traducidas. Añade imágenes con IA o las tuyas, revisa y programa.',
           buttonText: 'Saber más',
           url: '/produtos/ressoa',
-          pricingTitle: 'Planes',
-          pricingPlans: [
-            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
-          ]
-        },
-        {
-          id: 'subly',
-          theme: 'green',
-          title: 'Suscripciones y gastos',
-          appName: 'Subly',
-          appDescription: 'Reúne en un solo lugar el streaming, el gimnasio, el móvil, los seguros y el resto de gastos recurrentes. Muestra cuánto gastas al mes y avisa antes de cada renovación, para cancelar lo que ya no usas.',
-          buttonText: 'Saber más',
-          url: '/produtos/subly',
           pricingTitle: 'Planes',
           pricingPlans: [
             { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },

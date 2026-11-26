@@ -45,9 +45,9 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/produtos/opsflow",
-      "destination": "/produtos/zarpa",
-      "permanent": true
+      "source": "/produtos/:slug(zarpa|subly|opsflow)",
+      "destination": "/",
+      "permanent": false
     },
     {
       "source": "/produtos/amplia-social",

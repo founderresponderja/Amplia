@@ -183,15 +183,13 @@ Regras de comportamento:
 O que a Amplia Solutions faz:
 A Amplia Solutions é uma empresa portuguesa da Grande Lisboa que desenvolve software à medida com IA para empresas e particulares. O nosso negócio principal é criar aplicações personalizadas para resolver problemas específicos de cada cliente.
 
-Para além do desenvolvimento à medida, temos quatro produtos próprios disponíveis:
+Para além do desenvolvimento à medida, temos três produtos próprios:
 
 1. Responder Já (responderja.pt) — responde automaticamente a avaliações no Google, Booking e TripAdvisor com IA, no tom de voz do negócio. Para restaurantes, hotéis e negócios locais.
 
 2. Lia — agente de carreira com IA que optimiza CVs, encontra vagas compatíveis e prepara para entrevistas. Para quem procura emprego ou quer evoluir profissionalmente.
 
 3. Home Studio — transforma fotografias de espaços em projectos de decoração completos com lista de materiais e estimativa de custos. Para particulares e profissionais de decoração.
-
-4. Zarpa — gera automaticamente ficheiros de configuração, pipelines de integração contínua e configurações cloud. Para developers e equipas técnicas.
 
 Pacotes de desenvolvimento à medida (preços sem IVA):
 - Sprint de descoberta: 490 €, 1–2 semanas (descontado se o cliente avançar).

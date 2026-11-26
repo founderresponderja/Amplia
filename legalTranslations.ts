@@ -146,7 +146,6 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
             'Responder Já - plataforma de IA para resposta a avaliações online.',
             'Lia - agente de carreira com IA.',
             'Home Studio - redesenho de espaços com IA.',
-            'Zarpa - geração inteligente de configurações DevOps e cloud.',
           ],
         },
         {
@@ -375,7 +374,6 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
             'Responder Ja - AI platform for online review responses.',
             'Lia - AI career agent.',
             'Home Studio - AI-powered interior redesign.',
-            'Zarpa - intelligent DevOps and cloud configuration generation.',
           ],
         },
         {
@@ -604,7 +602,6 @@ export const legalTranslations: Record<AppLanguage, LegalContent> = {
             'Responder Já - plataforma de IA para respuestas a reseñas online.',
             'Lia - agente de carrera profesional con IA.',
             'Home Studio - rediseño de espacios con IA.',
-            'Zarpa - generación inteligente de configuraciones DevOps y cloud.',
           ],
         },
         {

@@ -70,36 +70,6 @@ export function AppRoutes() {
         }
       />
       <Route
-        path="/produtos/zarpa"
-        element={
-          <ProductComingSoonPage
-            title="Zarpa"
-            description="Ligue o repositório e receba o Dockerfile, a pipeline de CI/CD e a infraestrutura na cloud, com o custo mensal estimado."
-            imageUrl={PRODUCT_SCREENSHOTS.opsflow}
-            imageAlt="Ecrã da Zarpa com o repositório ligado e os ficheiros de deploy gerados"
-            waitlistKey="opsflow"
-            pricingPlans={[
-              { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
-            ]}
-          />
-        }
-      />
-      <Route
-        path="/produtos/subly"
-        element={
-          <ProductComingSoonPage
-            title="Subly"
-            description="Todas as subscrições e despesas recorrentes num só sítio, com aviso antes de cada renovação. Em breve."
-            imageUrl={PRODUCT_SCREENSHOTS.subly}
-            imageAlt="Ecrã do Subly com o total do mês e as próximas cobranças"
-            waitlistKey="subly"
-            pricingPlans={[
-              { name: 'Lançamento', price: 'Em breve', features: ['Lista de espera disponível'] },
-            ]}
-          />
-        }
-      />
-      <Route
         path="/produtos/ressoa"
         element={
           <ProductComingSoonPage
