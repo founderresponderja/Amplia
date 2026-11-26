@@ -26,6 +26,8 @@ export const routes: PrerenderRoute[] = [
   { path: '/produtos/lia', file: 'produtos/lia.html', title: 'Lia — Agente de Carreira com IA | Amplia Solutions', description: 'O seu agente de carreira com IA: adapta o CV a cada vaga, encontra ofertas compatíveis e prepara-o para as entrevistas.' },
   { path: '/produtos/amplia-home-studio', file: 'produtos/amplia-home-studio.html', title: 'Home Studio | Amplia Solutions', description: 'Indique as medidas ou carregue uma foto da divisão e receba o ambiente, a planta 2D e a lista de produtos com preços.' },
   { path: '/produtos/subly', file: 'produtos/subly.html', title: 'Subly | Amplia Solutions', description: 'Todas as subscrições pagas e newsletters, encontradas nos extratos e na caixa de correio. Em breve.' },
+  { path: '/produtos/avrio', file: 'produtos/avrio.html', title: 'Avrio — Acessibilidade de sites | Amplia Solutions', description: 'Diagnóstico e auditoria de acessibilidade de sites e lojas online (WCAG 2.2 AA, Ato Europeu da Acessibilidade), a partir de 290 € + IVA.' },
+  { path: '/produtos/relvo', file: 'produtos/relvo.html', title: 'Relvo — Relatório VSME para PME | Amplia Solutions', description: 'Relatório de sustentabilidade simplificado (VSME) para PME, a partir das faturas. Em breve.' },
 ];
 
 export function render(url: string): string {

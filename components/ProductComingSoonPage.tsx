@@ -21,6 +21,8 @@ type Props = {
   titleByLang?: Record<Language, string>;
   /** App já publicada: mostra um botão para a abrir em vez da lista de espera */
   liveUrl?: string;
+  /** Texto do botão e da frase quando o produto está disponível (por omissão: «Abrir a app») */
+  liveCta?: Record<Language, { label: string; hint: string }>;
   pricingPlans?: Array<{
     name: string;
     price: string;
@@ -37,6 +39,7 @@ export const ProductComingSoonPage: React.FC<Props> = ({
   waitlistKey,
   titleByLang,
   liveUrl,
+  liveCta,
   pricingPlans = [],
 }) => {
   const [lang, setLang] = useState<Language>(() => detectAppLanguage());
@@ -300,15 +303,14 @@ export const ProductComingSoonPage: React.FC<Props> = ({
 
         {liveUrl ? (
           <section className="mt-12 flex flex-col gap-4 rounded-[28px] border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-[#12141a]/80 p-8 md:flex-row md:items-center md:justify-between md:p-10 transition-colors duration-300">
-            <p className="text-gray-700 dark:text-gray-300">{locale.openHint}</p>
+            <p className="text-gray-700 dark:text-gray-300">{liveCta ? liveCta[lang].hint : locale.openHint}</p>
             <a
               href={liveUrl}
-              target="_blank"
-              rel="noopener"
+              {...(liveUrl.startsWith('/') ? {} : { target: '_blank', rel: 'noopener' })}
               className="inline-flex items-center justify-center rounded-2xl px-8 py-3.5 font-bold text-[#0a0b0e] transition-opacity hover:opacity-90"
               style={{ backgroundColor: ACCENT }}
             >
-              {locale.open} ↗
+              {liveCta ? liveCta[lang].label : `${locale.open} ↗`}
             </a>
           </section>
         ) : (

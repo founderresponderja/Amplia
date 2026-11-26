@@ -6,6 +6,8 @@ export const PRODUCT_SCREENSHOTS = {
   opsflow: '/produtos/opsflow-mockup.jpg',
   subly: '/produtos/subly-mockup.jpg',
   social: '/produtos/social-mockup.jpg',
+  avrio: '/produtos/avrio-mockup.jpg',
+  relvo: '/produtos/relvo-mockup.jpg',
 } as const;
 
 export type ProductWaitlistKey = keyof typeof PRODUCT_SCREENSHOTS;

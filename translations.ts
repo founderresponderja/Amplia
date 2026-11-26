@@ -28,8 +28,8 @@ export const translations = {
         { name: 'MVP web', description: 'App web com login, base de dados, painel de gestão e até 5 ecrãs principais.', duration: '6–8 semanas', price: '4.900 €', priceNote: '', popular: true },
         { name: 'App profissional', description: 'Web + Android/iOS, pagamentos, notificações e painel de administração.', duration: '10–14 semanas', price: '12.900 €', priceNote: '' },
         { name: 'Integração de IA', description: 'Assistente, respostas automáticas ou leitura de documentos ligada aos seus sistemas.', duration: '2–3 semanas', price: '2.500 €', priceNote: '' },
-        { name: 'Diagnóstico de acessibilidade', description: 'Revisão de 5 páginas do seu site, relatório em linguagem simples e declaração de acessibilidade, como pede o Ato Europeu da Acessibilidade.', duration: '5 dias úteis', price: '290 €', priceNote: '' },
-        { name: 'Auditoria de acessibilidade', description: 'Até 10 páginas e o percurso de compra, segundo as regras WCAG 2.2 AA, com a lista de correções por prioridade.', duration: '2 semanas', price: '790 €', priceNote: 'descontado se corrigirmos' },
+        { name: 'Avrio · Diagnóstico de acessibilidade', description: 'Revisão de 5 páginas do seu site, relatório em linguagem simples e declaração de acessibilidade, como pede o Ato Europeu da Acessibilidade.', duration: '5 dias úteis', price: '290 €', priceNote: '' },
+        { name: 'Avrio · Auditoria de acessibilidade', description: 'Até 10 páginas e o percurso de compra, segundo as regras WCAG 2.2 AA, com a lista de correções por prioridade.', duration: '2 semanas', price: '790 €', priceNote: 'descontado se corrigirmos' },
         { name: 'Manutenção e alojamento', description: 'Alojamento, cópias de segurança, atualizações e pequenas evoluções.', duration: 'Mensal', price: 'desde 150 €', priceNote: 'por mês' }
       ]
     },
@@ -68,7 +68,7 @@ export const translations = {
         {
           block: 'O que é a Amplia Solutions',
           q: 'O que é a Amplia Solutions?',
-          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos quatro produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Home Studio** (decoração com IA) e **Subly** (subscrições e newsletters, em breve).'
+          a: 'Somos um estúdio português de desenvolvimento de apps à medida para pequenas empresas, com inteligência artificial integrada. Também desenvolvemos seis produtos próprios: **Responder Já** (gestão de avaliações online), **Lia** (agente de carreira), **Home Studio** (decoração com IA), **Subly** (subscrições e newsletters, em breve), **Avrio** (acessibilidade de sites) e **Relvo** (relatório de sustentabilidade, em breve).'
         },
         {
           block: 'O que é a Amplia Solutions',
@@ -201,6 +201,35 @@ export const translations = {
           pricingPlans: [
             { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
           ]
+        },
+        {
+          id: 'avrio',
+          theme: 'blue',
+          title: 'Acessibilidade digital',
+          appName: 'Avrio',
+          appDescription: 'Verificamos se o seu site e a sua loja online podem ser usados por todas as pessoas, segundo as regras WCAG 2.2 AA e o Ato Europeu da Acessibilidade. Relatório em linguagem simples, correções por prioridade e declaração de acessibilidade.',
+          buttonText: 'Saber mais',
+          url: '/produtos/avrio',
+          pricingTitle: 'Pacotes',
+          pricingPlans: [
+            { name: 'Diagnóstico', price: '290 €', period: '+ IVA', features: ['5 páginas, relatório e declaração'] },
+            { name: 'Auditoria', price: '790 €', period: '+ IVA', features: ['Até 10 páginas e o percurso de compra'] },
+            { name: 'Correção', price: 'Orçamento fechado', period: '', features: ['Feita pela Amplia a partir da auditoria'] },
+            { name: 'Acompanhamento', price: '39 €', period: '/mês + IVA', features: ['Verificação mensal e declaração atualizada'] },
+          ]
+        },
+        {
+          id: 'relvo',
+          theme: 'green',
+          title: 'Relatório de sustentabilidade',
+          appName: 'Relvo',
+          appDescription: 'O relatório de sustentabilidade simplificado (norma europeia VSME) que bancos e clientes grandes começam a pedir às PME, feito a partir das faturas de energia e combustíveis. Em português, pronto a enviar, através do seu contabilista.',
+          buttonText: 'Saber mais',
+          url: '/produtos/relvo',
+          pricingTitle: 'Planos',
+          pricingPlans: [
+            { name: 'Lançamento', price: 'Em breve', period: '', features: ['Lista de espera disponível'] },
+          ]
         }
       ]
     },
@@ -294,8 +323,8 @@ export const translations = {
         { name: 'Web MVP', description: 'Web app with login, database, admin dashboard and up to 5 main screens.', duration: '6–8 weeks', price: '€4,900', priceNote: '', popular: true },
         { name: 'Professional app', description: 'Web + Android/iOS, payments, notifications and admin dashboard.', duration: '10–14 weeks', price: '€12,900', priceNote: '' },
         { name: 'AI integration', description: 'Assistant, automatic replies or document reading connected to your systems.', duration: '2–3 weeks', price: '€2,500', priceNote: '' },
-        { name: 'Accessibility check', description: 'Review of 5 pages of your website, a plain-language report and an accessibility statement, as required by the European Accessibility Act.', duration: '5 working days', price: '€290', priceNote: '' },
-        { name: 'Accessibility audit', description: 'Up to 10 pages and the checkout journey, against WCAG 2.2 AA, with a prioritised list of fixes.', duration: '2 weeks', price: '€790', priceNote: 'deducted if we do the fixes' },
+        { name: 'Avrio · Accessibility check', description: 'Review of 5 pages of your website, a plain-language report and an accessibility statement, as required by the European Accessibility Act.', duration: '5 working days', price: '€290', priceNote: '' },
+        { name: 'Avrio · Accessibility audit', description: 'Up to 10 pages and the checkout journey, against WCAG 2.2 AA, with a prioritised list of fixes.', duration: '2 weeks', price: '€790', priceNote: 'deducted if we do the fixes' },
         { name: 'Maintenance and hosting', description: 'Hosting, backups, updates and small improvements.', duration: 'Monthly', price: 'from €150', priceNote: 'per month' }
       ]
     },
@@ -334,7 +363,7 @@ export const translations = {
         {
           block: 'What Amplia Solutions Is',
           q: 'What is Amplia Solutions?',
-          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build four products of our own: **Responder Já** (online review management), **Lia** (career agent), **Home Studio** (AI interior design) and **Subly** (subscriptions and newsletters, coming soon). Our main business is building custom apps for small businesses.'
+          a: 'We are a Portuguese software company that uses AI to solve real business problems. We also build six products of our own: **Responder Já** (online review management), **Lia** (career agent), **Home Studio** (AI interior design), **Subly** (subscriptions and newsletters, coming soon), **Avrio** (website accessibility) and **Relvo** (sustainability report, coming soon). Our main business is building custom apps for small businesses.'
         },
         {
           block: 'What Amplia Solutions Is',
@@ -467,6 +496,35 @@ export const translations = {
           pricingPlans: [
             { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
           ]
+        },
+        {
+          id: 'avrio',
+          theme: 'blue',
+          title: 'Digital accessibility',
+          appName: 'Avrio',
+          appDescription: 'We check whether everyone can use your website and online shop, against WCAG 2.2 AA and the European Accessibility Act. Plain-language report, prioritised fixes and an accessibility statement.',
+          buttonText: 'Learn more',
+          url: '/produtos/avrio',
+          pricingTitle: 'Packages',
+          pricingPlans: [
+            { name: 'Check', price: '€290', period: '+ VAT', features: ['5 pages, report and statement'] },
+            { name: 'Audit', price: '€790', period: '+ VAT', features: ['Up to 10 pages and the checkout'] },
+            { name: 'Fixes', price: 'Fixed quote', period: '', features: ['Done by Amplia from the audit'] },
+            { name: 'Monitoring', price: '€39', period: '/month + VAT', features: ['Monthly check and up-to-date statement'] },
+          ]
+        },
+        {
+          id: 'relvo',
+          theme: 'green',
+          title: 'Sustainability report',
+          appName: 'Relvo',
+          appDescription: 'The simplified sustainability report (EU VSME standard) that banks and large clients are starting to ask SMEs for, built from energy and fuel invoices. Ready to send, through your accountant.',
+          buttonText: 'Learn more',
+          url: '/produtos/relvo',
+          pricingTitle: 'Plans',
+          pricingPlans: [
+            { name: 'Launch', price: 'Coming soon', period: '', features: ['Waitlist open'] },
+          ]
         }
       ]
     },
@@ -560,8 +618,8 @@ export const translations = {
         { name: 'MVP web', description: 'App web con login, base de datos, panel de gestión y hasta 5 pantallas principales.', duration: '6–8 semanas', price: '4.900 €', priceNote: '', popular: true },
         { name: 'App profesional', description: 'Web + Android/iOS, pagos, notificaciones y panel de administración.', duration: '10–14 semanas', price: '12.900 €', priceNote: '' },
         { name: 'Integración de IA', description: 'Asistente, respuestas automáticas o lectura de documentos conectada a sus sistemas.', duration: '2–3 semanas', price: '2.500 €', priceNote: '' },
-        { name: 'Diagnóstico de accesibilidad', description: 'Revisión de 5 páginas de tu web, informe en lenguaje sencillo y declaración de accesibilidad, como exige la Ley Europea de Accesibilidad.', duration: '5 días hábiles', price: '290 €', priceNote: '' },
-        { name: 'Auditoría de accesibilidad', description: 'Hasta 10 páginas y el proceso de compra, según las pautas WCAG 2.2 AA, con la lista de correcciones por prioridad.', duration: '2 semanas', price: '790 €', priceNote: 'descontado si lo corregimos' },
+        { name: 'Avrio · Diagnóstico de accesibilidad', description: 'Revisión de 5 páginas de tu web, informe en lenguaje sencillo y declaración de accesibilidad, como exige la Ley Europea de Accesibilidad.', duration: '5 días hábiles', price: '290 €', priceNote: '' },
+        { name: 'Avrio · Auditoría de accesibilidad', description: 'Hasta 10 páginas y el proceso de compra, según las pautas WCAG 2.2 AA, con la lista de correcciones por prioridad.', duration: '2 semanas', price: '790 €', priceNote: 'descontado si lo corregimos' },
         { name: 'Mantenimiento y alojamiento', description: 'Alojamiento, copias de seguridad, actualizaciones y pequeñas mejoras.', duration: 'Mensual', price: 'desde 150 €', priceNote: 'al mes' }
       ]
     },
@@ -600,7 +658,7 @@ export const translations = {
         {
           block: 'Qué es Amplia Solutions',
           q: '¿Qué es Amplia Solutions?',
-          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos cuatro productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Home Studio** (decoración con IA) y **Subly** (suscripciones y newsletters, próximamente).'
+          a: 'Somos una empresa portuguesa de software que usa IA para resolver problemas reales de negocio. Nuestra actividad principal es crear apps a medida para pequeñas empresas. También desarrollamos seis productos propios: **Responder Já** (gestión de reseñas online), **Lia** (agente de carrera), **Home Studio** (decoración con IA), **Subly** (suscripciones y newsletters, próximamente), **Avrio** (accesibilidad web) y **Relvo** (informe de sostenibilidad, próximamente).'
         },
         {
           block: 'Qué es Amplia Solutions',
@@ -729,6 +787,35 @@ export const translations = {
           appDescription: 'Lee tus extractos y tu bandeja de entrada y encuentra todas las suscripciones de pago y newsletters. Muestra cuánto gastas al mes, avisa antes de cada renovación y te da de baja de las newsletters que ya no lees con un clic.',
           buttonText: 'Más información',
           url: '/produtos/subly',
+          pricingTitle: 'Planes',
+          pricingPlans: [
+            { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },
+          ]
+        },
+        {
+          id: 'avrio',
+          theme: 'blue',
+          title: 'Accesibilidad digital',
+          appName: 'Avrio',
+          appDescription: 'Comprobamos si todas las personas pueden usar tu web y tu tienda online, según las pautas WCAG 2.2 AA y la Ley Europea de Accesibilidad. Informe en lenguaje sencillo, correcciones por prioridad y declaración de accesibilidad.',
+          buttonText: 'Más información',
+          url: '/produtos/avrio',
+          pricingTitle: 'Paquetes',
+          pricingPlans: [
+            { name: 'Diagnóstico', price: '290 €', period: '+ IVA', features: ['5 páginas, informe y declaración'] },
+            { name: 'Auditoría', price: '790 €', period: '+ IVA', features: ['Hasta 10 páginas y el proceso de compra'] },
+            { name: 'Corrección', price: 'Presupuesto cerrado', period: '', features: ['Hecha por Amplia a partir de la auditoría'] },
+            { name: 'Seguimiento', price: '39 €', period: '/mes + IVA', features: ['Revisión mensual y declaración actualizada'] },
+          ]
+        },
+        {
+          id: 'relvo',
+          theme: 'green',
+          title: 'Informe de sostenibilidad',
+          appName: 'Relvo',
+          appDescription: 'El informe de sostenibilidad simplificado (norma europea VSME) que bancos y grandes clientes empiezan a pedir a las pymes, a partir de las facturas de energía y combustibles. Listo para enviar, a través de tu asesor.',
+          buttonText: 'Más información',
+          url: '/produtos/relvo',
           pricingTitle: 'Planes',
           pricingPlans: [
             { name: 'Lanzamiento', price: 'Próximamente', period: '', features: ['Lista de espera abierta'] },

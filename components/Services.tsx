@@ -9,7 +9,7 @@ export const Services = ({ content }: { content: any }) => {
   const navigate = useNavigate();
   const renderLogo = (id: string) => {
     // Símbolos das marcas (capítulo «Marcas» do manual da Amplia)
-    const ids = ['responderja', 'lia', 'homestudio', 'opsflow', 'subly', 'social'];
+    const ids = ['responderja', 'lia', 'homestudio', 'opsflow', 'subly', 'social', 'avrio', 'relvo'];
     if (ids.includes(id)) return <img src={`/brand/produtos/${id}.svg`} alt="" aria-hidden="true" className="w-12 h-12" />;
     return logos[id] || <div className="w-12 h-12 rounded-xl bg-gray-200" />;
   };
